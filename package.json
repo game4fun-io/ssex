@@ -1,0 +1,15 @@
+{
+  "name": "ssex-consulting-tool",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start --workspace=@ssex/server\" \"npm run dev --workspace=@ssex/client\"",
+    "server": "npm run start --workspace=@ssex/server",
+    "client": "npm run dev --workspace=@ssex/client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
