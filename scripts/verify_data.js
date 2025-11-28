@@ -23,8 +23,15 @@ const verify = async () => {
             }
             console.log('Skills count:', sample.skills.length);
             if (sample.skills.length > 0) {
-                console.log('First Skill:', JSON.stringify(sample.skills[0], null, 2));
+                const firstSkill = sample.skills[0];
+                console.log('First Skill:', JSON.stringify(firstSkill, null, 2));
+                if (firstSkill.levels && firstSkill.levels.length > 0) {
+                    console.log('First Skill Levels:', firstSkill.levels);
+                }
+                console.log('First Skill Icon URL:', firstSkill.iconUrl);
             }
+            console.log('Image URL:', sample.imageUrl);
+            console.log('Avatar URL:', sample.avatarUrl);
         } else {
             console.log('No character found with bonds.');
         }

@@ -107,7 +107,10 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
             id: skill.skillid,
             name: getLocalized(skill.name, langPackages),
             description: description,
-            icon: skill.iconpath ? skill.iconpath.split('/').pop() : '',
+            // Point to remote URL for skill icons as they are missing locally
+            iconUrl: skill.iconpath
+                ? `https://seiya2.vercel.app/assets/resources/textures/hero/skillicon/texture/${skill.iconpath.split('/').pop()}.png`
+                : '',
             type: skill.skill_type.toString(), // 1=Basic, 2=Special, etc.
             cost: skill.cd || -1, // Assuming cost field exists or -1
             levels: levels
@@ -220,8 +223,15 @@ const migrate = async () => {
                 cv_name: getLocalized(role.cvname, langPackages),
                 quality: role.quality,
 
-                imageUrl: `/assets/resources/textures/hero/show/${role.id}.png`, // Placeholder path logic
-                avatarUrl: `/assets/resources/textures/hero/icon/${role.id}.png` // Placeholder path logic
+                // Use CircleHeroHead as fallback for both image and avatar since we have them locally
+                // and full body images are missing.
+                // role_initial_skins is an array, e.g. [10010]
+                imageUrl: role.role_initial_skins && role.role_initial_skins.length > 0
+                    ? `/assets/resources/textures/hero/circleherohead/CircleHeroHead_${role.role_initial_skins[0]}.png`
+                    : '',
+                avatarUrl: role.role_initial_skins && role.role_initial_skins.length > 0
+                    ? `/assets/resources/textures/hero/circleherohead/CircleHeroHead_${role.role_initial_skins[0]}.png`
+                    : ''
             };
 
             await Character.findOneAndUpdate(

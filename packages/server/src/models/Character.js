@@ -63,6 +63,7 @@ const CharacterSchema = new mongoose.Schema({
     }],
 
     imageUrl: { type: String, default: '' },
+    avatarUrl: { type: String, default: '' },
     description: { type: LocalizedString },
     collection: { type: String }
 });
