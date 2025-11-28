@@ -201,7 +201,7 @@ const migrate = async () => {
 
             const characterData = {
                 id: role.id,
-                name: getLocalized(role.rolename_short, langPackages),
+                name: getLocalized(`LC_ROLE_role_full_name_${role.id}`, langPackages) || getLocalized(role.rolename_short, langPackages),
                 description: getLocalized(role.role_introduction, langPackages),
                 rarity: mapRarity(role.quality),
                 faction: getLocalized(`LC_COMMON_cloth_trial_hero_camp_${role.camp}`, langPackages) || 'Other',

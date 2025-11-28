@@ -10,8 +10,8 @@ const verify = async () => {
         const count = await Character.countDocuments();
         console.log(`Total characters: ${count}`);
 
-        // Find a character with bonds and skills to verify
-        const sample = await Character.findOne({ rarity: 'UR' });
+        // Find Seiya (ID 1001) or a specific character to verify name
+        const sample = await Character.findOne({ id: 1001 });
 
         if (sample) {
             console.log('Sample character:', sample.name.en);
