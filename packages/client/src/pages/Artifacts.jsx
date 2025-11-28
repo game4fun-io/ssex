@@ -31,12 +31,8 @@ const Artifacts = () => {
         const fetchArtifacts = async () => {
             try {
                 const res = await api.get('/artifacts');
-                const sorted = (res.data || []).slice().sort((a, b) => {
-                    const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
-                    return (order[b.rarity] || 0) - (order[a.rarity] || 0);
-                });
-                setArtifacts(sorted);
-                setFilteredArtifacts(sorted);
+                setArtifacts(res.data);
+                setFilteredArtifacts(res.data);
 
                 const uniqueRarities = [...new Set(res.data.map(a => a.rarity))].filter(Boolean).sort();
                 setOptions({

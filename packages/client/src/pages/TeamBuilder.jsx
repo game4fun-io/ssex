@@ -39,15 +39,8 @@ const DraggableCharacter = ({ char, onClick, getLoc }) => {
     );
 };
 
-const rarityScore = (rarity) => {
-    const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
-    return order[rarity] || 0;
-};
-
 const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, onRelicChange, onCardsChange, relicLabel, cardsLabel, noneLabel }) => {
     const { isOver, setNodeRef } = useDroppable({ id });
-    const [openRelic, setOpenRelic] = useState(false);
-    const [openCards, setOpenCards] = useState(false);
 
     const style = {
         borderColor: isOver ? '#EAB308' : '#4B5563',
@@ -58,7 +51,7 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
     const cardIds = slot?.cardIds || [];
 
     return (
-        <div ref={setNodeRef} style={style} className="w-48 min-h-[240px] bg-gray-800 border-2 border-dashed rounded-lg flex flex-col items-center justify-start relative p-2 gap-2">
+        <div ref={setNodeRef} style={style} className="w-40 min-h-[220px] bg-gray-800 border-2 border-dashed rounded-lg flex flex-col items-center justify-start relative p-2 gap-2">
             {char ? (
                 <>
                     <div className="flex flex-col items-center">
@@ -72,46 +65,21 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
                     </div>
 
                     <div className="w-full">
-                        <label className="block text-[10px] text-gray-400 mb-1">{label} • {relicLabel}</label>
-                        <button
-                            type="button"
-                            onClick={() => { setOpenRelic(!openRelic); setOpenCards(false); }}
-                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 text-left flex items-center gap-2 hover:border-yellow-500"
+                        <label className="block text-[10px] text-gray-400">{label} • {relicLabel}</label>
+                        <select
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600"
+                            value={relicId}
+                            onChange={(e) => onRelicChange(id, e.target.value)}
                         >
-                            {relicId ? (
-                                (() => {
-                                    const art = artifacts.find(a => (a._id || a.id) === relicId);
-                                    return (
-                                        <>
-                                            {art?.imageUrl && <img src={art.imageUrl} alt={getLoc(art?.name)} className="w-6 h-6 object-contain" />}
-                                            <span>{getLoc(art?.name)}</span>
-                                        </>
-                                    );
-                                })()
-                            ) : (
-                                <span className="text-gray-400">{noneLabel}</span>
-                            )}
-                        </button>
-                        {openRelic && (
-                            <div className="absolute z-30 mt-1 left-2 right-2 bg-gray-900 border border-gray-700 rounded shadow-lg max-h-48 overflow-y-auto scrollbar-themed p-2">
-                                <button className="text-[10px] text-yellow-400 mb-2" onClick={() => { onRelicChange(id, ''); setOpenRelic(false); }}>{noneLabel}</button>
-                                {artifacts.slice().sort((a,b)=>rarityScore(b.rarity)-rarityScore(a.rarity)).map((art) => (
-                                    <button
-                                        key={art._id || art.id}
-                                        className="w-full flex items-center gap-2 text-left text-xs text-white p-2 rounded hover:bg-gray-800"
-                                        onClick={() => { onRelicChange(id, art._id || art.id); setOpenRelic(false); }}
-                                    >
-                                        {art.imageUrl && <img src={art.imageUrl} alt={getLoc(art.name)} className="w-8 h-8 object-contain" />}
-                                        <span>{getLoc(art.name)}</span>
-                                        <span className="ml-auto text-[10px] text-gray-400">{art.rarity}</span>
-                                    </button>
-                                ))}
-                            </div>
-                        )}
+                            <option value="">{noneLabel}</option>
+                            {artifacts.map((art) => (
+                                <option key={art._id || art.id} value={art._id || art.id}>{getLoc(art.name)}</option>
+                            ))}
+                        </select>
                     </div>
 
-                    <div className="w-full relative">
-                        <div className="flex justify-between items-center text-[10px] text-gray-400 mb-1">
+                    <div className="w-full">
+                        <div className="flex justify-between items-center text-[10px] text-gray-400">
                             <span>{cardsLabel} ({cardIds.length}/5)</span>
                             <button
                                 type="button"
@@ -119,50 +87,26 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
                                 onClick={() => onCardsChange(id, [])}
                             >{noneLabel}</button>
                         </div>
-                        <button
-                            type="button"
-                            onClick={() => { setOpenCards(!openCards); setOpenRelic(false); }}
-                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 text-left flex flex-wrap gap-1 min-h-[40px] hover:border-yellow-500"
+                        <select
+                            multiple
+                            size={Math.min(6, cards.length || 6)}
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 min-h-[88px]"
+                            value={cardIds}
+                            onChange={(e) => {
+                                const selected = Array.from(e.target.selectedOptions).map((o) => o.value).slice(0, 5);
+                                onCardsChange(id, selected);
+                            }}
                         >
-                            {cardIds.length === 0 ? (
-                                <span className="text-gray-400">{noneLabel}</span>
-                            ) : (
-                                cardIds.map((cid) => {
+                            {cards.map((card) => (
+                                <option key={card._id || card.id} value={card._id || card.id}>{getLoc(card.name)}</option>
+                            ))}
+                        </select>
+                        {cardIds.length > 0 && (
+                            <div className="flex flex-wrap gap-1 mt-1">
+                                {cardIds.map((cid) => {
                                     const card = cards.find(c => (c._id || c.id) === cid);
-                                    return (
-                                        <span key={cid} className="flex items-center gap-1 bg-gray-800 px-1.5 py-0.5 rounded border border-gray-600 text-[10px]">
-                                            {card?.imageUrl && <img src={card.imageUrl} alt={getLoc(card?.name)} className="w-5 h-5 object-contain" />}
-                                            {getLoc(card?.name) || cid}
-                                        </span>
-                                    );
-                                })
-                            )}
-                        </button>
-                        {openCards && (
-                            <div className="absolute z-30 mt-1 left-0 right-0 bg-gray-900 border border-gray-700 rounded shadow-lg max-h-56 overflow-y-auto scrollbar-themed p-2">
-                                {cards.slice().sort((a,b)=>rarityScore(b.rarity)-rarityScore(a.rarity)).map((card) => {
-                                    const idVal = card._id || card.id;
-                                    const selected = cardIds.includes(idVal);
-                                    const canAdd = selected || cardIds.length < 5;
-                                    return (
-                                        <button
-                                            key={idVal}
-                                            className={`w-full flex items-center gap-2 text-left text-xs p-2 rounded ${selected ? 'bg-gray-800 border border-yellow-500' : 'hover:bg-gray-800 border border-transparent'} ${!canAdd ? 'opacity-50 cursor-not-allowed' : ''}`}
-                                            onClick={() => {
-                                                if (!selected && !canAdd) return;
-                                                const next = selected ? cardIds.filter(c => c !== idVal) : [...cardIds, idVal].slice(0,5);
-                                                onCardsChange(id, next);
-                                            }}
-                                        >
-                                            {card.imageUrl && <img src={card.imageUrl} alt={getLoc(card.name)} className="w-8 h-8 object-contain" />}
-                                            <span className="flex-1">{getLoc(card.name)}</span>
-                                            <span className="text-[10px] text-gray-400">{card.rarity}</span>
-                                        </button>
-                                    );
+                                    return <span key={cid} className="text-[10px] bg-gray-700 px-1.5 py-0.5 rounded border border-gray-600">{getLoc(card?.name) || cid}</span>;
                                 })}
-                                <div className="flex justify-end mt-2">
-                                    <button className="text-[11px] text-yellow-400" onClick={() => setOpenCards(false)}>Close</button>
-                                </div>
                             </div>
                         )}
                     </div>
@@ -195,8 +139,7 @@ const TeamBuilder = () => {
         const fetchCharacters = async () => {
             try {
                 const res = await api.get('/characters');
-                const sorted = (res.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
-                setCharacters(sorted);
+                setCharacters(res.data);
             } catch (err) {
                 console.error(err);
             }
@@ -204,8 +147,7 @@ const TeamBuilder = () => {
         const fetchArtifacts = async () => {
             try {
                 const res = await api.get('/artifacts');
-                const sorted = (res.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
-                setArtifacts(sorted);
+                setArtifacts(res.data || []);
             } catch (err) {
                 console.error(err);
             }
@@ -213,8 +155,7 @@ const TeamBuilder = () => {
         const fetchCards = async () => {
             try {
                 const res = await api.get('/force-cards');
-                const sorted = (res.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
-                setCards(sorted);
+                setCards(res.data || []);
             } catch (err) {
                 console.error(err);
             }
@@ -357,7 +298,7 @@ const TeamBuilder = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Character List */}
-                        <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-4 rounded-lg h-[640px] overflow-y-auto overflow-x-hidden scrollbar-themed">
+                        <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-4 rounded-lg h-[640px] overflow-y-auto scrollbar-themed">
                             <h2 className="text-xl font-bold mb-4 text-gray-300">{t('availableSaints')}</h2>
                             <p className="text-xs text-gray-500 mb-4">{t('clickToAdd')}</p>
 
