@@ -51,6 +51,9 @@
         "backRow": "Trás",
         "teamStats": "Status do Time",
         "totalHP": "HP Total",
-        "totalATK": "ATQ Total"
+        "totalATK": "ATQ Total",
+        "laneRestriction": "Coloque {{name}} na fileira {{lane}}.",
+        "mainTeamFull": "O time principal tem limite de 5 personagens!",
+        "noSpaceForSaint": "Sem espaço nessa fileira ou nos slots de apoio."
     }
 }

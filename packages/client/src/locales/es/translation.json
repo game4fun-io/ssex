@@ -43,6 +43,9 @@
         "backRow": "Atrás",
         "teamStats": "Estadísticas del equipo",
         "totalHP": "HP Total",
-        "totalATK": "ATQ Total"
+        "totalATK": "ATQ Total",
+        "laneRestriction": "Coloca a {{name}} en la fila {{lane}}.",
+        "mainTeamFull": "El equipo principal está limitado a 5 personajes.",
+        "noSpaceForSaint": "No hay espacio en esa fila ni en soporte."
     }
 }

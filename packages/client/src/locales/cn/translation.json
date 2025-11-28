@@ -43,6 +43,9 @@
         "backRow": "后排",
         "teamStats": "队伍属性",
         "totalHP": "总生命",
-        "totalATK": "总攻击"
+        "totalATK": "总攻击",
+        "laneRestriction": "请将{{name}}放在{{lane}}。",
+        "mainTeamFull": "主阵容最多 5 名角色！",
+        "noSpaceForSaint": "该排或支援位已满。"
     }
 }

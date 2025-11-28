@@ -51,6 +51,9 @@
         "backRow": "Back",
         "teamStats": "Team Stats",
         "totalHP": "Total HP",
-        "totalATK": "Total ATK"
+        "totalATK": "Total ATK",
+        "laneRestriction": "Place {{name}} in the {{lane}} row.",
+        "mainTeamFull": "Main team is limited to 5 characters!",
+        "noSpaceForSaint": "No free slots in this row or support."
     }
 }

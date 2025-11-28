@@ -43,6 +43,9 @@
         "backRow": "Arrière",
         "teamStats": "Stats de l'équipe",
         "totalHP": "PV Totaux",
-        "totalATK": "ATQ Totale"
+        "totalATK": "ATQ Totale",
+        "laneRestriction": "Placez {{name}} sur la ligne {{lane}}.",
+        "mainTeamFull": "L'équipe principale est limitée à 5 personnages.",
+        "noSpaceForSaint": "Aucun espace dans cette ligne ni en soutien."
     }
 }

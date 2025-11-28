@@ -127,6 +127,7 @@ const TeamBuilder = () => {
     const [rowFilter, setRowFilter] = useState('');
     const [rarityFilter, setRarityFilter] = useState('');
     const [activeChar, setActiveChar] = useState(null);
+    const [toast, setToast] = useState(null);
     const [team, setTeam] = useState({
         front1: null, front2: null, front3: null,
         mid1: null, mid2: null, mid3: null,
@@ -204,13 +205,13 @@ const TeamBuilder = () => {
             const charRow = normalizeRow(getLoc(char.positioning));
             const targetRow = slotRow(slotId);
             if (!isSupportSlot && targetRow !== charRow) {
-                alert(`${getLoc(char.name)} prefers the ${charRow} row.`);
+                notify(t('laneRestriction', { name: getLoc(char.name), lane: t(`${charRow}Row`) || charRow }));
                 return;
             }
 
             // Check limits
             if (!isSupportSlot && getMainTeamCount() >= 5 && !team[slotId]?.character) {
-                alert("Main team is limited to 5 characters!");
+                notify(t('mainTeamFull'));
                 return;
             }
 
@@ -234,6 +235,11 @@ const TeamBuilder = () => {
         return 'support';
     };
 
+    const notify = (msg, type = 'warning') => {
+        setToast({ msg, type });
+        setTimeout(() => setToast(null), 2200);
+    };
+
     const autoAddCharacter = (char) => {
         const row = normalizeRow(getLoc(char.positioning));
         const targetSlots = getRowSlots(row);
@@ -245,7 +251,7 @@ const TeamBuilder = () => {
                     setTeam(prev => ({ ...prev, [slot]: { character: char, relicId: '', cardIds: [] } }));
                     added = true;
                 } else {
-                    alert("Main team is full (5/5)!");
+                    notify(t('mainTeamFull'));
                     return;
                 }
                 break;
@@ -255,7 +261,7 @@ const TeamBuilder = () => {
         if (!added) {
             if (!team.support1?.character) setTeam(prev => ({ ...prev, support1: { character: char, relicId: '', cardIds: [] } }));
             else if (!team.support2?.character) setTeam(prev => ({ ...prev, support2: { character: char, relicId: '', cardIds: [] } }));
-            else alert(`No space in ${row} or Support slots!`);
+            else notify(t('noSpaceForSaint'));
         }
     };
 
@@ -385,6 +391,11 @@ const TeamBuilder = () => {
                     </div>
                 </div>
             </div>
+            {toast && (
+                <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-3 rounded shadow-lg border border-yellow-600 max-w-sm text-sm">
+                    {toast.msg}
+                </div>
+            )}
             <DragOverlay>
                 {activeChar ? (
                     <div className="bg-gray-800 p-2 rounded border border-yellow-500 shadow-2xl">

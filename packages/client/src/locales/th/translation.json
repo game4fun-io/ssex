@@ -43,6 +43,9 @@
         "backRow": "แถวหลัง",
         "teamStats": "สถิติทีม",
         "totalHP": "HP รวม",
-        "totalATK": "ATK รวม"
+        "totalATK": "ATK รวม",
+        "laneRestriction": "วาง {{name}} ในแถว {{lane}}",
+        "mainTeamFull": "ทีมหลักจำกัดแค่ 5 ตัวละคร",
+        "noSpaceForSaint": "ไม่มีช่องว่างในแถวนั้นหรือช่องซัพพอร์ต"
     }
 }
