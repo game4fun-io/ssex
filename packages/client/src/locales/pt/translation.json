@@ -26,6 +26,13 @@
         "attackType": "Tipo de Ataque",
         "artifacts": "Relíquias Sagradas",
         "forceCards": "Poder Supremo",
+        "searchArtifactsPlaceholder": "Buscar relíquias (min 3 chars)...",
+        "searchForceCardsPlaceholder": "Buscar cartas de força (min 3 chars)...",
+        "backToArtifacts": "Voltar para Relíquias",
+        "backToCharacters": "Voltar para Personagens",
+        "backToForceCards": "Voltar para Poder Supremo",
+        "artifactEffect": "Efeito",
+        "artifactProgression": "Progressão de Nível e Melhorias",
         "admin": "Admin"
     }
 }

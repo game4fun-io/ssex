@@ -15,6 +15,16 @@
         "noCharacters": "Karakter tidak ditemukan. Database mungkin kosong.",
         "element": "Elemen",
         "faction": "Faksi",
-        "rarity": "Kelangkaan"
+        "rarity": "Kelangkaan",
+        "artifacts": "Relik",
+        "forceCards": "Kekuatan Tertinggi",
+        "backToForceCards": "Kembali ke Kekuatan Tertinggi",
+        "artifactEffect": "Efek",
+        "artifactProgression": "Progres Level & Peningkatan",
+        "admin": "Admin",
+        "searchArtifactsPlaceholder": "Cari relik (min 3 karakter)...",
+        "searchForceCardsPlaceholder": "Cari kekuatan tertinggi (min 3 karakter)...",
+        "backToArtifacts": "Kembali ke Relik",
+        "backToCharacters": "Kembali ke Karakter"
     }
 }

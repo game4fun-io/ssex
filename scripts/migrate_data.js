@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 const Character = require('../packages/server/src/models/Character');
+const Artifact = require('../packages/server/src/models/Artifact');
+const ForceCard = require('../packages/server/src/models/ForceCard');
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/ssex', {
@@ -44,12 +46,24 @@ const resolveSkillDescription = (desKey, valueId, skillValueConfig, langPackages
     let description = getLocalized(desKey, langPackages);
     if (!description) return '';
 
+    // Helper to clean text
+    const cleanText = (text) => {
+        if (!text) return text;
+        // Remove <color=...> and </color>
+        let cleaned = text.replace(/<color=[^>]+>/g, '').replace(/<\/color>/g, '');
+        // Remove <link=...> and </link>
+        cleaned = cleaned.replace(/<link=[^>]+>/g, '').replace(/<\/link>/g, '');
+        // Remove any other tags like <i>, <b> if needed, or just generic tag removal if safe
+        // For now, specific removal seems safer to preserve potential intended formatting if any
+        return cleaned;
+    };
+
     // Find values in SkillValueConfig
     const valueConfig = skillValueConfig.find(v => v.skillid === valueId);
     if (valueConfig && valueConfig.show_value) {
         const replaceValues = (text) => {
             if (!text) return text;
-            let newText = text;
+            let newText = cleanText(text); // Clean tags first
             valueConfig.show_value.forEach((val, index) => {
                 newText = newText.replace(new RegExp(`\\{${index}\\}`, 'g'), val);
             });
@@ -63,6 +77,15 @@ const resolveSkillDescription = (desKey, valueId, skillValueConfig, langPackages
                 description[lang] = replaceValues(description[lang]);
             }
         }
+    } else {
+        // If no values to replace, still clean the text
+        if (typeof description === 'string') {
+            description = cleanText(description);
+        } else if (typeof description === 'object') {
+            for (const lang in description) {
+                description[lang] = cleanText(description[lang]);
+            }
+        }
     }
     return description;
 };
@@ -74,8 +97,6 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
         if (!skill) return null;
 
         // Resolve main description
-        // skill_des is an array, usually taking the first one or matching level?
-        // Taking the first one for now as base description
         let description = {};
         if (skill.skill_des && skill.skill_des.length > 0) {
             description = resolveSkillDescription(skill.skill_des[0].des, skill.skill_des[0].value, skillValueConfig, langPackages);
@@ -87,9 +108,6 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
             skill.skill_star_des.forEach((starDes, index) => {
                 const levelDesc = resolveSkillDescription(starDes.des, starDes.value, skillValueConfig, langPackages);
 
-                // Find condition for this level (assuming index match or logic)
-                // skill_condition has lv: 1, lv: 2...
-                // skill_star_des usually corresponds to these levels
                 let unlockReq = {};
                 if (skill.skill_condition && skill.skill_condition[index]) {
                     unlockReq = getLocalized(skill.skill_condition[index].condition, langPackages);
@@ -107,12 +125,11 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
             id: skill.skillid,
             name: getLocalized(skill.name, langPackages),
             description: description,
-            // Point to remote URL for skill icons as they are missing locally
             iconUrl: skill.iconpath
                 ? `https://seiya2.vercel.app/assets/resources/textures/hero/skillicon/texture/${skill.iconpath.split('/').pop()}.png`
                 : '',
-            type: skill.skill_type.toString(), // 1=Basic, 2=Special, etc.
-            cost: skill.cd || -1, // Assuming cost field exists or -1
+            type: skill.skill_type.toString(),
+            cost: skill.cd || -1,
             levels: levels
         };
     }).filter(s => s !== null);
@@ -121,8 +138,6 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
 const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPackages) => {
     if (!relationId) return [];
 
-    // Find the relation config for this hero
-    // Assuming RoleConfig.id maps to HeroRelationConfig.id
     const relation = relationConfig.find(r => r.id === relationId);
     if (!relation || !relation.bond) return [];
 
@@ -130,22 +145,14 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
         const fetter = fettersConfig.find(f => f.id === bondId);
         if (!fetter) return null;
 
-        // Resolve target characters names
         const targets = fetter.condition.map(targetId => {
             const targetRole = roleConfig.find(r => r.id === targetId);
             if (!targetRole) console.log(`Target role not found for ID: ${targetId}`);
             return getLocalized(targetRole ? targetRole.rolename_short : '', langPackages);
         });
 
-        if (targets.length > 0) {
-            // console.log(`Found targets for bond ${bondId}:`, targets[0].en);
-        } else {
-            console.log(`No targets for bond ${bondId}`);
-        }
-
         return {
             name: getLocalized(fetter.name, langPackages),
-            // Using name as effect/desc for now as placeholder since we don't have a direct description key
             effect: getLocalized(fetter.name, langPackages),
             partners: targets
         };
@@ -155,12 +162,47 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
 const mapRarity = (quality) => {
     switch (quality) {
         case 1: return 'N';
-        case 2: return 'R';
-        case 3: return 'SR';
-        case 4: return 'SSR';
-        case 5: return 'UR';
-        default: return 'R';
+        case 2: return 'N';
+        case 3: return 'R';
+        case 4: return 'SR';
+        case 5: return 'SSR';
+        case 6: return 'UR'; // Assuming 6 might be UR if it exists
+        default: return 'N';
     }
+};
+
+const mapArtifactSkills = (artifactId, skillConfig, skillValueConfig, langPackages) => {
+    const skillId = artifactId * 100;
+    const skill = skillConfig.find(s => s.skillid === skillId);
+    if (!skill) return [];
+
+    // Artifact skills seem to be in skill_des array, each entry representing a level or stage
+    if (!skill.skill_des) return [];
+
+    return skill.skill_des.map((des, index) => {
+        return {
+            level: index + 1,
+            description: resolveSkillDescription(des.des, des.value, skillValueConfig, langPackages)
+        };
+    });
+};
+
+const mapArtifactImage = (id, artifactResourcesConfig) => {
+    const resource = artifactResourcesConfig.find(r => r.id === id);
+    if (!resource || !resource.preview_icon) return '';
+    return `https://seiya2.vercel.app/assets/resources/${resource.preview_icon.toLowerCase()}.png`;
+};
+
+const mapTags = (labelList, skillLabelConfig, langPackages) => {
+    if (!labelList) return [];
+    return labelList.map(labelId => {
+        const label = skillLabelConfig.find(l => l.id === labelId);
+        if (!label) return null;
+        return {
+            name: getLocalized(label.name, langPackages),
+            style: label.back_path
+        };
+    }).filter(t => t !== null);
 };
 
 const migrate = async () => {
@@ -171,32 +213,32 @@ const migrate = async () => {
             langPackages[lang] = loadJSON(lang, `LanguagePackage_${lang}.json`);
         }
 
-        // Load Configs (using EN for structure, assuming structure is same across langs)
+        // Load Configs
         const roleConfig = loadJSON('EN', 'RoleConfig.json');
         const heroConfig = loadJSON('EN', 'HeroConfig.json');
         const skillConfig = loadJSON('EN', 'SkillConfig.json');
         const skillValueConfig = loadJSON('EN', 'SkillValueConfig.json');
         const relationConfig = loadJSON('EN', 'HeroRelationConfig.json');
         const fettersConfig = loadJSON('EN', 'HeroFettersConfig.json');
+        const artifactConfig = loadJSON('EN', 'ArtifactConfig.json');
+        const forceCardConfig = loadJSON('EN', 'ForceCardItemConfig.json');
+        const artifactResourcesConfig = loadJSON('EN', 'ArtifactResourcesConfig.json');
+        const skillLabelConfig = loadJSON('EN', 'SkillLabelConfig.json');
 
         console.log(`Loaded ${roleConfig.length} roles, ${heroConfig.length} heroes, ${skillConfig.length} skills`);
+        console.log(`Loaded ${artifactConfig.length} artifacts, ${forceCardConfig.length} force cards`);
 
-        // Clear existing data and indexes
-        try {
-            await Character.collection.drop();
-            console.log('Dropped Character collection');
-        } catch (e) {
-            if (e.code === 26) {
-                console.log('Character collection does not exist, skipping drop');
-            } else {
-                throw e;
-            }
-        }
+        // Clear existing data
+        await Promise.all([
+            Character.deleteMany({}),
+            Artifact.deleteMany({}),
+            ForceCard.deleteMany({})
+        ]);
+        console.log('Cleared collections');
 
+        // Migrate Characters
         for (const role of roleConfig) {
             const hero = heroConfig.find(h => h.id === role.id);
-
-            // Skip if not a valid hero (some roles might be NPCs)
             if (!hero) continue;
 
             const characterData = {
@@ -208,27 +250,17 @@ const migrate = async () => {
                 combatPosition: getLocalized(`LC_COMMON_cloth_trial_hero_occupation_${role.occupation}`, langPackages) || 'Warrior',
                 positioning: getLocalized(`LC_COMMON_cloth_trial_hero_stance_${role.stance}`, langPackages) || 'Front Row',
                 attackType: getLocalized(`LC_COMMON_cloth_trial_hero_damagetype_${role.damagetype}`, langPackages) || 'P-ATK',
-
-                // Default Stats (PropertyConfig missing)
                 stats: {
                     hp: 1000 + (role.quality * 100),
                     atk: 100 + (role.quality * 10),
                     def: 50 + (role.quality * 5),
                     speed: 100 + (role.quality * 2)
                 },
-
                 skills: mapSkills(role.skills, skillConfig, skillValueConfig, langPackages),
-
-                // Map Bonds
                 bonds: mapBonds(role.id, relationConfig, fettersConfig, roleConfig, langPackages),
-
                 constellation: getLocalized(role.role_constellation_name, langPackages),
                 cv_name: getLocalized(role.cvname, langPackages),
                 quality: role.quality,
-
-                // Use CircleHeroHead as fallback for both image and avatar since we have them locally
-                // and full body images are missing.
-                // role_initial_skins is an array, e.g. [10010]
                 imageUrl: role.role_initial_skins && role.role_initial_skins.length > 0
                     ? `/assets/resources/textures/hero/circleherohead/CircleHeroHead_${role.role_initial_skins[0]}.png`
                     : '',
@@ -237,13 +269,54 @@ const migrate = async () => {
                     : ''
             };
 
-            await Character.findOneAndUpdate(
-                { id: role.id },
-                characterData,
-                { upsert: true, new: true }
-            );
-            console.log(`Migrated ${characterData.name.en}`);
+            await Character.create(characterData);
         }
+        console.log('Migrated Characters');
+
+        // Migrate Artifacts
+        for (const art of artifactConfig) {
+            const artifactData = {
+                id: art.id,
+                name: getLocalized(art.name, langPackages),
+                rarity: mapRarity(art.initial_quality),
+                faction: getLocalized(art.camp, langPackages),
+                stats: {
+                    hp: 0,
+                    atk: 0,
+                    def: 0,
+                    speed: 0
+                },
+                effect: getLocalized(art.desc, langPackages),
+                tags: mapTags(art.label_list, skillLabelConfig, langPackages),
+                skills: mapArtifactSkills(art.id, skillConfig, skillValueConfig, langPackages),
+                imageUrl: mapArtifactImage(art.id, artifactResourcesConfig)
+            };
+            await Artifact.create(artifactData);
+        }
+        console.log('Migrated Artifacts');
+
+        // Migrate Force Cards
+        for (const card of forceCardConfig) {
+            const cardData = {
+                id: card.id,
+                name: getLocalized(card.name, langPackages),
+                rarity: mapRarity(card.quality),
+                stats: {
+                    hp: 0,
+                    atk: card.args || 0,
+                    def: 0
+                },
+                skill: {
+                    name: getLocalized(card.name, langPackages),
+                    description: getLocalized(card.desc, langPackages)
+                },
+                imageUrl: card.icon_path
+                    ? `https://seiya2.vercel.app/assets/resources/${card.icon_path.toLowerCase()}.png`
+                    : ''
+            };
+            await ForceCard.create(cardData);
+        }
+        console.log('Migrated Force Cards');
 
         console.log('Migration completed successfully');
         process.exit(0);

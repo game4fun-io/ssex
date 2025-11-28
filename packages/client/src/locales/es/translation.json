@@ -15,6 +15,16 @@
         "noCharacters": "No se encontraron personajes. La base de datos podría estar vacía.",
         "element": "Elemento",
         "faction": "Facción",
-        "rarity": "Rareza"
+        "rarity": "Rareza",
+        "artifacts": "Reliquias",
+        "forceCards": "Poder Supremo",
+        "admin": "Admin",
+        "searchArtifactsPlaceholder": "Buscar reliquias (min 3 chars)...",
+        "searchForceCardsPlaceholder": "Buscar cartas de fuerza (min 3 chars)...",
+        "backToArtifacts": "Volver a Reliquias",
+        "backToCharacters": "Volver a Personajes",
+        "backToForceCards": "Volver a Poder Supremo",
+        "artifactEffect": "Efecto",
+        "artifactProgression": "Progresión de Nivel y Mejoras"
     }
 }

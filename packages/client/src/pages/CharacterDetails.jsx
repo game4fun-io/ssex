@@ -53,6 +53,11 @@ const CharacterDetails = () => {
     return (
         <div className="min-h-screen bg-gray-900 text-white pb-20">
             {/* Header Section */}
+            <div className="container mx-auto px-4 pt-4">
+                <Link to="/characters" className="text-yellow-500 hover:text-yellow-400 transition mb-4 inline-block">
+                    &larr; {t('backToCharacters')}
+                </Link>
+            </div>
             <div className="relative h-[400px] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900 z-0" />
                 <div className="container mx-auto px-4 relative z-10 h-full flex items-end pb-8 gap-8">
@@ -63,24 +68,25 @@ const CharacterDetails = () => {
                         alt={getLoc(character.name)}
                         className="w-48 h-48 md:w-64 md:h-64 object-cover object-top rounded-full border-4 border-yellow-500 shadow-2xl"
                     />
-                    <div className="mb-4">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-6xl font-bold text-white mb-2"
-                        >
-                            {getLoc(character.name)}
-                        </motion.h1>
+                    <div className="mb-4 flex-grow">
+                        <div className="flex justify-between items-end mb-2">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-4xl md:text-6xl font-bold text-white"
+                            >
+                                {getLoc(character.name)}
+                            </motion.h1>
+                            <span className={`px-3 py-1 rounded text-xl font-bold ${character.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
+                                character.rarity === 'SSR' ? 'bg-yellow-600 text-white border border-yellow-500' :
+                                    character.rarity === 'SR' ? 'bg-purple-600 text-white border border-purple-500' :
+                                        character.rarity === 'R' ? 'bg-blue-600 text-white border border-blue-500' :
+                                            'bg-gray-600 text-white border-gray-500'
+                                }`}>
+                                {character.rarity}
+                            </span>
+                        </div>
                         <div className="flex flex-wrap gap-2">
-                            <div className="flex items-center space-x-2">
-                                <span className={`px-2 py-0.5 rounded text-xs font-bold ${character.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
-                                    character.rarity === 'SSR' ? 'bg-yellow-500 text-black' :
-                                        character.rarity === 'SR' ? 'bg-purple-500 text-white' :
-                                            character.rarity === 'R' ? 'bg-blue-500 text-white' : 'bg-gray-500 text-white'
-                                    }`}>
-                                    {character.rarity}
-                                </span>
-                            </div>
                             {character.tags && character.tags.map((tag, idx) => (
                                 <span key={idx} className="bg-gray-700 px-3 py-1 rounded text-sm border border-gray-600">{tag}</span>
                             ))}

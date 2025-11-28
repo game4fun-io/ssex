@@ -15,6 +15,16 @@
         "noCharacters": "ไม่พบตัวละคร ฐานข้อมูลอาจว่างเปล่า",
         "element": "ธาตุ",
         "faction": "ฝ่าย",
-        "rarity": "ความหายาก"
+        "rarity": "ความหายาก",
+        "artifacts": "วัตถุโบราณ",
+        "forceCards": "พลังสูงสุด",
+        "admin": "ผู้ดูแลระบบ",
+        "searchArtifactsPlaceholder": "ค้นหาวัตถุโบราณ (อย่างน้อย 3 ตัวอักษร)...",
+        "searchForceCardsPlaceholder": "ค้นหาพลังสูงสุด (อย่างน้อย 3 ตัวอักษร)...",
+        "backToArtifacts": "กลับไปที่วัตถุโบราณ",
+        "backToCharacters": "กลับไปที่ตัวละคร",
+        "backToForceCards": "กลับไปที่พลังสูงสุด",
+        "artifactEffect": "เอฟเฟกต์",
+        "artifactProgression": "ความก้าวหน้าของระดับและการปรับปรุง"
     }
 }

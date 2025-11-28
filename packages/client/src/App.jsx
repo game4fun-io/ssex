@@ -9,7 +9,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import TeamBuilder from './pages/TeamBuilder';
 import Artifacts from './pages/Artifacts';
+import ArtifactDetail from './pages/ArtifactDetail';
 import ForceCards from './pages/ForceCards';
+import ForceCardDetail from './pages/ForceCardDetail';
 
 import { ConfigProvider } from './context/ConfigContext';
 import AdminDashboard from './pages/AdminDashboard';
@@ -28,7 +30,9 @@ function App() {
               <Route path="/characters/:id" element={<CharacterDetails />} />
               <Route path="/team-builder" element={<TeamBuilder />} />
               <Route path="/artifacts" element={<Artifacts />} />
+              <Route path="/artifacts/:id" element={<ArtifactDetail />} />
               <Route path="/force-cards" element={<ForceCards />} />
+              <Route path="/force-cards/:id" element={<ForceCardDetail />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route

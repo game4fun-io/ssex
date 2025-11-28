@@ -26,6 +26,13 @@
         "attackType": "Attack Type",
         "artifacts": "Relics",
         "forceCards": "Ultimate Power",
+        "searchArtifactsPlaceholder": "Search artifacts (min 3 chars)...",
+        "searchForceCardsPlaceholder": "Search force cards (min 3 chars)...",
+        "backToArtifacts": "Back to Relics",
+        "backToCharacters": "Back to Characters",
+        "backToForceCards": "Back to Supreme Power",
+        "artifactEffect": "Effect",
+        "artifactProgression": "Level Progression & Enhancements",
         "admin": "Admin"
     }
 }

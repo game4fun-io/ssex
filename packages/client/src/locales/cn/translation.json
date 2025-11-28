@@ -15,6 +15,16 @@
         "noCharacters": "未找到角色。数据库可能为空。",
         "element": "元素",
         "faction": "阵营",
-        "rarity": "稀有度"
+        "rarity": "稀有度",
+        "artifacts": "圣器",
+        "forceCards": "究极之力",
+        "backToForceCards": "返回究极之力",
+        "artifactEffect": "效果",
+        "artifactProgression": "等级提升与强化",
+        "admin": "管理员",
+        "searchArtifactsPlaceholder": "搜索圣器 (最少3个字符)...",
+        "searchForceCardsPlaceholder": "搜索究极之力 (最少3个字符)...",
+        "backToArtifacts": "返回圣器",
+        "backToCharacters": "返回角色"
     }
 }

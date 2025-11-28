@@ -15,6 +15,16 @@
         "noCharacters": "Aucun personnage trouvé. La base de données peut être vide.",
         "element": "Élément",
         "faction": "Faction",
-        "rarity": "Rareté"
+        "rarity": "Rareté",
+        "artifacts": "Reliques",
+        "forceCards": "Pouvoir Suprême",
+        "artifactEffect": "Effet",
+        "artifactProgression": "Progression de Niveau et Améliorations",
+        "admin": "Admin",
+        "searchArtifactsPlaceholder": "Rechercher des reliques (min 3 chars)...",
+        "searchForceCardsPlaceholder": "Rechercher des cartes de force (min 3 chars)...",
+        "backToArtifacts": "Retour aux Reliques",
+        "backToCharacters": "Retour aux Personnages",
+        "backToForceCards": "Retour au Pouvoir Suprême"
     }
 }
