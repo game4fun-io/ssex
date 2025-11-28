@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { DndContext, useDraggable, useDroppable } from '@dnd-kit/core';
+import { DndContext, DragOverlay, useDraggable, useDroppable } from '@dnd-kit/core';
 import { useTranslation } from 'react-i18next';
 import api from '../api/axios';
 
 const DraggableCharacter = ({ char, onClick, getLoc }) => {
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id: char._id,
-        data: char
+        data: char,
+        activationConstraint: { distance: 8 }
     });
 
     const style = transform ? {
@@ -19,8 +20,11 @@ const DraggableCharacter = ({ char, onClick, getLoc }) => {
             style={style}
             {...listeners}
             {...attributes}
-            onClick={() => onClick(char)}
-            className="bg-gray-800 p-2 rounded cursor-grab hover:bg-gray-700 border border-gray-600 w-24 h-28 flex flex-col items-center justify-center text-xs text-center relative group"
+            onClick={(e) => { e.preventDefault(); onClick(char); }}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(char); } }}
+            className="bg-gray-800 p-2 rounded cursor-grab hover:bg-gray-700 border border-gray-600 w-24 h-28 flex flex-col items-center justify-center text-xs text-center relative group select-none"
         >
             {char.imageUrl ? (
                 <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1 pointer-events-none" />
@@ -47,7 +51,7 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
     const cardIds = slot?.cardIds || [];
 
     return (
-        <div ref={setNodeRef} style={style} className="w-32 min-h-[170px] bg-gray-800 border-2 border-dashed rounded-lg flex flex-col items-center justify-start relative p-2 gap-2">
+        <div ref={setNodeRef} style={style} className="w-40 min-h-[220px] bg-gray-800 border-2 border-dashed rounded-lg flex flex-col items-center justify-start relative p-2 gap-2">
             {char ? (
                 <>
                     <div className="flex flex-col items-center">
@@ -63,7 +67,7 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
                     <div className="w-full">
                         <label className="block text-[10px] text-gray-400">{label} • {relicLabel}</label>
                         <select
-                            className="w-full bg-gray-700 text-white text-xs p-1 rounded border border-gray-600"
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600"
                             value={relicId}
                             onChange={(e) => onRelicChange(id, e.target.value)}
                         >
@@ -75,10 +79,18 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
                     </div>
 
                     <div className="w-full">
-                        <label className="block text-[10px] text-gray-400">{cardsLabel} ({cardIds.length}/5)</label>
+                        <div className="flex justify-between items-center text-[10px] text-gray-400">
+                            <span>{cardsLabel} ({cardIds.length}/5)</span>
+                            <button
+                                type="button"
+                                className="text-[10px] text-yellow-400 hover:text-yellow-300"
+                                onClick={() => onCardsChange(id, [])}
+                            >{noneLabel}</button>
+                        </div>
                         <select
                             multiple
-                            className="w-full bg-gray-700 text-white text-xs p-1 rounded border border-gray-600 min-h-[56px]"
+                            size={Math.min(6, cards.length || 6)}
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 min-h-[88px]"
                             value={cardIds}
                             onChange={(e) => {
                                 const selected = Array.from(e.target.selectedOptions).map((o) => o.value).slice(0, 5);
@@ -89,6 +101,14 @@ const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, on
                                 <option key={card._id || card.id} value={card._id || card.id}>{getLoc(card.name)}</option>
                             ))}
                         </select>
+                        {cardIds.length > 0 && (
+                            <div className="flex flex-wrap gap-1 mt-1">
+                                {cardIds.map((cid) => {
+                                    const card = cards.find(c => (c._id || c.id) === cid);
+                                    return <span key={cid} className="text-[10px] bg-gray-700 px-1.5 py-0.5 rounded border border-gray-600">{getLoc(card?.name) || cid}</span>;
+                                })}
+                            </div>
+                        )}
                     </div>
                 </>
             ) : (
@@ -103,6 +123,10 @@ const TeamBuilder = () => {
     const [characters, setCharacters] = useState([]);
     const [artifacts, setArtifacts] = useState([]);
     const [cards, setCards] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [rowFilter, setRowFilter] = useState('');
+    const [rarityFilter, setRarityFilter] = useState('');
+    const [activeChar, setActiveChar] = useState(null);
     const [team, setTeam] = useState({
         front1: null, front2: null, front3: null,
         mid1: null, mid2: null, mid3: null,
@@ -161,13 +185,28 @@ const TeamBuilder = () => {
         return 'front';
     };
 
+    const handleDragStart = (event) => {
+        const { active } = event;
+        if (active?.data?.current) {
+            setActiveChar(active.data.current);
+        }
+    };
+
     const handleDragEnd = (event) => {
         const { active, over } = event;
+        setActiveChar(null);
 
         if (over && active.data.current) {
             const char = active.data.current;
             const slotId = over.id;
             const isSupportSlot = slotId.startsWith('support');
+
+            const charRow = normalizeRow(getLoc(char.positioning));
+            const targetRow = slotRow(slotId);
+            if (!isSupportSlot && targetRow !== charRow) {
+                alert(`${getLoc(char.name)} prefers the ${charRow} row.`);
+                return;
+            }
 
             // Check limits
             if (!isSupportSlot && getMainTeamCount() >= 5 && !team[slotId]?.character) {
@@ -186,6 +225,13 @@ const TeamBuilder = () => {
         if (row === 'front') return ['front1', 'front2', 'front3'];
         if (row === 'mid') return ['mid1', 'mid2', 'mid3'];
         return ['back1', 'back2', 'back3'];
+    };
+
+    const slotRow = (slotId) => {
+        if (slotId.startsWith('front')) return 'front';
+        if (slotId.startsWith('mid')) return 'mid';
+        if (slotId.startsWith('back')) return 'back';
+        return 'support';
     };
 
     const autoAddCharacter = (char) => {
@@ -231,19 +277,59 @@ const TeamBuilder = () => {
         }));
     };
 
+    const filteredCharacters = characters.filter((c) => {
+        const nameMatch = getLoc(c.name).toLowerCase().includes(searchTerm.trim().toLowerCase());
+        const rowMatch = rowFilter ? normalizeRow(getLoc(c.positioning)) === rowFilter : true;
+        const rarityMatch = rarityFilter ? (c.rarity === rarityFilter) : true;
+        return nameMatch && rowMatch && rarityMatch;
+    });
+
     return (
-        <DndContext onDragEnd={handleDragEnd}>
+        <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
             <div className="min-h-screen bg-gray-900 text-white p-8">
                 <div className="container mx-auto">
                     <h1 className="text-3xl font-bold text-yellow-500 mb-8">{t('teamBuilder')}</h1>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Character List */}
-                        <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-4 rounded-lg h-[600px] overflow-y-auto">
+                        <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-4 rounded-lg h-[640px] overflow-y-auto scrollbar-themed">
                             <h2 className="text-xl font-bold mb-4 text-gray-300">{t('availableSaints')}</h2>
-                            <p className="text-xs text-gray-500 mb-2">{t('clickToAdd')}</p>
+                            <p className="text-xs text-gray-500 mb-4">{t('clickToAdd')}</p>
+
+                            <div className="flex flex-col gap-2 mb-4">
+                                <input
+                                    type="text"
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    placeholder={t('searchSaints')}
+                                    className="w-full bg-gray-800 text-white text-sm p-2 rounded border border-gray-700 focus:border-yellow-500 outline-none"
+                                />
+                                <div className="flex gap-2 text-xs">
+                                    <select
+                                        value={rowFilter}
+                                        onChange={(e) => setRowFilter(e.target.value)}
+                                        className="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-yellow-500 w-1/2"
+                                    >
+                                        <option value="">{t('all')}</option>
+                                        <option value="front">{t('frontRow')}</option>
+                                        <option value="mid">{t('midRow')}</option>
+                                        <option value="back">{t('backRow')}</option>
+                                    </select>
+                                    <select
+                                        value={rarityFilter}
+                                        onChange={(e) => setRarityFilter(e.target.value)}
+                                        className="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-yellow-500 w-1/2"
+                                    >
+                                        <option value="">{t('all')}</option>
+                                        {[...new Set(characters.map(c => c.rarity).filter(Boolean))].sort().map(r => (
+                                            <option key={r} value={r}>{r}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
                             <div className="grid grid-cols-3 gap-2">
-                                {characters.map(char => (
+                                {filteredCharacters.map(char => (
                                     <DraggableCharacter key={char._id} char={char} onClick={autoAddCharacter} getLoc={getLoc} />
                                 ))}
                             </div>
@@ -297,24 +383,23 @@ const TeamBuilder = () => {
                             </div>
 
                             {/* Basic Stats Summary */}
-                            <div className="mt-4 p-4 bg-gray-900 rounded w-full">
-                                <h3 className="text-xl font-bold text-yellow-500 mb-2">{t('teamStats')}</h3>
-                                <div className="grid grid-cols-4 gap-4 text-center">
-                                    <div>
-                                        <span className="block text-gray-400 text-sm">{t('totalHP')}</span>
-                                        <span className="text-xl font-bold">{Object.values(team).reduce((acc, slot) => acc + (slot?.character?.stats?.hp || 0), 0)}</span>
-                                    </div>
-                                    <div>
-                                        <span className="block text-gray-400 text-sm">{t('totalATK')}</span>
-                                        <span className="text-xl font-bold">{Object.values(team).reduce((acc, slot) => acc + (slot?.character?.stats?.atk || 0), 0)}</span>
-                                    </div>
-                                </div>
-                            </div>
-
+                            {/* Placeholder for future stats; hidden for now */}
                         </div>
                     </div>
                 </div>
             </div>
+            <DragOverlay>
+                {activeChar ? (
+                    <div className="bg-gray-800 p-2 rounded border border-yellow-500 shadow-2xl">
+                        {activeChar.imageUrl ? (
+                            <img src={activeChar.imageUrl} alt={getLoc(activeChar.name)} className="w-16 h-16 object-cover rounded-full" />
+                        ) : (
+                            <div className="w-16 h-16 bg-gray-600 rounded-full" />
+                        )}
+                        <div className="text-xs font-bold text-yellow-400 mt-1 text-center">{getLoc(activeChar.name)}</div>
+                    </div>
+                ) : null}
+            </DragOverlay>
         </DndContext>
     );
 };
