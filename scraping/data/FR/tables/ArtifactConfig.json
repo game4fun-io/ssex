@@ -1,0 +1,2137 @@
+[
+  {
+    "id": 4002,
+    "name": "LC_ARTIFACT_artifact_name_4002",
+    "desc": "LC_ARTIFACT_artifact_desc_4002",
+    "camp_type": 2,
+    "camp": "LC_COMMON_camp_2",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      115,
+      10
+    ],
+    "model_id": 4002,
+    "artifact_star_list": [
+      [
+        400251,
+        400252,
+        400253,
+        400254,
+        400255
+      ],
+      [
+        400261,
+        400262,
+        400263,
+        400264,
+        400265
+      ],
+      [
+        400271,
+        400272,
+        400273,
+        400274,
+        400275
+      ]
+    ],
+    "limit": [
+      {
+        "type": "damagetype",
+        "value": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4003,
+    "name": "LC_ARTIFACT_artifact_name_4003",
+    "desc": "LC_ARTIFACT_artifact_desc_4003",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      114,
+      46
+    ],
+    "model_id": 4003,
+    "artifact_star_list": [
+      [
+        400351,
+        400352,
+        400353,
+        400354,
+        400355
+      ],
+      [
+        400361,
+        400362,
+        400363,
+        400364,
+        400365
+      ],
+      [
+        400371,
+        400372,
+        400373,
+        400374,
+        400375
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4004,
+    "name": "LC_ARTIFACT_artifact_name_4004",
+    "desc": "LC_ARTIFACT_artifact_desc_4004",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      26
+    ],
+    "model_id": 4004,
+    "artifact_star_list": [
+      [
+        400451,
+        400452,
+        400453,
+        400454,
+        400455
+      ],
+      [
+        400461,
+        400462,
+        400463,
+        400464,
+        400465
+      ],
+      [
+        400471,
+        400472,
+        400473,
+        400474,
+        400475
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4005,
+    "name": "LC_ARTIFACT_artifact_name_4005",
+    "desc": "LC_ARTIFACT_artifact_desc_4005",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      115,
+      43
+    ],
+    "model_id": 4005,
+    "artifact_star_list": [
+      [
+        400541,
+        400542,
+        400543,
+        400544,
+        400545
+      ],
+      [
+        400551,
+        400552,
+        400553,
+        400554,
+        400555
+      ],
+      [
+        400561,
+        400562,
+        400563,
+        400564,
+        400565
+      ],
+      [
+        400571,
+        400572,
+        400573,
+        400574,
+        400575
+      ]
+    ],
+    "limit": [
+      {
+        "type": "damagetype",
+        "value": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4006,
+    "name": "LC_ARTIFACT_artifact_name_4006",
+    "desc": "LC_ARTIFACT_artifact_desc_4006",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 3,
+    "isRare": false,
+    "label_list": [
+      116,
+      51
+    ],
+    "model_id": 4006,
+    "artifact_star_list": [
+      [
+        400631,
+        400632,
+        400633,
+        400634,
+        400635
+      ],
+      [
+        400641,
+        400642,
+        400643,
+        400644,
+        400645
+      ],
+      [
+        400651,
+        400652,
+        400653,
+        400654,
+        400655
+      ],
+      [
+        400661,
+        400662,
+        400663,
+        400664,
+        400665
+      ],
+      [
+        400671,
+        400672,
+        400673,
+        400674,
+        400675
+      ]
+    ],
+    "limit": [
+      {
+        "type": "damagetype",
+        "value": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4007,
+    "name": "LC_ARTIFACT_artifact_name_4007",
+    "desc": "LC_ARTIFACT_artifact_desc_4007",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      39
+    ],
+    "model_id": 4007,
+    "artifact_star_list": [
+      [
+        400741,
+        400742,
+        400743,
+        400744,
+        400745
+      ],
+      [
+        400751,
+        400752,
+        400753,
+        400754,
+        400755
+      ],
+      [
+        400761,
+        400762,
+        400763,
+        400764,
+        400765
+      ],
+      [
+        400771,
+        400772,
+        400773,
+        400774,
+        400775
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4008,
+    "name": "LC_ARTIFACT_artifact_name_4008",
+    "desc": "LC_ARTIFACT_artifact_desc_4008",
+    "camp_type": 3,
+    "camp": "LC_COMMON_camp_3",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      49
+    ],
+    "model_id": 4008,
+    "artifact_star_list": [
+      [
+        400841,
+        400842,
+        400843,
+        400844,
+        400845
+      ],
+      [
+        400851,
+        400852,
+        400853,
+        400854,
+        400855
+      ],
+      [
+        400861,
+        400862,
+        400863,
+        400864,
+        400865
+      ],
+      [
+        400871,
+        400872,
+        400873,
+        400874,
+        400875
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4009,
+    "name": "LC_ARTIFACT_artifact_name_4009",
+    "desc": "LC_ARTIFACT_artifact_desc_4009",
+    "camp_type": 4,
+    "camp": "LC_COMMON_camp_4",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      29,
+      8
+    ],
+    "model_id": 4009,
+    "artifact_star_list": [
+      [
+        400951,
+        400952,
+        400953,
+        400954,
+        400955
+      ],
+      [
+        400961,
+        400962,
+        400963,
+        400964,
+        400965
+      ],
+      [
+        400971,
+        400972,
+        400973,
+        400974,
+        400975
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4010,
+    "name": "LC_ARTIFACT_artifact_name_4010",
+    "desc": "LC_ARTIFACT_artifact_desc_4010",
+    "camp_type": 4,
+    "camp": "LC_COMMON_camp_4",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      49
+    ],
+    "model_id": 4010,
+    "artifact_star_list": [
+      [
+        401041,
+        401042,
+        401043,
+        401044,
+        401045
+      ],
+      [
+        401051,
+        401052,
+        401053,
+        401054,
+        401055
+      ],
+      [
+        401061,
+        401062,
+        401063,
+        401064,
+        401065
+      ],
+      [
+        401071,
+        401072,
+        401073,
+        401074,
+        401075
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4011,
+    "name": "LC_ARTIFACT_artifact_name_4011",
+    "desc": "LC_ARTIFACT_artifact_desc_4011",
+    "camp_type": 4,
+    "camp": "LC_COMMON_camp_4",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      52
+    ],
+    "model_id": 4011,
+    "artifact_star_list": [
+      [
+        401141,
+        401142,
+        401143,
+        401144,
+        401145
+      ],
+      [
+        401151,
+        401152,
+        401153,
+        401154,
+        401155
+      ],
+      [
+        401161,
+        401162,
+        401163,
+        401164,
+        401165
+      ],
+      [
+        401171,
+        401172,
+        401173,
+        401174,
+        401175
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4012,
+    "name": "LC_ARTIFACT_artifact_name_4012",
+    "desc": "LC_ARTIFACT_artifact_desc_4012",
+    "camp_type": 3,
+    "camp": "LC_COMMON_camp_3",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      29
+    ],
+    "model_id": 4012,
+    "artifact_star_list": [
+      [
+        401251,
+        401252,
+        401253,
+        401254,
+        401255
+      ],
+      [
+        401261,
+        401262,
+        401263,
+        401264,
+        401265
+      ],
+      [
+        401271,
+        401272,
+        401273,
+        401274,
+        401275
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4013,
+    "name": "LC_ARTIFACT_artifact_name_4013",
+    "desc": "LC_ARTIFACT_artifact_desc_4013",
+    "camp_type": 2,
+    "camp": "LC_COMMON_camp_2",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4013,
+    "artifact_star_list": [
+      [
+        401351,
+        401352,
+        401353,
+        401354,
+        401355
+      ],
+      [
+        401361,
+        401362,
+        401363,
+        401364,
+        401365
+      ],
+      [
+        401371,
+        401372,
+        401373,
+        401374,
+        401375
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4014,
+    "name": "LC_ARTIFACT_artifact_name_4014",
+    "desc": "LC_ARTIFACT_artifact_desc_4014",
+    "camp_type": 3,
+    "camp": "LC_COMMON_camp_3",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      19
+    ],
+    "model_id": 4014,
+    "artifact_star_list": [
+      [
+        401441,
+        401442,
+        401443,
+        401444,
+        401445
+      ],
+      [
+        401451,
+        401452,
+        401453,
+        401454,
+        401455
+      ],
+      [
+        401461,
+        401462,
+        401463,
+        401464,
+        401465
+      ],
+      [
+        401471,
+        401472,
+        401473,
+        401474,
+        401475
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4015,
+    "name": "LC_ARTIFACT_artifact_name_4015",
+    "desc": null,
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4015,
+    "artifact_star_list": [
+      [
+        401551,
+        401552,
+        401553,
+        401554,
+        401555
+      ],
+      [
+        401561,
+        401562,
+        401563,
+        401564,
+        401565
+      ],
+      [
+        401571,
+        401572,
+        401573,
+        401574,
+        401575
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4016,
+    "name": "LC_ARTIFACT_artifact_name_4016",
+    "desc": null,
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4016,
+    "artifact_star_list": [
+      [
+        401651,
+        401652,
+        401653,
+        401654,
+        401655
+      ],
+      [
+        401661,
+        401662,
+        401663,
+        401664,
+        401665
+      ],
+      [
+        401671,
+        401672,
+        401673,
+        401674,
+        401675
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4017,
+    "name": "LC_ARTIFACT_artifact_name_4017",
+    "desc": null,
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4017,
+    "artifact_star_list": [
+      [
+        401751,
+        401752,
+        401753,
+        401754,
+        401755
+      ],
+      [
+        401761,
+        401762,
+        401763,
+        401764,
+        401765
+      ],
+      [
+        401771,
+        401772,
+        401773,
+        401774,
+        401775
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4018,
+    "name": "LC_ARTIFACT_artifact_name_4018",
+    "desc": "LC_ARTIFACT_artifact_desc_4018",
+    "camp_type": 3,
+    "camp": "LC_COMMON_camp_3",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      29
+    ],
+    "model_id": 4018,
+    "artifact_star_list": [
+      [
+        401851,
+        401852,
+        401853,
+        401854,
+        401855
+      ],
+      [
+        401861,
+        401862,
+        401863,
+        401864,
+        401865
+      ],
+      [
+        401871,
+        401872,
+        401873,
+        401874,
+        401875
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4019,
+    "name": "LC_ARTIFACT_artifact_name_4019",
+    "desc": "LC_ARTIFACT_artifact_desc_4019",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      113,
+      26
+    ],
+    "model_id": 4019,
+    "artifact_star_list": [
+      [
+        401941,
+        401942,
+        401943,
+        401944,
+        401945
+      ],
+      [
+        401951,
+        401952,
+        401953,
+        401954,
+        401955
+      ],
+      [
+        401961,
+        401962,
+        401963,
+        401964,
+        401965
+      ],
+      [
+        401971,
+        401972,
+        401973,
+        401974,
+        401975
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4020,
+    "name": "LC_ARTIFACT_artifact_name_4020",
+    "desc": "LC_ARTIFACT_artifact_desc_4020",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      115,
+      32
+    ],
+    "model_id": 4020,
+    "artifact_star_list": [
+      [
+        402041,
+        402042,
+        402043,
+        402044,
+        402045
+      ],
+      [
+        402051,
+        402052,
+        402053,
+        402054,
+        402055
+      ],
+      [
+        402061,
+        402062,
+        402063,
+        402064,
+        402065
+      ],
+      [
+        402071,
+        402072,
+        402073,
+        402074,
+        402075
+      ]
+    ],
+    "limit": [
+      {
+        "type": "damagetype",
+        "value": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4021,
+    "name": "LC_ARTIFACT_artifact_name_4021",
+    "desc": "LC_ARTIFACT_artifact_desc_4021",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      54
+    ],
+    "model_id": 4021,
+    "artifact_star_list": [
+      [
+        402141,
+        402142,
+        402143,
+        402144,
+        402145
+      ],
+      [
+        402151,
+        402152,
+        402153,
+        402154,
+        402155
+      ],
+      [
+        402161,
+        402162,
+        402163,
+        402164,
+        402165
+      ],
+      [
+        402171,
+        402172,
+        402173,
+        402174,
+        402175
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4022,
+    "name": "LC_ARTIFACT_artifact_name_4022",
+    "desc": "LC_ARTIFACT_artifact_desc_4022",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 3,
+    "isRare": false,
+    "label_list": [
+      118,
+      18
+    ],
+    "model_id": 4022,
+    "artifact_star_list": [
+      [
+        402231,
+        402232,
+        402233,
+        402234,
+        402235
+      ],
+      [
+        402241,
+        402242,
+        402243,
+        402244,
+        402245
+      ],
+      [
+        402251,
+        402252,
+        402253,
+        402254,
+        402255
+      ],
+      [
+        402261,
+        402262,
+        402263,
+        402264,
+        402265
+      ],
+      [
+        402271,
+        402272,
+        402273,
+        402274,
+        402275
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4023,
+    "name": "LC_ARTIFACT_artifact_name_4023",
+    "desc": "LC_ARTIFACT_artifact_desc_4023",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      116,
+      12
+    ],
+    "model_id": 4023,
+    "artifact_star_list": [
+      [
+        402341,
+        402342,
+        402343,
+        402344,
+        402345
+      ],
+      [
+        402351,
+        402352,
+        402353,
+        402354,
+        402355
+      ],
+      [
+        402361,
+        402362,
+        402363,
+        402364,
+        402365
+      ],
+      [
+        402371,
+        402372,
+        402373,
+        402374,
+        402375
+      ]
+    ],
+    "limit": [
+      {
+        "type": "damagetype",
+        "value": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4024,
+    "name": "LC_ARTIFACT_artifact_name_4024",
+    "desc": "LC_ARTIFACT_artifact_desc_4024",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 3,
+    "isRare": false,
+    "label_list": [
+      118,
+      26
+    ],
+    "model_id": 4024,
+    "artifact_star_list": [
+      [
+        402431,
+        402432,
+        402433,
+        402434,
+        402435
+      ],
+      [
+        402441,
+        402442,
+        402443,
+        402444,
+        402445
+      ],
+      [
+        402451,
+        402452,
+        402453,
+        402454,
+        402455
+      ],
+      [
+        402461,
+        402462,
+        402463,
+        402464,
+        402465
+      ],
+      [
+        402471,
+        402472,
+        402473,
+        402474,
+        402475
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4025,
+    "name": "LC_ARTIFACT_artifact_name_4025",
+    "desc": "LC_ARTIFACT_artifact_desc_4025",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      119,
+      109
+    ],
+    "model_id": 4025,
+    "artifact_star_list": [
+      [
+        402541,
+        402542,
+        402543,
+        402544,
+        402545
+      ],
+      [
+        402551,
+        402552,
+        402553,
+        402554,
+        402555
+      ],
+      [
+        402561,
+        402562,
+        402563,
+        402564,
+        402565
+      ],
+      [
+        402571,
+        402572,
+        402573,
+        402574,
+        402575
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4026,
+    "name": "LC_ARTIFACT_artifact_name_4026",
+    "desc": "LC_ARTIFACT_artifact_desc_4026",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      15
+    ],
+    "model_id": 4026,
+    "artifact_star_list": [
+      [
+        402651,
+        402652,
+        402653,
+        402654,
+        402655
+      ],
+      [
+        402661,
+        402662,
+        402663,
+        402664,
+        402665
+      ],
+      [
+        402671,
+        402672,
+        402673,
+        402674,
+        402675
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4027,
+    "name": "LC_ARTIFACT_artifact_name_4027",
+    "desc": "LC_ARTIFACT_artifact_desc_4027",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      114,
+      15
+    ],
+    "model_id": 4027,
+    "artifact_star_list": [
+      [
+        402741,
+        402742,
+        402743,
+        402744,
+        402745
+      ],
+      [
+        402751,
+        402752,
+        402753,
+        402754,
+        402755
+      ],
+      [
+        402761,
+        402762,
+        402763,
+        402764,
+        402765
+      ],
+      [
+        402771,
+        402772,
+        402773,
+        402774,
+        402775
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4028,
+    "name": "LC_ARTIFACT_artifact_name_4028",
+    "desc": "LC_ARTIFACT_artifact_desc_4028",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      114,
+      108
+    ],
+    "model_id": 4028,
+    "artifact_star_list": [
+      [
+        402841,
+        402842,
+        402843,
+        402844,
+        402845
+      ],
+      [
+        402851,
+        402852,
+        402853,
+        402854,
+        402855
+      ],
+      [
+        402861,
+        402862,
+        402863,
+        402864,
+        402865
+      ],
+      [
+        402871,
+        402872,
+        402873,
+        402874,
+        402875
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4029,
+    "name": "LC_ARTIFACT_artifact_name_4029",
+    "desc": "LC_ARTIFACT_artifact_desc_4029",
+    "camp_type": 4,
+    "camp": "LC_COMMON_camp_4",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 4,
+    "isRare": false,
+    "label_list": [
+      118,
+      108
+    ],
+    "model_id": 4029,
+    "artifact_star_list": [
+      [
+        402941,
+        402942,
+        402943,
+        402944,
+        402945
+      ],
+      [
+        402951,
+        402952,
+        402953,
+        402954,
+        402955
+      ],
+      [
+        402961,
+        402962,
+        402963,
+        402964,
+        402965
+      ],
+      [
+        402971,
+        402972,
+        402973,
+        402974,
+        402975
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4030,
+    "name": "LC_ARTIFACT_artifact_name_4030",
+    "desc": "LC_ARTIFACT_artifact_desc_4030",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      114,
+      108
+    ],
+    "model_id": 4030,
+    "artifact_star_list": [
+      [
+        403051,
+        403052,
+        403053,
+        403054,
+        403055
+      ],
+      [
+        403061,
+        403062,
+        403063,
+        403064,
+        403065
+      ],
+      [
+        403071,
+        403072,
+        403073,
+        403074,
+        403075
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4031,
+    "name": "LC_ARTIFACT_artifact_name_4031",
+    "desc": "LC_ARTIFACT_artifact_desc_4031",
+    "camp_type": 5,
+    "camp": "LC_COMMON_camp_5",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      114,
+      19
+    ],
+    "model_id": 4031,
+    "artifact_star_list": [
+      [
+        403151,
+        403152,
+        403153,
+        403154,
+        403155
+      ],
+      [
+        403161,
+        403162,
+        403163,
+        403164,
+        403165
+      ],
+      [
+        403171,
+        403172,
+        403173,
+        403174,
+        403175
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4032,
+    "name": "LC_ARTIFACT_artifact_name_4032",
+    "desc": "LC_ARTIFACT_artifact_desc_4032",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      119,
+      108
+    ],
+    "model_id": 4032,
+    "artifact_star_list": [
+      [
+        403251,
+        403252,
+        403253,
+        403254,
+        403255
+      ],
+      [
+        403261,
+        403262,
+        403263,
+        403264,
+        403265
+      ],
+      [
+        403271,
+        403272,
+        403273,
+        403274,
+        403275
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4033,
+    "name": "LC_ARTIFACT_artifact_name_4033",
+    "desc": "LC_ARTIFACT_artifact_desc_4033",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4033,
+    "artifact_star_list": [
+      [
+        403351,
+        403352,
+        403353,
+        403354,
+        403355
+      ],
+      [
+        403361,
+        403362,
+        403363,
+        403364,
+        403365
+      ],
+      [
+        403371,
+        403372,
+        403373,
+        403374,
+        403375
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4034,
+    "name": "LC_ARTIFACT_artifact_name_4034",
+    "desc": "LC_ARTIFACT_artifact_desc_4034",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4034,
+    "artifact_star_list": [
+      [
+        403451,
+        403452,
+        403453,
+        403454,
+        403455
+      ],
+      [
+        403461,
+        403462,
+        403463,
+        403464,
+        403465
+      ],
+      [
+        403471,
+        403472,
+        403473,
+        403474,
+        403475
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4035,
+    "name": "LC_ARTIFACT_artifact_name_4035",
+    "desc": "LC_ARTIFACT_artifact_desc_4035",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4035,
+    "artifact_star_list": [
+      [
+        403551,
+        403552,
+        403553,
+        403554,
+        403555
+      ],
+      [
+        403561,
+        403562,
+        403563,
+        403564,
+        403565
+      ],
+      [
+        403571,
+        403572,
+        403573,
+        403574,
+        403575
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4036,
+    "name": "LC_ARTIFACT_artifact_name_4036",
+    "desc": "LC_ARTIFACT_artifact_desc_4036",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4036,
+    "artifact_star_list": [
+      [
+        403651,
+        403652,
+        403653,
+        403654,
+        403655
+      ],
+      [
+        403661,
+        403662,
+        403663,
+        403664,
+        403665
+      ],
+      [
+        403671,
+        403672,
+        403673,
+        403674,
+        403675
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4037,
+    "name": "LC_ARTIFACT_artifact_name_4037",
+    "desc": "LC_ARTIFACT_artifact_desc_4037",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4037,
+    "artifact_star_list": [
+      [
+        403751,
+        403752,
+        403753,
+        403754,
+        403755
+      ],
+      [
+        403761,
+        403762,
+        403763,
+        403764,
+        403765
+      ],
+      [
+        403771,
+        403772,
+        403773,
+        403774,
+        403775
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4038,
+    "name": "LC_ARTIFACT_artifact_name_4038",
+    "desc": "LC_ARTIFACT_artifact_desc_4038",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4038,
+    "artifact_star_list": [
+      [
+        403851,
+        403852,
+        403853,
+        403854,
+        403855
+      ],
+      [
+        403861,
+        403862,
+        403863,
+        403864,
+        403865
+      ],
+      [
+        403871,
+        403872,
+        403873,
+        403874,
+        403875
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4039,
+    "name": "LC_ARTIFACT_artifact_name_4039",
+    "desc": "LC_ARTIFACT_artifact_desc_4039",
+    "camp_type": 5,
+    "camp": "LC_COMMON_camp_5",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4039,
+    "artifact_star_list": [
+      [
+        403951,
+        403952,
+        403953,
+        403954,
+        403955
+      ],
+      [
+        403961,
+        403962,
+        403963,
+        403964,
+        403965
+      ],
+      [
+        403971,
+        403972,
+        403973,
+        403974,
+        403975
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4040,
+    "name": "LC_ARTIFACT_artifact_name_4040",
+    "desc": "LC_ARTIFACT_artifact_desc_4040",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4040,
+    "artifact_star_list": [
+      [
+        404051,
+        404052,
+        404053,
+        404054,
+        404055
+      ],
+      [
+        404061,
+        404062,
+        404063,
+        404064,
+        404065
+      ],
+      [
+        404071,
+        404072,
+        404073,
+        404074,
+        404075
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4001,
+    "name": "LC_ARTIFACT_artifact_name_4001",
+    "desc": "LC_ARTIFACT_artifact_desc_4001",
+    "camp_type": 4,
+    "camp": "LC_COMMON_camp_4",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      112,
+      10
+    ],
+    "model_id": 4001,
+    "artifact_star_list": [
+      [
+        400151,
+        400152,
+        400153,
+        400154,
+        400155
+      ],
+      [
+        400161,
+        400162,
+        400163,
+        400164,
+        400165
+      ],
+      [
+        400171,
+        400172,
+        400173,
+        400174,
+        400175
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4041,
+    "name": "LC_ARTIFACT_artifact_name_4041",
+    "desc": "LC_ARTIFACT_artifact_desc_4041",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": [
+      118,
+      15,
+      46
+    ],
+    "model_id": 4041,
+    "artifact_star_list": [
+      [
+        404151,
+        404152,
+        404153,
+        404154,
+        404155
+      ],
+      [
+        404161,
+        404162,
+        404163,
+        404164,
+        404165
+      ],
+      [
+        404171,
+        404172,
+        404173,
+        404174,
+        404175
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4042,
+    "name": "LC_ARTIFACT_artifact_name_4042",
+    "desc": "LC_ARTIFACT_artifact_desc_4042",
+    "camp_type": 1,
+    "camp": "LC_COMMON_camp_1",
+    "initial_level": "0",
+    "initial_star": 1,
+    "initial_quality": 5,
+    "isRare": true,
+    "label_list": null,
+    "model_id": 4042,
+    "artifact_star_list": [
+      [
+        404251,
+        404252,
+        404253,
+        404254,
+        404255
+      ],
+      [
+        404261,
+        404262,
+        404263,
+        404264,
+        404265
+      ],
+      [
+        404271,
+        404272,
+        404273,
+        404274,
+        404275
+      ]
+    ],
+    "limit": [
+      {
+        "type": "stance",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  }
+]

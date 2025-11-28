@@ -1,0 +1,66 @@
+[
+  {
+    "key": "stance_1",
+    "desc": "LC_HERO_stance_1"
+  },
+  {
+    "key": "stance_2",
+    "desc": "LC_HERO_stance_2"
+  },
+  {
+    "key": "stance_3",
+    "desc": "LC_HERO_stance_3"
+  },
+  {
+    "key": "damagetype_1",
+    "desc": "LC_HERO_damagetype_1"
+  },
+  {
+    "key": "damagetype_2",
+    "desc": "LC_HERO_damagetype_2"
+  },
+  {
+    "key": "damagetype_3",
+    "desc": "LC_HERO_damagetype_3"
+  },
+  {
+    "key": "camp_1",
+    "desc": "LC_HERO_camp_1"
+  },
+  {
+    "key": "camp_2",
+    "desc": "LC_HERO_camp_2"
+  },
+  {
+    "key": "camp_3",
+    "desc": "LC_HERO_camp_3"
+  },
+  {
+    "key": "camp_4",
+    "desc": "LC_HERO_camp_4"
+  },
+  {
+    "key": "camp_5",
+    "desc": "LC_HERO_camp_5"
+  },
+  {
+    "key": "occupation_1",
+    "desc": "LC_HERO_occupation_1"
+  },
+  {
+    "key": "occupation_2",
+    "desc": "LC_HERO_occupation_2"
+  },
+  {
+    "key": "occupation_3",
+    "desc": "LC_HERO_occupation_3"
+  },
+  {
+    "key": "occupation_4",
+    "desc": "LC_HERO_occupation_4"
+  },
+  {
+    "key": "occupation_5",
+    "desc": "LC_HERO_occupation_5"
+  }
+]

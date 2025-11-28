@@ -1,0 +1,5938 @@
+[
+  {
+    "id": 1005,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10051,
+      10052,
+      10053,
+      10054
+    ],
+    "contain_role": [
+      1056,
+      1021,
+      1071,
+      1064,
+      1043,
+      1029,
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "refresh_role": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1006,
+      1012,
+      1020,
+      1021,
+      1029,
+      1037,
+      1043,
+      1064,
+      1065,
+      1066,
+      1070,
+      1071,
+      1072,
+      1079,
+      1080,
+      1089,
+      1092,
+      1093,
+      1094,
+      1095,
+      1096,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70001
+    ],
+    "combine_state_list": [
+      73003,
+      73005
+    ]
+  },
+  {
+    "id": 1001,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10011,
+      10012,
+      10013,
+      10014
+    ],
+    "contain_role": [
+      1022,
+      1006,
+      1023,
+      1008,
+      1051,
+      1010,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "refresh_role": [
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1008,
+      1010,
+      1011,
+      1015,
+      1017,
+      1022,
+      1023,
+      1037,
+      1040,
+      1047,
+      1051,
+      1055,
+      1057,
+      1058,
+      1059,
+      1063,
+      1072,
+      1075,
+      1077,
+      1079,
+      1089,
+      1090,
+      1092,
+      1097,
+      1099,
+      1100,
+      1101,
+      1107,
+      1108,
+      1109
+    ],
+    "combine_skill_list": [
+      70001
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73001,
+      73003
+    ]
+  },
+  {
+    "id": 1002,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10021,
+      10022,
+      10023,
+      10024
+    ],
+    "contain_role": [
+      1050,
+      1007,
+      1052,
+      1024,
+      1048,
+      1061,
+      1001,
+      1003,
+      1004,
+      1005
+    ],
+    "refresh_role": [
+      1001,
+      1003,
+      1004,
+      1005,
+      1006,
+      1013,
+      1017,
+      1024,
+      1038,
+      1041,
+      1046,
+      1050,
+      1051,
+      1061,
+      1062,
+      1077,
+      1081,
+      1093,
+      1099,
+      1101,
+      1107,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73001,
+      73003
+    ]
+  },
+  {
+    "id": 1003,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10031,
+      10032,
+      10033,
+      10034
+    ],
+    "contain_role": [
+      1053,
+      1019,
+      1049,
+      1091,
+      1063,
+      1030,
+      1001,
+      1002,
+      1004,
+      1005
+    ],
+    "refresh_role": [
+      1001,
+      1002,
+      1004,
+      1005,
+      1006,
+      1013,
+      1019,
+      1022,
+      1029,
+      1030,
+      1035,
+      1037,
+      1039,
+      1046,
+      1049,
+      1051,
+      1053,
+      1063,
+      1082,
+      1091,
+      1094,
+      1096,
+      1099,
+      1101,
+      1102,
+      1104,
+      1107,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70002
+    ],
+    "combine_state_list": [
+      73003
+    ]
+  },
+  {
+    "id": 1004,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10041,
+      10042,
+      10043,
+      10044
+    ],
+    "contain_role": [
+      1044,
+      1025,
+      1056,
+      1054,
+      1064,
+      1047,
+      1001,
+      1002,
+      1003,
+      1005
+    ],
+    "refresh_role": [
+      1001,
+      1002,
+      1003,
+      1005,
+      1006,
+      1013,
+      1021,
+      1024,
+      1037,
+      1040,
+      1043,
+      1044,
+      1045,
+      1047,
+      1051,
+      1054,
+      1055,
+      1057,
+      1058,
+      1060,
+      1064,
+      1065,
+      1069,
+      1071,
+      1079,
+      1080,
+      1095,
+      1099,
+      1101,
+      1107,
+      1108,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73003
+    ]
+  },
+  {
+    "id": 1006,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10061,
+      10062,
+      10063,
+      10064
+    ],
+    "contain_role": [
+      1001,
+      1025,
+      1013,
+      1009,
+      1051,
+      1052,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "refresh_role": [
+      1001,
+      1010,
+      1014,
+      1022,
+      1023,
+      1037,
+      1052,
+      1071,
+      1072,
+      1073,
+      1076,
+      1086,
+      1091,
+      1099,
+      1100,
+      1102,
+      1104,
+      1107,
+      1108,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70006
+    ],
+    "combine_state_list": [
+      73043
+    ]
+  },
+  {
+    "id": 1034,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10341,
+      10342,
+      10343,
+      10344
+    ],
+    "contain_role": [
+      1025,
+      1033,
+      1010,
+      1083,
+      1084,
+      1085,
+      1090,
+      1008,
+      1100,
+      1060
+    ],
+    "refresh_role": [
+      1033,
+      1036,
+      1060,
+      1100
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1007,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10071,
+      10072,
+      10073,
+      10074
+    ],
+    "contain_role": [
+      1008,
+      1074,
+      1099,
+      1010,
+      1049,
+      1050,
+      1059,
+      1083,
+      1084,
+      1085
+    ],
+    "refresh_role": [
+      1002,
+      1008,
+      1010,
+      1028,
+      1031,
+      1032,
+      1049,
+      1050,
+      1059,
+      1062,
+      1071,
+      1074,
+      1087,
+      1088,
+      1089,
+      1099,
+      1101
+    ],
+    "combine_skill_list": [
+      70008
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73014
+    ]
+  },
+  {
+    "id": 1008,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10081,
+      10082,
+      10083,
+      10084
+    ],
+    "contain_role": [
+      1001,
+      1007,
+      1050,
+      1049,
+      1052,
+      1071,
+      1032,
+      1065,
+      1087,
+      1088
+    ],
+    "refresh_role": [
+      1001,
+      1007,
+      1032,
+      1034,
+      1048,
+      1049,
+      1050,
+      1060,
+      1065,
+      1071,
+      1090,
+      1100,
+      1107,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73014,
+      73019
+    ]
+  },
+  {
+    "id": 1009,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10091,
+      10092,
+      10093,
+      10094
+    ],
+    "contain_role": [
+      1021,
+      1074,
+      1051,
+      1071,
+      1049,
+      1010,
+      1048,
+      1054,
+      1024,
+      1040
+    ],
+    "refresh_role": [
+      1006,
+      1010,
+      1021,
+      1043,
+      1051,
+      1053,
+      1065,
+      1072,
+      1074,
+      1075,
+      1083,
+      1105,
+      1108
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73010,
+      73015,
+      73029,
+      73054
+    ]
+  },
+  {
+    "id": 1010,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10101,
+      10102,
+      10103,
+      10104
+    ],
+    "contain_role": [
+      1051,
+      1007,
+      1049,
+      1001,
+      1023,
+      1006,
+      1009,
+      1071,
+      1090,
+      1033
+    ],
+    "refresh_role": [
+      1001,
+      1007,
+      1009,
+      1021,
+      1023,
+      1028,
+      1031,
+      1033,
+      1034,
+      1049,
+      1050,
+      1051,
+      1052,
+      1066,
+      1070,
+      1071,
+      1072,
+      1075,
+      1090,
+      1103,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70008
+    ],
+    "combine_state_list": [
+      73016,
+      73025,
+      73035,
+      73052
+    ]
+  },
+  {
+    "id": 1011,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10111,
+      10112,
+      10113,
+      10114
+    ],
+    "contain_role": [
+      1001,
+      1012,
+      1025,
+      1001,
+      1066,
+      1092,
+      1081,
+      1082,
+      1080,
+      1012
+    ],
+    "refresh_role": [
+      1012,
+      1025,
+      1027,
+      1080,
+      1081,
+      1082,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1012,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10121,
+      10122,
+      10123,
+      10124
+    ],
+    "contain_role": [
+      1005,
+      1011,
+      1025,
+      1005,
+      1070,
+      1096,
+      1081,
+      1082,
+      1011,
+      1080
+    ],
+    "refresh_role": [
+      1011,
+      1070,
+      1080,
+      1081,
+      1082,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1013,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10131,
+      10132,
+      10133,
+      10134
+    ],
+    "contain_role": [
+      1073,
+      1106,
+      1078,
+      1025,
+      1086,
+      1106,
+      1002,
+      1003,
+      1004,
+      1066
+    ],
+    "refresh_role": [
+      1006,
+      1014,
+      1015,
+      1019,
+      1020,
+      1021,
+      1025,
+      1066,
+      1067,
+      1068,
+      1073,
+      1076,
+      1078,
+      1086,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73047,
+      73048,
+      73049
+    ]
+  },
+  {
+    "id": 1014,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10141,
+      10142,
+      10143,
+      10144
+    ],
+    "contain_role": [
+      1073,
+      1020,
+      1013,
+      1021,
+      1099,
+      1023,
+      1044,
+      1022,
+      1006,
+      1056
+    ],
+    "refresh_role": [
+      1018,
+      1019,
+      1020,
+      1040,
+      1044,
+      1054,
+      1073,
+      1097,
+      1099,
+      1102
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73042
+    ]
+  },
+  {
+    "id": 1015,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10151,
+      10152,
+      10153,
+      10154
+    ],
+    "contain_role": [
+      1021,
+      1017,
+      1013,
+      1016,
+      1018,
+      1019,
+      1001,
+      1037,
+      1063,
+      1051
+    ],
+    "refresh_role": [
+      1016,
+      1017,
+      1018,
+      1019,
+      1037,
+      1040,
+      1063,
+      1073,
+      1097
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1016,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10161,
+      10162,
+      10163,
+      10164
+    ],
+    "contain_role": [
+      1032,
+      1040,
+      1044,
+      1098,
+      1075,
+      1108,
+      1015,
+      1019,
+      1018,
+      1017
+    ],
+    "refresh_role": [
+      1015,
+      1017,
+      1018,
+      1026,
+      1032,
+      1043,
+      1073,
+      1098
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1017,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10171,
+      10172,
+      10173,
+      10174
+    ],
+    "contain_role": [
+      1071,
+      1052,
+      1002,
+      1050,
+      1001,
+      1002,
+      1015,
+      1016,
+      1019,
+      1018
+    ],
+    "refresh_role": [
+      1015,
+      1016,
+      1018,
+      1052,
+      1073,
+      1089
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73030,
+      73038
+    ]
+  },
+  {
+    "id": 1018,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10181,
+      10182,
+      10183,
+      10184
+    ],
+    "contain_role": [
+      1050,
+      1020,
+      1014,
+      1024,
+      1091,
+      1023,
+      1015,
+      1019,
+      1016,
+      1017
+    ],
+    "refresh_role": [
+      1015,
+      1016,
+      1017,
+      1019,
+      1024,
+      1073,
+      1095,
+      1100
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1019,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10191,
+      10192,
+      10193,
+      10194
+    ],
+    "contain_role": [
+      1003,
+      1053,
+      1039,
+      1013,
+      1014,
+      1021,
+      1020,
+      1018,
+      1097,
+      1015
+    ],
+    "refresh_role": [
+      1003,
+      1015,
+      1016,
+      1017,
+      1018,
+      1039,
+      1053,
+      1068,
+      1091,
+      1094,
+      1097
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73028
+    ]
+  },
+  {
+    "id": 1020,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10201,
+      10202,
+      10203,
+      10204
+    ],
+    "contain_role": [
+      1073,
+      1013,
+      1014,
+      1021,
+      1005,
+      1077,
+      1055,
+      1064,
+      1058,
+      1056
+    ],
+    "refresh_role": [
+      1014,
+      1018,
+      1019,
+      1021,
+      1055,
+      1056,
+      1058,
+      1062,
+      1064,
+      1073,
+      1076,
+      1078,
+      1096
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73030,
+      73047,
+      73050
+    ]
+  },
+  {
+    "id": 1021,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10211,
+      10212,
+      10213,
+      10214
+    ],
+    "contain_role": [
+      1009,
+      1005,
+      1028,
+      1049,
+      1020,
+      1013,
+      1090,
+      1004,
+      1065,
+      1010
+    ],
+    "refresh_role": [
+      1005,
+      1009,
+      1014,
+      1015,
+      1019,
+      1020,
+      1043,
+      1065,
+      1072,
+      1077
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73029,
+      73030,
+      73036,
+      73037,
+      73059
+    ]
+  },
+  {
+    "id": 1022,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10221,
+      10222,
+      10223,
+      10224
+    ],
+    "contain_role": [
+      1006,
+      1023,
+      1001,
+      1040,
+      1097,
+      1098,
+      1029,
+      1003,
+      1104,
+      1031
+    ],
+    "refresh_role": [
+      1001,
+      1014,
+      1029,
+      1040,
+      1044,
+      1090,
+      1096,
+      1097,
+      1098,
+      1100,
+      1102,
+      1103,
+      1104,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73007
+    ]
+  },
+  {
+    "id": 1023,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10231,
+      10232,
+      10233,
+      10234
+    ],
+    "contain_role": [
+      1090,
+      1006,
+      1001,
+      1010,
+      1024,
+      1104,
+      1039,
+      1100,
+      1053,
+      1103
+    ],
+    "refresh_role": [
+      1001,
+      1010,
+      1014,
+      1018,
+      1022,
+      1024,
+      1027,
+      1044,
+      1061,
+      1066,
+      1090,
+      1095,
+      1099,
+      1100,
+      1102,
+      1104,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73007,
+      73008
+    ]
+  },
+  {
+    "id": 1024,
+    "attribute_list": [
+      "Max_Hp",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10241,
+      10242,
+      10243,
+      10244
+    ],
+    "contain_role": [
+      1002,
+      1045,
+      1004,
+      1023,
+      1104,
+      1040,
+      1091,
+      1095,
+      1018,
+      1060
+    ],
+    "refresh_role": [
+      1002,
+      1009,
+      1018,
+      1023,
+      1039,
+      1045,
+      1090,
+      1104,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1025,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10251,
+      10252,
+      10253,
+      10254
+    ],
+    "contain_role": [
+      1079,
+      1026,
+      1027,
+      1086,
+      1013,
+      1011,
+      1028,
+      1029,
+      1030,
+      1056
+    ],
+    "refresh_role": [
+      1004,
+      1006,
+      1011,
+      1012,
+      1013,
+      1026,
+      1027,
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1038,
+      1041,
+      1042,
+      1046,
+      1047,
+      1048,
+      1059,
+      1067,
+      1078,
+      1079,
+      1083,
+      1084,
+      1085,
+      1086,
+      1087,
+      1088,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1026,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10261,
+      10262,
+      10263,
+      10264
+    ],
+    "contain_role": [
+      1027,
+      1056,
+      1025,
+      1081,
+      1080,
+      1082,
+      1054,
+      1055,
+      1016,
+      1053
+    ],
+    "refresh_role": [
+      1025,
+      1027,
+      1056,
+      1062,
+      1069,
+      1070,
+      1080,
+      1081,
+      1082
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73061
+    ]
+  },
+  {
+    "id": 1027,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10271,
+      10272,
+      10273,
+      10274
+    ],
+    "contain_role": [
+      1026,
+      1011,
+      1025,
+      1037,
+      1023,
+      1100,
+      1048,
+      1071,
+      1057,
+      1047
+    ],
+    "refresh_role": [
+      1025,
+      1026,
+      1056,
+      1066,
+      1067,
+      1068,
+      1069,
+      1070
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73061
+    ]
+  },
+  {
+    "id": 1028,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10281,
+      10282,
+      10283,
+      10284
+    ],
+    "contain_role": [
+      1108,
+      1029,
+      1030,
+      1007,
+      1049,
+      1010,
+      1031,
+      1042,
+      1038,
+      1041
+    ],
+    "refresh_role": [
+      1021,
+      1025,
+      1029,
+      1030,
+      1031,
+      1032,
+      1036,
+      1038,
+      1041,
+      1048,
+      1051,
+      1057,
+      1059,
+      1077,
+      1079,
+      1098,
+      1108
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1029,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10291,
+      10292,
+      10293,
+      10294
+    ],
+    "contain_role": [
+      1005,
+      1028,
+      1030,
+      1022,
+      1003,
+      1104,
+      1058,
+      1042,
+      1038,
+      1041
+    ],
+    "refresh_role": [
+      1005,
+      1022,
+      1025,
+      1028,
+      1030,
+      1104,
+      1108
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1030,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10301,
+      10302,
+      10303,
+      10304
+    ],
+    "contain_role": [
+      1003,
+      1028,
+      1029,
+      1079,
+      1057,
+      1047,
+      1041,
+      1042,
+      1038,
+      1056
+    ],
+    "refresh_role": [
+      1003,
+      1025,
+      1028,
+      1029,
+      1057,
+      1091,
+      1108
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1031,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10311,
+      10312,
+      10313,
+      10314
+    ],
+    "contain_role": [
+      1025,
+      1042,
+      1028,
+      1007,
+      1010,
+      1049,
+      1059,
+      1046,
+      1058,
+      1042
+    ],
+    "refresh_role": [
+      1022,
+      1028,
+      1038,
+      1041,
+      1042,
+      1046,
+      1104
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1032,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10321,
+      10322,
+      10323,
+      10324
+    ],
+    "contain_role": [
+      1025,
+      1008,
+      1007,
+      1054,
+      1043,
+      1016,
+      1028,
+      1059,
+      1036,
+      1033
+    ],
+    "refresh_role": [
+      1008,
+      1016,
+      1035,
+      1036,
+      1043,
+      1047,
+      1059
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1033,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10331,
+      10332,
+      10333,
+      10334
+    ],
+    "contain_role": [
+      1025,
+      1034,
+      1010,
+      1034,
+      1035,
+      1036,
+      1033,
+      1035,
+      1036,
+      1047
+    ],
+    "refresh_role": [
+      1010,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1047,
+      1059
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73052
+    ]
+  },
+  {
+    "id": 1035,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10351,
+      10352,
+      10353,
+      10354
+    ],
+    "contain_role": [
+      1025,
+      1003,
+      1085,
+      1083,
+      1084,
+      1085,
+      1033,
+      1047,
+      1036,
+      1032
+    ],
+    "refresh_role": [
+      1033,
+      1047
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1036,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10361,
+      10362,
+      10363,
+      10364
+    ],
+    "contain_role": [
+      1083,
+      2000,
+      2000,
+      1034,
+      2000,
+      2000,
+      1028,
+      1032,
+      1059,
+      1033
+    ],
+    "refresh_role": [
+      1032,
+      1033,
+      1035,
+      1047,
+      1059
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73056
+    ]
+  },
+  {
+    "id": 1037,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10371,
+      10372,
+      10373,
+      10374
+    ],
+    "contain_role": [
+      1001,
+      1100,
+      1091,
+      1051,
+      1063,
+      1015,
+      1004,
+      1005,
+      1003,
+      1006
+    ],
+    "refresh_role": [
+      1015,
+      1027,
+      1063,
+      1065,
+      1091,
+      1092,
+      1098,
+      1100
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73009
+    ]
+  },
+  {
+    "id": 1038,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10381,
+      10382,
+      10383,
+      10384
+    ],
+    "contain_role": [
+      1025,
+      1041,
+      1042,
+      1041,
+      1042,
+      1002,
+      1031,
+      1042,
+      1041,
+      1028
+    ],
+    "refresh_role": [
+      1028,
+      1029,
+      1030,
+      1041,
+      1042
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1039,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10391,
+      10392,
+      10393,
+      10394
+    ],
+    "contain_role": [
+      1107,
+      1075,
+      1003,
+      1003,
+      1053,
+      1019,
+      1055,
+      1045,
+      1040,
+      1024
+    ],
+    "refresh_role": [
+      1019,
+      1023,
+      1051,
+      1053,
+      1068,
+      1072,
+      1075,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1040,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10401,
+      10402,
+      10403,
+      10404
+    ],
+    "contain_role": [
+      1015,
+      1097,
+      1098,
+      1022,
+      1001,
+      1099,
+      1044,
+      1004,
+      1054,
+      1014
+    ],
+    "refresh_role": [
+      1009,
+      1016,
+      1022,
+      1024,
+      1039,
+      1045,
+      1089,
+      1090,
+      1091,
+      1097,
+      1098,
+      1104,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73004
+    ]
+  },
+  {
+    "id": 1041,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10411,
+      10412,
+      10413,
+      10414
+    ],
+    "contain_role": [
+      1025,
+      1042,
+      1038,
+      1041,
+      1042,
+      1002,
+      1031,
+      1042,
+      1038,
+      1028
+    ],
+    "refresh_role": [
+      1028,
+      1029,
+      1030,
+      1038,
+      1041,
+      1042
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1042,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10421,
+      10422,
+      10423,
+      10424
+    ],
+    "contain_role": [
+      1025,
+      1041,
+      1038,
+      1046,
+      1058,
+      1057,
+      1059,
+      1031,
+      1058,
+      1046
+    ],
+    "refresh_role": [
+      1028,
+      1029,
+      1030,
+      1031,
+      1038,
+      1041,
+      1046,
+      1057,
+      1058
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1043,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10431,
+      10432,
+      10433,
+      10434
+    ],
+    "contain_role": [
+      1065,
+      1076,
+      1062,
+      1054,
+      1032,
+      1016,
+      1005,
+      1004,
+      1009,
+      1021
+    ],
+    "refresh_role": [
+      1005,
+      1032,
+      1062,
+      1064,
+      1065,
+      1077
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70003
+    ],
+    "combine_state_list": [
+      73026
+    ]
+  },
+  {
+    "id": 1044,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10441,
+      10442,
+      10443,
+      10444
+    ],
+    "contain_role": [
+      1004,
+      1095,
+      1057,
+      1049,
+      1054,
+      1045,
+      1022,
+      1056,
+      1023,
+      1014
+    ],
+    "refresh_role": [
+      1004,
+      1014,
+      1016,
+      1040,
+      1045,
+      1054,
+      1102
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1045,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10451,
+      10452,
+      10453,
+      10454
+    ],
+    "contain_role": [
+      1074,
+      1044,
+      1004,
+      1049,
+      1054,
+      1044,
+      1055,
+      1045,
+      1040,
+      1024
+    ],
+    "refresh_role": [
+      1024,
+      1039,
+      1044,
+      1045,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1046,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10461,
+      10462,
+      10463,
+      10464
+    ],
+    "contain_role": [
+      1025,
+      1003,
+      1002,
+      1042,
+      1058,
+      1057,
+      1059,
+      1031,
+      1058,
+      1042
+    ],
+    "refresh_role": [
+      1031,
+      1042,
+      1057,
+      1058
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1047,
+    "attribute_list": [
+      "Max_Hp",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10471,
+      10472,
+      10473,
+      10474
+    ],
+    "contain_role": [
+      1025,
+      1001,
+      1004,
+      1035,
+      1058,
+      1032,
+      1033,
+      1035,
+      1036,
+      1032
+    ],
+    "refresh_role": [
+      1004,
+      1027,
+      1030,
+      1033,
+      1035
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1048,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10481,
+      10482,
+      10483,
+      10484
+    ],
+    "contain_role": [
+      1054,
+      1050,
+      1089,
+      1008,
+      1053,
+      1052,
+      1025,
+      1028,
+      1055,
+      1101
+    ],
+    "refresh_role": [
+      1002,
+      1009,
+      1027,
+      1052,
+      1053,
+      1054,
+      1087,
+      1089,
+      1097
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73013,
+      73046,
+      73051
+    ]
+  },
+  {
+    "id": 1049,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10491,
+      10492,
+      10493,
+      10494
+    ],
+    "contain_role": [
+      1053,
+      1003,
+      1108,
+      1083,
+      1085,
+      1084,
+      1007,
+      1008,
+      1010,
+      1071
+    ],
+    "refresh_role": [
+      1003,
+      1007,
+      1008,
+      1009,
+      1010,
+      1021,
+      1028,
+      1031,
+      1044,
+      1045,
+      1050,
+      1053,
+      1054,
+      1071,
+      1093
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70008
+    ],
+    "combine_state_list": [
+      73012,
+      73036
+    ]
+  },
+  {
+    "id": 1050,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10501,
+      10502,
+      10503,
+      10504
+    ],
+    "contain_role": [
+      1051,
+      1074,
+      1101,
+      1002,
+      1089,
+      1067,
+      1007,
+      1008,
+      1010,
+      1049
+    ],
+    "refresh_role": [
+      1002,
+      1007,
+      1008,
+      1017,
+      1018,
+      1048,
+      1052,
+      1055,
+      1060,
+      1062,
+      1067,
+      1074,
+      1078,
+      1089,
+      1101
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1051,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10511,
+      10512,
+      10513,
+      10514
+    ],
+    "contain_role": [
+      1009,
+      1010,
+      1052,
+      1077,
+      1028,
+      1039,
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "refresh_role": [
+      1001,
+      1006,
+      1009,
+      1010,
+      1015,
+      1037,
+      1050,
+      1052,
+      1066,
+      1074,
+      1075,
+      1092
+    ],
+    "combine_skill_list": [
+      70006
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73010,
+      73011,
+      73025
+    ]
+  },
+  {
+    "id": 1052,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10521,
+      10522,
+      10523,
+      10524
+    ],
+    "contain_role": [
+      1089,
+      1017,
+      1050,
+      1054,
+      1053,
+      1048,
+      1072,
+      1051,
+      1006,
+      1010
+    ],
+    "refresh_role": [
+      1002,
+      1006,
+      1008,
+      1017,
+      1048,
+      1051,
+      1053,
+      1074,
+      1078,
+      1084,
+      1089
+    ],
+    "combine_skill_list": [
+      70005
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73044,
+      73057
+    ]
+  },
+  {
+    "id": 1053,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10531,
+      10532,
+      10533,
+      10534
+    ],
+    "contain_role": [
+      1068,
+      1049,
+      1052,
+      1039,
+      1003,
+      1019,
+      1054,
+      1048,
+      1072,
+      1009
+    ],
+    "refresh_role": [
+      1003,
+      1019,
+      1023,
+      1026,
+      1039,
+      1048,
+      1049,
+      1052,
+      1054,
+      1068,
+      1074,
+      1085,
+      1094,
+      1103
+    ],
+    "combine_skill_list": [
+      70002
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73012,
+      73028,
+      73055
+    ]
+  },
+  {
+    "id": 1054,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10541,
+      10542,
+      10543,
+      10544
+    ],
+    "contain_role": [
+      1048,
+      1075,
+      1101,
+      1071,
+      1049,
+      1053,
+      1044,
+      1004,
+      1056,
+      1014
+    ],
+    "refresh_role": [
+      1004,
+      1009,
+      1026,
+      1032,
+      1040,
+      1043,
+      1044,
+      1045,
+      1048,
+      1052,
+      1053,
+      1074,
+      1088,
+      1091,
+      1097
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73013,
+      73053
+    ]
+  },
+  {
+    "id": 1055,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10551,
+      10552,
+      10553,
+      10554
+    ],
+    "contain_role": [
+      1058,
+      1001,
+      1004,
+      1050,
+      1071,
+      1108,
+      1056,
+      1020,
+      1058,
+      1064
+    ],
+    "refresh_role": [
+      1020,
+      1026,
+      1039,
+      1045,
+      1048,
+      1056,
+      1058,
+      1064,
+      1079
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1056,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10561,
+      10562,
+      10563,
+      10564
+    ],
+    "contain_role": [
+      1079,
+      1026,
+      1027,
+      1083,
+      1084,
+      1085,
+      1055,
+      1020,
+      1058,
+      1064
+    ],
+    "refresh_role": [
+      1004,
+      1005,
+      1014,
+      1020,
+      1025,
+      1026,
+      1030,
+      1044,
+      1054,
+      1055,
+      1058,
+      1064,
+      1069,
+      1079,
+      1091,
+      1102
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73061
+    ]
+  },
+  {
+    "id": 1057,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10571,
+      10572,
+      10573,
+      10574
+    ],
+    "contain_role": [
+      1030,
+      1001,
+      1004,
+      1046,
+      1058,
+      1042,
+      1001,
+      1004,
+      1108,
+      1028
+    ],
+    "refresh_role": [
+      1027,
+      1030,
+      1042,
+      1044,
+      1046,
+      1058,
+      1108
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73060
+    ]
+  },
+  {
+    "id": 1058,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10581,
+      10582,
+      10583,
+      10584
+    ],
+    "contain_role": [
+      1055,
+      1001,
+      1004,
+      1046,
+      1057,
+      1042,
+      1056,
+      1020,
+      1055,
+      1064
+    ],
+    "refresh_role": [
+      1020,
+      1029,
+      1031,
+      1042,
+      1046,
+      1047,
+      1055,
+      1056,
+      1057,
+      1061,
+      1064
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1059,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10591,
+      10592,
+      10593,
+      10594
+    ],
+    "contain_role": [
+      1025,
+      1001,
+      1007,
+      1083,
+      1084,
+      1085,
+      1028,
+      1032,
+      1036,
+      1033
+    ],
+    "refresh_role": [
+      1007,
+      1031,
+      1032,
+      1036,
+      1042,
+      1046
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1060,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10601,
+      10602,
+      10603,
+      10604
+    ],
+    "contain_role": [
+      1076,
+      1050,
+      1004,
+      1077,
+      1063,
+      1065,
+      1090,
+      1008,
+      1100,
+      1034
+    ],
+    "refresh_role": [
+      1024,
+      1034,
+      1061,
+      1063,
+      1064,
+      1065,
+      1076,
+      1077,
+      1100
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73019
+    ]
+  },
+  {
+    "id": 1061,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10611,
+      10612,
+      10613,
+      10614
+    ],
+    "contain_role": [
+      1002,
+      1100,
+      1058,
+      1091,
+      1023,
+      1065,
+      1060,
+      1063,
+      1064,
+      1062
+    ],
+    "refresh_role": [
+      1002,
+      1063
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73027
+    ]
+  },
+  {
+    "id": 1062,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10621,
+      10622,
+      10623,
+      10624
+    ],
+    "contain_role": [
+      1076,
+      1002,
+      1050,
+      1077,
+      1063,
+      1043,
+      1075,
+      1007,
+      1020,
+      1026
+    ],
+    "refresh_role": [
+      1043,
+      1061,
+      1063,
+      1067,
+      1078
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73039,
+      73040
+    ]
+  },
+  {
+    "id": 1063,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10631,
+      10632,
+      10633,
+      10634
+    ],
+    "contain_role": [
+      1077,
+      1102,
+      1003,
+      1001,
+      1015,
+      1037,
+      1060,
+      1061,
+      1064,
+      1062
+    ],
+    "refresh_role": [
+      1003,
+      1015,
+      1037,
+      1060,
+      1061,
+      1062,
+      1064,
+      1065,
+      1068,
+      1076,
+      1077,
+      1091,
+      1092,
+      1094,
+      1098,
+      1102,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73018,
+      73021
+    ]
+  },
+  {
+    "id": 1064,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10641,
+      10642,
+      10643,
+      10644
+    ],
+    "contain_role": [
+      1043,
+      1004,
+      1005,
+      1065,
+      1063,
+      1060,
+      1055,
+      1020,
+      1058,
+      1056
+    ],
+    "refresh_role": [
+      1004,
+      1005,
+      1020,
+      1055,
+      1056,
+      1058,
+      1061,
+      1063,
+      1065,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73026
+    ]
+  },
+  {
+    "id": 1065,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10651,
+      10652,
+      10653,
+      10654
+    ],
+    "contain_role": [
+      1043,
+      1037,
+      1008,
+      1063,
+      1060,
+      1064,
+      1005,
+      1004,
+      1009,
+      1021
+    ],
+    "refresh_role": [
+      1008,
+      1021,
+      1043,
+      1060,
+      1061,
+      1064,
+      1076,
+      1077,
+      1106
+    ],
+    "combine_skill_list": [
+      70003
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1066,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10661,
+      10662,
+      10663,
+      10664
+    ],
+    "contain_role": [
+      1051,
+      1013,
+      1023,
+      1005,
+      1010,
+      1027,
+      1067,
+      1068,
+      1070,
+      1069
+    ],
+    "refresh_role": [
+      1011,
+      1013,
+      1067,
+      1068,
+      1069,
+      1070,
+      1078,
+      1105
+    ],
+    "combine_skill_list": [
+      70004
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73011,
+      73020,
+      73031,
+      73049
+    ]
+  },
+  {
+    "id": 1067,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10671,
+      10672,
+      10673,
+      10674
+    ],
+    "contain_role": [
+      1050,
+      1013,
+      1027,
+      1078,
+      1025,
+      1062,
+      1066,
+      1068,
+      1070,
+      1069
+    ],
+    "refresh_role": [
+      1050,
+      1066,
+      1068,
+      1069,
+      1070,
+      1078,
+      1081
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70004
+    ],
+    "combine_state_list": [
+      73031,
+      73045,
+      73046
+    ]
+  },
+  {
+    "id": 1068,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10681,
+      10682,
+      10683,
+      10684
+    ],
+    "contain_role": [
+      1053,
+      1013,
+      1027,
+      1063,
+      1039,
+      1019,
+      1066,
+      1067,
+      1070,
+      1069
+    ],
+    "refresh_role": [
+      1053,
+      1066,
+      1067,
+      1069,
+      1070,
+      1082
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70004
+    ],
+    "combine_state_list": [
+      73028,
+      73031
+    ]
+  },
+  {
+    "id": 1069,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10691,
+      10692,
+      10693,
+      10694
+    ],
+    "contain_role": [
+      1071,
+      1026,
+      1027,
+      1079,
+      1004,
+      1056,
+      1066,
+      1067,
+      1070,
+      1068
+    ],
+    "refresh_role": [
+      1066,
+      1067,
+      1068,
+      1070,
+      1080
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73031,
+      73032,
+      73034
+    ]
+  },
+  {
+    "id": 1070,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10701,
+      10702,
+      10703,
+      10704
+    ],
+    "contain_role": [
+      1010,
+      1026,
+      1027,
+      1005,
+      1012,
+      1096,
+      1066,
+      1067,
+      1068,
+      1069
+    ],
+    "refresh_role": [
+      1012,
+      1066,
+      1067,
+      1068,
+      1069
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73031,
+      73032,
+      73035
+    ]
+  },
+  {
+    "id": 1071,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10711,
+      10712,
+      10713,
+      10714
+    ],
+    "contain_role": [
+      1004,
+      1005,
+      1006,
+      1083,
+      1085,
+      1084,
+      1049,
+      1007,
+      1008,
+      1010
+    ],
+    "refresh_role": [
+      1005,
+      1008,
+      1009,
+      1010,
+      1017,
+      1027,
+      1049,
+      1054,
+      1055,
+      1069,
+      1083,
+      1084,
+      1085
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73016,
+      73034
+    ]
+  },
+  {
+    "id": 1072,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10721,
+      10722,
+      10723,
+      10724
+    ],
+    "contain_role": [
+      1074,
+      1075,
+      1021,
+      1010,
+      1103,
+      1039,
+      1001,
+      1006,
+      1005,
+      1009
+    ],
+    "refresh_role": [
+      1052,
+      1053,
+      1074,
+      1075
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73015,
+      73024
+    ]
+  },
+  {
+    "id": 1073,
+    "attribute_list": [
+      "Attack",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10731,
+      10732,
+      10733,
+      10734
+    ],
+    "contain_role": [
+      1013,
+      1020,
+      1014,
+      1006,
+      1079,
+      1076,
+      1015,
+      1016,
+      1018,
+      1017
+    ],
+    "refresh_role": [
+      1013,
+      1014,
+      1020,
+      1076
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73037,
+      73042,
+      73043,
+      73048
+    ]
+  },
+  {
+    "id": 1074,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10741,
+      10742,
+      10743,
+      10744
+    ],
+    "contain_role": [
+      1050,
+      1007,
+      1099,
+      1072,
+      1051,
+      1075,
+      1009,
+      1052,
+      1053,
+      1054
+    ],
+    "refresh_role": [
+      1007,
+      1009,
+      1045,
+      1050,
+      1072,
+      1075,
+      1099,
+      1101
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1075,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10751,
+      10752,
+      10753,
+      10754
+    ],
+    "contain_role": [
+      1072,
+      1001,
+      1090,
+      1010,
+      1103,
+      1039,
+      1074,
+      1051,
+      1009,
+      1108
+    ],
+    "refresh_role": [
+      1016,
+      1039,
+      1054,
+      1062,
+      1072,
+      1074,
+      1098,
+      1104,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73024,
+      73033
+    ]
+  },
+  {
+    "id": 1076,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10761,
+      10762,
+      10763,
+      10764
+    ],
+    "contain_role": [
+      1102,
+      1020,
+      1013,
+      1006,
+      1079,
+      1073,
+      1077,
+      1063,
+      1065,
+      1060
+    ],
+    "refresh_role": [
+      1043,
+      1060,
+      1062,
+      1073,
+      1077,
+      1078,
+      1102
+    ],
+    "combine_skill_list": [
+      70014
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73022,
+      73023,
+      73033,
+      73040
+    ]
+  },
+  {
+    "id": 1077,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10771,
+      10772,
+      10773,
+      10774
+    ],
+    "contain_role": [
+      1076,
+      1089,
+      1001,
+      1028,
+      1002,
+      1021,
+      1060,
+      1063,
+      1065,
+      1043
+    ],
+    "refresh_role": [
+      1020,
+      1051,
+      1060,
+      1062,
+      1063,
+      1076,
+      1089,
+      1096,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70014
+    ],
+    "combine_state_list": [
+      73017,
+      73021,
+      73044,
+      73050
+    ]
+  },
+  {
+    "id": 1078,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10781,
+      10782,
+      10783,
+      10784
+    ],
+    "contain_role": [
+      1066,
+      1020,
+      1076,
+      1086,
+      1025,
+      1013,
+      1062,
+      1052,
+      1067,
+      1050
+    ],
+    "refresh_role": [
+      1013,
+      1067,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73020,
+      73023,
+      73039
+    ]
+  },
+  {
+    "id": 1079,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10791,
+      10792,
+      10793,
+      10794
+    ],
+    "contain_role": [
+      1025,
+      1004,
+      1005,
+      1025,
+      1056,
+      1005,
+      1055,
+      1028,
+      1001,
+      1004
+    ],
+    "refresh_role": [
+      1025,
+      1030,
+      1056,
+      1069,
+      1073,
+      1076
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1080,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10801,
+      10802,
+      10803,
+      10804
+    ],
+    "contain_role": [
+      1004,
+      1005,
+      1026,
+      1004,
+      1069,
+      1095,
+      1081,
+      1082,
+      1011,
+      1012
+    ],
+    "refresh_role": [
+      1011,
+      1012,
+      1026,
+      1081,
+      1082,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1081,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10811,
+      10812,
+      10813,
+      10814
+    ],
+    "contain_role": [
+      1002,
+      1082,
+      1026,
+      1002,
+      1067,
+      1093,
+      1080,
+      1082,
+      1011,
+      1012
+    ],
+    "refresh_role": [
+      1011,
+      1012,
+      1026,
+      1080,
+      1082,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1082,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10821,
+      10822,
+      10823,
+      10824
+    ],
+    "contain_role": [
+      1003,
+      1081,
+      1026,
+      1003,
+      1068,
+      1094,
+      1081,
+      1080,
+      1011,
+      1012
+    ],
+    "refresh_role": [
+      1011,
+      1012,
+      1026,
+      1080,
+      1081,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1083,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10831,
+      10832,
+      10833,
+      10834
+    ],
+    "contain_role": [
+      1009,
+      1025,
+      1086,
+      1084,
+      1085,
+      1071,
+      1084,
+      1085,
+      1088,
+      1087
+    ],
+    "refresh_role": [
+      1007,
+      1034,
+      1035,
+      1036,
+      1049,
+      1056,
+      1059,
+      1071,
+      1084,
+      1085,
+      1087,
+      1088,
+      1108
+    ],
+    "combine_skill_list": [
+      70009
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73054,
+      73056,
+      73058
+    ]
+  },
+  {
+    "id": 1084,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10841,
+      10842,
+      10843,
+      10844
+    ],
+    "contain_role": [
+      1052,
+      1025,
+      1086,
+      1083,
+      1085,
+      1071,
+      1083,
+      1085,
+      1088,
+      1087
+    ],
+    "refresh_role": [
+      1007,
+      1034,
+      1035,
+      1049,
+      1056,
+      1059,
+      1071,
+      1083,
+      1085,
+      1087,
+      1088
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70009
+    ],
+    "combine_state_list": [
+      73057,
+      73058
+    ]
+  },
+  {
+    "id": 1085,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10851,
+      10852,
+      10853,
+      10854
+    ],
+    "contain_role": [
+      1053,
+      1025,
+      1086,
+      1083,
+      1084,
+      1071,
+      1084,
+      1083,
+      1088,
+      1087
+    ],
+    "refresh_role": [
+      1007,
+      1034,
+      1035,
+      1049,
+      1056,
+      1059,
+      1071,
+      1083,
+      1084,
+      1087,
+      1088
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70009
+    ],
+    "combine_state_list": [
+      73055,
+      73058
+    ]
+  },
+  {
+    "id": 1086,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10861,
+      10862,
+      10863,
+      10864
+    ],
+    "contain_role": [
+      1006,
+      1025,
+      1011,
+      1025,
+      1106,
+      1013,
+      1081,
+      1082,
+      1080,
+      1012
+    ],
+    "refresh_role": [
+      1013,
+      1025,
+      1078,
+      1083,
+      1084,
+      1085,
+      1087,
+      1088,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1087,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10871,
+      10872,
+      10873,
+      10874
+    ],
+    "contain_role": [
+      1048,
+      1025,
+      1086,
+      1088,
+      1101,
+      1007,
+      1084,
+      1085,
+      1083,
+      1088
+    ],
+    "refresh_role": [
+      1008,
+      1083,
+      1084,
+      1085,
+      1088,
+      1101
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70010
+    ],
+    "combine_state_list": [
+      73051,
+      73058
+    ]
+  },
+  {
+    "id": 1088,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10881,
+      10882,
+      10883,
+      10884
+    ],
+    "contain_role": [
+      1054,
+      1025,
+      1086,
+      1087,
+      1101,
+      1007,
+      1084,
+      1085,
+      1083,
+      1087
+    ],
+    "refresh_role": [
+      1008,
+      1083,
+      1084,
+      1085,
+      1087,
+      1101
+    ],
+    "combine_skill_list": [
+      70010
+    ],
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73053,
+      73058
+    ]
+  },
+  {
+    "id": 1089,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10891,
+      10892,
+      10893,
+      10894
+    ],
+    "contain_role": [
+      1001,
+      1007,
+      1099,
+      1050,
+      1040,
+      1005,
+      1077,
+      1048,
+      1052,
+      1017
+    ],
+    "refresh_role": [
+      1048,
+      1050,
+      1052,
+      1077,
+      1093
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": [
+      70005
+    ],
+    "combine_state_list": [
+      73017,
+      73027,
+      73038,
+      73045
+    ]
+  },
+  {
+    "id": 1090,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10901,
+      10902,
+      10903,
+      10904
+    ],
+    "contain_role": [
+      1010,
+      1100,
+      1008,
+      1022,
+      1023,
+      1001,
+      1024,
+      1105,
+      1040,
+      1104
+    ],
+    "refresh_role": [
+      1010,
+      1021,
+      1023,
+      1034,
+      1060,
+      1075,
+      1098,
+      1100,
+      1105,
+      1107,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73008
+    ]
+  },
+  {
+    "id": 1091,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10911,
+      10912,
+      10913,
+      10914
+    ],
+    "contain_role": [
+      1003,
+      1100,
+      1037,
+      1063,
+      1030,
+      1019,
+      1040,
+      1054,
+      1056,
+      1006
+    ],
+    "refresh_role": [
+      1003,
+      1018,
+      1024,
+      1037,
+      1061,
+      1095
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73009
+    ]
+  },
+  {
+    "id": 1092,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10921,
+      10922,
+      10923,
+      10924
+    ],
+    "contain_role": [
+      1001,
+      1103,
+      1005,
+      1037,
+      1063,
+      1051,
+      1093,
+      1094,
+      1095,
+      1096
+    ],
+    "refresh_role": [
+      1011,
+      1093,
+      1094,
+      1095,
+      1096,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73002
+    ]
+  },
+  {
+    "id": 1093,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10931,
+      10932,
+      10933,
+      10934
+    ],
+    "contain_role": [
+      1002,
+      1103,
+      1005,
+      1089,
+      1049,
+      1108,
+      1092,
+      1094,
+      1095,
+      1096
+    ],
+    "refresh_role": [
+      1081,
+      1092,
+      1094,
+      1095,
+      1096,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73002
+    ]
+  },
+  {
+    "id": 1094,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10941,
+      10942,
+      10943,
+      10944
+    ],
+    "contain_role": [
+      1003,
+      1103,
+      1005,
+      1019,
+      1053,
+      1063,
+      1093,
+      1092,
+      1095,
+      1096
+    ],
+    "refresh_role": [
+      1082,
+      1092,
+      1093,
+      1095,
+      1096,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73002
+    ]
+  },
+  {
+    "id": 1095,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10951,
+      10952,
+      10953,
+      10954
+    ],
+    "contain_role": [
+      1004,
+      1103,
+      1005,
+      1091,
+      1023,
+      1018,
+      1093,
+      1094,
+      1092,
+      1096
+    ],
+    "refresh_role": [
+      1024,
+      1044,
+      1080,
+      1092,
+      1093,
+      1094,
+      1096,
+      1103
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73002
+    ]
+  },
+  {
+    "id": 1096,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10961,
+      10962,
+      10963,
+      10964
+    ],
+    "contain_role": [
+      1005,
+      1020,
+      1077,
+      1104,
+      1022,
+      1003,
+      1093,
+      1094,
+      1095,
+      1092
+    ],
+    "refresh_role": [
+      1012,
+      1070,
+      1092,
+      1093,
+      1094,
+      1095
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73002,
+      73005
+    ]
+  },
+  {
+    "id": 1097,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10971,
+      10972,
+      10973,
+      10974
+    ],
+    "contain_role": [
+      1015,
+      1040,
+      1098,
+      1022,
+      1001,
+      1099,
+      1054,
+      1048,
+      1014,
+      1019
+    ],
+    "refresh_role": [
+      1019,
+      1022,
+      1040,
+      1098,
+      1107,
+      1109
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73004
+    ]
+  },
+  {
+    "id": 1098,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10981,
+      10982,
+      10983,
+      10984
+    ],
+    "contain_role": [
+      1022,
+      1040,
+      1097,
+      1075,
+      1016,
+      1108,
+      1090,
+      1063,
+      1028,
+      1037
+    ],
+    "refresh_role": [
+      1016,
+      1022,
+      1040,
+      1097
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73004
+    ]
+  },
+  {
+    "id": 1099,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      10991,
+      10992,
+      10993,
+      10994
+    ],
+    "contain_role": [
+      1002,
+      1007,
+      1074,
+      1001,
+      1003,
+      1004,
+      1006,
+      1102,
+      1014,
+      1023
+    ],
+    "refresh_role": [
+      1007,
+      1014,
+      1040,
+      1074,
+      1089,
+      1097,
+      1102
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1100,
+    "attribute_list": [
+      "Max_Hp",
+      "Physis_Def",
+      "Physis_Pierce"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11001,
+      11002,
+      11003,
+      11004
+    ],
+    "contain_role": [
+      1018,
+      1001,
+      1006,
+      1037,
+      1023,
+      1022,
+      1090,
+      1060,
+      1008,
+      1034
+    ],
+    "refresh_role": [
+      1023,
+      1027,
+      1034,
+      1037,
+      1060,
+      1061,
+      1090,
+      1091
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73009
+    ]
+  },
+  {
+    "id": 1101,
+    "attribute_list": [
+      "Max_Hp",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11011,
+      11012,
+      11013,
+      11014
+    ],
+    "contain_role": [
+      1074,
+      1050,
+      1002,
+      1087,
+      1088,
+      1007,
+      1001,
+      1003,
+      1002,
+      1004
+    ],
+    "refresh_role": [
+      1048,
+      1050,
+      1054,
+      1087,
+      1088
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1102,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11021,
+      11022,
+      11023,
+      11024
+    ],
+    "contain_role": [
+      1076,
+      1063,
+      1003,
+      1006,
+      1099,
+      1022,
+      1023,
+      1056,
+      1044,
+      1014
+    ],
+    "refresh_role": [
+      1063,
+      1076,
+      1099,
+      1106
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73018,
+      73022
+    ]
+  },
+  {
+    "id": 1103,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11031,
+      11032,
+      11033,
+      11034
+    ],
+    "contain_role": [
+      1005,
+      1039,
+      1010,
+      1022,
+      1053,
+      1045,
+      1092,
+      1093,
+      1094,
+      1095
+    ],
+    "refresh_role": [
+      1023,
+      1072,
+      1075,
+      1092,
+      1093,
+      1094,
+      1095
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73005
+    ]
+  },
+  {
+    "id": 1104,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11041,
+      11042,
+      11043,
+      11044
+    ],
+    "contain_role": [
+      1023,
+      1075,
+      1006,
+      1024,
+      1105,
+      1040,
+      1029,
+      1003,
+      1022,
+      1031
+    ],
+    "refresh_role": [
+      1022,
+      1023,
+      1024,
+      1029,
+      1090,
+      1096,
+      1105
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73006
+    ]
+  },
+  {
+    "id": 1105,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11051,
+      11052,
+      11053,
+      11054
+    ],
+    "contain_role": [
+      1075,
+      1009,
+      1066,
+      1024,
+      1104,
+      1040,
+      1023,
+      1090,
+      1010,
+      1022
+    ],
+    "refresh_role": [
+      1090,
+      1104
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73006
+    ]
+  },
+  {
+    "id": 1106,
+    "attribute_list": [
+      "Attack",
+      "Magic_Def",
+      "Pierce_Resist"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11061,
+      11062,
+      11063,
+      11064
+    ],
+    "contain_role": [
+      1102,
+      1013,
+      1078,
+      1025,
+      1086,
+      1013,
+      1077,
+      1063,
+      1065,
+      1064
+    ],
+    "refresh_role": [
+      1013,
+      1086
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1107,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11071,
+      11072,
+      11073,
+      11074
+    ],
+    "contain_role": [
+      1090,
+      1006,
+      1001,
+      1008,
+      1097,
+      1090,
+      1002,
+      1003,
+      1004,
+      1001
+    ],
+    "refresh_role": [
+      1039
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  },
+  {
+    "id": 1108,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11081,
+      11082,
+      11083,
+      11084
+    ],
+    "contain_role": [
+      1009,
+      1083,
+      1006,
+      1028,
+      1030,
+      1029,
+      1028,
+      1057,
+      1001,
+      1004
+    ],
+    "refresh_role": [
+      1016,
+      1028,
+      1049,
+      1055,
+      1057,
+      1075,
+      1093,
+      1098
+    ],
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": [
+      73059,
+      73060
+    ]
+  },
+  {
+    "id": 1109,
+    "attribute_list": [
+      "Attack",
+      "Max_Hp"
+    ],
+    "quality_add_list": [
+      2,
+      5,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "bond": [
+      11091,
+      11092,
+      11093,
+      11094
+    ],
+    "contain_role": [
+      1090,
+      1006,
+      1001,
+      1008,
+      1097,
+      1090,
+      1002,
+      1003,
+      1004,
+      1001
+    ],
+    "refresh_role": null,
+    "combine_skill_list": null,
+    "combine_skill_participation_list": null,
+    "combine_state_list": null
+  }
+]

@@ -1,0 +1,783 @@
+[
+  {
+    "id": 70001,
+    "name": "LC_ROLE_Fetters_70001",
+    "type": 1,
+    "hero_id": 1001,
+    "hero_list": [
+      1005
+    ],
+    "skill_id": 70001
+  },
+  {
+    "id": 70002,
+    "name": "LC_ROLE_Fetters_70002",
+    "type": 1,
+    "hero_id": 1053,
+    "hero_list": [
+      1003
+    ],
+    "skill_id": 70002
+  },
+  {
+    "id": 70003,
+    "name": null,
+    "type": 1,
+    "hero_id": 1065,
+    "hero_list": [
+      1043
+    ],
+    "skill_id": 70003
+  },
+  {
+    "id": 70004,
+    "name": "LC_ROLE_Fetters_70004",
+    "type": 1,
+    "hero_id": 1066,
+    "hero_list": [
+      1067,
+      1068
+    ],
+    "skill_id": 70004
+  },
+  {
+    "id": 70005,
+    "name": "LC_ROLE_Fetters_70005",
+    "type": 1,
+    "hero_id": 1052,
+    "hero_list": [
+      1089
+    ],
+    "skill_id": 70005
+  },
+  {
+    "id": 70006,
+    "name": "LC_ROLE_Fetters_70006",
+    "type": 1,
+    "hero_id": 1051,
+    "hero_list": [
+      1006
+    ],
+    "skill_id": 70006
+  },
+  {
+    "id": 70008,
+    "name": "LC_ROLE_Fetters_70008",
+    "type": 1,
+    "hero_id": 1007,
+    "hero_list": [
+      1049,
+      1010
+    ],
+    "skill_id": 70008
+  },
+  {
+    "id": 70009,
+    "name": "LC_ROLE_Fetters_70009",
+    "type": 1,
+    "hero_id": 1083,
+    "hero_list": [
+      1084,
+      1085
+    ],
+    "skill_id": 70009
+  },
+  {
+    "id": 70010,
+    "name": "LC_ROLE_Fetters_70010",
+    "type": 1,
+    "hero_id": 1088,
+    "hero_list": [
+      1087
+    ],
+    "skill_id": 70010
+  },
+  {
+    "id": 70014,
+    "name": "LC_ROLE_Fetters_70014",
+    "type": 1,
+    "hero_id": 1076,
+    "hero_list": [
+      1077
+    ],
+    "skill_id": 70014
+  },
+  {
+    "id": 73016,
+    "name": "LC_ROLE_Fetters_73016",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1071,
+      1010
+    ],
+    "skill_id": 73016
+  },
+  {
+    "id": 73017,
+    "name": "LC_ROLE_Fetters_73017",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1077,
+      1089
+    ],
+    "skill_id": 73017
+  },
+  {
+    "id": 73018,
+    "name": "LC_ROLE_Fetters_73018",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1063,
+      1102
+    ],
+    "skill_id": 73018
+  },
+  {
+    "id": 73019,
+    "name": "LC_ROLE_Fetters_73019",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1060,
+      1008
+    ],
+    "skill_id": 73019
+  },
+  {
+    "id": 73020,
+    "name": "LC_ROLE_Fetters_73020",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1078,
+      1066
+    ],
+    "skill_id": 73020
+  },
+  {
+    "id": 73021,
+    "name": "LC_ROLE_Fetters_73021",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1077,
+      1063
+    ],
+    "skill_id": 73021
+  },
+  {
+    "id": 73022,
+    "name": "LC_ROLE_Fetters_73022",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1076,
+      1102
+    ],
+    "skill_id": 73022
+  },
+  {
+    "id": 73023,
+    "name": "LC_ROLE_Fetters_73023",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1078,
+      1076
+    ],
+    "skill_id": 73023
+  },
+  {
+    "id": 73024,
+    "name": "LC_ROLE_Fetters_73024",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1072,
+      1075
+    ],
+    "skill_id": 73024
+  },
+  {
+    "id": 73025,
+    "name": "LC_ROLE_Fetters_73025",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1010,
+      1051
+    ],
+    "skill_id": 73025
+  },
+  {
+    "id": 73026,
+    "name": "LC_ROLE_Fetters_73026",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1064,
+      1043
+    ],
+    "skill_id": 73026
+  },
+  {
+    "id": 73027,
+    "name": "LC_ROLE_Fetters_73027",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1061,
+      1089
+    ],
+    "skill_id": 73027
+  },
+  {
+    "id": 73028,
+    "name": "LC_ROLE_Fetters_73028",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1053,
+      1068,
+      1019
+    ],
+    "skill_id": 73028
+  },
+  {
+    "id": 73029,
+    "name": "LC_ROLE_Fetters_73029",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1021,
+      1009
+    ],
+    "skill_id": 73029
+  },
+  {
+    "id": 73044,
+    "name": "LC_ROLE_Fetters_73044",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1052,
+      1077
+    ],
+    "skill_id": 73044
+  },
+  {
+    "id": 73045,
+    "name": "LC_ROLE_Fetters_73045",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1067,
+      1089
+    ],
+    "skill_id": 73045
+  },
+  {
+    "id": 73046,
+    "name": "LC_ROLE_Fetters_73046",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1067,
+      1048
+    ],
+    "skill_id": 73046
+  },
+  {
+    "id": 73047,
+    "name": "LC_ROLE_Fetters_73047",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1013,
+      1020
+    ],
+    "skill_id": 73047
+  },
+  {
+    "id": 73048,
+    "name": "LC_ROLE_Fetters_73048",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1013,
+      1073
+    ],
+    "skill_id": 73048
+  },
+  {
+    "id": 73049,
+    "name": "LC_ROLE_Fetters_73049",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1013,
+      1066
+    ],
+    "skill_id": 73049
+  },
+  {
+    "id": 73050,
+    "name": "LC_ROLE_Fetters_73050",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1020,
+      1077
+    ],
+    "skill_id": 73050
+  },
+  {
+    "id": 73051,
+    "name": "LC_ROLE_Fetters_73051",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1087,
+      1048
+    ],
+    "skill_id": 73051
+  },
+  {
+    "id": 73052,
+    "name": "LC_ROLE_Fetters_73052",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1033,
+      1010
+    ],
+    "skill_id": 73052
+  },
+  {
+    "id": 73053,
+    "name": "LC_ROLE_Fetters_73053",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1088,
+      1054
+    ],
+    "skill_id": 73053
+  },
+  {
+    "id": 73054,
+    "name": "LC_ROLE_Fetters_73054",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1083,
+      1009
+    ],
+    "skill_id": 73054
+  },
+  {
+    "id": 73001,
+    "name": "LC_ROLE_Fetters_73001",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1001,
+      1002
+    ],
+    "skill_id": 73001
+  },
+  {
+    "id": 73002,
+    "name": "LC_ROLE_Fetters_73002",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1092,
+      1093,
+      1094,
+      1095,
+      1096
+    ],
+    "skill_id": 73002
+  },
+  {
+    "id": 73003,
+    "name": "LC_ROLE_Fetters_73003",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "skill_id": 73003
+  },
+  {
+    "id": 73004,
+    "name": "LC_ROLE_Fetters_73004",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1040,
+      1097,
+      1098
+    ],
+    "skill_id": 73004
+  },
+  {
+    "id": 73005,
+    "name": "LC_ROLE_Fetters_73005",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1096,
+      1005,
+      1103
+    ],
+    "skill_id": 73005
+  },
+  {
+    "id": 73006,
+    "name": "LC_ROLE_Fetters_73006",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1104,
+      1105
+    ],
+    "skill_id": 73006
+  },
+  {
+    "id": 73007,
+    "name": "LC_ROLE_Fetters_73007",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1023,
+      1022
+    ],
+    "skill_id": 73007
+  },
+  {
+    "id": 73008,
+    "name": "LC_ROLE_Fetters_73008",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1090,
+      1023
+    ],
+    "skill_id": 73008
+  },
+  {
+    "id": 73009,
+    "name": "LC_ROLE_Fetters_73009",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1100,
+      1091,
+      1037
+    ],
+    "skill_id": 73009
+  },
+  {
+    "id": 73010,
+    "name": "LC_ROLE_Fetters_73010",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1009,
+      1051
+    ],
+    "skill_id": 73010
+  },
+  {
+    "id": 73011,
+    "name": "LC_ROLE_Fetters_73011",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1066,
+      1051
+    ],
+    "skill_id": 73011
+  },
+  {
+    "id": 73012,
+    "name": "LC_ROLE_Fetters_73012",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1053,
+      1049
+    ],
+    "skill_id": 73012
+  },
+  {
+    "id": 73013,
+    "name": "LC_ROLE_Fetters_73013",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1054,
+      1048
+    ],
+    "skill_id": 73013
+  },
+  {
+    "id": 73014,
+    "name": "LC_ROLE_Fetters_73014",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1007,
+      1008
+    ],
+    "skill_id": 73014
+  },
+  {
+    "id": 73015,
+    "name": "LC_ROLE_Fetters_73015",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1072,
+      1009
+    ],
+    "skill_id": 73015
+  },
+  {
+    "id": 73030,
+    "name": "LC_ROLE_Fetters_73030",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1021,
+      1017,
+      1020
+    ],
+    "skill_id": 73030
+  },
+  {
+    "id": 73031,
+    "name": "LC_ROLE_Fetters_73031",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1070,
+      1069,
+      1066,
+      1067,
+      1068
+    ],
+    "skill_id": 73031
+  },
+  {
+    "id": 73032,
+    "name": "LC_ROLE_Fetters_73032",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1070,
+      1069
+    ],
+    "skill_id": 73032
+  },
+  {
+    "id": 73033,
+    "name": "LC_ROLE_Fetters_73033",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1076,
+      1075
+    ],
+    "skill_id": 73033
+  },
+  {
+    "id": 73034,
+    "name": "LC_ROLE_Fetters_73034",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1069,
+      1071
+    ],
+    "skill_id": 73034
+  },
+  {
+    "id": 73035,
+    "name": "LC_ROLE_Fetters_73035",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1070,
+      1010
+    ],
+    "skill_id": 73035
+  },
+  {
+    "id": 73036,
+    "name": "LC_ROLE_Fetters_73036",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1021,
+      1049
+    ],
+    "skill_id": 73036
+  },
+  {
+    "id": 73037,
+    "name": "LC_ROLE_Fetters_73037",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1021,
+      1073
+    ],
+    "skill_id": 73037
+  },
+  {
+    "id": 73038,
+    "name": "LC_ROLE_Fetters_73038",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1089,
+      1017
+    ],
+    "skill_id": 73038
+  },
+  {
+    "id": 73039,
+    "name": "LC_ROLE_Fetters_73039",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1078,
+      1062
+    ],
+    "skill_id": 73039
+  },
+  {
+    "id": 73040,
+    "name": "LC_ROLE_Fetters_73040",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1062,
+      1076
+    ],
+    "skill_id": 73040
+  },
+  {
+    "id": 73042,
+    "name": "LC_ROLE_Fetters_73042",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1014,
+      1073
+    ],
+    "skill_id": 73042
+  },
+  {
+    "id": 73043,
+    "name": "LC_ROLE_Fetters_73043",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1006,
+      1073
+    ],
+    "skill_id": 73043
+  },
+  {
+    "id": 73055,
+    "name": "LC_ROLE_Fetters_73055",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1085,
+      1053
+    ],
+    "skill_id": 73055
+  },
+  {
+    "id": 73056,
+    "name": "LC_ROLE_Fetters_73056",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1036,
+      1083
+    ],
+    "skill_id": 73056
+  },
+  {
+    "id": 73057,
+    "name": "LC_ROLE_Fetters_73057",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1084,
+      1052
+    ],
+    "skill_id": 73057
+  },
+  {
+    "id": 73058,
+    "name": "LC_ROLE_Fetters_73058",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1084,
+      1083,
+      1085,
+      1088,
+      1087
+    ],
+    "skill_id": 73058
+  },
+  {
+    "id": 73059,
+    "name": "LC_ROLE_Fetters_73059",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1108,
+      1021
+    ],
+    "skill_id": 73059
+  },
+  {
+    "id": 73060,
+    "name": "LC_ROLE_Fetters_73060",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1108,
+      1057
+    ],
+    "skill_id": 73060
+  },
+  {
+    "id": 73061,
+    "name": "LC_ROLE_Fetters_73061",
+    "type": 2,
+    "hero_id": -1,
+    "hero_list": [
+      1056,
+      1026,
+      1027
+    ],
+    "skill_id": 73061
+  }
+]

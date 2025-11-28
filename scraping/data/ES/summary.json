@@ -1,0 +1,23 @@
+{
+  "tables": {
+    "RoleConfig": 1291,
+    "RoleResourcesConfig": 324,
+    "HeroTypeDescConfig": 16,
+    "HeroConfig": 109,
+    "HeroQualitySkillConfig": 233,
+    "HeroAwakenConfig": 109,
+    "HeroAwakenInfoConfig": 763,
+    "HeroRelationConfig": 109,
+    "HeroFettersConfig": 436,
+    "HeroRelationSkillConfig": 70,
+    "SkillConfig": 2487,
+    "SkillLabelConfig": 119,
+    "SkillValueConfig": 9494,
+    "ArtifactConfig": 42,
+    "ArtifactResourcesConfig": 61,
+    "ForceCardItemConfig": 165,
+    "LanguagePackage_ES": 54406
+  },
+  "image_url_count": 6752,
+  "assets_downloaded": false
+}

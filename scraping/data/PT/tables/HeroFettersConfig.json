@@ -1,0 +1,9376 @@
+[
+  {
+    "id": 10011,
+    "name": "LC_ROLE_Fetters_10011",
+    "condition": [
+      1022
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10082,
+    "name": "LC_ROLE_Fetters_10082",
+    "condition": [
+      1007,
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10012,
+    "name": "LC_ROLE_Fetters_10012",
+    "condition": [
+      1006,
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10013,
+    "name": "LC_ROLE_Fetters_10013",
+    "condition": [
+      1008,
+      1051,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10014,
+    "name": "LC_ROLE_Fetters_10014",
+    "condition": [
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10033,
+    "name": "LC_ROLE_Fetters_10033",
+    "condition": [
+      1091,
+      1063,
+      1030
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10034,
+    "name": "LC_ROLE_Fetters_10034",
+    "condition": [
+      1001,
+      1002,
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10041,
+    "name": "LC_ROLE_Fetters_10041",
+    "condition": [
+      1044
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10042,
+    "name": "LC_ROLE_Fetters_10042",
+    "condition": [
+      1025,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10043,
+    "name": "LC_ROLE_Fetters_10043",
+    "condition": [
+      1054,
+      1064,
+      1047
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10044,
+    "name": "LC_ROLE_Fetters_10044",
+    "condition": [
+      1001,
+      1002,
+      1003,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10051,
+    "name": "LC_ROLE_Fetters_10051",
+    "condition": [
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10052,
+    "name": "LC_ROLE_Fetters_10052",
+    "condition": [
+      1021,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10053,
+    "name": "LC_ROLE_Fetters_10053",
+    "condition": [
+      1064,
+      1043,
+      1029
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10054,
+    "name": "LC_ROLE_Fetters_10054",
+    "condition": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10061,
+    "name": "LC_ROLE_Fetters_10061",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10062,
+    "name": "LC_ROLE_Fetters_10062",
+    "condition": [
+      1025,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10063,
+    "name": "LC_ROLE_Fetters_10063",
+    "condition": [
+      1009,
+      1051,
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10064,
+    "name": "LC_ROLE_Fetters_10064",
+    "condition": [
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10071,
+    "name": "LC_ROLE_Fetters_10071",
+    "condition": [
+      1008
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10072,
+    "name": "LC_ROLE_Fetters_10072",
+    "condition": [
+      1074,
+      1099
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10073,
+    "name": "LC_ROLE_Fetters_10073",
+    "condition": [
+      1010,
+      1049,
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10074,
+    "name": "LC_ROLE_Fetters_10074",
+    "condition": [
+      1059,
+      1083,
+      1084,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10081,
+    "name": "LC_ROLE_Fetters_10081",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10021,
+    "name": "LC_ROLE_Fetters_10021",
+    "condition": [
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10022,
+    "name": "LC_ROLE_Fetters_10022",
+    "condition": [
+      1007,
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10023,
+    "name": "LC_ROLE_Fetters_10023",
+    "condition": [
+      1024,
+      1048,
+      1061
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10024,
+    "name": "LC_ROLE_Fetters_10024",
+    "condition": [
+      1001,
+      1003,
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10031,
+    "name": "LC_ROLE_Fetters_10031",
+    "condition": [
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10032,
+    "name": "LC_ROLE_Fetters_10032",
+    "condition": [
+      1019,
+      1049
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10083,
+    "name": "LC_ROLE_Fetters_10083",
+    "condition": [
+      1049,
+      1052,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10084,
+    "name": "LC_ROLE_Fetters_10084",
+    "condition": [
+      1032,
+      1065,
+      1087,
+      1088
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10091,
+    "name": "LC_ROLE_Fetters_10091",
+    "condition": [
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10092,
+    "name": "LC_ROLE_Fetters_10092",
+    "condition": [
+      1074,
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10093,
+    "name": "LC_ROLE_Fetters_10093",
+    "condition": [
+      1071,
+      1049,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10094,
+    "name": "LC_ROLE_Fetters_10094",
+    "condition": [
+      1048,
+      1054,
+      1024,
+      1040
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10101,
+    "name": "LC_ROLE_Fetters_10101",
+    "condition": [
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10102,
+    "name": "LC_ROLE_Fetters_10102",
+    "condition": [
+      1007,
+      1049
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10103,
+    "name": "LC_ROLE_Fetters_10103",
+    "condition": [
+      1001,
+      1023,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10104,
+    "name": "LC_ROLE_Fetters_10104",
+    "condition": [
+      1009,
+      1071,
+      1090,
+      1033
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10111,
+    "name": "LC_ROLE_Fetters_10111",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10112,
+    "name": "LC_ROLE_Fetters_10112",
+    "condition": [
+      1012,
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10113,
+    "name": "LC_ROLE_Fetters_10113",
+    "condition": [
+      1001,
+      1066,
+      1092
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10114,
+    "name": "LC_ROLE_Fetters_10114",
+    "condition": [
+      1081,
+      1082,
+      1080,
+      1012
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10121,
+    "name": "LC_ROLE_Fetters_10121",
+    "condition": [
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10122,
+    "name": "LC_ROLE_Fetters_10122",
+    "condition": [
+      1011,
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10123,
+    "name": "LC_ROLE_Fetters_10123",
+    "condition": [
+      1005,
+      1070,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10124,
+    "name": "LC_ROLE_Fetters_10124",
+    "condition": [
+      1081,
+      1082,
+      1011,
+      1080
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10131,
+    "name": "LC_ROLE_Fetters_10131",
+    "condition": [
+      1073
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10132,
+    "name": "LC_ROLE_Fetters_10132",
+    "condition": [
+      1106,
+      1078
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10133,
+    "name": "LC_ROLE_Fetters_10133",
+    "condition": [
+      1025,
+      1086,
+      1106
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10134,
+    "name": "LC_ROLE_Fetters_10134",
+    "condition": [
+      1002,
+      1003,
+      1004,
+      1066
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10141,
+    "name": "LC_ROLE_Fetters_10141",
+    "condition": [
+      1073
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10142,
+    "name": "LC_ROLE_Fetters_10142",
+    "condition": [
+      1020,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10143,
+    "name": "LC_ROLE_Fetters_10143",
+    "condition": [
+      1021,
+      1099,
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10144,
+    "name": "LC_ROLE_Fetters_10144",
+    "condition": [
+      1044,
+      1022,
+      1006,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10151,
+    "name": "LC_ROLE_Fetters_10151",
+    "condition": [
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10152,
+    "name": "LC_ROLE_Fetters_10152",
+    "condition": [
+      1017,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10153,
+    "name": "LC_ROLE_Fetters_10153",
+    "condition": [
+      1016,
+      1018,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10154,
+    "name": "LC_ROLE_Fetters_10154",
+    "condition": [
+      1001,
+      1037,
+      1063,
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10161,
+    "name": "LC_ROLE_Fetters_10161",
+    "condition": [
+      1032
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10162,
+    "name": "LC_ROLE_Fetters_10162",
+    "condition": [
+      1040,
+      1044
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10163,
+    "name": "LC_ROLE_Fetters_10163",
+    "condition": [
+      1098,
+      1075,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10164,
+    "name": "LC_ROLE_Fetters_10164",
+    "condition": [
+      1015,
+      1019,
+      1018,
+      1017
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10171,
+    "name": "LC_ROLE_Fetters_10171",
+    "condition": [
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10172,
+    "name": "LC_ROLE_Fetters_10172",
+    "condition": [
+      1052,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10173,
+    "name": "LC_ROLE_Fetters_10173",
+    "condition": [
+      1050,
+      1001,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10174,
+    "name": "LC_ROLE_Fetters_10174",
+    "condition": [
+      1015,
+      1016,
+      1019,
+      1018
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10181,
+    "name": "LC_ROLE_Fetters_10181",
+    "condition": [
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10182,
+    "name": "LC_ROLE_Fetters_10182",
+    "condition": [
+      1020,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10183,
+    "name": "LC_ROLE_Fetters_10183",
+    "condition": [
+      1024,
+      1091,
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10184,
+    "name": "LC_ROLE_Fetters_10184",
+    "condition": [
+      1015,
+      1019,
+      1016,
+      1017
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10191,
+    "name": "LC_ROLE_Fetters_10191",
+    "condition": [
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10192,
+    "name": "LC_ROLE_Fetters_10192",
+    "condition": [
+      1053,
+      1039
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10193,
+    "name": "LC_ROLE_Fetters_10193",
+    "condition": [
+      1013,
+      1014,
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10194,
+    "name": "LC_ROLE_Fetters_10194",
+    "condition": [
+      1020,
+      1018,
+      1097,
+      1015
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10201,
+    "name": "LC_ROLE_Fetters_10201",
+    "condition": [
+      1073
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10202,
+    "name": "LC_ROLE_Fetters_10202",
+    "condition": [
+      1013,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10203,
+    "name": "LC_ROLE_Fetters_10203",
+    "condition": [
+      1021,
+      1005,
+      1077
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10204,
+    "name": "LC_ROLE_Fetters_10204",
+    "condition": [
+      1055,
+      1064,
+      1058,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10211,
+    "name": "LC_ROLE_Fetters_10211",
+    "condition": [
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10212,
+    "name": "LC_ROLE_Fetters_10212",
+    "condition": [
+      1005,
+      1028
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10213,
+    "name": "LC_ROLE_Fetters_10213",
+    "condition": [
+      1049,
+      1020,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10214,
+    "name": "LC_ROLE_Fetters_10214",
+    "condition": [
+      1090,
+      1004,
+      1065,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10221,
+    "name": "LC_ROLE_Fetters_10221",
+    "condition": [
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10222,
+    "name": "LC_ROLE_Fetters_10222",
+    "condition": [
+      1023,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10223,
+    "name": "LC_ROLE_Fetters_10223",
+    "condition": [
+      1040,
+      1097,
+      1098
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10224,
+    "name": "LC_ROLE_Fetters_10224",
+    "condition": [
+      1029,
+      1003,
+      1104,
+      1031
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10231,
+    "name": "LC_ROLE_Fetters_10231",
+    "condition": [
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10232,
+    "name": "LC_ROLE_Fetters_10232",
+    "condition": [
+      1006,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10233,
+    "name": "LC_ROLE_Fetters_10233",
+    "condition": [
+      1010,
+      1024,
+      1104
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10234,
+    "name": "LC_ROLE_Fetters_10234",
+    "condition": [
+      1039,
+      1100,
+      1053,
+      1103
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10241,
+    "name": "LC_ROLE_Fetters_10241",
+    "condition": [
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10242,
+    "name": "LC_ROLE_Fetters_10242",
+    "condition": [
+      1045,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10243,
+    "name": "LC_ROLE_Fetters_10243",
+    "condition": [
+      1023,
+      1104,
+      1040
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10244,
+    "name": "LC_ROLE_Fetters_10244",
+    "condition": [
+      1091,
+      1095,
+      1018,
+      1060
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10251,
+    "name": "LC_ROLE_Fetters_10251",
+    "condition": [
+      1079
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10252,
+    "name": "LC_ROLE_Fetters_10252",
+    "condition": [
+      1026,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10253,
+    "name": "LC_ROLE_Fetters_10253",
+    "condition": [
+      1086,
+      1013,
+      1011
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10254,
+    "name": "LC_ROLE_Fetters_10254",
+    "condition": [
+      1028,
+      1029,
+      1030,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10261,
+    "name": "LC_ROLE_Fetters_10261",
+    "condition": [
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10262,
+    "name": "LC_ROLE_Fetters_10262",
+    "condition": [
+      1056,
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10263,
+    "name": "LC_ROLE_Fetters_10263",
+    "condition": [
+      1081,
+      1080,
+      1082
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10264,
+    "name": "LC_ROLE_Fetters_10264",
+    "condition": [
+      1054,
+      1055,
+      1016,
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10271,
+    "name": "LC_ROLE_Fetters_10271",
+    "condition": [
+      1026
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10272,
+    "name": "LC_ROLE_Fetters_10272",
+    "condition": [
+      1011,
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10273,
+    "name": "LC_ROLE_Fetters_10273",
+    "condition": [
+      1037,
+      1023,
+      1100
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10274,
+    "name": "LC_ROLE_Fetters_10274",
+    "condition": [
+      1048,
+      1071,
+      1057,
+      1047
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10281,
+    "name": "LC_ROLE_Fetters_10281",
+    "condition": [
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10282,
+    "name": "LC_ROLE_Fetters_10282",
+    "condition": [
+      1029,
+      1030
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10283,
+    "name": "LC_ROLE_Fetters_10283",
+    "condition": [
+      1007,
+      1049,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10284,
+    "name": "LC_ROLE_Fetters_10284",
+    "condition": [
+      1031,
+      1042,
+      1038,
+      1041
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10291,
+    "name": "LC_ROLE_Fetters_10291",
+    "condition": [
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10292,
+    "name": "LC_ROLE_Fetters_10292",
+    "condition": [
+      1028,
+      1030
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10293,
+    "name": "LC_ROLE_Fetters_10293",
+    "condition": [
+      1022,
+      1003,
+      1104
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10294,
+    "name": "LC_ROLE_Fetters_10294",
+    "condition": [
+      1058,
+      1042,
+      1038,
+      1041
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10301,
+    "name": "LC_ROLE_Fetters_10301",
+    "condition": [
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10302,
+    "name": "LC_ROLE_Fetters_10302",
+    "condition": [
+      1028,
+      1029
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10303,
+    "name": "LC_ROLE_Fetters_10303",
+    "condition": [
+      1079,
+      1057,
+      1047
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10304,
+    "name": "LC_ROLE_Fetters_10304",
+    "condition": [
+      1041,
+      1042,
+      1038,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10311,
+    "name": "LC_ROLE_Fetters_10311",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10312,
+    "name": "LC_ROLE_Fetters_10312",
+    "condition": [
+      1042,
+      1028
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10313,
+    "name": "LC_ROLE_Fetters_10313",
+    "condition": [
+      1007,
+      1010,
+      1049
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10314,
+    "name": "LC_ROLE_Fetters_10314",
+    "condition": [
+      1059,
+      1046,
+      1058,
+      1042
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10321,
+    "name": "LC_ROLE_Fetters_10321",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10322,
+    "name": "LC_ROLE_Fetters_10322",
+    "condition": [
+      1008,
+      1007
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10323,
+    "name": "LC_ROLE_Fetters_10323",
+    "condition": [
+      1054,
+      1043,
+      1016
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10324,
+    "name": "LC_ROLE_Fetters_10324",
+    "condition": [
+      1028,
+      1059,
+      1036,
+      1033
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10331,
+    "name": "LC_ROLE_Fetters_10331",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10332,
+    "name": "LC_ROLE_Fetters_10332",
+    "condition": [
+      1034,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10333,
+    "name": "LC_ROLE_Fetters_10333",
+    "condition": [
+      1034,
+      1035,
+      1036
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10334,
+    "name": "LC_ROLE_Fetters_10334",
+    "condition": [
+      1033,
+      1035,
+      1036,
+      1047
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10341,
+    "name": "LC_ROLE_Fetters_10341",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10342,
+    "name": "LC_ROLE_Fetters_10342",
+    "condition": [
+      1033,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10343,
+    "name": "LC_ROLE_Fetters_10343",
+    "condition": [
+      1083,
+      1084,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10344,
+    "name": "LC_ROLE_Fetters_10344",
+    "condition": [
+      1090,
+      1008,
+      1100,
+      1060
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10351,
+    "name": "LC_ROLE_Fetters_10351",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10372,
+    "name": "LC_ROLE_Fetters_10372",
+    "condition": [
+      1100,
+      1091
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10352,
+    "name": "LC_ROLE_Fetters_10352",
+    "condition": [
+      1003,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10353,
+    "name": "LC_ROLE_Fetters_10353",
+    "condition": [
+      1083,
+      1084,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10354,
+    "name": "LC_ROLE_Fetters_10354",
+    "condition": [
+      1033,
+      1047,
+      1036,
+      1032
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10361,
+    "name": "LC_ROLE_Fetters_10361",
+    "condition": [
+      1083
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10362,
+    "name": "LC_ROLE_Fetters_10362",
+    "condition": [
+      2000,
+      2000
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10363,
+    "name": "LC_ROLE_Fetters_10363",
+    "condition": [
+      1034,
+      2000,
+      2000
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10364,
+    "name": "LC_ROLE_Fetters_10364",
+    "condition": [
+      1028,
+      1032,
+      1059,
+      1033
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10371,
+    "name": "LC_ROLE_Fetters_10371",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10373,
+    "name": "LC_ROLE_Fetters_10373",
+    "condition": [
+      1051,
+      1063,
+      1015
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10374,
+    "name": "LC_ROLE_Fetters_10374",
+    "condition": [
+      1004,
+      1005,
+      1003,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10381,
+    "name": "LC_ROLE_Fetters_10381",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10382,
+    "name": "LC_ROLE_Fetters_10382",
+    "condition": [
+      1041,
+      1042
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10383,
+    "name": "LC_ROLE_Fetters_10383",
+    "condition": [
+      1041,
+      1042,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10384,
+    "name": "LC_ROLE_Fetters_10384",
+    "condition": [
+      1031,
+      1042,
+      1041,
+      1028
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10391,
+    "name": "LC_ROLE_Fetters_10391",
+    "condition": [
+      1107
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10392,
+    "name": "LC_ROLE_Fetters_10392",
+    "condition": [
+      1075,
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10393,
+    "name": "LC_ROLE_Fetters_10393",
+    "condition": [
+      1003,
+      1053,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10394,
+    "name": "LC_ROLE_Fetters_10394",
+    "condition": [
+      1055,
+      1045,
+      1040,
+      1024
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10401,
+    "name": "LC_ROLE_Fetters_10401",
+    "condition": [
+      1015
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10402,
+    "name": "LC_ROLE_Fetters_10402",
+    "condition": [
+      1097,
+      1098
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10403,
+    "name": "LC_ROLE_Fetters_10403",
+    "condition": [
+      1022,
+      1001,
+      1099
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10404,
+    "name": "LC_ROLE_Fetters_10404",
+    "condition": [
+      1044,
+      1004,
+      1054,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10411,
+    "name": "LC_ROLE_Fetters_10411",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10412,
+    "name": "LC_ROLE_Fetters_10412",
+    "condition": [
+      1042,
+      1038
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10413,
+    "name": "LC_ROLE_Fetters_10413",
+    "condition": [
+      1041,
+      1042,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10414,
+    "name": "LC_ROLE_Fetters_10414",
+    "condition": [
+      1031,
+      1042,
+      1038,
+      1028
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10421,
+    "name": "LC_ROLE_Fetters_10421",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10422,
+    "name": "LC_ROLE_Fetters_10422",
+    "condition": [
+      1041,
+      1038
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10423,
+    "name": "LC_ROLE_Fetters_10423",
+    "condition": [
+      1046,
+      1058,
+      1057
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10424,
+    "name": "LC_ROLE_Fetters_10424",
+    "condition": [
+      1059,
+      1031,
+      1058,
+      1046
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10431,
+    "name": "LC_ROLE_Fetters_10431",
+    "condition": [
+      1065
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10432,
+    "name": "LC_ROLE_Fetters_10432",
+    "condition": [
+      1076,
+      1062
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10433,
+    "name": "LC_ROLE_Fetters_10433",
+    "condition": [
+      1054,
+      1032,
+      1016
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10434,
+    "name": "LC_ROLE_Fetters_10434",
+    "condition": [
+      1005,
+      1004,
+      1009,
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10441,
+    "name": "LC_ROLE_Fetters_10441",
+    "condition": [
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10442,
+    "name": "LC_ROLE_Fetters_10442",
+    "condition": [
+      1095,
+      1057
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10443,
+    "name": "LC_ROLE_Fetters_10443",
+    "condition": [
+      1049,
+      1054,
+      1045
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10444,
+    "name": "LC_ROLE_Fetters_10444",
+    "condition": [
+      1022,
+      1056,
+      1023,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10451,
+    "name": "LC_ROLE_Fetters_10451",
+    "condition": [
+      1074
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10452,
+    "name": "LC_ROLE_Fetters_10452",
+    "condition": [
+      1044,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10453,
+    "name": "LC_ROLE_Fetters_10453",
+    "condition": [
+      1049,
+      1054,
+      1044
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10454,
+    "name": "LC_ROLE_Fetters_10454",
+    "condition": [
+      1055,
+      1045,
+      1040,
+      1024
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10461,
+    "name": "LC_ROLE_Fetters_10461",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10462,
+    "name": "LC_ROLE_Fetters_10462",
+    "condition": [
+      1003,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10463,
+    "name": "LC_ROLE_Fetters_10463",
+    "condition": [
+      1042,
+      1058,
+      1057
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10464,
+    "name": "LC_ROLE_Fetters_10464",
+    "condition": [
+      1059,
+      1031,
+      1058,
+      1042
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10471,
+    "name": "LC_ROLE_Fetters_10471",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10472,
+    "name": "LC_ROLE_Fetters_10472",
+    "condition": [
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10473,
+    "name": "LC_ROLE_Fetters_10473",
+    "condition": [
+      1035,
+      1058,
+      1032
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10474,
+    "name": "LC_ROLE_Fetters_10474",
+    "condition": [
+      1033,
+      1035,
+      1036,
+      1032
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10481,
+    "name": "LC_ROLE_Fetters_10481",
+    "condition": [
+      1054
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10482,
+    "name": "LC_ROLE_Fetters_10482",
+    "condition": [
+      1050,
+      1089
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10483,
+    "name": "LC_ROLE_Fetters_10483",
+    "condition": [
+      1008,
+      1053,
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10484,
+    "name": "LC_ROLE_Fetters_10484",
+    "condition": [
+      1025,
+      1028,
+      1055,
+      1101
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10491,
+    "name": "LC_ROLE_Fetters_10491",
+    "condition": [
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10492,
+    "name": "LC_ROLE_Fetters_10492",
+    "condition": [
+      1003,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10493,
+    "name": "LC_ROLE_Fetters_10493",
+    "condition": [
+      1083,
+      1085,
+      1084
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10494,
+    "name": "LC_ROLE_Fetters_10494",
+    "condition": [
+      1007,
+      1008,
+      1010,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10501,
+    "name": "LC_ROLE_Fetters_10501",
+    "condition": [
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10502,
+    "name": "LC_ROLE_Fetters_10502",
+    "condition": [
+      1074,
+      1101
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10503,
+    "name": "LC_ROLE_Fetters_10503",
+    "condition": [
+      1002,
+      1089,
+      1067
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10504,
+    "name": "LC_ROLE_Fetters_10504",
+    "condition": [
+      1007,
+      1008,
+      1010,
+      1049
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10511,
+    "name": "LC_ROLE_Fetters_10511",
+    "condition": [
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10512,
+    "name": "LC_ROLE_Fetters_10512",
+    "condition": [
+      1010,
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10513,
+    "name": "LC_ROLE_Fetters_10513",
+    "condition": [
+      1077,
+      1028,
+      1039
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10514,
+    "name": "LC_ROLE_Fetters_10514",
+    "condition": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10521,
+    "name": "LC_ROLE_Fetters_10521",
+    "condition": [
+      1089
+    ],
+    "active_skill": 70005,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10522,
+    "name": "LC_ROLE_Fetters_10522",
+    "condition": [
+      1017,
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10523,
+    "name": "LC_ROLE_Fetters_10523",
+    "condition": [
+      1054,
+      1053,
+      1048
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10524,
+    "name": "LC_ROLE_Fetters_10524",
+    "condition": [
+      1072,
+      1051,
+      1006,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10531,
+    "name": "LC_ROLE_Fetters_10531",
+    "condition": [
+      1068
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10532,
+    "name": "LC_ROLE_Fetters_10532",
+    "condition": [
+      1049,
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10533,
+    "name": "LC_ROLE_Fetters_10533",
+    "condition": [
+      1039,
+      1003,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10534,
+    "name": "LC_ROLE_Fetters_10534",
+    "condition": [
+      1054,
+      1048,
+      1072,
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10541,
+    "name": "LC_ROLE_Fetters_10541",
+    "condition": [
+      1048
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10542,
+    "name": "LC_ROLE_Fetters_10542",
+    "condition": [
+      1075,
+      1101
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10543,
+    "name": "LC_ROLE_Fetters_10543",
+    "condition": [
+      1071,
+      1049,
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10544,
+    "name": "LC_ROLE_Fetters_10544",
+    "condition": [
+      1044,
+      1004,
+      1056,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10551,
+    "name": "LC_ROLE_Fetters_10551",
+    "condition": [
+      1058
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10552,
+    "name": "LC_ROLE_Fetters_10552",
+    "condition": [
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10553,
+    "name": "LC_ROLE_Fetters_10553",
+    "condition": [
+      1050,
+      1071,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10554,
+    "name": "LC_ROLE_Fetters_10554",
+    "condition": [
+      1056,
+      1020,
+      1058,
+      1064
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10561,
+    "name": "LC_ROLE_Fetters_10561",
+    "condition": [
+      1079
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10562,
+    "name": "LC_ROLE_Fetters_10562",
+    "condition": [
+      1026,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10563,
+    "name": "LC_ROLE_Fetters_10563",
+    "condition": [
+      1083,
+      1084,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10564,
+    "name": "LC_ROLE_Fetters_10564",
+    "condition": [
+      1055,
+      1020,
+      1058,
+      1064
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10571,
+    "name": "LC_ROLE_Fetters_10571",
+    "condition": [
+      1030
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10572,
+    "name": "LC_ROLE_Fetters_10572",
+    "condition": [
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10573,
+    "name": "LC_ROLE_Fetters_10573",
+    "condition": [
+      1046,
+      1058,
+      1042
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10574,
+    "name": "LC_ROLE_Fetters_10574",
+    "condition": [
+      1001,
+      1004,
+      1108,
+      1028
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10581,
+    "name": "LC_ROLE_Fetters_10581",
+    "condition": [
+      1055
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10582,
+    "name": "LC_ROLE_Fetters_10582",
+    "condition": [
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10583,
+    "name": "LC_ROLE_Fetters_10583",
+    "condition": [
+      1046,
+      1057,
+      1042
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10584,
+    "name": "LC_ROLE_Fetters_10584",
+    "condition": [
+      1056,
+      1020,
+      1055,
+      1064
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10591,
+    "name": "LC_ROLE_Fetters_10591",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10592,
+    "name": "LC_ROLE_Fetters_10592",
+    "condition": [
+      1001,
+      1007
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10593,
+    "name": "LC_ROLE_Fetters_10593",
+    "condition": [
+      1083,
+      1084,
+      1085
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10594,
+    "name": "LC_ROLE_Fetters_10594",
+    "condition": [
+      1028,
+      1032,
+      1036,
+      1033
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10601,
+    "name": "LC_ROLE_Fetters_10601",
+    "condition": [
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10602,
+    "name": "LC_ROLE_Fetters_10602",
+    "condition": [
+      1050,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10603,
+    "name": "LC_ROLE_Fetters_10603",
+    "condition": [
+      1077,
+      1063,
+      1065
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10604,
+    "name": "LC_ROLE_Fetters_10604",
+    "condition": [
+      1090,
+      1008,
+      1100,
+      1034
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10611,
+    "name": "LC_ROLE_Fetters_10611",
+    "condition": [
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10612,
+    "name": "LC_ROLE_Fetters_10612",
+    "condition": [
+      1100,
+      1058
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10613,
+    "name": "LC_ROLE_Fetters_10613",
+    "condition": [
+      1091,
+      1023,
+      1065
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10614,
+    "name": "LC_ROLE_Fetters_10614",
+    "condition": [
+      1060,
+      1063,
+      1064,
+      1062
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10621,
+    "name": "LC_ROLE_Fetters_10621",
+    "condition": [
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10622,
+    "name": "LC_ROLE_Fetters_10622",
+    "condition": [
+      1002,
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10623,
+    "name": "LC_ROLE_Fetters_10623",
+    "condition": [
+      1077,
+      1063,
+      1043
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10624,
+    "name": "LC_ROLE_Fetters_10624",
+    "condition": [
+      1075,
+      1007,
+      1020,
+      1026
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10631,
+    "name": "LC_ROLE_Fetters_10631",
+    "condition": [
+      1077
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10652,
+    "name": "LC_ROLE_Fetters_10652",
+    "condition": [
+      1037,
+      1008
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10632,
+    "name": "LC_ROLE_Fetters_10632",
+    "condition": [
+      1102,
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10633,
+    "name": "LC_ROLE_Fetters_10633",
+    "condition": [
+      1001,
+      1015,
+      1037
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10634,
+    "name": "LC_ROLE_Fetters_10634",
+    "condition": [
+      1060,
+      1061,
+      1064,
+      1062
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10641,
+    "name": "LC_ROLE_Fetters_10641",
+    "condition": [
+      1043
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10642,
+    "name": "LC_ROLE_Fetters_10642",
+    "condition": [
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10643,
+    "name": "LC_ROLE_Fetters_10643",
+    "condition": [
+      1065,
+      1063,
+      1060
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10644,
+    "name": "LC_ROLE_Fetters_10644",
+    "condition": [
+      1055,
+      1020,
+      1058,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10651,
+    "name": "LC_ROLE_Fetters_10651",
+    "condition": [
+      1043
+    ],
+    "active_skill": 70003,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10653,
+    "name": "LC_ROLE_Fetters_10653",
+    "condition": [
+      1063,
+      1060,
+      1064
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10654,
+    "name": "LC_ROLE_Fetters_10654",
+    "condition": [
+      1005,
+      1004,
+      1009,
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10661,
+    "name": "LC_ROLE_Fetters_10661",
+    "condition": [
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10662,
+    "name": "LC_ROLE_Fetters_10662",
+    "condition": [
+      1013,
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10663,
+    "name": "LC_ROLE_Fetters_10663",
+    "condition": [
+      1005,
+      1010,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10664,
+    "name": "LC_ROLE_Fetters_10664",
+    "condition": [
+      1067,
+      1068,
+      1070,
+      1069
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10671,
+    "name": "LC_ROLE_Fetters_10671",
+    "condition": [
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10672,
+    "name": "LC_ROLE_Fetters_10672",
+    "condition": [
+      1013,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10673,
+    "name": "LC_ROLE_Fetters_10673",
+    "condition": [
+      1078,
+      1025,
+      1062
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10674,
+    "name": "LC_ROLE_Fetters_10674",
+    "condition": [
+      1066,
+      1068,
+      1070,
+      1069
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10681,
+    "name": "LC_ROLE_Fetters_10681",
+    "condition": [
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10682,
+    "name": "LC_ROLE_Fetters_10682",
+    "condition": [
+      1013,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10683,
+    "name": "LC_ROLE_Fetters_10683",
+    "condition": [
+      1063,
+      1039,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10684,
+    "name": "LC_ROLE_Fetters_10684",
+    "condition": [
+      1066,
+      1067,
+      1070,
+      1069
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10691,
+    "name": "LC_ROLE_Fetters_10691",
+    "condition": [
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10692,
+    "name": "LC_ROLE_Fetters_10692",
+    "condition": [
+      1026,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10693,
+    "name": "LC_ROLE_Fetters_10693",
+    "condition": [
+      1079,
+      1004,
+      1056
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10694,
+    "name": "LC_ROLE_Fetters_10694",
+    "condition": [
+      1066,
+      1067,
+      1070,
+      1068
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10701,
+    "name": "LC_ROLE_Fetters_10701",
+    "condition": [
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10702,
+    "name": "LC_ROLE_Fetters_10702",
+    "condition": [
+      1026,
+      1027
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10703,
+    "name": "LC_ROLE_Fetters_10703",
+    "condition": [
+      1005,
+      1012,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10743,
+    "name": "LC_ROLE_Fetters_10743",
+    "condition": [
+      1072,
+      1051,
+      1075
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10744,
+    "name": "LC_ROLE_Fetters_10744",
+    "condition": [
+      1009,
+      1052,
+      1053,
+      1054
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10772,
+    "name": "LC_ROLE_Fetters_10772",
+    "condition": [
+      1089,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10704,
+    "name": "LC_ROLE_Fetters_10704",
+    "condition": [
+      1066,
+      1067,
+      1068,
+      1069
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10711,
+    "name": "LC_ROLE_Fetters_10711",
+    "condition": [
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10712,
+    "name": "LC_ROLE_Fetters_10712",
+    "condition": [
+      1005,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10713,
+    "name": "LC_ROLE_Fetters_10713",
+    "condition": [
+      1083,
+      1085,
+      1084
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10714,
+    "name": "LC_ROLE_Fetters_10714",
+    "condition": [
+      1049,
+      1007,
+      1008,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10721,
+    "name": "LC_ROLE_Fetters_10721",
+    "condition": [
+      1074
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10722,
+    "name": "LC_ROLE_Fetters_10722",
+    "condition": [
+      1075,
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10723,
+    "name": "LC_ROLE_Fetters_10723",
+    "condition": [
+      1010,
+      1103,
+      1039
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10724,
+    "name": "LC_ROLE_Fetters_10724",
+    "condition": [
+      1001,
+      1006,
+      1005,
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10731,
+    "name": "LC_ROLE_Fetters_10731",
+    "condition": [
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10732,
+    "name": "LC_ROLE_Fetters_10732",
+    "condition": [
+      1020,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10733,
+    "name": "LC_ROLE_Fetters_10733",
+    "condition": [
+      1006,
+      1079,
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10734,
+    "name": "LC_ROLE_Fetters_10734",
+    "condition": [
+      1015,
+      1016,
+      1018,
+      1017
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10741,
+    "name": "LC_ROLE_Fetters_10741",
+    "condition": [
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10742,
+    "name": "LC_ROLE_Fetters_10742",
+    "condition": [
+      1007,
+      1099
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10751,
+    "name": "LC_ROLE_Fetters_10751",
+    "condition": [
+      1072
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10752,
+    "name": "LC_ROLE_Fetters_10752",
+    "condition": [
+      1001,
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10753,
+    "name": "LC_ROLE_Fetters_10753",
+    "condition": [
+      1010,
+      1103,
+      1039
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10754,
+    "name": "LC_ROLE_Fetters_10754",
+    "condition": [
+      1074,
+      1051,
+      1009,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10761,
+    "name": "LC_ROLE_Fetters_10761",
+    "condition": [
+      1102
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10762,
+    "name": "LC_ROLE_Fetters_10762",
+    "condition": [
+      1020,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10763,
+    "name": "LC_ROLE_Fetters_10763",
+    "condition": [
+      1006,
+      1079,
+      1073
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10764,
+    "name": "LC_ROLE_Fetters_10764",
+    "condition": [
+      1077,
+      1063,
+      1065,
+      1060
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10771,
+    "name": "LC_ROLE_Fetters_10771",
+    "condition": [
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10773,
+    "name": "LC_ROLE_Fetters_10773",
+    "condition": [
+      1028,
+      1002,
+      1021
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10774,
+    "name": "LC_ROLE_Fetters_10774",
+    "condition": [
+      1060,
+      1063,
+      1065,
+      1043
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10781,
+    "name": "LC_ROLE_Fetters_10781",
+    "condition": [
+      1066
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10782,
+    "name": "LC_ROLE_Fetters_10782",
+    "condition": [
+      1020,
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10783,
+    "name": "LC_ROLE_Fetters_10783",
+    "condition": [
+      1086,
+      1025,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10784,
+    "name": "LC_ROLE_Fetters_10784",
+    "condition": [
+      1062,
+      1052,
+      1067,
+      1050
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10791,
+    "name": "LC_ROLE_Fetters_10791",
+    "condition": [
+      1025
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10792,
+    "name": "LC_ROLE_Fetters_10792",
+    "condition": [
+      1004,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10793,
+    "name": "LC_ROLE_Fetters_10793",
+    "condition": [
+      1025,
+      1056,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10794,
+    "name": "LC_ROLE_Fetters_10794",
+    "condition": [
+      1055,
+      1028,
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10801,
+    "name": "LC_ROLE_Fetters_10801",
+    "condition": [
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10802,
+    "name": "LC_ROLE_Fetters_10802",
+    "condition": [
+      1005,
+      1026
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10803,
+    "name": "LC_ROLE_Fetters_10803",
+    "condition": [
+      1004,
+      1069,
+      1095
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10804,
+    "name": "LC_ROLE_Fetters_10804",
+    "condition": [
+      1081,
+      1082,
+      1011,
+      1012
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10811,
+    "name": "LC_ROLE_Fetters_10811",
+    "condition": [
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10812,
+    "name": "LC_ROLE_Fetters_10812",
+    "condition": [
+      1082,
+      1026
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10813,
+    "name": "LC_ROLE_Fetters_10813",
+    "condition": [
+      1002,
+      1067,
+      1093
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10814,
+    "name": "LC_ROLE_Fetters_10814",
+    "condition": [
+      1080,
+      1082,
+      1011,
+      1012
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10821,
+    "name": "LC_ROLE_Fetters_10821",
+    "condition": [
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10822,
+    "name": "LC_ROLE_Fetters_10822",
+    "condition": [
+      1081,
+      1026
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10823,
+    "name": "LC_ROLE_Fetters_10823",
+    "condition": [
+      1003,
+      1068,
+      1094
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10824,
+    "name": "LC_ROLE_Fetters_10824",
+    "condition": [
+      1081,
+      1080,
+      1011,
+      1012
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10831,
+    "name": "LC_ROLE_Fetters_10831",
+    "condition": [
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10832,
+    "name": "LC_ROLE_Fetters_10832",
+    "condition": [
+      1025,
+      1086
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10833,
+    "name": "LC_ROLE_Fetters_10833",
+    "condition": [
+      1084,
+      1085,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10834,
+    "name": "LC_ROLE_Fetters_10834",
+    "condition": [
+      1084,
+      1085,
+      1088,
+      1087
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10841,
+    "name": "LC_ROLE_Fetters_10841",
+    "condition": [
+      1052
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10842,
+    "name": "LC_ROLE_Fetters_10842",
+    "condition": [
+      1025,
+      1086
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10843,
+    "name": "LC_ROLE_Fetters_10843",
+    "condition": [
+      1083,
+      1085,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10844,
+    "name": "LC_ROLE_Fetters_10844",
+    "condition": [
+      1083,
+      1085,
+      1088,
+      1087
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10851,
+    "name": "LC_ROLE_Fetters_10851",
+    "condition": [
+      1053
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10852,
+    "name": "LC_ROLE_Fetters_10852",
+    "condition": [
+      1025,
+      1086
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10853,
+    "name": "LC_ROLE_Fetters_10853",
+    "condition": [
+      1083,
+      1084,
+      1071
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10854,
+    "name": "LC_ROLE_Fetters_10854",
+    "condition": [
+      1084,
+      1083,
+      1088,
+      1087
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10861,
+    "name": "LC_ROLE_Fetters_10861",
+    "condition": [
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10862,
+    "name": "LC_ROLE_Fetters_10862",
+    "condition": [
+      1025,
+      1011
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10863,
+    "name": "LC_ROLE_Fetters_10863",
+    "condition": [
+      1025,
+      1106,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10864,
+    "name": "LC_ROLE_Fetters_10864",
+    "condition": [
+      1081,
+      1082,
+      1080,
+      1012
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10871,
+    "name": "LC_ROLE_Fetters_10871",
+    "condition": [
+      1048
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10872,
+    "name": "LC_ROLE_Fetters_10872",
+    "condition": [
+      1025,
+      1086
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10873,
+    "name": "LC_ROLE_Fetters_10873",
+    "condition": [
+      1088,
+      1101,
+      1007
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10874,
+    "name": "LC_ROLE_Fetters_10874",
+    "condition": [
+      1084,
+      1085,
+      1083,
+      1088
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10881,
+    "name": "LC_ROLE_Fetters_10881",
+    "condition": [
+      1054
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10882,
+    "name": "LC_ROLE_Fetters_10882",
+    "condition": [
+      1025,
+      1086
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10883,
+    "name": "LC_ROLE_Fetters_10883",
+    "condition": [
+      1087,
+      1101,
+      1007
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10884,
+    "name": "LC_ROLE_Fetters_10884",
+    "condition": [
+      1084,
+      1085,
+      1083,
+      1087
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10891,
+    "name": "LC_ROLE_Fetters_10891",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10892,
+    "name": "LC_ROLE_Fetters_10892",
+    "condition": [
+      1007,
+      1099
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10893,
+    "name": "LC_ROLE_Fetters_10893",
+    "condition": [
+      1050,
+      1040,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10894,
+    "name": "LC_ROLE_Fetters_10894",
+    "condition": [
+      1077,
+      1048,
+      1052,
+      1017
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10901,
+    "name": "LC_ROLE_Fetters_10901",
+    "condition": [
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10902,
+    "name": "LC_ROLE_Fetters_10902",
+    "condition": [
+      1100,
+      1008
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10903,
+    "name": "LC_ROLE_Fetters_10903",
+    "condition": [
+      1022,
+      1023,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10904,
+    "name": "LC_ROLE_Fetters_10904",
+    "condition": [
+      1024,
+      1105,
+      1040,
+      1104
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10911,
+    "name": "LC_ROLE_Fetters_10911",
+    "condition": [
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10912,
+    "name": "LC_ROLE_Fetters_10912",
+    "condition": [
+      1100,
+      1037
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10913,
+    "name": "LC_ROLE_Fetters_10913",
+    "condition": [
+      1063,
+      1030,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10914,
+    "name": "LC_ROLE_Fetters_10914",
+    "condition": [
+      1040,
+      1054,
+      1056,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10921,
+    "name": "LC_ROLE_Fetters_10921",
+    "condition": [
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10922,
+    "name": "LC_ROLE_Fetters_10922",
+    "condition": [
+      1103,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10923,
+    "name": "LC_ROLE_Fetters_10923",
+    "condition": [
+      1037,
+      1063,
+      1051
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10924,
+    "name": "LC_ROLE_Fetters_10924",
+    "condition": [
+      1093,
+      1094,
+      1095,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10931,
+    "name": "LC_ROLE_Fetters_10931",
+    "condition": [
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10932,
+    "name": "LC_ROLE_Fetters_10932",
+    "condition": [
+      1103,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10933,
+    "name": "LC_ROLE_Fetters_10933",
+    "condition": [
+      1089,
+      1049,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10934,
+    "name": "LC_ROLE_Fetters_10934",
+    "condition": [
+      1092,
+      1094,
+      1095,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10941,
+    "name": "LC_ROLE_Fetters_10941",
+    "condition": [
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10942,
+    "name": "LC_ROLE_Fetters_10942",
+    "condition": [
+      1103,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10943,
+    "name": "LC_ROLE_Fetters_10943",
+    "condition": [
+      1019,
+      1053,
+      1063
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10944,
+    "name": "LC_ROLE_Fetters_10944",
+    "condition": [
+      1093,
+      1092,
+      1095,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10951,
+    "name": "LC_ROLE_Fetters_10951",
+    "condition": [
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10952,
+    "name": "LC_ROLE_Fetters_10952",
+    "condition": [
+      1103,
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10953,
+    "name": "LC_ROLE_Fetters_10953",
+    "condition": [
+      1091,
+      1023,
+      1018
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10954,
+    "name": "LC_ROLE_Fetters_10954",
+    "condition": [
+      1093,
+      1094,
+      1092,
+      1096
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10961,
+    "name": "LC_ROLE_Fetters_10961",
+    "condition": [
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10962,
+    "name": "LC_ROLE_Fetters_10962",
+    "condition": [
+      1020,
+      1077
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10963,
+    "name": "LC_ROLE_Fetters_10963",
+    "condition": [
+      1104,
+      1022,
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10964,
+    "name": "LC_ROLE_Fetters_10964",
+    "condition": [
+      1093,
+      1094,
+      1095,
+      1092
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10971,
+    "name": "LC_ROLE_Fetters_10971",
+    "condition": [
+      1015
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10992,
+    "name": "LC_ROLE_Fetters_10992",
+    "condition": [
+      1007,
+      1074
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10993,
+    "name": "LC_ROLE_Fetters_10993",
+    "condition": [
+      1001,
+      1003,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10994,
+    "name": "LC_ROLE_Fetters_10994",
+    "condition": [
+      1006,
+      1102,
+      1014,
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11001,
+    "name": "LC_ROLE_Fetters_11001",
+    "condition": [
+      1018
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11002,
+    "name": "LC_ROLE_Fetters_11002",
+    "condition": [
+      1001,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11003,
+    "name": "LC_ROLE_Fetters_11003",
+    "condition": [
+      1037,
+      1023,
+      1022
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11004,
+    "name": "LC_ROLE_Fetters_11004",
+    "condition": [
+      1090,
+      1060,
+      1008,
+      1034
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10972,
+    "name": "LC_ROLE_Fetters_10972",
+    "condition": [
+      1040,
+      1098
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10973,
+    "name": "LC_ROLE_Fetters_10973",
+    "condition": [
+      1022,
+      1001,
+      1099
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10974,
+    "name": "LC_ROLE_Fetters_10974",
+    "condition": [
+      1054,
+      1048,
+      1014,
+      1019
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10981,
+    "name": "LC_ROLE_Fetters_10981",
+    "condition": [
+      1022
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 10982,
+    "name": "LC_ROLE_Fetters_10982",
+    "condition": [
+      1040,
+      1097
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 10983,
+    "name": "LC_ROLE_Fetters_10983",
+    "condition": [
+      1075,
+      1016,
+      1108
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 10984,
+    "name": "LC_ROLE_Fetters_10984",
+    "condition": [
+      1090,
+      1063,
+      1028,
+      1037
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 10991,
+    "name": "LC_ROLE_Fetters_10991",
+    "condition": [
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11011,
+    "name": "LC_ROLE_Fetters_11011",
+    "condition": [
+      1074
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11012,
+    "name": "LC_ROLE_Fetters_11012",
+    "condition": [
+      1050,
+      1002
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11013,
+    "name": "LC_ROLE_Fetters_11013",
+    "condition": [
+      1087,
+      1088,
+      1007
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11014,
+    "name": "LC_ROLE_Fetters_11014",
+    "condition": [
+      1001,
+      1003,
+      1002,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11021,
+    "name": "LC_ROLE_Fetters_11021",
+    "condition": [
+      1076
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11064,
+    "name": "LC_ROLE_Fetters_11064",
+    "condition": [
+      1077,
+      1063,
+      1065,
+      1064
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11072,
+    "name": "LC_ROLE_Fetters_11072",
+    "condition": [
+      1006,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11073,
+    "name": "LC_ROLE_Fetters_11073",
+    "condition": [
+      1008,
+      1097,
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11074,
+    "name": "LC_ROLE_Fetters_11074",
+    "condition": [
+      1002,
+      1003,
+      1004,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11081,
+    "name": "LC_ROLE_Fetters_11081",
+    "condition": [
+      1009
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11082,
+    "name": "LC_ROLE_Fetters_11082",
+    "condition": [
+      1083,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11083,
+    "name": "LC_ROLE_Fetters_11083",
+    "condition": [
+      1028,
+      1030,
+      1029
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11084,
+    "name": "LC_ROLE_Fetters_11084",
+    "condition": [
+      1028,
+      1057,
+      1001,
+      1004
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11091,
+    "name": "LC_ROLE_Fetters_11091",
+    "condition": [
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11092,
+    "name": "LC_ROLE_Fetters_11092",
+    "condition": [
+      1006,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11093,
+    "name": "LC_ROLE_Fetters_11093",
+    "condition": [
+      1008,
+      1097,
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11094,
+    "name": "LC_ROLE_Fetters_11094",
+    "condition": [
+      1002,
+      1003,
+      1004,
+      1001
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11022,
+    "name": "LC_ROLE_Fetters_11022",
+    "condition": [
+      1063,
+      1003
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11023,
+    "name": "LC_ROLE_Fetters_11023",
+    "condition": [
+      1006,
+      1099,
+      1022
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11024,
+    "name": "LC_ROLE_Fetters_11024",
+    "condition": [
+      1023,
+      1056,
+      1044,
+      1014
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11031,
+    "name": "LC_ROLE_Fetters_11031",
+    "condition": [
+      1005
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11032,
+    "name": "LC_ROLE_Fetters_11032",
+    "condition": [
+      1039,
+      1010
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11033,
+    "name": "LC_ROLE_Fetters_11033",
+    "condition": [
+      1022,
+      1053,
+      1045
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11034,
+    "name": "LC_ROLE_Fetters_11034",
+    "condition": [
+      1092,
+      1093,
+      1094,
+      1095
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11041,
+    "name": "LC_ROLE_Fetters_11041",
+    "condition": [
+      1023
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11042,
+    "name": "LC_ROLE_Fetters_11042",
+    "condition": [
+      1075,
+      1006
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11043,
+    "name": "LC_ROLE_Fetters_11043",
+    "condition": [
+      1024,
+      1105,
+      1040
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11044,
+    "name": "LC_ROLE_Fetters_11044",
+    "condition": [
+      1029,
+      1003,
+      1022,
+      1031
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11051,
+    "name": "LC_ROLE_Fetters_11051",
+    "condition": [
+      1075
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11052,
+    "name": "LC_ROLE_Fetters_11052",
+    "condition": [
+      1009,
+      1066
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11053,
+    "name": "LC_ROLE_Fetters_11053",
+    "condition": [
+      1024,
+      1104,
+      1040
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11054,
+    "name": "LC_ROLE_Fetters_11054",
+    "condition": [
+      1023,
+      1090,
+      1010,
+      1022
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        4
+      ],
+      [
+        "Attack",
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "id": 11061,
+    "name": "LC_ROLE_Fetters_11061",
+    "condition": [
+      1102
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 11062,
+    "name": "LC_ROLE_Fetters_11062",
+    "condition": [
+      1013,
+      1078
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        2
+      ],
+      [
+        "Attack",
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 11063,
+    "name": "LC_ROLE_Fetters_11063",
+    "condition": [
+      1025,
+      1086,
+      1013
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        3
+      ],
+      [
+        "Attack",
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 11071,
+    "name": "LC_ROLE_Fetters_11071",
+    "condition": [
+      1090
+    ],
+    "active_skill": -1,
+    "attribute": [
+      [
+        "Max_Hp",
+        0,
+        1
+      ],
+      [
+        "Attack",
+        0,
+        1
+      ]
+    ]
+  }
+]

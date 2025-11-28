@@ -7,11 +7,9 @@ import ConfigContext from '../context/ConfigContext';
 const Navbar = () => {
     const { user, logout, isAdmin } = useContext(AuthContext);
     const { config } = useContext(ConfigContext);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
+
 
     const menus = config?.featureFlags?.menus || {};
 
@@ -27,15 +25,7 @@ const Navbar = () => {
                     {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400">Artifacts</Link>}
                     {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400">Force Cards</Link>}
 
-                    <div className="flex space-x-2 border-l border-gray-700 pl-4">
-                        <button onClick={() => changeLanguage('en')} className="hover:text-yellow-400 text-xs">EN</button>
-                        <button onClick={() => changeLanguage('pt')} className="hover:text-yellow-400 text-xs">PT</button>
-                        <button onClick={() => changeLanguage('es')} className="hover:text-yellow-400 text-xs">ES</button>
-                        <button onClick={() => changeLanguage('fr')} className="hover:text-yellow-400 text-xs">FR</button>
-                        <button onClick={() => changeLanguage('cn')} className="hover:text-yellow-400 text-xs">CN</button>
-                        <button onClick={() => changeLanguage('id')} className="hover:text-yellow-400 text-xs">ID</button>
-                        <button onClick={() => changeLanguage('th')} className="hover:text-yellow-400 text-xs">TH</button>
-                    </div>
+
 
                     {user ? (
                         <>

@@ -1,0 +1,597 @@
+[
+  {
+    "id": 1,
+    "back_path": 4,
+    "name": "LC_SKILL_label_1"
+  },
+  {
+    "id": 4,
+    "back_path": 2,
+    "name": "LC_SKILL_label_4"
+  },
+  {
+    "id": 5,
+    "back_path": 6,
+    "name": "LC_SKILL_label_5"
+  },
+  {
+    "id": 8,
+    "back_path": 5,
+    "name": "LC_SKILL_label_8"
+  },
+  {
+    "id": 9,
+    "back_path": 5,
+    "name": "LC_SKILL_label_9"
+  },
+  {
+    "id": 10,
+    "back_path": 1,
+    "name": "LC_SKILL_label_10"
+  },
+  {
+    "id": 11,
+    "back_path": 1,
+    "name": "LC_SKILL_label_11"
+  },
+  {
+    "id": 12,
+    "back_path": 1,
+    "name": "LC_SKILL_label_12"
+  },
+  {
+    "id": 13,
+    "back_path": 1,
+    "name": "LC_SKILL_label_13"
+  },
+  {
+    "id": 14,
+    "back_path": 1,
+    "name": "LC_SKILL_label_14"
+  },
+  {
+    "id": 15,
+    "back_path": 3,
+    "name": "LC_SKILL_label_15"
+  },
+  {
+    "id": 16,
+    "back_path": 3,
+    "name": "LC_SKILL_label_16"
+  },
+  {
+    "id": 17,
+    "back_path": 2,
+    "name": "LC_SKILL_label_17"
+  },
+  {
+    "id": 18,
+    "back_path": 4,
+    "name": "LC_SKILL_label_18"
+  },
+  {
+    "id": 19,
+    "back_path": 4,
+    "name": "LC_SKILL_label_19"
+  },
+  {
+    "id": 20,
+    "back_path": 4,
+    "name": "LC_SKILL_label_20"
+  },
+  {
+    "id": 21,
+    "back_path": 4,
+    "name": "LC_SKILL_label_21"
+  },
+  {
+    "id": 22,
+    "back_path": 4,
+    "name": "LC_SKILL_label_22"
+  },
+  {
+    "id": 23,
+    "back_path": 4,
+    "name": "LC_SKILL_label_23"
+  },
+  {
+    "id": 24,
+    "back_path": 4,
+    "name": "LC_SKILL_label_24"
+  },
+  {
+    "id": 25,
+    "back_path": 4,
+    "name": "LC_SKILL_label_25"
+  },
+  {
+    "id": 26,
+    "back_path": 2,
+    "name": "LC_SKILL_label_26"
+  },
+  {
+    "id": 27,
+    "back_path": 2,
+    "name": "LC_SKILL_label_27"
+  },
+  {
+    "id": 28,
+    "back_path": 2,
+    "name": "LC_SKILL_label_28"
+  },
+  {
+    "id": 29,
+    "back_path": 3,
+    "name": "LC_SKILL_label_29"
+  },
+  {
+    "id": 30,
+    "back_path": 2,
+    "name": "LC_SKILL_label_30"
+  },
+  {
+    "id": 31,
+    "back_path": 4,
+    "name": "LC_SKILL_label_31"
+  },
+  {
+    "id": 32,
+    "back_path": 5,
+    "name": "LC_SKILL_label_32"
+  },
+  {
+    "id": 33,
+    "back_path": 1,
+    "name": "LC_SKILL_label_33"
+  },
+  {
+    "id": 34,
+    "back_path": 1,
+    "name": "LC_SKILL_label_34"
+  },
+  {
+    "id": 35,
+    "back_path": 5,
+    "name": "LC_SKILL_label_35"
+  },
+  {
+    "id": 36,
+    "back_path": 2,
+    "name": "LC_SKILL_label_36"
+  },
+  {
+    "id": 37,
+    "back_path": 2,
+    "name": "LC_SKILL_label_37"
+  },
+  {
+    "id": 38,
+    "back_path": 2,
+    "name": "LC_SKILL_label_38"
+  },
+  {
+    "id": 39,
+    "back_path": 1,
+    "name": "LC_SKILL_label_39"
+  },
+  {
+    "id": 40,
+    "back_path": 1,
+    "name": "LC_SKILL_label_40"
+  },
+  {
+    "id": 41,
+    "back_path": 2,
+    "name": "LC_SKILL_label_41"
+  },
+  {
+    "id": 42,
+    "back_path": 5,
+    "name": "LC_SKILL_label_42"
+  },
+  {
+    "id": 43,
+    "back_path": 4,
+    "name": "LC_SKILL_label_43"
+  },
+  {
+    "id": 44,
+    "back_path": 2,
+    "name": "LC_SKILL_label_44"
+  },
+  {
+    "id": 45,
+    "back_path": 2,
+    "name": "LC_SKILL_label_45"
+  },
+  {
+    "id": 46,
+    "back_path": 2,
+    "name": "LC_SKILL_label_46"
+  },
+  {
+    "id": 47,
+    "back_path": 2,
+    "name": "LC_SKILL_label_47"
+  },
+  {
+    "id": 48,
+    "back_path": 2,
+    "name": "LC_SKILL_label_48"
+  },
+  {
+    "id": 49,
+    "back_path": 5,
+    "name": "LC_SKILL_label_49"
+  },
+  {
+    "id": 50,
+    "back_path": 2,
+    "name": "LC_SKILL_label_50"
+  },
+  {
+    "id": 51,
+    "back_path": 4,
+    "name": "LC_SKILL_label_51"
+  },
+  {
+    "id": 52,
+    "back_path": 5,
+    "name": "LC_SKILL_label_52"
+  },
+  {
+    "id": 53,
+    "back_path": 5,
+    "name": "LC_SKILL_label_53"
+  },
+  {
+    "id": 54,
+    "back_path": 1,
+    "name": "LC_SKILL_label_54"
+  },
+  {
+    "id": 55,
+    "back_path": 1,
+    "name": "LC_SKILL_label_55"
+  },
+  {
+    "id": 56,
+    "back_path": 2,
+    "name": "LC_SKILL_label_56"
+  },
+  {
+    "id": 57,
+    "back_path": 4,
+    "name": "LC_SKILL_label_57"
+  },
+  {
+    "id": 58,
+    "back_path": 1,
+    "name": "LC_SKILL_label_58"
+  },
+  {
+    "id": 59,
+    "back_path": 2,
+    "name": "LC_SKILL_label_59"
+  },
+  {
+    "id": 60,
+    "back_path": 5,
+    "name": "LC_SKILL_label_60"
+  },
+  {
+    "id": 61,
+    "back_path": 2,
+    "name": "LC_SKILL_label_61"
+  },
+  {
+    "id": 62,
+    "back_path": 5,
+    "name": "LC_SKILL_label_62"
+  },
+  {
+    "id": 63,
+    "back_path": 4,
+    "name": "LC_SKILL_label_63"
+  },
+  {
+    "id": 64,
+    "back_path": 2,
+    "name": "LC_SKILL_label_64"
+  },
+  {
+    "id": 65,
+    "back_path": 1,
+    "name": "LC_SKILL_label_65"
+  },
+  {
+    "id": 66,
+    "back_path": 2,
+    "name": "LC_SKILL_label_66"
+  },
+  {
+    "id": 67,
+    "back_path": 1,
+    "name": "LC_SKILL_label_67"
+  },
+  {
+    "id": 68,
+    "back_path": 4,
+    "name": "LC_SKILL_label_68"
+  },
+  {
+    "id": 69,
+    "back_path": 5,
+    "name": "LC_SKILL_label_69"
+  },
+  {
+    "id": 70,
+    "back_path": 6,
+    "name": "LC_SKILL_label_70"
+  },
+  {
+    "id": 71,
+    "back_path": 6,
+    "name": "LC_SKILL_label_71"
+  },
+  {
+    "id": 72,
+    "back_path": 5,
+    "name": "LC_SKILL_label_72"
+  },
+  {
+    "id": 73,
+    "back_path": 3,
+    "name": "LC_SKILL_label_73"
+  },
+  {
+    "id": 74,
+    "back_path": 1,
+    "name": "LC_SKILL_label_74"
+  },
+  {
+    "id": 75,
+    "back_path": 4,
+    "name": "LC_SKILL_label_75"
+  },
+  {
+    "id": 76,
+    "back_path": 4,
+    "name": "LC_SKILL_label_76"
+  },
+  {
+    "id": 77,
+    "back_path": 2,
+    "name": "LC_SKILL_label_77"
+  },
+  {
+    "id": 78,
+    "back_path": 3,
+    "name": "LC_SKILL_label_78"
+  },
+  {
+    "id": 79,
+    "back_path": 2,
+    "name": "LC_SKILL_label_79"
+  },
+  {
+    "id": 80,
+    "back_path": 6,
+    "name": "LC_SKILL_label_80"
+  },
+  {
+    "id": 81,
+    "back_path": 2,
+    "name": "LC_SKILL_label_81"
+  },
+  {
+    "id": 82,
+    "back_path": 4,
+    "name": "LC_SKILL_label_82"
+  },
+  {
+    "id": 83,
+    "back_path": 4,
+    "name": "LC_SKILL_label_83"
+  },
+  {
+    "id": 84,
+    "back_path": 4,
+    "name": "LC_SKILL_label_84"
+  },
+  {
+    "id": 101,
+    "back_path": 2,
+    "name": "LC_SKILL_label_101"
+  },
+  {
+    "id": 102,
+    "back_path": 2,
+    "name": "LC_SKILL_label_102"
+  },
+  {
+    "id": 103,
+    "back_path": 2,
+    "name": "LC_SKILL_label_103"
+  },
+  {
+    "id": 104,
+    "back_path": 5,
+    "name": "LC_SKILL_label_104"
+  },
+  {
+    "id": 105,
+    "back_path": 1,
+    "name": "LC_SKILL_label_105"
+  },
+  {
+    "id": 106,
+    "back_path": 6,
+    "name": "LC_SKILL_label_106"
+  },
+  {
+    "id": 107,
+    "back_path": 4,
+    "name": "LC_SKILL_label_107"
+  },
+  {
+    "id": 108,
+    "back_path": 2,
+    "name": "LC_SKILL_label_108"
+  },
+  {
+    "id": 109,
+    "back_path": 5,
+    "name": "LC_SKILL_label_109"
+  },
+  {
+    "id": 110,
+    "back_path": 4,
+    "name": "LC_SKILL_label_110"
+  },
+  {
+    "id": 111,
+    "back_path": 4,
+    "name": "LC_SKILL_label_111"
+  },
+  {
+    "id": 112,
+    "back_path": 3,
+    "name": "LC_SKILL_label_112"
+  },
+  {
+    "id": 113,
+    "back_path": 3,
+    "name": "LC_SKILL_label_113"
+  },
+  {
+    "id": 114,
+    "back_path": 3,
+    "name": "LC_SKILL_label_114"
+  },
+  {
+    "id": 115,
+    "back_path": 3,
+    "name": "LC_SKILL_label_115"
+  },
+  {
+    "id": 116,
+    "back_path": 3,
+    "name": "LC_SKILL_label_116"
+  },
+  {
+    "id": 117,
+    "back_path": 3,
+    "name": "LC_SKILL_label_117"
+  },
+  {
+    "id": 118,
+    "back_path": 3,
+    "name": "LC_SKILL_label_118"
+  },
+  {
+    "id": 119,
+    "back_path": 3,
+    "name": "LC_SKILL_label_119"
+  },
+  {
+    "id": 201,
+    "back_path": 2,
+    "name": "LC_SKILL_label_201"
+  },
+  {
+    "id": 202,
+    "back_path": 1,
+    "name": "LC_SKILL_label_202"
+  },
+  {
+    "id": 203,
+    "back_path": 4,
+    "name": "LC_SKILL_label_203"
+  },
+  {
+    "id": 204,
+    "back_path": 5,
+    "name": "LC_SKILL_label_204"
+  },
+  {
+    "id": 205,
+    "back_path": 3,
+    "name": "LC_SKILL_label_205"
+  },
+  {
+    "id": 206,
+    "back_path": 2,
+    "name": "LC_SKILL_label_206"
+  },
+  {
+    "id": 207,
+    "back_path": 2,
+    "name": "LC_SKILL_label_207"
+  },
+  {
+    "id": 208,
+    "back_path": 2,
+    "name": "LC_SKILL_label_208"
+  },
+  {
+    "id": 209,
+    "back_path": 2,
+    "name": "LC_SKILL_label_209"
+  },
+  {
+    "id": 210,
+    "back_path": 2,
+    "name": "LC_SKILL_label_210"
+  },
+  {
+    "id": 211,
+    "back_path": 3,
+    "name": "LC_SKILL_label_211"
+  },
+  {
+    "id": 212,
+    "back_path": 1,
+    "name": "LC_SKILL_label_212"
+  },
+  {
+    "id": 213,
+    "back_path": 2,
+    "name": "LC_SKILL_label_213"
+  },
+  {
+    "id": 214,
+    "back_path": 4,
+    "name": "LC_SKILL_label_214"
+  },
+  {
+    "id": 215,
+    "back_path": 5,
+    "name": "LC_SKILL_label_215"
+  },
+  {
+    "id": 216,
+    "back_path": 2,
+    "name": "LC_SKILL_label_216"
+  },
+  {
+    "id": 2,
+    "back_path": 3,
+    "name": "LC_SKILL_label_2"
+  },
+  {
+    "id": 3,
+    "back_path": 1,
+    "name": "LC_SKILL_label_3"
+  },
+  {
+    "id": 6,
+    "back_path": 5,
+    "name": "LC_SKILL_label_6"
+  },
+  {
+    "id": 7,
+    "back_path": 5,
+    "name": "LC_SKILL_label_7"
+  }
+]

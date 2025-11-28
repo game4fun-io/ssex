@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Characters from './pages/Characters';
 import CharacterDetails from './pages/CharacterDetails';
@@ -39,6 +40,7 @@ function App() {
                 }
               />
             </Routes>
+            <Footer />
           </div>
         </Router>
       </ConfigProvider>

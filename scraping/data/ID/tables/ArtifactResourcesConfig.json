@@ -1,0 +1,429 @@
+[
+  {
+    "id": 4031,
+    "model": "Actor/Artifact/alice_trident/alice_trident_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/alice_trident",
+    "show_icon": "Textures/Artifact/ArtifactShowView/alice_trident_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50031"
+  },
+  {
+    "id": 4032,
+    "model": "Actor/Artifact/athena_helmet/athena_helmet_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_helmet",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_helmet_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50032"
+  },
+  {
+    "id": 4033,
+    "model": "Actor/Artifact/excalibur/excalibur_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/excalibur",
+    "show_icon": "Textures/Artifact/ArtifactShowView/excalibur_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50033"
+  },
+  {
+    "id": 4034,
+    "model": "Actor/Artifact/lucifer_helmet/lucifer_helmet_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/lucifer_helmet",
+    "show_icon": "Textures/Artifact/ArtifactShowView/lucifer_helmet_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50034"
+  },
+  {
+    "id": 4035,
+    "model": "Actor/Artifact/dolbar_sword/dolbar_sword_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/dolbar_sword",
+    "show_icon": "Textures/Artifact/ArtifactShowView/dolbar_sword_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50035"
+  },
+  {
+    "id": 4036,
+    "model": "Actor/Artifact/siegfried_sword/siegfried_sword_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/siegfried_sword",
+    "show_icon": "Textures/Artifact/ArtifactShowView/siegfried_sword_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50036"
+  },
+  {
+    "id": 4037,
+    "model": "Actor/Artifact/siegfried_shield/siegfried_shield_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/siegfried_shield",
+    "show_icon": "Textures/Artifact/ArtifactShowView/siegfried_shield_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50037"
+  },
+  {
+    "id": 4038,
+    "model": "Actor/Artifact/frey_sword/frey_sword_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/frey_sword",
+    "show_icon": "Textures/Artifact/ArtifactShowView/frey_sword_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50038"
+  },
+  {
+    "id": 4039,
+    "model": "Actor/Artifact/alice_headwear/alice_headwear_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/alice_headwear",
+    "show_icon": "Textures/Artifact/ArtifactShowView/alice_headwear_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50039"
+  },
+  {
+    "id": 4040,
+    "model": "Actor/Artifact/abel_belt/abel_belt_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/abel_belt",
+    "show_icon": "Textures/Artifact/ArtifactShowView/abel_belt_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50040"
+  },
+  {
+    "id": 4041,
+    "model": "Actor/Artifact/budda_lotus/budda_lotus_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/budda_lotus",
+    "show_icon": "Textures/Artifact/ArtifactShowView/budda_lotus_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50041"
+  },
+  {
+    "id": 4042,
+    "model": "Actor/Artifact/virgo_beads_seal/virgo_beads_seal_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/virgo_beads_seal",
+    "show_icon": "Textures/Artifact/ArtifactShowView/virgo_beads_seal_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50042"
+  },
+  {
+    "id": 82020,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128020",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82020"
+  },
+  {
+    "id": 82030,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128030",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82030"
+  },
+  {
+    "id": 82040,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128040",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82040"
+  },
+  {
+    "id": 82050,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128050",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82050"
+  },
+  {
+    "id": 82060,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128060",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82060"
+  },
+  {
+    "id": 82070,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128070",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82070"
+  },
+  {
+    "id": 82080,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128080",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82080"
+  },
+  {
+    "id": 82090,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128090",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82090"
+  },
+  {
+    "id": 82100,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128100",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82100"
+  },
+  {
+    "id": 82110,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128110",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82110"
+  },
+  {
+    "id": 82120,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128120",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82120"
+  },
+  {
+    "id": 82130,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128130",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82130"
+  },
+  {
+    "id": 82140,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128140",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82140"
+  },
+  {
+    "id": 82150,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128150",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82150"
+  },
+  {
+    "id": 82160,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128160",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82160"
+  },
+  {
+    "id": 82170,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128170",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82170"
+  },
+  {
+    "id": 82180,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128180",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82180"
+  },
+  {
+    "id": 82190,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128190",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82190"
+  },
+  {
+    "id": 4001,
+    "model": "Actor/Artifact/hades_weapon/hades_weapon_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/hades_weapon",
+    "show_icon": "Textures/Artifact/ArtifactShowView/hades_weapon_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50001"
+  },
+  {
+    "id": 4002,
+    "model": "Actor/Artifact/poseidon_trident/poseidon_trident_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/poseidon_trident",
+    "show_icon": "Textures/Artifact/ArtifactShowView/poseidon_trident_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50002"
+  },
+  {
+    "id": 4003,
+    "model": "Actor/Artifact/athena_scepter/athena_scepter_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_scepter",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_scepter_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50003"
+  },
+  {
+    "id": 4004,
+    "model": "Actor/Artifact/athena_shield/athena_shield_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_shield",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_shield_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50004"
+  },
+  {
+    "id": 4005,
+    "model": "Actor/Artifact/athena_gold_dagger/athena_gold_dagger_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_gold_dagger",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_gold_dagger_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50005"
+  },
+  {
+    "id": 4006,
+    "model": "Actor/Artifact/virgo_beads/virgo_beads_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/virgo_beads",
+    "show_icon": "Textures/Artifact/ArtifactShowView/virgo_beads_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50006"
+  },
+  {
+    "id": 4007,
+    "model": "Actor/Artifact/athena_pot/athena_pot_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_pot",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_pot_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50007"
+  },
+  {
+    "id": 4008,
+    "model": "Actor/Artifact/hilda_nibelungen/hilda_nibelungen_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/hilda_nibelungen",
+    "show_icon": "Textures/Artifact/ArtifactShowView/hilda_nibelungen_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50008"
+  },
+  {
+    "id": 4009,
+    "model": "Actor/Artifact/hades_monster_pot/hades_monster_pot_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/hades_monster_pot",
+    "show_icon": "Textures/Artifact/ArtifactShowView/hades_monster_pot_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50009"
+  },
+  {
+    "id": 4010,
+    "model": "Actor/Artifact/hades_necklace/hades_necklace_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/hades_necklace",
+    "show_icon": "Textures/Artifact/ArtifactShowView/hades_necklace_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50010"
+  },
+  {
+    "id": 4011,
+    "model": "Actor/Artifact/pandora_box/pandora_box_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/pandora_box",
+    "show_icon": "Textures/Artifact/ArtifactShowView/pandora_box_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50011"
+  },
+  {
+    "id": 4012,
+    "model": "Actor/Artifact/odin_weapon/odin_weapon_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/odin_weapon",
+    "show_icon": "Textures/Artifact/ArtifactShowView/odin_weapon_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50012"
+  },
+  {
+    "id": 4013,
+    "model": "Actor/Artifact/poseidon_helmet/poseidon_helmet_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/poseidon_helmet",
+    "show_icon": "Textures/Artifact/ArtifactShowView/poseidon_helmet_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50013"
+  },
+  {
+    "id": 4014,
+    "model": "Actor/Artifact/hilda_spear/hilda_spear_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/hilda_spear",
+    "show_icon": "Textures/Artifact/ArtifactShowView/hilda_spear_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50014"
+  },
+  {
+    "id": 4015,
+    "model": "Actor/Artifact/premonitory_ring/premonitory_ring_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/premonitory_ring",
+    "show_icon": "Textures/Artifact/ArtifactShowView/premonitory_ring_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50015"
+  },
+  {
+    "id": 4016,
+    "model": "Actor/Artifact/damocles_sword/damocles_sword_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/damocles_sword",
+    "show_icon": "Textures/Artifact/ArtifactShowView/damocles_sword_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50016"
+  },
+  {
+    "id": 4017,
+    "model": "Actor/Artifact/galal_horn/galal_horn_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/galal_horn",
+    "show_icon": "Textures/Artifact/ArtifactShowView/galal_horn_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50017"
+  },
+  {
+    "id": 4018,
+    "model": "Actor/Artifact/bridgeman_necklace/bridgeman_necklace_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/bridgeman_necklace",
+    "show_icon": "Textures/Artifact/ArtifactShowView/bridgeman_necklace_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50018"
+  },
+  {
+    "id": 4019,
+    "model": "Actor/Artifact/libra_shield/libra_shield_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/libra_shield",
+    "show_icon": "Textures/Artifact/ArtifactShowView/libra_shield_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50019"
+  },
+  {
+    "id": 4020,
+    "model": "Actor/Artifact/libra_sword/libra_sword_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/libra_sword",
+    "show_icon": "Textures/Artifact/ArtifactShowView/libra_sword_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50020"
+  },
+  {
+    "id": 4021,
+    "model": "Actor/Artifact/libra_halberd/libra_halberd_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/libra_halberd",
+    "show_icon": "Textures/Artifact/ArtifactShowView/libra_halberd_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50021"
+  },
+  {
+    "id": 4022,
+    "model": "Actor/Artifact/chameleon_whip/chameleon_whip_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/chameleon_whip",
+    "show_icon": "Textures/Artifact/ArtifactShowView/chameleon_whip_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50022"
+  },
+  {
+    "id": 4023,
+    "model": "Actor/Artifact/medusa_shield/medusa_shield_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/medusa_shield",
+    "show_icon": "Textures/Artifact/ArtifactShowView/medusa_shield_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50023"
+  },
+  {
+    "id": 4024,
+    "model": "Actor/Artifact/draco_shield/draco_shield_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/draco_shield",
+    "show_icon": "Textures/Artifact/ArtifactShowView/draco_shield_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50024"
+  },
+  {
+    "id": 4025,
+    "model": "Actor/Artifact/gold_arrow/gold_arrow_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/gold_arrow",
+    "show_icon": "Textures/Artifact/ArtifactShowView/gold_arrow_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50025"
+  },
+  {
+    "id": 4026,
+    "model": "Actor/Artifact/golden_apple/golden_apple_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/golden_apple",
+    "show_icon": "Textures/Artifact/ArtifactShowView/golden_apple_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50026"
+  },
+  {
+    "id": 4027,
+    "model": "Actor/Artifact/athena_necklace/athena_necklace_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/athena_necklace",
+    "show_icon": "Textures/Artifact/ArtifactShowView/athena_necklace_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50027"
+  },
+  {
+    "id": 4028,
+    "model": "Actor/Artifact/libra_tri_cudgel/libra_tri_cudgel_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/libra_tri_cudgel",
+    "show_icon": "Textures/Artifact/ArtifactShowView/libra_tri_cudgel_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50028"
+  },
+  {
+    "id": 4029,
+    "model": "Actor/Artifact/pandora_ring/pandora_ring_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/pandora_ring",
+    "show_icon": "Textures/Artifact/ArtifactShowView/pandora_ring_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50029"
+  },
+  {
+    "id": 4030,
+    "model": "Actor/Artifact/abel_lyre/abel_lyre_Prefab",
+    "preview_icon": "Textures/Artifact/ArtifactShowView/abel_lyre",
+    "show_icon": "Textures/Artifact/ArtifactShowView/abel_lyre_label",
+    "item_icon": "Textures/ItemIcon/ItemIcon_50030"
+  },
+  {
+    "id": 82010,
+    "model": null,
+    "preview_icon": "Textures/PrimarySpirit/Spirit/ItemIcon_128010",
+    "show_icon": null,
+    "item_icon": "Textures/ItemIcon/ItemIcon_82010"
+  }
+]

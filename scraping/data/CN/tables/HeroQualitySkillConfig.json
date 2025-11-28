@@ -1,0 +1,2907 @@
+[
+  {
+    "id": 1,
+    "skill_up": null,
+    "skill_info": null
+  },
+  {
+    "id": 10011,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10021,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10031,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10041,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10051,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10061,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10071,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10081,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10091,
+    "skill_up": [
+      {
+        "skill_id": 10097,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10097,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10101,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10111,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10121,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10131,
+    "skill_up": [
+      {
+        "skill_id": 10137,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10137,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10141,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10151,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10161,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10171,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10181,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10191,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10201,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10211,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10221,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10231,
+    "skill_up": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10241,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10251,
+    "skill_up": [
+      {
+        "skill_id": 10257,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10257,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10261,
+    "skill_up": [
+      {
+        "skill_id": 10267,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10267,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10271,
+    "skill_up": [
+      {
+        "skill_id": 10277,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10277,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10281,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10291,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10301,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10311,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10321,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10331,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10341,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10351,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10361,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10371,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10381,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10391,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10401,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10411,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10421,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10431,
+    "skill_up": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10441,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10451,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10461,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10471,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10481,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10491,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10501,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10511,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10521,
+    "skill_up": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10531,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10541,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10551,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10561,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10571,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10581,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10591,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10601,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10611,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10621,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10631,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10641,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10651,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10661,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10671,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10681,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10691,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10701,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10711,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10721,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10731,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10741,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10751,
+    "skill_up": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10761,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10771,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10781,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10791,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10801,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10811,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10821,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10831,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10841,
+    "skill_up": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10851,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10861,
+    "skill_up": [
+      {
+        "skill_id": 10867,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 10867,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10871,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10881,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10891,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10901,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10911,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10921,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10931,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10941,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10951,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10961,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10971,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10981,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10991,
+    "skill_up": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11001,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11011,
+    "skill_up": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11021,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11031,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11041,
+    "skill_up": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11051,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11061,
+    "skill_up": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11071,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11081,
+    "skill_up": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11091,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11101,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11111,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11121,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11131,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11141,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11151,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11161,
+    "skill_up": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ],
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10012,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10022,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10032,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10042,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10052,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10062,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10072,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10082,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10092,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10097,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10102,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10112,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10122,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10132,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10137,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10142,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10152,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10162,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10172,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10182,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10192,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10202,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10212,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10222,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10232,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10242,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10252,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10257,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10262,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10267,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10272,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10277,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10282,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10292,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10302,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10312,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10322,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10332,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10342,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10352,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10362,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10372,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10382,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10392,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10402,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10412,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10422,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10432,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10442,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10552,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10562,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10572,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10582,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10592,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10602,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10612,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10622,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10632,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10642,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10652,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10452,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10462,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10472,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10482,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10492,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10502,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10512,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10522,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10532,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10542,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10662,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10672,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10682,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10692,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10702,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10712,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10722,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10732,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10742,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10752,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66007,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10762,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10772,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10782,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10792,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10802,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10812,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10822,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10832,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10842,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66008,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10852,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10862,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 10867,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10872,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10882,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10892,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10902,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10912,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10922,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10932,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10942,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10952,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10962,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10972,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10982,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 10992,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66006,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11002,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11012,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66002,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11022,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11032,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11042,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66005,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11052,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11062,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66003,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11072,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11082,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66004,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11162,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11092,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11102,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11112,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11122,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11132,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11142,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  },
+  {
+    "id": 11152,
+    "skill_up": null,
+    "skill_info": [
+      {
+        "skill_id": 66001,
+        "skill_lv": 1
+      }
+    ]
+  }
+]
