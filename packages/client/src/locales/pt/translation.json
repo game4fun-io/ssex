@@ -54,6 +54,20 @@
         "totalATK": "ATQ Total",
         "laneRestriction": "Coloque {{name}} na fileira {{lane}}.",
         "mainTeamFull": "O time principal tem limite de 5 personagens!",
-        "noSpaceForSaint": "Sem espaço nessa fileira ou nos slots de apoio."
+        "noSpaceForSaint": "Sem espaço nessa fileira ou nos slots de apoio.",
+        "compName": "Nome da composição",
+        "notesPlaceholder": "Notas (markdown permitido para usuários registrados)",
+        "saveComp": "Salvar",
+        "shareComp": "Compartilhar",
+        "myComps": "Minhas comps",
+        "noComps": "Nenhuma composição salva ainda.",
+        "load": "Carregar",
+        "linkCopied": "Link de compartilhamento copiado.",
+        "compSaved": "Composição salva localmente.",
+        "untitledComp": "Composição sem título",
+        "loginToSave": "Entre para salvar composições.",
+        "viewOnlyShare": "Visualizando composição compartilhada (somente leitura)",
+        "addFormation": "Adicionar na Formação",
+        "addSupport": "Adicionar como Suporte"
     }
 }

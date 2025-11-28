@@ -46,6 +46,20 @@
         "totalATK": "ATQ Totale",
         "laneRestriction": "Placez {{name}} sur la ligne {{lane}}.",
         "mainTeamFull": "L'équipe principale est limitée à 5 personnages.",
-        "noSpaceForSaint": "Aucun espace dans cette ligne ni en soutien."
+        "noSpaceForSaint": "Aucun espace dans cette ligne ni en soutien.",
+        "compName": "Nom de la composition",
+        "notesPlaceholder": "Notes (markdown autorisé pour les utilisateurs inscrits)",
+        "saveComp": "Enregistrer",
+        "shareComp": "Partager",
+        "myComps": "Mes comps",
+        "noComps": "Aucune composition enregistrée pour l'instant.",
+        "load": "Charger",
+        "linkCopied": "Lien de partage copié.",
+        "compSaved": "Composition enregistrée localement.",
+        "untitledComp": "Composition sans titre",
+        "loginToSave": "Connectez-vous pour enregistrer des compositions.",
+        "viewOnlyShare": "Affichage d'une composition partagée (lecture seule)",
+        "addFormation": "Ajouter à la formation",
+        "addSupport": "Ajouter en soutien"
     }
 }

@@ -46,6 +46,20 @@
         "totalATK": "ATK Total",
         "laneRestriction": "Tempatkan {{name}} di baris {{lane}}.",
         "mainTeamFull": "Tim utama dibatasi 5 karakter!",
-        "noSpaceForSaint": "Tidak ada slot di baris ini atau slot support."
+        "noSpaceForSaint": "Tidak ada slot di baris ini atau slot support.",
+        "compName": "Nama komposisi",
+        "notesPlaceholder": "Catatan (markdown untuk pengguna terdaftar)",
+        "saveComp": "Simpan",
+        "shareComp": "Bagikan",
+        "myComps": "Komposisi saya",
+        "noComps": "Belum ada komposisi tersimpan.",
+        "load": "Muat",
+        "linkCopied": "Tautan bagikan disalin.",
+        "compSaved": "Komposisi disimpan lokal.",
+        "untitledComp": "Komposisi tanpa judul",
+        "loginToSave": "Masuk untuk menyimpan komposisi.",
+        "viewOnlyShare": "Melihat komposisi yang dibagikan (read-only)",
+        "addFormation": "Tambahkan ke formasi",
+        "addSupport": "Tambahkan sebagai support"
     }
 }

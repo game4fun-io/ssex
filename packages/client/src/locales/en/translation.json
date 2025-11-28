@@ -54,6 +54,20 @@
         "totalATK": "Total ATK",
         "laneRestriction": "Place {{name}} in the {{lane}} row.",
         "mainTeamFull": "Main team is limited to 5 characters!",
-        "noSpaceForSaint": "No free slots in this row or support."
+        "noSpaceForSaint": "No free slots in this row or support.",
+        "compName": "Composition name",
+        "notesPlaceholder": "Notes (markdown allowed for registered users)",
+        "saveComp": "Save",
+        "shareComp": "Share",
+        "myComps": "My Comps",
+        "noComps": "No saved compositions yet.",
+        "load": "Load",
+        "linkCopied": "Share link copied to clipboard.",
+        "compSaved": "Composition saved locally.",
+        "untitledComp": "Untitled comp",
+        "loginToSave": "Log in to save compositions.",
+        "viewOnlyShare": "Viewing shared composition (read-only)",
+        "addFormation": "Add to Formation",
+        "addSupport": "Add as Support"
     }
 }

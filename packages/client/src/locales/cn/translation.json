@@ -46,6 +46,20 @@
         "totalATK": "总攻击",
         "laneRestriction": "请将{{name}}放在{{lane}}。",
         "mainTeamFull": "主阵容最多 5 名角色！",
-        "noSpaceForSaint": "该排或支援位已满。"
+        "noSpaceForSaint": "该排或支援位已满。",
+        "compName": "编队名称",
+        "notesPlaceholder": "备注（注册用户可使用 markdown）",
+        "saveComp": "保存",
+        "shareComp": "分享",
+        "myComps": "我的编队",
+        "noComps": "暂无保存的编队。",
+        "load": "加载",
+        "linkCopied": "分享链接已复制。",
+        "compSaved": "编队已本地保存。",
+        "untitledComp": "未命名编队",
+        "loginToSave": "登录后才能保存编队。",
+        "viewOnlyShare": "正在查看分享的编队（只读）",
+        "addFormation": "加入阵容",
+        "addSupport": "作为支援"
     }
 }

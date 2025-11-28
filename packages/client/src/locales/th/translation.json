@@ -46,6 +46,20 @@
         "totalATK": "ATK รวม",
         "laneRestriction": "วาง {{name}} ในแถว {{lane}}",
         "mainTeamFull": "ทีมหลักจำกัดแค่ 5 ตัวละคร",
-        "noSpaceForSaint": "ไม่มีช่องว่างในแถวนั้นหรือช่องซัพพอร์ต"
+        "noSpaceForSaint": "ไม่มีช่องว่างในแถวนั้นหรือช่องซัพพอร์ต",
+        "compName": "ชื่อคอมพ์",
+        "notesPlaceholder": "บันทึก (markdown สำหรับผู้ใช้ที่ล็อกอิน)",
+        "saveComp": "บันทึก",
+        "shareComp": "แชร์",
+        "myComps": "คอมพ์ของฉัน",
+        "noComps": "ยังไม่มีคอมพ์ที่บันทึกไว้",
+        "load": "โหลด",
+        "linkCopied": "คัดลอกลิงก์แชร์แล้ว",
+        "compSaved": "บันทึกคอมพ์ไว้ในเครื่องแล้ว",
+        "untitledComp": "คอมพ์ไม่มีชื่อ",
+        "loginToSave": "เข้าสู่ระบบเพื่อบันทึกคอมพ์",
+        "viewOnlyShare": "กำลังดูคอมพ์ที่แชร์ (อ่านอย่างเดียว)",
+        "addFormation": "ใส่ในฟอร์เมชัน",
+        "addSupport": "ใส่เป็นซัพพอร์ต"
     }
 }
