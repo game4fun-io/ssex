@@ -1,25 +1,37 @@
 const mongoose = require('mongoose');
 
-const CharacterSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    rarity: { type: String, enum: ['R', 'SR', 'SSR', 'UR'], required: true },
-    tags: [{ type: String }], // e.g., "Bronze Saint", "Gold Saint"
-    faction: { type: String, enum: ['Sanctuary', 'Asgard', 'Poseidon', 'Hades', 'Athena', 'Other'], required: true },
+const LocalizedString = new mongoose.Schema({
+    en: { type: String, default: '' },
+    pt: { type: String, default: '' },
+    es: { type: String, default: '' },
+    fr: { type: String, default: '' },
+    cn: { type: String, default: '' },
+    id: { type: String, default: '' },
+    th: { type: String, default: '' }
+}, { _id: false });
 
-    // New Fields
-    combatPosition: { type: String, enum: ['Tank', 'Warrior', 'Archer', 'Supporter'], required: true },
-    positioning: { type: String, enum: ['Front Row', 'Mid Row', 'Back Row'], required: true },
-    attackType: { type: String, enum: ['P-ATK', 'M-ATK'], required: true },
+const CharacterSchema = new mongoose.Schema({
+    id: { type: Number, required: true, unique: true }, // Scraped ID
+    name: { type: LocalizedString, required: true },
+    rarity: { type: String, enum: ['R', 'SR', 'SSR', 'UR'], default: 'R' },
+    tags: [{ type: String }],
+    faction: { type: String, default: 'Other' }, // Camp
+
+    // New Fields from scraping
+    constellation: { type: LocalizedString },
+    cv_name: { type: LocalizedString },
+    quality: { type: Number },
+
+    combatPosition: { type: String, default: 'Warrior' }, // Default for now
+    positioning: { type: String, default: 'Front Row' },
+    attackType: { type: String, default: 'P-ATK' },
 
     stats: {
-        // Basic Stats
         hp: { type: Number, default: 0 },
         atk: { type: Number, default: 0 },
-        def: { type: Number, default: 0 }, // Physical Defense
-        mdef: { type: Number, default: 0 }, // Mental Defense
+        def: { type: Number, default: 0 },
+        mdef: { type: Number, default: 0 },
         speed: { type: Number, default: 0 },
-
-        // Special Stats
         hitRate: { type: Number, default: 0 },
         dodgeRate: { type: Number, default: 0 },
         critRate: { type: Number, default: 0 },
@@ -29,29 +41,30 @@ const CharacterSchema = new mongoose.Schema({
     },
 
     skills: [{
-        name: { type: String, required: true },
-        description: { type: String, required: true },
-        type: { type: String, enum: ['Basic', 'Skill', 'Ultimate', 'Passive'], required: true },
+        id: { type: Number },
+        name: { type: LocalizedString },
+        description: { type: LocalizedString },
+        type: { type: String }, // Basic, Skill, Ultimate, Passive
         cost: { type: Number, default: 0 },
-        iconUrl: { type: String, default: '' },
+        iconUrl: { type: String },
         levels: [{
-            level: { type: Number, required: true },
-            description: { type: String, required: true }, // Description at this level
-            unlockRequirement: { type: String } // e.g., "Unlock at 3 stars"
+            level: { type: Number },
+            description: { type: LocalizedString },
+            unlockRequirement: { type: String }
         }],
         isAwakened: { type: Boolean, default: false }
     }],
 
     bonds: [{
-        name: { type: String, required: true },
-        partners: [{ type: String }], // Names of partner characters
-        effect: { type: String, required: true },
-        isActive: { type: Boolean, default: false } // Calculated on frontend usually, but good to have structure
+        name: { type: LocalizedString },
+        partners: [{ type: LocalizedString }],
+        effect: { type: LocalizedString },
+        isActive: { type: Boolean, default: false }
     }],
 
     imageUrl: { type: String, default: '' },
-    description: { type: String }, // Lore/Bio
-    collection: { type: String } // e.g., "Bronze Saints", "Gold Saints"
+    description: { type: LocalizedString },
+    collection: { type: String }
 });
 
 module.exports = mongoose.model('Character', CharacterSchema);

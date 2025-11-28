@@ -3,7 +3,7 @@ import { DndContext, useDraggable, useDroppable } from '@dnd-kit/core';
 import { useTranslation } from 'react-i18next';
 import api from '../api/axios';
 
-const DraggableCharacter = ({ char, onClick }) => {
+const DraggableCharacter = ({ char, onClick, getLoc }) => {
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id: char._id,
         data: char
@@ -23,11 +23,11 @@ const DraggableCharacter = ({ char, onClick }) => {
             className="bg-gray-800 p-2 rounded cursor-grab hover:bg-gray-700 border border-gray-600 w-24 h-24 flex flex-col items-center justify-center text-xs text-center relative group"
         >
             {char.imageUrl ? (
-                <img src={char.imageUrl} alt={char.name} className="w-16 h-16 object-cover rounded-full mb-1 pointer-events-none" />
+                <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1 pointer-events-none" />
             ) : (
                 <div className="w-16 h-16 bg-gray-600 rounded-full mb-1" />
             )}
-            <span className="truncate w-full">{char.name}</span>
+            <span className="truncate w-full">{getLoc(char.name)}</span>
             <div className="absolute top-0 right-0 bg-gray-900 text-white text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 transition">
                 {char.positioning}
             </div>
@@ -35,7 +35,7 @@ const DraggableCharacter = ({ char, onClick }) => {
     );
 };
 
-const DroppableSlot = ({ id, char, onRemove, label }) => {
+const DroppableSlot = ({ id, char, onRemove, label, getLoc }) => {
     const { isOver, setNodeRef } = useDroppable({
         id: id,
     });
@@ -49,11 +49,11 @@ const DroppableSlot = ({ id, char, onRemove, label }) => {
             {char ? (
                 <div className="flex flex-col items-center">
                     {char.imageUrl ? (
-                        <img src={char.imageUrl} alt={char.name} className="w-16 h-16 object-cover rounded-full mb-1" />
+                        <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1" />
                     ) : (
                         <div className="w-16 h-16 bg-gray-600 rounded-full mb-1" />
                     )}
-                    <span className="text-xs font-bold text-center leading-tight">{char.name}</span>
+                    <span className="text-xs font-bold text-center leading-tight">{getLoc(char.name)}</span>
                     <button onClick={() => onRemove(id)} className="absolute -top-2 -right-2 text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-500">x</button>
                 </div>
             ) : (
@@ -64,7 +64,7 @@ const DroppableSlot = ({ id, char, onRemove, label }) => {
 };
 
 const TeamBuilder = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [characters, setCharacters] = useState([]);
     const [team, setTeam] = useState({
         front1: null, front2: null,
@@ -84,6 +84,13 @@ const TeamBuilder = () => {
         };
         fetchCharacters();
     }, []);
+
+    const getLoc = (data) => {
+        if (!data) return '';
+        if (typeof data === 'string') return data;
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        return data[lang] || data['en'] || '';
+    };
 
     const getMainTeamCount = () => {
         const slots = ['front1', 'front2', 'mid1', 'mid2', 'back1', 'back2'];
@@ -165,7 +172,7 @@ const TeamBuilder = () => {
                             <p className="text-xs text-gray-500 mb-2">Click to auto-add or drag to slot.</p>
                             <div className="grid grid-cols-3 gap-2">
                                 {characters.map(char => (
-                                    <DraggableCharacter key={char._id} char={char} onClick={autoAddCharacter} />
+                                    <DraggableCharacter key={char._id} char={char} onClick={autoAddCharacter} getLoc={getLoc} />
                                 ))}
                             </div>
                         </div>
@@ -190,16 +197,16 @@ const TeamBuilder = () => {
                                 {/* Grid Layout: 2-2-2 visual but logic enforces 5 max */}
                                 <div className="flex flex-col gap-4">
                                     <div className="flex gap-4">
-                                        <DroppableSlot id="front1" char={team.front1} onRemove={removeFromTeam} label="Front" />
-                                        <DroppableSlot id="front2" char={team.front2} onRemove={removeFromTeam} label="Front" />
+                                        <DroppableSlot id="front1" char={team.front1} onRemove={removeFromTeam} label="Front" getLoc={getLoc} />
+                                        <DroppableSlot id="front2" char={team.front2} onRemove={removeFromTeam} label="Front" getLoc={getLoc} />
                                     </div>
                                     <div className="flex gap-4">
-                                        <DroppableSlot id="mid1" char={team.mid1} onRemove={removeFromTeam} label="Mid" />
-                                        <DroppableSlot id="mid2" char={team.mid2} onRemove={removeFromTeam} label="Mid" />
+                                        <DroppableSlot id="mid1" char={team.mid1} onRemove={removeFromTeam} label="Mid" getLoc={getLoc} />
+                                        <DroppableSlot id="mid2" char={team.mid2} onRemove={removeFromTeam} label="Mid" getLoc={getLoc} />
                                     </div>
                                     <div className="flex gap-4">
-                                        <DroppableSlot id="back1" char={team.back1} onRemove={removeFromTeam} label="Back" />
-                                        <DroppableSlot id="back2" char={team.back2} onRemove={removeFromTeam} label="Back" />
+                                        <DroppableSlot id="back1" char={team.back1} onRemove={removeFromTeam} label="Back" getLoc={getLoc} />
+                                        <DroppableSlot id="back2" char={team.back2} onRemove={removeFromTeam} label="Back" getLoc={getLoc} />
                                     </div>
                                 </div>
                             </div>
@@ -208,8 +215,8 @@ const TeamBuilder = () => {
                             <div className="w-full border-t border-gray-700 pt-6 mt-2">
                                 <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">Support</h3>
                                 <div className="flex justify-center gap-4">
-                                    <DroppableSlot id="support1" char={team.support1} onRemove={removeFromTeam} label="Support" />
-                                    <DroppableSlot id="support2" char={team.support2} onRemove={removeFromTeam} label="Support" />
+                                    <DroppableSlot id="support1" char={team.support1} onRemove={removeFromTeam} label="Support" getLoc={getLoc} />
+                                    <DroppableSlot id="support2" char={team.support2} onRemove={removeFromTeam} label="Support" getLoc={getLoc} />
                                 </div>
                             </div>
 

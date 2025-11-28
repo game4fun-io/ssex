@@ -8,7 +8,7 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [filteredCharacters, setFilteredCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     // Filters
     const [filters, setFilters] = useState({
@@ -49,6 +49,13 @@ const Characters = () => {
 
     const clearFilters = () => {
         setFilters({ rarity: '', faction: '', positioning: '', combatPosition: '' });
+    };
+
+    const getLoc = (data) => {
+        if (!data) return '';
+        if (typeof data === 'string') return data;
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        return data[lang] || data['en'] || '';
     };
 
     if (loading) {
@@ -116,7 +123,7 @@ const Characters = () => {
                                 <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700 group-hover:border-yellow-500 transition h-full flex flex-col">
                                     <div className="h-48 bg-gray-700 flex items-center justify-center relative overflow-hidden">
                                         {char.imageUrl ? (
-                                            <img src={char.imageUrl} alt={char.name} className="h-full w-full object-cover object-top group-hover:scale-110 transition duration-500" />
+                                            <img src={char.imageUrl} alt={getLoc(char.name)} className="h-full w-full object-cover object-top group-hover:scale-110 transition duration-500" />
                                         ) : (
                                             <span className="text-gray-500">No Image</span>
                                         )}
@@ -130,7 +137,7 @@ const Characters = () => {
                                         </div>
                                     </div>
                                     <div className="p-4 flex-grow">
-                                        <h2 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition">{char.name}</h2>
+                                        <h2 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition">{getLoc(char.name)}</h2>
 
                                         <div className="flex flex-wrap gap-1 mb-2">
                                             {char.tags && char.tags.map((tag, idx) => (

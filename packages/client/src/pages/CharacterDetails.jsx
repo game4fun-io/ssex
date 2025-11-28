@@ -7,7 +7,7 @@ import AdUnit from '../components/AdUnit';
 
 const CharacterDetails = () => {
     const { id } = useParams();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [character, setCharacter] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -25,6 +25,28 @@ const CharacterDetails = () => {
         fetchCharacter();
     }, [id]);
 
+    const getLoc = (data) => {
+        if (!data) return '';
+        if (typeof data === 'string') return data;
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        return data[lang] || data['en'] || '';
+    };
+
+    // Helper to parse Unity-style rich text tags
+    const parseRichText = (text) => {
+        if (!text) return '';
+
+        let processed = text
+            // Replace color tags
+            .replace(/<color=(#[0-9A-Fa-f]{6})>(.*?)<\/color>/g, '<span style="color: $1">$2</span>')
+            // Replace link tags
+            .replace(/<link=\d+>(.*?)<\/link>/g, '$1')
+            // Replace newlines
+            .replace(/\\n/g, '<br/>');
+
+        return <span dangerouslySetInnerHTML={{ __html: processed }} />;
+    };
+
     if (loading) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">{t('loading')}</div>;
     if (!character) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">Character not found</div>;
 
@@ -38,7 +60,7 @@ const CharacterDetails = () => {
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         src={character.imageUrl}
-                        alt={character.name}
+                        alt={getLoc(character.name)}
                         className="w-48 h-48 md:w-64 md:h-64 object-cover object-top rounded-full border-4 border-yellow-500 shadow-2xl"
                     />
                     <div className="mb-4">
@@ -47,7 +69,7 @@ const CharacterDetails = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-4xl md:text-6xl font-bold text-white mb-2"
                         >
-                            {character.name}
+                            {getLoc(character.name)}
                         </motion.h1>
                         <div className="flex flex-wrap gap-2">
                             <span className={`px-3 py-1 rounded text-sm font-bold ${character.rarity === 'SSR' ? 'bg-yellow-600' :
@@ -113,9 +135,9 @@ const CharacterDetails = () => {
                         <div className="space-y-4">
                             {character.bonds.map((bond, idx) => (
                                 <div key={idx} className="border-b border-gray-700 pb-2 last:border-0">
-                                    <h3 className="font-bold text-white">{bond.name}</h3>
-                                    <p className="text-xs text-gray-400 mb-1">Partners: {bond.partners.join(', ')}</p>
-                                    <p className="text-sm text-yellow-400">{bond.effect}</p>
+                                    <h3 className="font-bold text-white">{getLoc(bond.name)}</h3>
+                                    <p className="text-xs text-gray-400 mb-1">Partners: {bond.partners.map(p => getLoc(p)).join(', ')}</p>
+                                    <p className="text-sm text-yellow-400">{parseRichText(getLoc(bond.effect))}</p>
                                 </div>
                             ))}
                         </div>
@@ -135,8 +157,10 @@ const CharacterDetails = () => {
                         className="bg-gray-800 p-6 rounded-xl border border-gray-700"
                     >
                         <h2 className="text-xl font-bold text-yellow-500 mb-2">Biography</h2>
-                        <p className="text-gray-300 leading-relaxed">{character.description}</p>
+                        <p className="text-gray-300 leading-relaxed">{parseRichText(getLoc(character.description))}</p>
                         <p className="text-sm text-gray-500 mt-2">Collection: {character.collection}</p>
+                        {getLoc(character.constellation) && <p className="text-sm text-gray-500">Constellation: {getLoc(character.constellation)}</p>}
+                        {getLoc(character.cv_name) && <p className="text-sm text-gray-500">CV: {getLoc(character.cv_name)}</p>}
                     </motion.div>
 
                     {/* Skills */}
@@ -151,15 +175,15 @@ const CharacterDetails = () => {
                                 <div key={idx} className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition">
                                     <div className="flex justify-between items-start mb-2">
                                         <div className="flex items-center gap-4">
-                                            {skill.iconUrl && <img src={skill.iconUrl} alt={skill.name} className="w-12 h-12 rounded border border-gray-600" />}
+                                            {skill.iconUrl && <img src={skill.iconUrl} alt={getLoc(skill.name)} className="w-12 h-12 rounded border border-gray-600" />}
                                             <div>
-                                                <h3 className="text-xl font-bold text-white">{skill.name}</h3>
+                                                <h3 className="text-xl font-bold text-white">{getLoc(skill.name)}</h3>
                                                 <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300 mr-2">{skill.type}</span>
                                                 {skill.cost > 0 && <span className="text-xs bg-blue-900 px-2 py-1 rounded text-blue-200">Cost: {skill.cost}</span>}
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-gray-300 mb-4">{skill.description}</p>
+                                    <p className="text-gray-300 mb-4">{parseRichText(getLoc(skill.description))}</p>
 
                                     {/* Skill Levels */}
                                     <div className="bg-gray-900 p-4 rounded-lg">
@@ -168,7 +192,7 @@ const CharacterDetails = () => {
                                             {skill.levels.map((lvl, lIdx) => (
                                                 <li key={lIdx} className="text-sm text-gray-400 flex gap-2">
                                                     <span className="text-yellow-500 font-bold">Lv.{lvl.level}</span>
-                                                    <span>{lvl.description}</span>
+                                                    <span>{getLoc(lvl.description)}</span>
                                                     {lvl.unlockRequirement && <span className="text-xs text-gray-600 ml-auto">({lvl.unlockRequirement})</span>}
                                                 </li>
                                             ))}
