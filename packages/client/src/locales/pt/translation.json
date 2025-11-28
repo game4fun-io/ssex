@@ -1,6 +1,6 @@
 {
     "translation": {
-        "welcome": "Companheiro Saint Seiya EX",
+        "welcome": "Saint Seiya EX Companion",
         "subtitle": "Planeje formações, compare status e acompanhe relíquias e cartas de poder supremo para o meta global.",
         "heroBenefits": "Monte, salve e compartilhe composições de time. Acompanhe relíquias e cartas de poder supremo com dados localizados.",
         "viewCharacters": "Ver Elenco",
@@ -38,6 +38,19 @@
         "featureCharactersDescription": "Explore o elenco completo com status, habilidades e raridade localizados.",
         "featureTeamBuilderDescription": "Crie, salve e compartilhe formações ideais com seu time.",
         "featureRelicsDescription": "Revise os bônus das relíquias e como elas impulsionam seus Cavaleiros.",
-        "featureExplore": "Explorar"
+        "featureExplore": "Explorar",
+        "availableSaints": "Cavaleiros disponíveis",
+        "clickToAdd": "Clique para auto-adicionar ou arraste para um slot.",
+        "formation": "Formação",
+        "support": "Apoio",
+        "relicLabel": "Relíquia",
+        "ultimateCardsLabel": "Cartas de Poder",
+        "noneOption": "Nenhuma",
+        "frontRow": "Frente",
+        "midRow": "Meio",
+        "backRow": "Trás",
+        "teamStats": "Status do Time",
+        "totalHP": "HP Total",
+        "totalATK": "ATQ Total"
     }
 }

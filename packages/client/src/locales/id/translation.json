@@ -1,6 +1,6 @@
 {
     "translation": {
-        "welcome": "Pendamping Saint Seiya EX",
+        "welcome": "Saint Seiya EX Companion",
         "subtitle": "Rencanakan formasi, bandingkan statistik, dan pantau relik serta kartu kekuatan tertinggi untuk meta global.",
         "heroBenefits": "Buat, simpan, dan bagikan komposisi tim. Pantau relik dan kartu kekuatan tertinggi dengan data terlokalisasi.",
         "viewCharacters": "Lihat Roster",
@@ -30,6 +30,19 @@
         "featureCharactersDescription": "Jelajahi seluruh roster dengan statistik, skill, dan kelangkaan yang terlokalisasi.",
         "featureTeamBuilderDescription": "Buat, simpan, dan bagikan formasi optimal bersama timmu.",
         "featureRelicsDescription": "Tinjau bonus relik dan bagaimana mereka meningkatkan performa Saint-mu.",
-        "featureExplore": "Jelajahi"
+        "featureExplore": "Jelajahi",
+        "availableSaints": "Saint tersedia",
+        "clickToAdd": "Klik untuk auto-tambah atau seret ke slot.",
+        "formation": "Formasi",
+        "support": "Support",
+        "relicLabel": "Relik",
+        "ultimateCardsLabel": "Kartu kekuatan",
+        "noneOption": "Tidak ada",
+        "frontRow": "Depan",
+        "midRow": "Tengah",
+        "backRow": "Belakang",
+        "teamStats": "Stat tim",
+        "totalHP": "HP Total",
+        "totalATK": "ATK Total"
     }
 }

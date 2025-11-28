@@ -1,6 +1,6 @@
 {
     "translation": {
-        "welcome": "Compañero Saint Seiya EX",
+        "welcome": "Saint Seiya EX Companion",
         "subtitle": "Planifica formaciones, compara estadísticas y sigue reliquias y cartas de poder supremo para el meta global.",
         "heroBenefits": "Crea, guarda y comparte composiciones de equipo. Sigue reliquias y cartas de poder supremo con datos localizados.",
         "viewCharacters": "Ver Plantel",
@@ -30,6 +30,19 @@
         "featureCharactersDescription": "Explora todo el plantel con estadísticas, habilidades y rareza localizadas.",
         "featureTeamBuilderDescription": "Crea, guarda y comparte formaciones óptimas con tu escuadrón.",
         "featureRelicsDescription": "Revisa las bonificaciones de las reliquias y cómo potencian a tus Santos.",
-        "featureExplore": "Explorar"
+        "featureExplore": "Explorar",
+        "availableSaints": "Santos disponibles",
+        "clickToAdd": "Haz clic para autoañadir o arrastra a un espacio.",
+        "formation": "Formación",
+        "support": "Soporte",
+        "relicLabel": "Reliquia",
+        "ultimateCardsLabel": "Cartas de poder",
+        "noneOption": "Ninguna",
+        "frontRow": "Frente",
+        "midRow": "Medio",
+        "backRow": "Atrás",
+        "teamStats": "Estadísticas del equipo",
+        "totalHP": "HP Total",
+        "totalATK": "ATQ Total"
     }
 }

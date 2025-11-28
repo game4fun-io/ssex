@@ -30,6 +30,19 @@
         "featureCharactersDescription": "浏览完整角色名单及本地化的属性、技能与稀有度。",
         "featureTeamBuilderDescription": "创建、保存并分享与你的小队的最佳阵容。",
         "featureRelicsDescription": "查看圣器加成以及它们如何强化你的圣斗士。",
-        "featureExplore": "探索"
+        "featureExplore": "探索",
+        "availableSaints": "可用圣斗士",
+        "clickToAdd": "点击自动加入或拖放至槽位。",
+        "formation": "阵容",
+        "support": "支援",
+        "relicLabel": "圣器",
+        "ultimateCardsLabel": "究极之力卡",
+        "noneOption": "无",
+        "frontRow": "前排",
+        "midRow": "中排",
+        "backRow": "后排",
+        "teamStats": "队伍属性",
+        "totalHP": "总生命",
+        "totalATK": "总攻击"
     }
 }

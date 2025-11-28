@@ -1,6 +1,6 @@
 {
     "translation": {
-        "welcome": "ผู้ช่วย Saint Seiya EX",
+        "welcome": "Saint Seiya EX ผู้ช่วย",
         "subtitle": "วางแผนทีม เปรียบเทียบสเตตัส และติดตามรีลิกกับการ์ดพลังสูงสุดสำหรับเมต้าโกลบอล",
         "heroBenefits": "สร้าง บันทึก และแชร์คอมพ์ทีมของคุณ ติดตามรีลิกและการ์ดพลังสูงสุดด้วยข้อมูลแปลแล้ว",
         "viewCharacters": "ดูรายชื่อตัวละคร",
@@ -30,6 +30,19 @@
         "featureCharactersDescription": "สำรวจรายชื่อตัวละครพร้อมสเตตัส สกิล และความหายากที่แปลแล้ว",
         "featureTeamBuilderDescription": "สร้าง บันทึก และแชร์ฟอร์เมชันที่เหมาะสมกับทีมของคุณ",
         "featureRelicsDescription": "ดูบัฟจากรีลิกและผลที่ส่งต่อให้เหล่าเซนต์",
-        "featureExplore": "สำรวจ"
+        "featureExplore": "สำรวจ",
+        "availableSaints": "เซนต์ที่มีให้เลือก",
+        "clickToAdd": "คลิกเพื่อเพิ่มอัตโนมัติหรือวางด้วยการลาก",
+        "formation": "รูปแบบทีม",
+        "support": "ซัพพอร์ต",
+        "relicLabel": "รีลิก",
+        "ultimateCardsLabel": "การ์ดพลังสูงสุด",
+        "noneOption": "ไม่มี",
+        "frontRow": "แถวหน้า",
+        "midRow": "แถวกลาง",
+        "backRow": "แถวหลัง",
+        "teamStats": "สถิติทีม",
+        "totalHP": "HP รวม",
+        "totalATK": "ATK รวม"
     }
 }

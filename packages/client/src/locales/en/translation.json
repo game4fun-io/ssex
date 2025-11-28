@@ -38,6 +38,19 @@
         "featureCharactersDescription": "Browse the full roster with localized stats, skills, and rarity details.",
         "featureTeamBuilderDescription": "Create, save, and share optimal team formations with your squad.",
         "featureRelicsDescription": "Review relic bonuses and how they boost your Saints' performance.",
-        "featureExplore": "Explore"
+        "featureExplore": "Explore",
+        "availableSaints": "Available Saints",
+        "clickToAdd": "Click to auto-add or drag to slot.",
+        "formation": "Formation",
+        "support": "Support",
+        "relicLabel": "Relic",
+        "ultimateCardsLabel": "Ultimate Cards",
+        "noneOption": "None",
+        "frontRow": "Front",
+        "midRow": "Middle",
+        "backRow": "Back",
+        "teamStats": "Team Stats",
+        "totalHP": "Total HP",
+        "totalATK": "Total ATK"
     }
 }
