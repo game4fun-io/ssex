@@ -7,7 +7,7 @@ const User = require('../models/User');
 // Register
 router.post('/register', async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, firstName, lastName, country, age } = req.body;
 
         // Check if user exists
         let user = await User.findOne({ email });
@@ -23,7 +23,11 @@ router.post('/register', async (req, res) => {
         user = new User({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            firstName,
+            lastName,
+            country,
+            age
         });
 
         await user.save();
@@ -87,6 +91,26 @@ router.post('/login', async (req, res) => {
         console.error(err.message);
         res.status(500).send('Server error');
     }
+});
+
+// @route   GET api/auth/me
+// @desc    Get current user
+// @access  Private
+const auth = require('../middleware/auth');
+router.get('/me', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// Social Login Callbacks (Placeholders)
+router.get('/:provider/callback', (req, res) => {
+    const { provider } = req.params;
+    res.send(`Callback for ${provider} - Implementation pending`);
 });
 
 module.exports = router;

@@ -7,27 +7,39 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const fetchUser = async () => {
+        try {
+            const res = await api.get('/auth/me');
+            setUser(res.data);
+        } catch (err) {
+            console.error('Error fetching user:', err);
+            localStorage.removeItem('token');
+            setUser(null);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            // Ideally verify token with backend here, for now just set user exists
-            // You might want to decode the token or fetch user profile
-            setUser({ token });
+            fetchUser();
+        } else {
+            setLoading(false);
         }
-        setLoading(false);
     }, []);
 
     const login = async (email, password) => {
         const res = await api.post('/auth/login', { email, password });
         localStorage.setItem('token', res.data.token);
-        setUser({ token: res.data.token });
+        await fetchUser();
         return res.data;
     };
 
-    const register = async (username, email, password) => {
-        const res = await api.post('/auth/register', { username, email, password });
+    const register = async (username, email, password, firstName, lastName, country, age) => {
+        const res = await api.post('/auth/register', { username, email, password, firstName, lastName, country, age });
         localStorage.setItem('token', res.data.token);
-        setUser({ token: res.data.token });
+        await fetchUser();
         return res.data;
     };
 
@@ -36,8 +48,10 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
     };
 
+    const isAdmin = user?.role === 'admin';
+
     return (
-        <AuthContext.Provider value={{ user, login, register, logout, loading }}>
+        <AuthContext.Provider value={{ user, login, register, logout, loading, isAdmin }}>
             {children}
         </AuthContext.Provider>
     );

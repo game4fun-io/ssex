@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "welcome": "Selamat datang di Database Saint Seiya EX",
+        "subtitle": "Alat konsultasi utama untuk game seluler Saint Seiya EX. Jelajahi karakter, keterampilan, dan bangun tim impian Anda.",
+        "viewCharacters": "Lihat Karakter",
+        "joinNow": "Bergabung Sekarang",
+        "home": "Beranda",
+        "characters": "Karakter",
+        "teamBuilder": "Pembuat Tim",
+        "login": "Masuk",
+        "register": "Daftar",
+        "logout": "Keluar",
+        "welcomeUser": "Selamat Datang",
+        "loading": "Memuat...",
+        "noCharacters": "Karakter tidak ditemukan. Database mungkin kosong.",
+        "element": "Elemen",
+        "faction": "Faksi",
+        "rarity": "Kelangkaan"
+    }
+}

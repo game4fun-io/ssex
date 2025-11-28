@@ -20,6 +20,9 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/characters', require('./src/routes/characters'));
+app.use('/api/artifacts', require('./src/routes/artifacts'));
+app.use('/api/force-cards', require('./src/routes/forceCards'));
+app.use('/api/config', require('./src/routes/config'));
 
 app.get('/', (req, res) => {
     res.send('Saint Seiya EX API is running');

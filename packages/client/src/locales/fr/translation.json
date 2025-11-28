@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "welcome": "Bienvenue sur la base de données Saint Seiya EX",
+        "subtitle": "L'outil de consultation ultime pour le jeu mobile Saint Seiya EX. Explorez les personnages, les compétences et construisez votre équipe de rêve.",
+        "viewCharacters": "Voir les Personnages",
+        "joinNow": "Rejoindre Maintenant",
+        "home": "Accueil",
+        "characters": "Personnages",
+        "teamBuilder": "Constructeur d'Équipe",
+        "login": "Connexion",
+        "register": "S'inscrire",
+        "logout": "Déconnexion",
+        "welcomeUser": "Bienvenue",
+        "loading": "Chargement...",
+        "noCharacters": "Aucun personnage trouvé. La base de données peut être vide.",
+        "element": "Élément",
+        "faction": "Faction",
+        "rarity": "Rareté"
+    }
+}

@@ -42,6 +42,29 @@ const Login = () => {
                         Login
                     </button>
                 </form>
+
+                <div className="mt-6">
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-gray-600"></div>
+                        </div>
+                        <div className="relative flex justify-center text-sm">
+                            <span className="px-2 bg-gray-900 text-gray-400">Or sign in with</span>
+                        </div>
+                    </div>
+
+                    <div className="mt-6 grid grid-cols-3 gap-3">
+                        {['Discord', 'Google', 'Microsoft', 'Twitch', 'Steam', 'Instagram'].map((provider) => (
+                            <button
+                                key={provider}
+                                onClick={() => console.log(`Login with ${provider}`)}
+                                className="w-full inline-flex justify-center py-2 px-4 border border-gray-600 rounded-md shadow-sm bg-gray-800 text-xs font-medium text-gray-300 hover:bg-gray-700"
+                            >
+                                {provider}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

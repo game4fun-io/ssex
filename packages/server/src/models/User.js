@@ -20,6 +20,29 @@ const UserSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
+    firstName: {
+        type: String,
+        trim: true
+    },
+    lastName: {
+        type: String,
+        trim: true
+    },
+    country: {
+        type: String,
+        trim: true
+    },
+    age: {
+        type: Number
+    },
+    providers: {
+        google: String,
+        discord: String,
+        microsoft: String,
+        twitch: String,
+        steam: String,
+        instagram: String
+    },
     role: {
         type: String,
         enum: ['user', 'admin'],

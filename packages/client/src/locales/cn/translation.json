@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "welcome": "欢迎来到圣斗士星矢EX数据库",
+        "subtitle": "圣斗士星矢EX手游的终极咨询工具。探索角色、技能并组建您的梦之队。",
+        "viewCharacters": "查看角色",
+        "joinNow": "立即加入",
+        "home": "首页",
+        "characters": "角色",
+        "teamBuilder": "队伍构建器",
+        "login": "登录",
+        "register": "注册",
+        "logout": "登出",
+        "welcomeUser": "欢迎",
+        "loading": "加载中...",
+        "noCharacters": "未找到角色。数据库可能为空。",
+        "element": "元素",
+        "faction": "阵营",
+        "rarity": "稀有度"
+    }
+}

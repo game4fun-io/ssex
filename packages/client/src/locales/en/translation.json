@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "welcome": "Welcome to Saint Seiya EX Database",
+        "subtitle": "The ultimate consulting tool for Saint Seiya EX mobile game. Explore characters, skills, and build your dream team.",
+        "viewCharacters": "View Characters",
+        "joinNow": "Join Now",
+        "home": "Home",
+        "characters": "Characters",
+        "teamBuilder": "Team Builder",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout",
+        "welcomeUser": "Welcome",
+        "loading": "Loading...",
+        "noCharacters": "No characters found. Database might be empty.",
+        "element": "Element",
+        "faction": "Faction",
+        "rarity": "Rarity"
+    }
+}
