@@ -30,8 +30,10 @@ const ForceCards = () => {
         const fetchCards = async () => {
             try {
                 const res = await api.get('/force-cards');
-                setCards(res.data);
-                setFilteredCards(res.data);
+                const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
+                const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
+                setCards(sorted);
+                setFilteredCards(sorted);
 
                 const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
                 setOptions({

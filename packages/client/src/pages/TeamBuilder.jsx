@@ -1,118 +1,161 @@
-import { useState, useEffect } from 'react';
-import { DndContext, DragOverlay, useDraggable, useDroppable } from '@dnd-kit/core';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import api from '../api/axios';
 
-const DraggableCharacter = ({ char, onClick, getLoc }) => {
-    const { attributes, listeners, setNodeRef, transform } = useDraggable({
-        id: char._id,
-        data: char,
-        activationConstraint: { distance: 8 }
-    });
-
-    const style = transform ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-    } : undefined;
-
-    return (
-        <div
-            ref={setNodeRef}
-            style={style}
-            {...listeners}
-            {...attributes}
-            onClick={(e) => { e.preventDefault(); onClick(char); }}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(char); } }}
-            className="bg-gray-800 p-2 rounded cursor-grab hover:bg-gray-700 border border-gray-600 w-24 h-28 flex flex-col items-center justify-center text-xs text-center relative group select-none"
-        >
-            {char.imageUrl ? (
-                <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1 pointer-events-none" />
-            ) : (
-                <div className="w-16 h-16 bg-gray-600 rounded-full mb-1" />
-            )}
-            <span className="truncate w-full">{getLoc(char.name)}</span>
-            <div className="absolute top-0 right-0 bg-gray-900 text-white text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 transition">
-                {getLoc(char.positioning) || char.positioning}
-            </div>
-        </div>
-    );
+const rarityScore = (rarity) => {
+    const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
+    return order[rarity] || 0;
 };
 
-const DroppableSlot = ({ id, slot, onRemove, label, getLoc, artifacts, cards, onRelicChange, onCardsChange, relicLabel, cardsLabel, noneLabel }) => {
-    const { isOver, setNodeRef } = useDroppable({ id });
+const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport }) => (
+    <div className="bg-gray-800 p-2 rounded border border-gray-600 hover:border-yellow-500 w-full flex flex-col items-center text-xs text-white relative group">
+        {char.imageUrl ? (
+            <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1" />
+        ) : (
+            <div className="w-16 h-16 bg-gray-600 rounded-full mb-1" />
+        )}
+        <span className="truncate w-full text-center">{getLoc(char.name)}</span>
+        <span className="text-[10px] text-gray-400">{char.rarity}</span>
+        <span className="text-[10px] text-gray-400">{getLoc(char.positioning) || char.positioning}</span>
 
-    const style = {
-        borderColor: isOver ? '#EAB308' : '#4B5563',
-    };
+        <div className="absolute inset-0 bg-black/70 rounded opacity-0 group-hover:opacity-100 transition flex flex-col justify-center gap-2 p-2">
+            <button
+                type="button"
+                className="w-full bg-yellow-600 hover:bg-yellow-500 text-white text-xs py-1 rounded"
+                onClick={() => onAddMain(char)}
+            >
+                Add to Formation
+            </button>
+            <button
+                type="button"
+                className="w-full bg-blue-700 hover:bg-blue-600 text-white text-xs py-1 rounded"
+                onClick={() => onAddSupport(char)}
+            >
+                Add as Support
+            </button>
+        </div>
+    </div>
+);
 
+const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange, onCardsChange, relicLabel, cardsLabel, noneLabel }) => {
     const char = slot?.character;
     const relicId = slot?.relicId || '';
     const cardIds = slot?.cardIds || [];
+    const [openRelic, setOpenRelic] = useState(false);
+    const [openCards, setOpenCards] = useState(false);
+    const cardsTimeoutRef = useRef(null);
 
     return (
-        <div ref={setNodeRef} style={style} className="w-40 min-h-[220px] bg-gray-800 border-2 border-dashed rounded-lg flex flex-col items-center justify-start relative p-2 gap-2">
+        <div className="w-48 min-h-[240px] bg-gray-800 border border-gray-700 rounded-lg flex flex-col items-center p-2 gap-2 relative">
             {char ? (
                 <>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center relative w-full">
                         {char.imageUrl ? (
                             <img src={char.imageUrl} alt={getLoc(char.name)} className="w-16 h-16 object-cover rounded-full mb-1" />
                         ) : (
                             <div className="w-16 h-16 bg-gray-600 rounded-full mb-1" />
                         )}
                         <span className="text-xs font-bold text-center leading-tight">{getLoc(char.name)}</span>
-                        <button onClick={() => onRemove(id)} className="absolute -top-2 -right-2 text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-500">x</button>
+                        <button onClick={onRemove} className="absolute -top-2 -right-2 text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-500">x</button>
                     </div>
 
-                    <div className="w-full">
-                        <label className="block text-[10px] text-gray-400">{label} • {relicLabel}</label>
-                        <select
-                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600"
-                            value={relicId}
-                            onChange={(e) => onRelicChange(id, e.target.value)}
+                    <div className="w-full text-left">
+                        <label className="block text-[10px] text-gray-400 mb-1">{label} • {relicLabel}</label>
+                        <button
+                            type="button"
+                            onClick={() => { setOpenRelic(!openRelic); setOpenCards(false); }}
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 text-left flex items-center gap-2 hover:border-yellow-500"
                         >
-                            <option value="">{noneLabel}</option>
-                            {artifacts.map((art) => (
-                                <option key={art._id || art.id} value={art._id || art.id}>{getLoc(art.name)}</option>
-                            ))}
-                        </select>
+                            {relicId ? (() => {
+                                const art = relics.find(a => (a._id || a.id) === relicId);
+                                return (
+                                    <>
+                                        {art?.imageUrl && <img src={art.imageUrl} alt={getLoc(art?.name)} className="w-6 h-6 object-contain" />}
+                                        <span className="truncate">{getLoc(art?.name)}</span>
+                                        <span className="text-[10px] text-gray-400 ml-auto">{art?.rarity}</span>
+                                    </>
+                                );
+                            })() : <span className="text-gray-400">{noneLabel}</span>}
+                        </button>
+                        {openRelic && (
+                            <div className="absolute z-30 left-2 right-2 bg-gray-900 border border-gray-700 rounded shadow-lg max-h-48 overflow-y-auto scrollbar-themed mt-1 p-2">
+                                <button className="text-[10px] text-yellow-400 mb-2" onClick={() => { onRelicChange(''); setOpenRelic(false); }}>{noneLabel}</button>
+                                {relics.map((art) => (
+                                    <button
+                                        key={art._id || art.id}
+                                        className="w-full flex items-center gap-2 text-left text-xs text-white p-2 rounded hover:bg-gray-800"
+                                        onClick={() => { onRelicChange(art._id || art.id); setOpenRelic(false); }}
+                                    >
+                                        {art.imageUrl && <img src={art.imageUrl} alt={getLoc(art.name)} className="w-8 h-8 object-contain" />}
+                                        <span className="flex-1 truncate">{getLoc(art.name)}</span>
+                                        <span className="text-[10px] text-gray-400">{art.rarity}</span>
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
-                    <div className="w-full">
-                        <div className="flex justify-between items-center text-[10px] text-gray-400">
+                    <div className="w-full text-left">
+                        <div className="flex justify-between items-center text-[10px] text-gray-400 mb-1">
                             <span>{cardsLabel} ({cardIds.length}/5)</span>
                             <button
                                 type="button"
                                 className="text-[10px] text-yellow-400 hover:text-yellow-300"
-                                onClick={() => onCardsChange(id, [])}
+                                onClick={() => onCardsChange([])}
                             >{noneLabel}</button>
                         </div>
-                        <select
-                            multiple
-                            size={Math.min(6, cards.length || 6)}
-                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 min-h-[88px]"
-                            value={cardIds}
-                            onChange={(e) => {
-                                const selected = Array.from(e.target.selectedOptions).map((o) => o.value).slice(0, 5);
-                                onCardsChange(id, selected);
-                            }}
+                        <button
+                            type="button"
+                            onClick={() => { setOpenCards(!openCards); setOpenRelic(false); }}
+                            className="w-full bg-gray-700 text-white text-xs p-2 rounded border border-gray-600 text-left flex flex-wrap gap-1 min-h-[44px] hover:border-yellow-500"
                         >
-                            {cards.map((card) => (
-                                <option key={card._id || card.id} value={card._id || card.id}>{getLoc(card.name)}</option>
-                            ))}
-                        </select>
-                        {cardIds.length > 0 && (
-                            <div className="flex flex-wrap gap-1 mt-1">
-                                {cardIds.map((cid) => {
+                            {cardIds.length === 0 ? <span className="text-gray-400">{noneLabel}</span> : (
+                                cardIds.map((cid) => {
                                     const card = cards.find(c => (c._id || c.id) === cid);
-                                    return <span key={cid} className="text-[10px] bg-gray-700 px-1.5 py-0.5 rounded border border-gray-600">{getLoc(card?.name) || cid}</span>;
+                                    return (
+                                        <span key={cid} className="flex items-center gap-1 bg-gray-800 px-1.5 py-0.5 rounded border border-gray-600 text-[10px]">
+                                            {card?.imageUrl && <img src={card.imageUrl} alt={getLoc(card?.name)} className="w-5 h-5 object-contain" />}
+                                            {getLoc(card?.name) || cid}
+                                        </span>
+                                    );
+                                })
+                            )}
+                        </button>
+                        {openCards && (
+                            <div
+                                className="absolute z-30 left-0 right-0 bg-gray-900 border border-gray-700 rounded shadow-lg max-h-64 overflow-y-auto scrollbar-themed mt-1 p-2"
+                                onMouseEnter={() => { if (cardsTimeoutRef.current) clearTimeout(cardsTimeoutRef.current); }}
+                                onMouseLeave={() => { cardsTimeoutRef.current = setTimeout(() => setOpenCards(false), 1200); }}
+                            >
+                                {cards.map((card) => {
+                                    const idVal = card._id || card.id;
+                                    const selected = cardIds.includes(idVal);
+                                    const canAdd = selected || cardIds.length < 5;
+                                    return (
+                                        <button
+                                            key={idVal}
+                                            className={`w-full flex items-center gap-2 text-left text-xs p-2 rounded ${selected ? 'bg-gray-800 border border-yellow-500' : 'hover:bg-gray-800 border border-transparent'} ${!canAdd ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                            onClick={() => {
+                                                if (!selected && !canAdd) return;
+                                                const next = selected ? cardIds.filter(c => c !== idVal) : [...cardIds, idVal].slice(0, 5);
+                                                onCardsChange(next);
+                                            }}
+                                        >
+                                            {card.imageUrl && <img src={card.imageUrl} alt={getLoc(card.name)} className="w-8 h-8 object-contain" />}
+                                            <span className="flex-1 truncate">{getLoc(card.name)}</span>
+                                            <span className="text-[10px] text-gray-400">{card.rarity}</span>
+                                        </button>
+                                    );
                                 })}
+                                <div className="flex justify-end mt-2">
+                                    <button className="text-[11px] text-yellow-400" onClick={() => setOpenCards(false)}>Close</button>
+                                </div>
                             </div>
                         )}
                     </div>
                 </>
             ) : (
-                <span className="text-gray-500 text-xs text-center leading-tight">{label || `Slot`}</span>
+                <div className="text-gray-500 text-xs text-center leading-tight w-full h-full flex items-center justify-center">{label}</div>
             )}
         </div>
     );
@@ -126,7 +169,6 @@ const TeamBuilder = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [rowFilter, setRowFilter] = useState('');
     const [rarityFilter, setRarityFilter] = useState('');
-    const [activeChar, setActiveChar] = useState(null);
     const [toast, setToast] = useState(null);
     const [team, setTeam] = useState({
         front1: null, front2: null, front3: null,
@@ -136,34 +178,26 @@ const TeamBuilder = () => {
     });
 
     useEffect(() => {
-        const fetchCharacters = async () => {
+        const fetchData = async () => {
             try {
-                const res = await api.get('/characters');
-                setCharacters(res.data);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-        const fetchArtifacts = async () => {
-            try {
-                const res = await api.get('/artifacts');
-                setArtifacts(res.data || []);
-            } catch (err) {
-                console.error(err);
-            }
-        };
-        const fetchCards = async () => {
-            try {
-                const res = await api.get('/force-cards');
-                setCards(res.data || []);
-            } catch (err) {
-                console.error(err);
-            }
-        };
+                const [charRes, artRes, cardRes] = await Promise.all([
+                    api.get('/characters'),
+                    api.get('/artifacts'),
+                    api.get('/force-cards')
+                ]);
 
-        fetchCharacters();
-        fetchArtifacts();
-        fetchCards();
+                const sortedChars = (charRes.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
+                const sortedArts = (artRes.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
+                const sortedCards = (cardRes.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));
+
+                setCharacters(sortedChars);
+                setArtifacts(sortedArts);
+                setCards(sortedCards);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        fetchData();
     }, []);
 
     const getLoc = (data) => {
@@ -178,6 +212,16 @@ const TeamBuilder = () => {
         return slots.reduce((count, slot) => team[slot]?.character ? count + 1 : count, 0);
     };
 
+    const getTotalCount = (state = team) => {
+        return Object.values(state).reduce((count, entry) => entry?.character ? count + 1 : count, 0);
+    };
+
+    const findSlotsByChar = (charId) => {
+        return Object.entries(team)
+            .filter(([, value]) => value?.character?._id === charId || value?.character?.id === charId)
+            .map(([k]) => k);
+    };
+
     const normalizeRow = (positioning) => {
         const value = (positioning || '').toLowerCase();
         if (value.includes('front') || value.includes('frente') || value.includes('avant')) return 'front';
@@ -186,87 +230,126 @@ const TeamBuilder = () => {
         return 'front';
     };
 
-    const handleDragStart = (event) => {
-        const { active } = event;
-        if (active?.data?.current) {
-            setActiveChar(active.data.current);
-        }
-    };
-
-    const handleDragEnd = (event) => {
-        const { active, over } = event;
-        setActiveChar(null);
-
-        if (over && active.data.current) {
-            const char = active.data.current;
-            const slotId = over.id;
-            const isSupportSlot = slotId.startsWith('support');
-
-            const charRow = normalizeRow(getLoc(char.positioning));
-            const targetRow = slotRow(slotId);
-            if (!isSupportSlot && targetRow !== charRow) {
-                notify(t('laneRestriction', { name: getLoc(char.name), lane: t(`${charRow}Row`) || charRow }));
-                return;
-            }
-
-            // Check limits
-            if (!isSupportSlot && getMainTeamCount() >= 5 && !team[slotId]?.character) {
-                notify(t('mainTeamFull'));
-                return;
-            }
-
-            setTeam(prev => ({
-                ...prev,
-                [slotId]: { character: char, relicId: '', cardIds: [] }
-            }));
-        }
+    const notify = (msg) => {
+        setToast(msg);
+        setTimeout(() => setToast(null), 2200);
     };
 
     const getRowSlots = (row) => {
-        if (row === 'front') return ['front1', 'front2', 'front3'];
+        if (row === 'front') return ['front1', 'front2', 'front3']; // left, mid, right
         if (row === 'mid') return ['mid1', 'mid2', 'mid3'];
         return ['back1', 'back2', 'back3'];
     };
 
-    const slotRow = (slotId) => {
-        if (slotId.startsWith('front')) return 'front';
-        if (slotId.startsWith('mid')) return 'mid';
-        if (slotId.startsWith('back')) return 'back';
-        return 'support';
+    const placeWithRule = (state, entry) => {
+        const { left, mid, right } = state;
+        if (!left && !mid && !right) return { left, mid: entry, right };
+        if (mid && !left && !right) return { left: mid, mid: null, right: entry };
+        if (left && right && !mid) return { left, mid: entry, right };
+        if (!left) return { left: entry, mid, right };
+        if (!mid) return { left, mid: entry, right };
+        if (!right) return { left, mid, right: entry };
+        return { left, mid, right }; // full
     };
 
-    const notify = (msg, type = 'warning') => {
-        setToast({ msg, type });
-        setTimeout(() => setToast(null), 2200);
+    const reflowRow = (row, baseTeam) => {
+        const slots = getRowSlots(row);
+        const entries = slots
+            .map((slot) => baseTeam[slot])
+            .filter(Boolean)
+            .map((entry) => ({ ...entry }));
+
+        let state = { left: null, mid: null, right: null };
+        entries.forEach((entry) => {
+            state = placeWithRule(state, entry);
+        });
+
+        return {
+            [slots[0]]: state.left,
+            [slots[1]]: state.mid,
+            [slots[2]]: state.right
+        };
     };
 
-    const autoAddCharacter = (char) => {
+    const placeInRow = (row, char, baseTeam = team) => {
+        const slots = getRowSlots(row);
+        const state = {
+            left: baseTeam[slots[0]],
+            mid: baseTeam[slots[1]],
+            right: baseTeam[slots[2]]
+        };
+        const next = placeWithRule(state, { character: char, relicId: '', cardIds: [] });
+        if (next.left === state.left && next.mid === state.mid && next.right === state.right) return null;
+        return {
+            [slots[0]]: next.left,
+            [slots[1]]: next.mid,
+            [slots[2]]: next.right
+        };
+    };
+
+    const autoAddCharacter = (char, asSupport = false) => {
         const row = normalizeRow(getLoc(char.positioning));
-        const targetSlots = getRowSlots(row);
 
-        let added = false;
-        for (const slot of targetSlots) {
-            if (!team[slot]?.character) {
-                if (getMainTeamCount() < 5) {
-                    setTeam(prev => ({ ...prev, [slot]: { character: char, relicId: '', cardIds: [] } }));
-                    added = true;
-                } else {
-                    notify(t('mainTeamFull'));
-                    return;
-                }
-                break;
+        // remove existing placements of this char
+        let nextTeam = { ...team };
+        findSlotsByChar(char._id || char.id).forEach((slotId) => {
+            nextTeam[slotId] = null;
+        });
+
+        // reflow rows affected by removal
+        ['front', 'mid', 'back'].forEach((r) => {
+            nextTeam = { ...nextTeam, ...reflowRow(r, nextTeam) };
+        });
+
+        if (asSupport) {
+            if (getTotalCount(nextTeam) >= 5) {
+                notify(t('mainTeamFull'));
+                return;
             }
+            if (!nextTeam.support1?.character) {
+                setTeam({ ...nextTeam, support1: { character: char, relicId: '', cardIds: [] } });
+                return;
+            }
+            if (!nextTeam.support2?.character) {
+                setTeam({ ...nextTeam, support2: { character: char, relicId: '', cardIds: [] } });
+                return;
+            }
+            notify(t('noSpaceForSaint'));
+            return;
         }
 
-        if (!added) {
-            if (!team.support1?.character) setTeam(prev => ({ ...prev, support1: { character: char, relicId: '', cardIds: [] } }));
-            else if (!team.support2?.character) setTeam(prev => ({ ...prev, support2: { character: char, relicId: '', cardIds: [] } }));
-            else notify(t('noSpaceForSaint'));
+        const placement = placeInRow(row, char, nextTeam);
+
+        const currentCount = getTotalCount(nextTeam);
+        if (currentCount >= 5) {
+            notify(t('mainTeamFull'));
+            return;
         }
+
+        if (placement && currentCount < 5) {
+            setTeam({ ...nextTeam, ...placement });
+            return;
+        }
+
+        if (!nextTeam.support1?.character && currentCount < 5) {
+            setTeam({ ...nextTeam, support1: { character: char, relicId: '', cardIds: [] } });
+            return;
+        }
+        if (!nextTeam.support2?.character && currentCount < 5) {
+            setTeam({ ...nextTeam, support2: { character: char, relicId: '', cardIds: [] } });
+            return;
+        }
+
+        notify(t('noSpaceForSaint'));
     };
 
     const removeFromTeam = (slotId) => {
-        setTeam(prev => ({ ...prev, [slotId]: null }));
+        const row = slotId.startsWith('front') ? 'front' : slotId.startsWith('mid') ? 'mid' : slotId.startsWith('back') ? 'back' : null;
+        let nextTeam = { ...team, [slotId]: null };
+        if (row) {
+            nextTeam = { ...nextTeam, ...reflowRow(row, nextTeam) };
+        }
+        setTeam(nextTeam);
     };
 
     const handleRelicChange = (slotId, relicId) => {
@@ -286,23 +369,23 @@ const TeamBuilder = () => {
     const filteredCharacters = characters.filter((c) => {
         const nameMatch = getLoc(c.name).toLowerCase().includes(searchTerm.trim().toLowerCase());
         const rowMatch = rowFilter ? normalizeRow(getLoc(c.positioning)) === rowFilter : true;
-        const rarityMatch = rarityFilter ? (c.rarity === rarityFilter) : true;
+        const rarityMatch = rarityFilter ? c.rarity === rarityFilter : true;
         return nameMatch && rowMatch && rarityMatch;
     });
 
     return (
-        <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-            <div className="min-h-screen bg-gray-900 text-white p-8">
-                <div className="container mx-auto">
-                    <h1 className="text-3xl font-bold text-yellow-500 mb-8">{t('teamBuilder')}</h1>
+        <div className="min-h-screen bg-gray-900 text-white p-8">
+            <div className="container mx-auto">
+                <h1 className="text-3xl font-bold text-yellow-500 mb-8">{t('teamBuilder')}</h1>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {/* Character List */}
-                        <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-4 rounded-lg h-[640px] overflow-y-auto scrollbar-themed">
-                            <h2 className="text-xl font-bold mb-4 text-gray-300">{t('availableSaints')}</h2>
-                            <p className="text-xs text-gray-500 mb-4">{t('clickToAdd')}</p>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Character List */}
+                    <div className="lg:col-span-1 bg-gray-900 border border-gray-700 p-0 rounded-lg h-[640px] overflow-y-auto overflow-x-hidden scrollbar-themed relative">
+                        <div className="sticky top-0 z-10 bg-gray-900 p-4 border-b border-gray-800">
+                            <h2 className="text-xl font-bold mb-2 text-gray-300">{t('availableSaints')}</h2>
+                            <p className="text-xs text-gray-500 mb-3">{t('clickToAdd')}</p>
 
-                            <div className="flex flex-col gap-2 mb-4">
+                            <div className="flex flex-col gap-2">
                                 <input
                                     type="text"
                                     value={searchTerm}
@@ -327,88 +410,81 @@ const TeamBuilder = () => {
                                         className="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-yellow-500 w-1/2"
                                     >
                                         <option value="">{t('all')}</option>
-                                        {[...new Set(characters.map(c => c.rarity).filter(Boolean))].sort().map(r => (
+                                        {['UR','SSR','SR','R','N'].map(r => (
                                             <option key={r} value={r}>{r}</option>
                                         ))}
                                     </select>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="grid grid-cols-3 gap-2">
-                                {filteredCharacters.map(char => (
-                                    <DraggableCharacter key={char._id} char={char} onClick={autoAddCharacter} getLoc={getLoc} />
+                        <div className="grid grid-cols-3 gap-2 p-4">
+                            {filteredCharacters.map(char => (
+                                <CharacterCard
+                                    key={char._id || char.id}
+                                    char={char}
+                                    getLoc={getLoc}
+                                    onAddMain={(c) => autoAddCharacter(c, false)}
+                                    onAddSupport={(c) => autoAddCharacter(c, true)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Formation */}
+                    <div className="lg:col-span-2 bg-gray-800 p-8 rounded-lg flex flex-col gap-6">
+                        <div className="flex justify-between w-full items-center">
+                            <h2 className="text-2xl font-bold text-yellow-500">{t('formation')}</h2>
+                            <span className={`text-lg font-bold ${getMainTeamCount() === 5 ? 'text-red-500' : 'text-green-500'}`}>
+                                {getMainTeamCount()}/5 Main
+                            </span>
+                        </div>
+
+                        <div className="flex gap-4 w-full flex-wrap">
+                            <div className="flex flex-col gap-4 flex-1 min-w-0">
+                                {[['front', t('frontRow') || 'Front'], ['mid', t('midRow') || 'Middle'], ['back', t('backRow') || 'Back']].map(([rowKey, rowLabel]) => (
+                                    <div key={rowKey} className="flex gap-3 items-start">
+                                        <div className="w-16 text-gray-500 font-bold text-sm pt-4 text-right">{rowLabel.toUpperCase()}</div>
+                                        <div className="flex gap-3">
+                                            {getRowSlots(rowKey).map((slotId, idx) => (
+                                                <SlotCard
+                                                    key={slotId}
+                                                    slot={team[slotId]}
+                                                    label={`${rowLabel} ${idx === 0 ? 'L' : idx === 1 ? 'M' : 'R'}`}
+                                                    getLoc={getLoc}
+                                                    onRemove={() => removeFromTeam(slotId)}
+                                                    relics={artifacts}
+                                                    cards={cards}
+                                                    onRelicChange={(val) => handleRelicChange(slotId, val)}
+                                                    onCardsChange={(vals) => handleCardsChange(slotId, vals)}
+                                                    relicLabel={t('relicLabel')}
+                                                    cardsLabel={t('ultimateCardsLabel')}
+                                                    noneLabel={t('noneOption')}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Formation Area */}
-                        <div className="lg:col-span-2 bg-gray-800 p-8 rounded-lg flex flex-col items-center justify-center gap-8">
-                            <div className="flex justify-between w-full items-center">
-                                <h2 className="text-2xl font-bold text-yellow-500">{t('formation')}</h2>
-                                <span className={`text-lg font-bold ${getMainTeamCount() === 5 ? 'text-red-500' : 'text-green-500'}`}>
-                                    {getMainTeamCount()}/5 Main
-                                </span>
+                        <div className="w-full border-t border-gray-700 pt-6">
+                            <h3 className="text-lg font-bold text-blue-400 text-center mb-3">{t('support')}</h3>
+                            <div className="flex justify-center gap-4 flex-wrap">
+                                <SlotCard slot={team.support1} label={t('support')} getLoc={getLoc} onRemove={() => removeFromTeam('support1')} relics={artifacts} cards={cards} onRelicChange={(val) => handleRelicChange('support1', val)} onCardsChange={(vals) => handleCardsChange('support1', vals)} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
+                                <SlotCard slot={team.support2} label={t('support')} getLoc={getLoc} onRemove={() => removeFromTeam('support2')} relics={artifacts} cards={cards} onRelicChange={(val) => handleRelicChange('support2', val)} onCardsChange={(vals) => handleCardsChange('support2', vals)} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
                             </div>
-
-                            <div className="flex gap-6 w-full">
-                                <div className="flex flex-col gap-4 w-full">
-                                    {[['front', t('frontRow') || 'Front'], ['mid', t('midRow') || 'Middle'], ['back', t('backRow') || 'Back']].map(([rowKey, rowLabel]) => (
-                                        <div key={rowKey} className="flex gap-3 items-start">
-                                            <div className="w-16 text-gray-500 font-bold text-sm pt-4 text-right">{rowLabel.toUpperCase()}</div>
-                                            <div className="flex gap-3">
-                                                {getRowSlots(rowKey).map((slotId) => (
-                                                    <DroppableSlot
-                                                        key={slotId}
-                                                        id={slotId}
-                                                        slot={team[slotId]}
-                                                        onRemove={removeFromTeam}
-                                                        label={rowLabel}
-                                                        getLoc={getLoc}
-                                                        artifacts={artifacts}
-                                                        cards={cards}
-                                                        onRelicChange={handleRelicChange}
-                                                        onCardsChange={handleCardsChange}
-                                                        relicLabel={t('relicLabel')}
-                                                        cardsLabel={t('ultimateCardsLabel')}
-                                                        noneLabel={t('noneOption')}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="w-48 shrink-0 bg-gray-900 border border-gray-700 rounded-lg p-4 flex flex-col gap-3">
-                                    <h3 className="text-lg font-bold text-blue-400 text-center">{t('support')}</h3>
-                                    <DroppableSlot id="support1" slot={team.support1} onRemove={removeFromTeam} label={t('support')} getLoc={getLoc} artifacts={artifacts} cards={cards} onRelicChange={handleRelicChange} onCardsChange={handleCardsChange} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
-                                    <DroppableSlot id="support2" slot={team.support2} onRemove={removeFromTeam} label={t('support')} getLoc={getLoc} artifacts={artifacts} cards={cards} onRelicChange={handleRelicChange} onCardsChange={handleCardsChange} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
-                                </div>
-                            </div>
-
-                            {/* Basic Stats Summary */}
-                            {/* Placeholder for future stats; hidden for now */}
                         </div>
                     </div>
                 </div>
             </div>
+
             {toast && (
                 <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-3 rounded shadow-lg border border-yellow-600 max-w-sm text-sm">
-                    {toast.msg}
+                    {toast}
                 </div>
             )}
-            <DragOverlay>
-                {activeChar ? (
-                    <div className="bg-gray-800 p-2 rounded border border-yellow-500 shadow-2xl">
-                        {activeChar.imageUrl ? (
-                            <img src={activeChar.imageUrl} alt={getLoc(activeChar.name)} className="w-16 h-16 object-cover rounded-full" />
-                        ) : (
-                            <div className="w-16 h-16 bg-gray-600 rounded-full" />
-                        )}
-                        <div className="text-xs font-bold text-yellow-400 mt-1 text-center">{getLoc(activeChar.name)}</div>
-                    </div>
-                ) : null}
-            </DragOverlay>
-        </DndContext>
+        </div>
     );
 };
 
