@@ -23,6 +23,10 @@ const ForceCardSchema = new mongoose.Schema({
         name: { type: LocalizedString, required: true },
         description: { type: LocalizedString, required: true }
     },
+    skills: [{
+        level: { type: Number, required: true },
+        description: { type: LocalizedString, required: true }
+    }],
     imageUrl: { type: String, default: '' }
 });
 

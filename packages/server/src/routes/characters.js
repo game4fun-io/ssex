@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Character = require('../models/Character');
+const { mapCharacterAssets } = require('../utils/assets');
 
 // Get all characters
 router.get('/', async (req, res) => {
     try {
         const characters = await Character.find();
-        res.json(characters);
+        res.json(characters.map(mapCharacterAssets));
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
@@ -20,7 +21,7 @@ router.get('/:id', async (req, res) => {
         if (!character) {
             return res.status(404).json({ msg: 'Character not found' });
         }
-        res.json(character);
+        res.json(mapCharacterAssets(character));
     } catch (err) {
         console.error(err.message);
         if (err.kind === 'ObjectId') {
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
     try {
         const newCharacter = new Character(req.body);
         const character = await newCharacter.save();
-        res.json(character);
+        res.json(mapCharacterAssets(character));
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');

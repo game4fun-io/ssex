@@ -69,8 +69,24 @@ const ForceCardDetail = () => {
                         </div>
 
                         <div className="mb-8">
-                            <h2 className="text-2xl font-bold text-white mb-2">{getLoc(card.skill.name)}</h2>
+                            <h2 className="text-2xl font-bold text-white mb-2">{t('artifactEffect')}</h2>
                             <p className="text-gray-300 text-lg leading-relaxed">{getLoc(card.skill.description)}</p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mb-4">{t('artifactProgression')}</h2>
+                            {card.skills && card.skills.length > 0 ? (
+                                <div className="space-y-4">
+                                    {card.skills.map((skill, idx) => (
+                                        <div key={idx} className="bg-gray-700 p-4 rounded border border-gray-600">
+                                            <h3 className="text-yellow-500 font-bold mb-1">{skill.level} Star{skill.level > 1 ? 's' : ''}</h3>
+                                            <p className="text-gray-300">{getLoc(skill.description)}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className="text-gray-500 italic">No progression data available.</p>
+                            )}
                         </div>
                     </div>
                 </div>

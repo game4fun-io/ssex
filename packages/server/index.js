@@ -2,15 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const ASSET_ROUTE = process.env.ASSET_ROUTE || '/assets';
+// Default to server-package assets so deployment/CDN swaps are straightforward
+const ASSET_DIR = process.env.ASSET_DIR || path.join(__dirname, 'public', 'assets');
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(ASSET_ROUTE, express.static(ASSET_DIR)); // serve scraped assets locally
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)

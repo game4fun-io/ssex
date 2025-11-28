@@ -162,11 +162,11 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
 const mapRarity = (quality) => {
     switch (quality) {
         case 1: return 'N';
-        case 2: return 'N';
-        case 3: return 'R';
-        case 4: return 'SR';
-        case 5: return 'SSR';
-        case 6: return 'UR'; // Assuming 6 might be UR if it exists
+        case 2: return 'R';
+        case 3: return 'SR';
+        case 4: return 'SSR';
+        case 5: return 'UR';
+        case 6: return 'UR';
         default: return 'N';
     }
 };
@@ -190,7 +190,23 @@ const mapArtifactSkills = (artifactId, skillConfig, skillValueConfig, langPackag
 const mapArtifactImage = (id, artifactResourcesConfig) => {
     const resource = artifactResourcesConfig.find(r => r.id === id);
     if (!resource || !resource.preview_icon) return '';
-    return `https://seiya2.vercel.app/assets/resources/${resource.preview_icon.toLowerCase()}.png`;
+    return `/assets/resources/${resource.preview_icon.toLowerCase()}.png`;
+};
+
+const mapForceCardSkills = (cardId, skillConfig, skillValueConfig, langPackages) => {
+    // Force Card ID maps directly to Skill ID
+    const skill = skillConfig.find(s => s.skillid === cardId);
+    if (!skill) return [];
+
+    // Force Card skills seem to be in skill_des array
+    if (!skill.skill_des) return [];
+
+    return skill.skill_des.map((des, index) => {
+        return {
+            level: index + 1,
+            description: resolveSkillDescription(des.des, des.value, skillValueConfig, langPackages)
+        };
+    });
 };
 
 const mapTags = (labelList, skillLabelConfig, langPackages) => {
@@ -297,6 +313,14 @@ const migrate = async () => {
 
         // Migrate Force Cards
         for (const card of forceCardConfig) {
+            let imageUrl = '';
+            if (card.icon_path) {
+                const parts = card.icon_path.split('/');
+                const filename = parts.pop();
+                const path = parts.join('/').toLowerCase();
+                imageUrl = `/assets/resources/${path}/${filename}.png`;
+            }
+
             const cardData = {
                 id: card.id,
                 name: getLocalized(card.name, langPackages),
@@ -310,9 +334,8 @@ const migrate = async () => {
                     name: getLocalized(card.name, langPackages),
                     description: getLocalized(card.desc, langPackages)
                 },
-                imageUrl: card.icon_path
-                    ? `https://seiya2.vercel.app/assets/resources/${card.icon_path.toLowerCase()}.png`
-                    : ''
+                skills: mapForceCardSkills(card.id, skillConfig, skillValueConfig, langPackages),
+                imageUrl: imageUrl
             };
             await ForceCard.create(cardData);
         }
