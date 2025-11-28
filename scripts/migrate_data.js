@@ -40,25 +40,77 @@ const getLocalized = (key, langPackages) => {
     return loc;
 };
 
-const mapSkills = (skillIds, skillConfig, langPackages) => {
+const resolveSkillDescription = (desKey, valueId, skillValueConfig, langPackages) => {
+    let description = getLocalized(desKey, langPackages);
+    if (!description) return '';
+
+    // Find values in SkillValueConfig
+    const valueConfig = skillValueConfig.find(v => v.skillid === valueId);
+    if (valueConfig && valueConfig.show_value) {
+        const replaceValues = (text) => {
+            if (!text) return text;
+            let newText = text;
+            valueConfig.show_value.forEach((val, index) => {
+                newText = newText.replace(new RegExp(`\\{${index}\\}`, 'g'), val);
+            });
+            return newText;
+        };
+
+        if (typeof description === 'string') {
+            description = replaceValues(description);
+        } else if (typeof description === 'object') {
+            for (const lang in description) {
+                description[lang] = replaceValues(description[lang]);
+            }
+        }
+    }
+    return description;
+};
+
+const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
     if (!skillIds) return [];
     return skillIds.map(id => {
         const skill = skillConfig.find(s => s.skillid === id);
         if (!skill) return null;
 
-        // Handle skill description from skill_des array
-        let descKey = null;
+        // Resolve main description
+        // skill_des is an array, usually taking the first one or matching level?
+        // Taking the first one for now as base description
+        let description = {};
         if (skill.skill_des && skill.skill_des.length > 0) {
-            descKey = skill.skill_des[0].des;
+            description = resolveSkillDescription(skill.skill_des[0].des, skill.skill_des[0].value, skillValueConfig, langPackages);
+        }
+
+        // Map levels
+        const levels = [];
+        if (skill.skill_star_des && skill.skill_star_des.length > 0) {
+            skill.skill_star_des.forEach((starDes, index) => {
+                const levelDesc = resolveSkillDescription(starDes.des, starDes.value, skillValueConfig, langPackages);
+
+                // Find condition for this level (assuming index match or logic)
+                // skill_condition has lv: 1, lv: 2...
+                // skill_star_des usually corresponds to these levels
+                let unlockReq = {};
+                if (skill.skill_condition && skill.skill_condition[index]) {
+                    unlockReq = getLocalized(skill.skill_condition[index].condition, langPackages);
+                }
+
+                levels.push({
+                    level: index + 1,
+                    description: levelDesc,
+                    unlockRequirement: unlockReq
+                });
+            });
         }
 
         return {
             id: skill.skillid,
             name: getLocalized(skill.name, langPackages),
-            description: getLocalized(descKey, langPackages),
+            description: description,
             icon: skill.iconpath ? skill.iconpath.split('/').pop() : '',
-            type: skill.skill_type,
-            cost: skill.cd
+            type: skill.skill_type.toString(), // 1=Basic, 2=Special, etc.
+            cost: skill.cd || -1, // Assuming cost field exists or -1
+            levels: levels
         };
     }).filter(s => s !== null);
 };
@@ -97,6 +149,17 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
     }).filter(b => b !== null);
 };
 
+const mapRarity = (quality) => {
+    switch (quality) {
+        case 1: return 'N';
+        case 2: return 'R';
+        case 3: return 'SR';
+        case 4: return 'SSR';
+        case 5: return 'UR';
+        default: return 'R';
+    }
+};
+
 const migrate = async () => {
     try {
         // Load Language Packages
@@ -109,6 +172,7 @@ const migrate = async () => {
         const roleConfig = loadJSON('EN', 'RoleConfig.json');
         const heroConfig = loadJSON('EN', 'HeroConfig.json');
         const skillConfig = loadJSON('EN', 'SkillConfig.json');
+        const skillValueConfig = loadJSON('EN', 'SkillValueConfig.json');
         const relationConfig = loadJSON('EN', 'HeroRelationConfig.json');
         const fettersConfig = loadJSON('EN', 'HeroFettersConfig.json');
 
@@ -136,7 +200,7 @@ const migrate = async () => {
                 id: role.id,
                 name: getLocalized(role.rolename_short, langPackages),
                 description: getLocalized(role.role_introduction, langPackages),
-                rarity: role.quality, // Map quality to rarity (3=R, 4=SR, 5=SSR etc - logic might need adjustment)
+                rarity: mapRarity(role.quality),
                 faction: role.camp,
 
                 // Default Stats (PropertyConfig missing)
@@ -147,7 +211,7 @@ const migrate = async () => {
                     speed: 100 + (role.quality * 2)
                 },
 
-                skills: mapSkills(role.skills, skillConfig, langPackages),
+                skills: mapSkills(role.skills, skillConfig, skillValueConfig, langPackages),
 
                 // Map Bonds
                 bonds: mapBonds(role.id, relationConfig, fettersConfig, roleConfig, langPackages),

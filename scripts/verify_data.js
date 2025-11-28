@@ -11,10 +11,11 @@ const verify = async () => {
         console.log(`Total characters: ${count}`);
 
         // Find a character with bonds and skills to verify
-        const sample = await Character.findOne({ 'bonds.0': { $exists: true } });
+        const sample = await Character.findOne({ rarity: 'UR' });
 
         if (sample) {
             console.log('Sample character:', sample.name.en);
+            console.log('Rarity:', sample.rarity);
             console.log('Stats:', sample.stats);
             console.log('Bonds count:', sample.bonds.length);
             if (sample.bonds.length > 0) {

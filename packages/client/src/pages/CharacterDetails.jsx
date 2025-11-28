@@ -72,9 +72,15 @@ const CharacterDetails = () => {
                             {getLoc(character.name)}
                         </motion.h1>
                         <div className="flex flex-wrap gap-2">
-                            <span className={`px-3 py-1 rounded text-sm font-bold ${character.rarity === 'SSR' ? 'bg-yellow-600' :
-                                character.rarity === 'SR' ? 'bg-purple-600' : 'bg-blue-600'
-                                }`}>{character.rarity}</span>
+                            <div className="flex items-center space-x-2">
+                                <span className={`px-2 py-0.5 rounded text-xs font-bold ${character.rarity === 'UR' ? 'bg-red-500 text-white' :
+                                    character.rarity === 'SSR' ? 'bg-yellow-500 text-black' :
+                                        character.rarity === 'SR' ? 'bg-purple-500 text-white' :
+                                            character.rarity === 'R' ? 'bg-blue-500 text-white' : 'bg-gray-500 text-white'
+                                    }`}>
+                                    {character.rarity}
+                                </span>
+                            </div>
                             {character.tags && character.tags.map((tag, idx) => (
                                 <span key={idx} className="bg-gray-700 px-3 py-1 rounded text-sm border border-gray-600">{tag}</span>
                             ))}
@@ -192,8 +198,8 @@ const CharacterDetails = () => {
                                             {skill.levels.map((lvl, lIdx) => (
                                                 <li key={lIdx} className="text-sm text-gray-400 flex gap-2">
                                                     <span className="text-yellow-500 font-bold">Lv.{lvl.level}</span>
-                                                    <span>{getLoc(lvl.description)}</span>
-                                                    {lvl.unlockRequirement && <span className="text-xs text-gray-600 ml-auto">({lvl.unlockRequirement})</span>}
+                                                    <span>{parseRichText(getLoc(lvl.description))}</span>
+                                                    {getLoc(lvl.unlockRequirement) && <span className="text-xs text-gray-600 ml-auto">({getLoc(lvl.unlockRequirement)})</span>}
                                                 </li>
                                             ))}
                                         </ul>

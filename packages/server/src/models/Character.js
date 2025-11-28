@@ -13,7 +13,7 @@ const LocalizedString = new mongoose.Schema({
 const CharacterSchema = new mongoose.Schema({
     id: { type: Number, required: true, unique: true }, // Scraped ID
     name: { type: LocalizedString, required: true },
-    rarity: { type: String, enum: ['R', 'SR', 'SSR', 'UR'], default: 'R' },
+    rarity: { type: String, enum: ['N', 'R', 'SR', 'SSR', 'UR'], default: 'R' },
     tags: [{ type: String }],
     faction: { type: String, default: 'Other' }, // Camp
 
@@ -50,7 +50,7 @@ const CharacterSchema = new mongoose.Schema({
         levels: [{
             level: { type: Number },
             description: { type: LocalizedString },
-            unlockRequirement: { type: String }
+            unlockRequirement: { type: LocalizedString }
         }],
         isAwakened: { type: Boolean, default: false }
     }],
