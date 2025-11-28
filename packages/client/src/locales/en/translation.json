@@ -17,6 +17,15 @@
         "faction": "Faction",
         "rarity": "Rarity",
         "copyright": "Copyright © {{year}} Saint Seiya EX. All rights reserved.",
-        "gameBy": "Game by Efun."
+        "gameBy": "Game by Efun.",
+        "searchPlaceholder": "Search characters (min 3 chars)...",
+        "position": "Position",
+        "role": "Role",
+        "clear": "Clear",
+        "all": "All",
+        "attackType": "Attack Type",
+        "artifacts": "Relics",
+        "forceCards": "Ultimate Power",
+        "admin": "Admin"
     }
 }

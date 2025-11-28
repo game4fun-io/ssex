@@ -17,6 +17,16 @@ const Characters = () => {
         positioning: '',
         combatPosition: ''
     });
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Dynamic Filter Options
+    const [options, setOptions] = useState({
+        rarities: [],
+        factions: [],
+        positionings: [],
+        combatPositions: [],
+        attackTypes: []
+    });
 
     useEffect(() => {
         const fetchCharacters = async () => {
@@ -24,6 +34,22 @@ const Characters = () => {
                 const res = await api.get('/characters');
                 setCharacters(res.data);
                 setFilteredCharacters(res.data);
+
+                // Extract unique values for filters based on current language
+                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
+                const uniqueFactions = [...new Set(res.data.map(c => getLoc(c.faction)))].filter(Boolean).sort();
+                const uniquePositionings = [...new Set(res.data.map(c => getLoc(c.positioning)))].filter(Boolean).sort();
+                const uniqueCombatPositions = [...new Set(res.data.map(c => getLoc(c.combatPosition)))].filter(Boolean).sort();
+                const uniqueAttackTypes = [...new Set(res.data.map(c => getLoc(c.attackType)))].filter(Boolean).sort();
+
+                setOptions({
+                    rarities: uniqueRarities,
+                    factions: uniqueFactions,
+                    positionings: uniquePositionings,
+                    combatPositions: uniqueCombatPositions,
+                    attackTypes: uniqueAttackTypes
+                });
+
             } catch (err) {
                 console.error('Error fetching characters:', err);
             } finally {
@@ -32,23 +58,35 @@ const Characters = () => {
         };
 
         fetchCharacters();
-    }, []);
+    }, [i18n.language]); // Re-run when language changes to update filter options
 
     useEffect(() => {
         let result = characters;
+
+        // Search Filter (>= 3 chars)
+        if (searchTerm.length >= 3) {
+            result = result.filter(c => getLoc(c.name).toLowerCase().includes(searchTerm.toLowerCase()));
+        }
+
         if (filters.rarity) result = result.filter(c => c.rarity === filters.rarity);
         if (filters.faction) result = result.filter(c => getLoc(c.faction) === filters.faction);
-        if (filters.positioning) result = result.filter(c => c.positioning === filters.positioning);
+        if (filters.positioning) result = result.filter(c => getLoc(c.positioning) === filters.positioning);
         if (filters.combatPosition) result = result.filter(c => getLoc(c.combatPosition) === filters.combatPosition);
+
         setFilteredCharacters(result);
-    }, [filters, characters, i18n.language]);
+    }, [filters, characters, searchTerm, i18n.language]);
 
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
     };
 
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
     const clearFilters = () => {
         setFilters({ rarity: '', faction: '', positioning: '', combatPosition: '' });
+        setSearchTerm('');
     };
 
     const getLoc = (data) => {
@@ -67,49 +105,50 @@ const Characters = () => {
             <div className="container mx-auto">
                 <h1 className="text-3xl font-bold text-yellow-500 mb-8">{t('characters')}</h1>
 
-                {/* Filters */}
-                <div className="bg-gray-800 p-4 rounded-lg mb-8 flex flex-wrap gap-4 items-end border border-gray-700">
+                {/* Filters & Search */}
+                <div className="bg-gray-800 p-4 rounded-lg mb-8 border border-gray-700 space-y-4">
+                    {/* Search Bar */}
                     <div>
-                        <label className="block text-xs text-gray-400 mb-1">Rarity</label>
-                        <select name="rarity" value={filters.rarity} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none">
-                            <option value="">All</option>
-                            <option value="SSR">SSR</option>
-                            <option value="SR">SR</option>
-                            <option value="R">R</option>
-                        </select>
+                        <input
+                            type="text"
+                            placeholder={t('searchPlaceholder')}
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            className="w-full bg-gray-700 text-white p-2 rounded border border-gray-600 focus:border-yellow-500 outline-none"
+                        />
                     </div>
-                    <div>
-                        <label className="block text-xs text-gray-400 mb-1">Faction</label>
-                        <select name="faction" value={filters.faction} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none">
-                            <option value="">All</option>
-                            <option value="Sanctuary">Sanctuary</option>
-                            <option value="Asgard">Asgard</option>
-                            <option value="Poseidon">Poseidon</option>
-                            <option value="Hades">Hades</option>
-                            <option value="Athena">Athena</option>
-                            <option value="Other">Other</option>
-                        </select>
+
+                    <div className="flex flex-wrap gap-4 items-end">
+                        <div>
+                            <label className="block text-xs text-gray-400 mb-1">{t('rarity')}</label>
+                            <select name="rarity" value={filters.rarity} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[100px]">
+                                <option value="">{t('all')}</option>
+                                {options.rarities.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-xs text-gray-400 mb-1">{t('faction')}</label>
+                            <select name="faction" value={filters.faction} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
+                                <option value="">{t('all')}</option>
+                                {options.factions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-xs text-gray-400 mb-1">{t('position')}</label>
+                            <select name="positioning" value={filters.positioning} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
+                                <option value="">{t('all')}</option>
+                                {options.positionings.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-xs text-gray-400 mb-1">{t('role')}</label>
+                            <select name="combatPosition" value={filters.combatPosition} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
+                                <option value="">{t('all')}</option>
+                                {options.combatPositions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                        <button onClick={clearFilters} className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm border border-gray-600 transition h-[38px]">{t('clear')}</button>
                     </div>
-                    <div>
-                        <label className="block text-xs text-gray-400 mb-1">Position</label>
-                        <select name="positioning" value={filters.positioning} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none">
-                            <option value="">All</option>
-                            <option value="Front Row">Front Row</option>
-                            <option value="Mid Row">Mid Row</option>
-                            <option value="Back Row">Back Row</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label className="block text-xs text-gray-400 mb-1">Role</label>
-                        <select name="combatPosition" value={filters.combatPosition} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none">
-                            <option value="">All</option>
-                            <option value="Tank">Tank</option>
-                            <option value="Warrior">Warrior</option>
-                            <option value="Archer">Archer</option>
-                            <option value="Supporter">Supporter</option>
-                        </select>
-                    </div>
-                    <button onClick={clearFilters} className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm border border-gray-600 transition">Clear Filters</button>
                 </div>
 
                 <AdUnit slot="characters-list-top" />

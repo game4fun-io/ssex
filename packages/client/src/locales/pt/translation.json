@@ -17,6 +17,15 @@
         "faction": "Facção",
         "rarity": "Raridade",
         "copyright": "Direitos Autorais © {{year}} Saint Seiya EX. Todos os direitos reservados.",
-        "gameBy": "Jogo por Efun."
+        "gameBy": "Jogo por Efun.",
+        "searchPlaceholder": "Buscar personagens (min 3 chars)...",
+        "position": "Posição",
+        "role": "Classe",
+        "clear": "Limpar",
+        "all": "Todos",
+        "attackType": "Tipo de Ataque",
+        "artifacts": "Relíquias Sagradas",
+        "forceCards": "Poder Supremo",
+        "admin": "Admin"
     }
 }

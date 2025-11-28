@@ -22,14 +22,14 @@ const Navbar = () => {
 
                     {menus.characters && <Link to="/characters" className="hover:text-yellow-400">{t('characters')}</Link>}
                     {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400">{t('teamBuilder')}</Link>}
-                    {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400">Artifacts</Link>}
-                    {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400">Force Cards</Link>}
+                    {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400">{t('artifacts')}</Link>}
+                    {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400">{t('forceCards')}</Link>}
 
 
 
                     {user ? (
                         <>
-                            {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">Admin</Link>}
+                            {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">{t('admin')}</Link>}
                             <span className="text-gray-400">{t('welcomeUser')}</span>
                             <button onClick={logout} className="hover:text-red-400">{t('logout')}</button>
                         </>
