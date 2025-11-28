@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams, useLocation } from 'react-router-dom';
 import api from '../api/axios';
 import AuthContext from '../context/AuthContext';
 
@@ -167,6 +168,8 @@ const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange,
 const TeamBuilder = () => {
     const { t, i18n } = useTranslation();
     const { user } = useContext(AuthContext);
+    const { hash } = useParams();
+    const location = useLocation();
     const [characters, setCharacters] = useState([]);
     const [artifacts, setArtifacts] = useState([]);
     const [cards, setCards] = useState([]);
@@ -226,8 +229,8 @@ const TeamBuilder = () => {
     }, [user]);
 
     useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const share = params.get('share');
+        const params = new URLSearchParams(location.search);
+        const share = hash || params.get('share');
         if (share) {
             try {
                 const json = decodeURIComponent(atob(share));
@@ -241,7 +244,7 @@ const TeamBuilder = () => {
                 console.error('Invalid share payload');
             }
         }
-    }, [t]);
+    }, [hash, location.search, t]);
 
     const getLoc = (data) => {
         if (!data) return '';
@@ -388,10 +391,6 @@ const TeamBuilder = () => {
         });
 
         if (asSupport) {
-            if (getTotalCount(nextTeam) >= 5) {
-                notify(t('mainTeamFull'));
-                return;
-            }
             if (!nextTeam.support1?.character) {
                 setTeam({ ...nextTeam, support1: { character: char, relicId: '', cardIds: [] } });
                 return;
@@ -413,16 +412,6 @@ const TeamBuilder = () => {
                 return;
             }
             setTeam({ ...nextTeam, ...placement });
-            return;
-        }
-
-        const supportCount = getSupportCount(nextTeam);
-        if (!nextTeam.support1?.character && supportCount < 2) {
-            setTeam({ ...nextTeam, support1: { character: char, relicId: '', cardIds: [] } });
-            return;
-        }
-        if (!nextTeam.support2?.character && supportCount < 2) {
-            setTeam({ ...nextTeam, support2: { character: char, relicId: '', cardIds: [] } });
             return;
         }
 
@@ -575,8 +564,8 @@ const TeamBuilder = () => {
                             </span>
                         </div>
 
-                        <div className="flex gap-4 w-full flex-wrap">
-                            <div className="flex flex-col gap-4 flex-1 min-w-0">
+                            <div className="flex gap-4 w-full flex-wrap">
+                                <div className="flex flex-col gap-4 flex-1 min-w-0">
                                 {[['front', t('frontRow') || 'Front'], ['mid', t('midRow') || 'Middle'], ['back', t('backRow') || 'Back']].map(([rowKey, rowLabel]) => (
                                     <div key={rowKey} className="flex gap-3 items-start">
                                         <div className="w-16 text-gray-500 font-bold text-sm pt-4 text-right">{rowLabel.toUpperCase()}</div>
