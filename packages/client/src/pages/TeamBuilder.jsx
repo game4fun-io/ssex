@@ -301,7 +301,7 @@ const TeamBuilder = () => {
                                     type="text"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    placeholder={t('searchSaints')}
+                                    placeholder={t('searchPlaceholder')}
                                     className="w-full bg-gray-800 text-white text-sm p-2 rounded border border-gray-700 focus:border-yellow-500 outline-none"
                                 />
                                 <div className="flex gap-2 text-xs">
@@ -371,12 +371,9 @@ const TeamBuilder = () => {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
 
-                            {/* Support Slots */}
-                            <div className="w-full border-t border-gray-700 pt-6 mt-2">
-                                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">{t('support')}</h3>
-                                <div className="flex justify-center gap-4">
+                                <div className="w-48 shrink-0 bg-gray-900 border border-gray-700 rounded-lg p-4 flex flex-col gap-3">
+                                    <h3 className="text-lg font-bold text-blue-400 text-center">{t('support')}</h3>
                                     <DroppableSlot id="support1" slot={team.support1} onRemove={removeFromTeam} label={t('support')} getLoc={getLoc} artifacts={artifacts} cards={cards} onRelicChange={handleRelicChange} onCardsChange={handleCardsChange} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
                                     <DroppableSlot id="support2" slot={team.support2} onRemove={removeFromTeam} label={t('support')} getLoc={getLoc} artifacts={artifacts} cards={cards} onRelicChange={handleRelicChange} onCardsChange={handleCardsChange} relicLabel={t('relicLabel')} cardsLabel={t('ultimateCardsLabel')} noneLabel={t('noneOption')} />
                                 </div>
