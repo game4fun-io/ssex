@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "欢迎来到圣斗士星矢EX数据库",
-        "subtitle": "圣斗士星矢EX手游的终极咨询工具。探索角色、技能并组建您的梦之队。",
-        "viewCharacters": "查看角色",
-        "joinNow": "立即加入",
+        "welcome": "圣斗士星矢EX助手",
+        "subtitle": "规划阵容、对比属性，并追踪圣器与究极卡，贴合全球版环境。",
+        "heroBenefits": "构建、保存并分享队伍方案。利用本地化数据追踪圣器和究极之力卡牌。",
+        "viewCharacters": "浏览角色名单",
+        "joinNow": "保存并分享队伍",
         "home": "首页",
         "characters": "角色",
         "teamBuilder": "队伍构建器",
@@ -25,6 +26,10 @@
         "searchArtifactsPlaceholder": "搜索圣器 (最少3个字符)...",
         "searchForceCardsPlaceholder": "搜索究极之力 (最少3个字符)...",
         "backToArtifacts": "返回圣器",
-        "backToCharacters": "返回角色"
+        "backToCharacters": "返回角色",
+        "featureCharactersDescription": "浏览完整角色名单及本地化的属性、技能与稀有度。",
+        "featureTeamBuilderDescription": "创建、保存并分享与你的小队的最佳阵容。",
+        "featureRelicsDescription": "查看圣器加成以及它们如何强化你的圣斗士。",
+        "featureExplore": "探索"
     }
 }

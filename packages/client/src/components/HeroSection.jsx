@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+const assetBase = (import.meta.env.VITE_ASSET_BASE || 'http://localhost:5000/assets').replace(/\/+$/, '');
+const logoSrc = `${assetBase}/branding/logo.svg`;
+
 const HeroSection = () => {
     const { t } = useTranslation();
 
@@ -12,6 +15,15 @@ const HeroSection = () => {
 
             {/* Animated Content */}
             <div className="relative z-10 text-center px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="flex justify-center mb-4"
+                >
+                    <img src={logoSrc} alt="Saint Seiya EX" className="h-14 w-auto drop-shadow-2xl" />
+                </motion.div>
+
                 <motion.h1
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -25,9 +37,18 @@ const HeroSection = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto"
+                    className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto"
                 >
                     {t('subtitle')}
+                </motion.p>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.8 }}
+                    className="text-base md:text-lg text-gray-400 mb-10 max-w-3xl mx-auto"
+                >
+                    {t('heroBenefits')}
                 </motion.p>
 
                 <motion.div

@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "Bienvenue sur la base de données Saint Seiya EX",
-        "subtitle": "L'outil de consultation ultime pour le jeu mobile Saint Seiya EX. Explorez les personnages, les compétences et construisez votre équipe de rêve.",
-        "viewCharacters": "Voir les Personnages",
-        "joinNow": "Rejoindre Maintenant",
+        "welcome": "Compagnon Saint Seiya EX",
+        "subtitle": "Planifiez vos formations, comparez les stats et suivez les reliques et cartes de pouvoir suprême pour le méta global.",
+        "heroBenefits": "Créez, enregistrez et partagez des compositions d'équipe. Suivez les reliques et cartes de pouvoir suprême avec des données localisées.",
+        "viewCharacters": "Voir le Roster",
+        "joinNow": "Enregistrer et partager des comps",
         "home": "Accueil",
         "characters": "Personnages",
         "teamBuilder": "Constructeur d'Équipe",
@@ -25,6 +26,10 @@
         "searchForceCardsPlaceholder": "Rechercher des cartes de force (min 3 chars)...",
         "backToArtifacts": "Retour aux Reliques",
         "backToCharacters": "Retour aux Personnages",
-        "backToForceCards": "Retour au Pouvoir Suprême"
+        "backToForceCards": "Retour au Pouvoir Suprême",
+        "featureCharactersDescription": "Parcourez tout le roster avec stats, compétences et raretés localisées.",
+        "featureTeamBuilderDescription": "Créez, enregistrez et partagez des formations optimales avec votre équipe.",
+        "featureRelicsDescription": "Consultez les bonus des reliques et comment elles renforcent vos Saints.",
+        "featureExplore": "Explorer"
     }
 }

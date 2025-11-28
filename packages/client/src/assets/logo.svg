@@ -1,0 +1,22 @@
+<svg width="220" height="64" viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Saint Seiya EX Logo</title>
+  <desc id="desc">Stylized Saint Seiya EX companion mark</desc>
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="deep" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="214" height="58" rx="12" fill="url(#deep)" stroke="#f59e0b" stroke-width="3"/>
+  <path d="M24 18 L32 8 L40 18" fill="none" stroke="#facc15" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 8 L32 24" fill="none" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+  <text x="52" y="28" fill="url(#gold)" font-family="'Orbitron', 'Bebas Neue', sans-serif" font-size="22" font-weight="700" letter-spacing="1">SAINT SEIYA</text>
+  <text x="52" y="48" fill="#e5e7eb" font-family="'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="700" letter-spacing="4">EX COMPANION</text>
+  <circle cx="190" cy="20" r="6" fill="url(#gold)" opacity="0.9"/>
+  <circle cx="198" cy="40" r="9" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.7"/>
+</svg>

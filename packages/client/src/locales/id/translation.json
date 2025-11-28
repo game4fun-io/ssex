@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "Selamat datang di Database Saint Seiya EX",
-        "subtitle": "Alat konsultasi utama untuk game seluler Saint Seiya EX. Jelajahi karakter, keterampilan, dan bangun tim impian Anda.",
-        "viewCharacters": "Lihat Karakter",
-        "joinNow": "Bergabung Sekarang",
+        "welcome": "Pendamping Saint Seiya EX",
+        "subtitle": "Rencanakan formasi, bandingkan statistik, dan pantau relik serta kartu kekuatan tertinggi untuk meta global.",
+        "heroBenefits": "Buat, simpan, dan bagikan komposisi tim. Pantau relik dan kartu kekuatan tertinggi dengan data terlokalisasi.",
+        "viewCharacters": "Lihat Roster",
+        "joinNow": "Simpan & bagikan komposisi",
         "home": "Beranda",
         "characters": "Karakter",
         "teamBuilder": "Pembuat Tim",
@@ -25,6 +26,10 @@
         "searchArtifactsPlaceholder": "Cari relik (min 3 karakter)...",
         "searchForceCardsPlaceholder": "Cari kekuatan tertinggi (min 3 karakter)...",
         "backToArtifacts": "Kembali ke Relik",
-        "backToCharacters": "Kembali ke Karakter"
+        "backToCharacters": "Kembali ke Karakter",
+        "featureCharactersDescription": "Jelajahi seluruh roster dengan statistik, skill, dan kelangkaan yang terlokalisasi.",
+        "featureTeamBuilderDescription": "Buat, simpan, dan bagikan formasi optimal bersama timmu.",
+        "featureRelicsDescription": "Tinjau bonus relik dan bagaimana mereka meningkatkan performa Saint-mu.",
+        "featureExplore": "Jelajahi"
     }
 }

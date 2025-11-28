@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "Bem-vindo ao Banco de Dados Saint Seiya EX",
-        "subtitle": "A ferramenta de consulta definitiva para o jogo móvel Saint Seiya EX. Explore personagens, habilidades e monte seu time dos sonhos.",
-        "viewCharacters": "Ver Personagens",
-        "joinNow": "Junte-se Agora",
+        "welcome": "Companheiro Saint Seiya EX",
+        "subtitle": "Planeje formações, compare status e acompanhe relíquias e cartas de poder supremo para o meta global.",
+        "heroBenefits": "Monte, salve e compartilhe composições de time. Acompanhe relíquias e cartas de poder supremo com dados localizados.",
+        "viewCharacters": "Ver Elenco",
+        "joinNow": "Salvar e compartilhar comps",
         "home": "Início",
         "characters": "Personagens",
         "teamBuilder": "Construtor de Times",
@@ -33,6 +34,10 @@
         "backToForceCards": "Voltar para Poder Supremo",
         "artifactEffect": "Efeito",
         "artifactProgression": "Progressão de Nível e Melhorias",
-        "admin": "Admin"
+        "admin": "Admin",
+        "featureCharactersDescription": "Explore o elenco completo com status, habilidades e raridade localizados.",
+        "featureTeamBuilderDescription": "Crie, salve e compartilhe formações ideais com seu time.",
+        "featureRelicsDescription": "Revise os bônus das relíquias e como elas impulsionam seus Cavaleiros.",
+        "featureExplore": "Explorar"
     }
 }

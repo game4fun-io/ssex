@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "Welcome to Saint Seiya EX Database",
-        "subtitle": "The ultimate consulting tool for Saint Seiya EX mobile game. Explore characters, skills, and build your dream team.",
-        "viewCharacters": "View Characters",
-        "joinNow": "Join Now",
+        "welcome": "Saint Seiya EX Companion",
+        "subtitle": "Plan squads, compare stats, and keep up with relics and ultimate cards—built for the global launch meta.",
+        "heroBenefits": "Build, save, and share team compositions. Track relics and ultimate power cards with localized data.",
+        "viewCharacters": "Browse Roster",
+        "joinNow": "Save & Share Team Comps",
         "home": "Home",
         "characters": "Characters",
         "teamBuilder": "Team Builder",
@@ -26,13 +27,17 @@
         "attackType": "Attack Type",
         "artifacts": "Relics",
         "forceCards": "Ultimate Power",
-        "searchArtifactsPlaceholder": "Search artifacts (min 3 chars)...",
+        "searchArtifactsPlaceholder": "Search relics (min 3 chars)...",
         "searchForceCardsPlaceholder": "Search force cards (min 3 chars)...",
         "backToArtifacts": "Back to Relics",
         "backToCharacters": "Back to Characters",
         "backToForceCards": "Back to Supreme Power",
         "artifactEffect": "Effect",
         "artifactProgression": "Level Progression & Enhancements",
-        "admin": "Admin"
+        "admin": "Admin",
+        "featureCharactersDescription": "Browse the full roster with localized stats, skills, and rarity details.",
+        "featureTeamBuilderDescription": "Create, save, and share optimal team formations with your squad.",
+        "featureRelicsDescription": "Review relic bonuses and how they boost your Saints' performance.",
+        "featureExplore": "Explore"
     }
 }

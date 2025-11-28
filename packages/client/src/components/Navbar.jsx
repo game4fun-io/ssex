@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import AuthContext from '../context/AuthContext';
 import ConfigContext from '../context/ConfigContext';
+const assetBase = (import.meta.env.VITE_ASSET_BASE || 'http://localhost:5000/assets').replace(/\/+$/, '');
+const logoSrc = `${assetBase}/branding/logo.svg`;
 
 const Navbar = () => {
     const { user, logout, isAdmin } = useContext(AuthContext);
@@ -16,7 +18,10 @@ const Navbar = () => {
     return (
         <nav className="bg-gray-900 text-white p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
-                <Link to="/" className="text-2xl font-bold text-yellow-500">Saint Seiya EX</Link>
+                <Link to="/" className="flex items-center gap-3 group">
+                    <img src={logoSrc} alt="Saint Seiya EX" className="h-10 w-auto drop-shadow-lg group-hover:scale-[1.02] transition" />
+                    <span className="sr-only">Saint Seiya EX</span>
+                </Link>
                 <div className="flex items-center space-x-4">
                     <Link to="/" className="hover:text-yellow-400">{t('home')}</Link>
 

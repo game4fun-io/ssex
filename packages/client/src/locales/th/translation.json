@@ -1,9 +1,10 @@
 {
     "translation": {
-        "welcome": "ยินดีต้อนรับสู่ฐานข้อมูล Saint Seiya EX",
-        "subtitle": "เครื่องมือปรึกษาที่ดีที่สุดสำหรับเกมมือถือ Saint Seiya EX สำรวจตัวละคร ทักษะ และสร้างทีมในฝันของคุณ",
-        "viewCharacters": "ดูตัวละคร",
-        "joinNow": "เข้าร่วมเลย",
+        "welcome": "ผู้ช่วย Saint Seiya EX",
+        "subtitle": "วางแผนทีม เปรียบเทียบสเตตัส และติดตามรีลิกกับการ์ดพลังสูงสุดสำหรับเมต้าโกลบอล",
+        "heroBenefits": "สร้าง บันทึก และแชร์คอมพ์ทีมของคุณ ติดตามรีลิกและการ์ดพลังสูงสุดด้วยข้อมูลแปลแล้ว",
+        "viewCharacters": "ดูรายชื่อตัวละคร",
+        "joinNow": "บันทึกและแชร์คอมพ์ทีม",
         "home": "หน้าแรก",
         "characters": "ตัวละคร",
         "teamBuilder": "สร้างทีม",
@@ -16,15 +17,19 @@
         "element": "ธาตุ",
         "faction": "ฝ่าย",
         "rarity": "ความหายาก",
-        "artifacts": "วัตถุโบราณ",
+        "artifacts": "รีลิก",
         "forceCards": "พลังสูงสุด",
         "admin": "ผู้ดูแลระบบ",
-        "searchArtifactsPlaceholder": "ค้นหาวัตถุโบราณ (อย่างน้อย 3 ตัวอักษร)...",
+        "searchArtifactsPlaceholder": "ค้นหารีลิก (อย่างน้อย 3 ตัวอักษร)...",
         "searchForceCardsPlaceholder": "ค้นหาพลังสูงสุด (อย่างน้อย 3 ตัวอักษร)...",
         "backToArtifacts": "กลับไปที่วัตถุโบราณ",
         "backToCharacters": "กลับไปที่ตัวละคร",
         "backToForceCards": "กลับไปที่พลังสูงสุด",
         "artifactEffect": "เอฟเฟกต์",
-        "artifactProgression": "ความก้าวหน้าของระดับและการปรับปรุง"
+        "artifactProgression": "ความก้าวหน้าของระดับและการปรับปรุง",
+        "featureCharactersDescription": "สำรวจรายชื่อตัวละครพร้อมสเตตัส สกิล และความหายากที่แปลแล้ว",
+        "featureTeamBuilderDescription": "สร้าง บันทึก และแชร์ฟอร์เมชันที่เหมาะสมกับทีมของคุณ",
+        "featureRelicsDescription": "ดูบัฟจากรีลิกและผลที่ส่งต่อให้เหล่าเซนต์",
+        "featureExplore": "สำรวจ"
     }
 }
