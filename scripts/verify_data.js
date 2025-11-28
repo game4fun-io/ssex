@@ -32,6 +32,10 @@ const verify = async () => {
             }
             console.log('Image URL:', sample.imageUrl);
             console.log('Avatar URL:', sample.avatarUrl);
+            console.log('Faction:', sample.faction);
+            console.log('Combat Position:', sample.combatPosition);
+            console.log('Positioning:', sample.positioning);
+            console.log('Attack Type:', sample.attackType);
         } else {
             console.log('No character found with bonds.');
         }

@@ -37,11 +37,11 @@ const Characters = () => {
     useEffect(() => {
         let result = characters;
         if (filters.rarity) result = result.filter(c => c.rarity === filters.rarity);
-        if (filters.faction) result = result.filter(c => c.faction === filters.faction);
+        if (filters.faction) result = result.filter(c => getLoc(c.faction) === filters.faction);
         if (filters.positioning) result = result.filter(c => c.positioning === filters.positioning);
-        if (filters.combatPosition) result = result.filter(c => c.combatPosition === filters.combatPosition);
+        if (filters.combatPosition) result = result.filter(c => getLoc(c.combatPosition) === filters.combatPosition);
         setFilteredCharacters(result);
-    }, [filters, characters]);
+    }, [filters, characters, i18n.language]);
 
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -121,16 +121,18 @@ const Characters = () => {
                         {filteredCharacters.map((char) => (
                             <Link to={`/characters/${char._id}`} key={char._id} className="block group">
                                 <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-gray-700 group-hover:border-yellow-500 transition h-full flex flex-col">
-                                    <div className="h-48 bg-gray-700 flex items-center justify-center relative overflow-hidden">
+                                    <div className="h-48 bg-gray-800 flex items-center justify-center relative overflow-hidden p-4">
                                         {char.imageUrl ? (
-                                            <img src={char.imageUrl} alt={getLoc(char.name)} className="h-full w-full object-cover object-top group-hover:scale-110 transition duration-500" />
+                                            <img src={char.imageUrl} alt={getLoc(char.name)} className="h-full w-full object-contain group-hover:scale-110 transition duration-500" />
                                         ) : (
                                             <span className="text-gray-500">No Image</span>
                                         )}
                                         <div className="absolute top-2 right-2 flex flex-col gap-1 items-end">
-                                            <span className={`px-2 py-1 rounded text-xs font-bold ${char.rarity === 'SSR' ? 'bg-yellow-600 text-white' :
-                                                char.rarity === 'SR' ? 'bg-purple-600 text-white' :
-                                                    'bg-blue-600 text-white'
+                                            <span className={`px-2 py-1 rounded text-xs font-bold ${char.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
+                                                char.rarity === 'SSR' ? 'bg-yellow-600 text-white' :
+                                                    char.rarity === 'SR' ? 'bg-purple-600 text-white' :
+                                                        char.rarity === 'R' ? 'bg-blue-600 text-white' :
+                                                            'bg-gray-600 text-white'
                                                 }`}>
                                                 {char.rarity}
                                             </span>
@@ -148,19 +150,19 @@ const Characters = () => {
                                         <div className="grid grid-cols-2 gap-y-2 gap-x-1 text-xs text-gray-400">
                                             <div className="flex items-center gap-1" title="Faction">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                                {char.faction}
+                                                {getLoc(char.faction)}
                                             </div>
                                             <div className="flex items-center gap-1" title="Role">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                                                {char.combatPosition}
+                                                {getLoc(char.combatPosition)}
                                             </div>
                                             <div className="flex items-center gap-1" title="Position">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                                {char.positioning}
+                                                {getLoc(char.positioning)}
                                             </div>
                                             <div className="flex items-center gap-1" title="Attack Type">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                                {char.attackType}
+                                                {getLoc(char.attackType)}
                                             </div>
                                         </div>
                                     </div>

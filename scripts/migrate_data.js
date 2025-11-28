@@ -204,7 +204,10 @@ const migrate = async () => {
                 name: getLocalized(role.rolename_short, langPackages),
                 description: getLocalized(role.role_introduction, langPackages),
                 rarity: mapRarity(role.quality),
-                faction: role.camp,
+                faction: getLocalized(`LC_COMMON_cloth_trial_hero_camp_${role.camp}`, langPackages) || 'Other',
+                combatPosition: getLocalized(`LC_COMMON_cloth_trial_hero_occupation_${role.occupation}`, langPackages) || 'Warrior',
+                positioning: getLocalized(`LC_COMMON_cloth_trial_hero_stance_${role.stance}`, langPackages) || 'Front Row',
+                attackType: getLocalized(`LC_COMMON_cloth_trial_hero_damagetype_${role.damagetype}`, langPackages) || 'P-ATK',
 
                 // Default Stats (PropertyConfig missing)
                 stats: {

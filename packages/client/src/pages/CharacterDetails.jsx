@@ -73,7 +73,7 @@ const CharacterDetails = () => {
                         </motion.h1>
                         <div className="flex flex-wrap gap-2">
                             <div className="flex items-center space-x-2">
-                                <span className={`px-2 py-0.5 rounded text-xs font-bold ${character.rarity === 'UR' ? 'bg-red-500 text-white' :
+                                <span className={`px-2 py-0.5 rounded text-xs font-bold ${character.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
                                     character.rarity === 'SSR' ? 'bg-yellow-500 text-black' :
                                         character.rarity === 'SR' ? 'bg-purple-500 text-white' :
                                             character.rarity === 'R' ? 'bg-blue-500 text-white' : 'bg-gray-500 text-white'
@@ -84,10 +84,10 @@ const CharacterDetails = () => {
                             {character.tags && character.tags.map((tag, idx) => (
                                 <span key={idx} className="bg-gray-700 px-3 py-1 rounded text-sm border border-gray-600">{tag}</span>
                             ))}
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{character.faction}</span>
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{character.combatPosition}</span>
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{character.positioning}</span>
-                            <span className="bg-red-900 px-3 py-1 rounded text-sm">{character.attackType}</span>
+                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.faction)}</span>
+                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.combatPosition)}</span>
+                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.positioning)}</span>
+                            <span className="bg-red-900 px-3 py-1 rounded text-sm">{getLoc(character.attackType)}</span>
                         </div>
                     </div>
                 </div>
