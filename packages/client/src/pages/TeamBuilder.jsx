@@ -48,7 +48,7 @@ const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
     </div>
 );
 
-const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange, onCardsChange, relicLabel, cardsLabel, noneLabel }) => {
+const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange, onCardsChange, relicLabel, cardsLabel, noneLabel, clearLabel }) => {
     const char = slot?.character;
     const relicId = slot?.relicId || '';
     const cardIds = slot?.cardIds || [];
@@ -150,7 +150,7 @@ const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange,
                         >
                             <div className="p-2 border-b border-gray-800 flex justify-between items-center">
                                 <span className="text-xs font-bold text-gray-400">{cardsLabel}</span>
-                                <button className="text-[10px] text-red-400 hover:text-red-300" onClick={() => onCardsChange([])}>{t('clear') || 'Clear'}</button>
+                                <button className="text-[10px] text-red-400 hover:text-red-300" onClick={() => onCardsChange([])}>{clearLabel || 'Clear'}</button>
                             </div>
                             {cards.map(c => {
                                 const id = c._id || c.id;
@@ -346,6 +346,27 @@ const TeamBuilder = () => {
         return ['back1', 'back2', 'back3'];
     };
 
+    const rebalanceRow = (rowSlots, charsInRow) => {
+        const updates = {};
+        // Clear all slots first
+        rowSlots.forEach(slot => updates[slot] = null);
+
+        if (charsInRow.length === 1) {
+            // 1 char -> Middle (Slot 2)
+            updates[rowSlots[1]] = charsInRow[0];
+        } else if (charsInRow.length === 2) {
+            // 2 chars -> Extremes (Slot 1 & 3)
+            updates[rowSlots[0]] = charsInRow[0];
+            updates[rowSlots[2]] = charsInRow[1];
+        } else if (charsInRow.length === 3) {
+            // 3 chars -> Slot 1, Slot 3, Slot 2 (3rd char goes to middle)
+            updates[rowSlots[0]] = charsInRow[0];
+            updates[rowSlots[2]] = charsInRow[1];
+            updates[rowSlots[1]] = charsInRow[2];
+        }
+        return updates;
+    };
+
     const autoAddCharacter = (char, isSupport = false) => {
         // 1. Check if already in team
         const existingSlot = Object.entries(team).find(([_, val]) => val?.character?._id === (char._id || char.id));
@@ -370,24 +391,75 @@ const TeamBuilder = () => {
         // Main Team Logic
         const row = normalizeRow(getLoc(char.positioning));
         const slots = getRowSlots(row);
-        const emptySlot = slots.find(s => !team[s]);
 
-        if (emptySlot) {
-            if (getMainTeamCount() >= 5) {
-                notify(t('mainTeamFull'));
-                return;
-            }
-            setTeam(prev => ({
-                ...prev,
-                [emptySlot]: { character: char, relicId: '', cardIds: [] }
-            }));
-        } else {
+        // Get existing chars in this row (preserving order is tricky if we just grab from slots, 
+        // but we can infer order based on current count/position or just grab them left-to-right and append)
+        // Actually, to support "add 3rd goes to middle", we need to know which was 1st and 2nd.
+        // But simpler is: Grab all chars in row, append new one.
+        // If we grab left-to-right:
+        // Count 1 (Mid): [null, c1, null] -> [c1]
+        // Count 2 (Ext): [c1, null, c2] -> [c1, c2]
+        // Count 3 (Full): [c1, c3, c2] -> [c1, c3, c2] (Wait, if we read left-to-right, we get c1, c3, c2. 
+        // If we append c4? Full.
+        // If we remove c3 (Mid)? We get [c1, c2]. Rebalance -> [c1, null, c2]. Correct.
+        // So reading left-to-right works for maintaining set, but for "3rd goes to middle", 
+        // we just need to handle the *placement* of the list of 3 chars.
+        // The list `charsInRow` will be `[c1, c2, c3]`.
+        // Logic:
+        // 1: [null, c1, null]
+        // 2: [c1, null, c2]
+        // 3: [c1, c3, c2]  <-- Note: c3 is at index 1 in slots, but index 2 in our list? 
+        // No, `rebalanceRow` handles the mapping.
+        // If we have 2 chars: `[c1, c2]`. Add `c3`. List: `[c1, c2, c3]`.
+        // `rebalanceRow` puts `c1` at Slot 0, `c2` at Slot 2, `c3` at Slot 1.
+        // Result: `[c1, c3, c2]`. Correct.
+
+        const currentChars = slots.map(s => team[s]).filter(Boolean);
+
+        if (currentChars.length >= 3) {
             notify(t('rowFull', { row: row.toUpperCase() }));
+            return;
         }
+
+        if (getMainTeamCount() >= 5) {
+            notify(t('mainTeamFull'));
+            return;
+        }
+
+        const newChars = [...currentChars, { character: char, relicId: '', cardIds: [] }];
+        const updates = rebalanceRow(slots, newChars);
+
+        setTeam(prev => ({ ...prev, ...updates }));
     };
 
     const removeFromTeam = (slotId) => {
-        setTeam(prev => ({ ...prev, [slotId]: null }));
+        // If support, just remove
+        if (slotId.includes('support')) {
+            setTeam(prev => ({ ...prev, [slotId]: null }));
+            return;
+        }
+
+        // If main row, we need to rebalance
+        let row = 'front';
+        if (slotId.includes('mid')) row = 'mid';
+        if (slotId.includes('back')) row = 'back';
+
+        const slots = getRowSlots(row);
+        // Get all chars EXCEPT the one being removed
+        // We must read them in slot order (1, 2, 3) to maintain relative order of remaining?
+        // Or should we try to preserve "insertion order"?
+        // If we have `[c1, c3, c2]` (Slots: 1, 2, 3).
+        // Remove `c3` (Slot 2). Remaining from slots: `c1`, `c2`.
+        // List: `[c1, c2]`.
+        // Rebalance 2 chars: `[c1, null, c2]`. Correct.
+        // Remove `c1` (Slot 1). Remaining: `c3`, `c2`.
+        // List: `[c3, c2]`.
+        // Rebalance: `[c3, null, c2]`. Correct.
+
+        const currentChars = slots.map(s => team[s]).filter(entry => entry && s !== slotId);
+        const updates = rebalanceRow(slots, currentChars);
+
+        setTeam(prev => ({ ...prev, ...updates }));
     };
 
     const handleRelicChange = (slotId, relicId) => {
@@ -593,7 +665,11 @@ const TeamBuilder = () => {
                             <div className="grid grid-cols-2 gap-2">
                                 <select name="rarity" value={filters.rarity} onChange={handleFilterChange} className="bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs focus:border-yellow-500 outline-none">
                                     <option value="">{t('allRarities')}</option>
-                                    {options.rarities.map(r => <option key={r} value={r}>{r}</option>)}
+                                    {options.rarities.map(r => (
+                                        <option key={r} value={r} className={r === 'UR' ? 'text-red-500 font-bold' : r === 'SSR' ? 'text-yellow-500 font-bold' : r === 'SR' ? 'text-purple-400' : 'text-gray-300'}>
+                                            {r}
+                                        </option>
+                                    ))}
                                 </select>
                                 <select name="faction" value={filters.faction} onChange={handleFilterChange} className="bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs focus:border-yellow-500 outline-none">
                                     <option value="">{t('allFactions')}</option>
@@ -641,7 +717,7 @@ const TeamBuilder = () => {
                                 <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('front')}</div>
                                 <div className="flex gap-4 flex-1 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                                     {['front1', 'front2', 'front3'].map(slot => (
-                                        <SlotCard key={slot} slot={team[slot]} label={t('front')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} />
+                                        <SlotCard key={slot} slot={team[slot]} label={t('front')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} clearLabel={t('clear')} />
                                     ))}
                                 </div>
                             </div>
@@ -651,7 +727,7 @@ const TeamBuilder = () => {
                                 <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('mid')}</div>
                                 <div className="flex gap-4 flex-1 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                                     {['mid1', 'mid2', 'mid3'].map(slot => (
-                                        <SlotCard key={slot} slot={team[slot]} label={t('mid')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} />
+                                        <SlotCard key={slot} slot={team[slot]} label={t('mid')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} clearLabel={t('clear')} />
                                     ))}
                                 </div>
                             </div>
@@ -661,7 +737,7 @@ const TeamBuilder = () => {
                                 <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('back')}</div>
                                 <div className="flex gap-4 flex-1 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                                     {['back1', 'back2', 'back3'].map(slot => (
-                                        <SlotCard key={slot} slot={team[slot]} label={t('back')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} />
+                                        <SlotCard key={slot} slot={team[slot]} label={t('back')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} clearLabel={t('clear')} />
                                     ))}
                                 </div>
                             </div>
@@ -671,7 +747,7 @@ const TeamBuilder = () => {
                                 <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-blue-500 uppercase">{t('support')}</div>
                                 <div className="flex gap-4 flex-1 justify-center bg-blue-900/10 p-4 rounded-lg border border-blue-900/30 flex-wrap">
                                     {['support1', 'support2'].map(slot => (
-                                        <SlotCard key={slot} slot={team[slot]} label={t('support')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} />
+                                        <SlotCard key={slot} slot={team[slot]} label={t('support')} getLoc={getLoc} onRemove={() => removeFromTeam(slot)} relics={artifacts} cards={cards} onRelicChange={(id) => handleRelicChange(slot, id)} onCardsChange={(ids) => handleCardsChange(slot, ids)} relicLabel={t('relic')} cardsLabel={t('cards')} noneLabel={t('none')} clearLabel={t('clear')} />
                                     ))}
                                 </div>
                             </div>

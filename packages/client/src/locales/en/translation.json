@@ -71,6 +71,19 @@
         "addSupport": "Add as Support",
         "notesLabel": "Notes",
         "invalidShare": "Invalid share link",
-        "shareCompTitle": "Shared Composition"
+        "shareCompTitle": "Shared Composition",
+        "allRarities": "All Rarities",
+        "allFactions": "All Factions",
+        "allPositions": "All Positions",
+        "allRoles": "All Roles",
+        "compositionName": "Composition Name",
+        "notes": "Notes",
+        "activeBonds": "Active Bonds",
+        "front": "Front",
+        "mid": "Mid",
+        "back": "Back",
+        "cards": "Cards",
+        "relic": "Relic",
+        "none": "None"
     }
 }
