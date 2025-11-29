@@ -68,6 +68,9 @@
         "loginToSave": "Log in to save compositions.",
         "viewOnlyShare": "Viewing shared composition (read-only)",
         "addFormation": "Add to Formation",
-        "addSupport": "Add as Support"
+        "addSupport": "Add as Support",
+        "notesLabel": "Notes",
+        "invalidShare": "Invalid share link",
+        "shareCompTitle": "Shared Composition"
     }
 }

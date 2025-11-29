@@ -13,7 +13,6 @@ const LocalizedString = new mongoose.Schema({
 const ArtifactSchema = new mongoose.Schema({
     id: { type: Number, required: true, unique: true },
     name: { type: LocalizedString, required: true },
-    rarity: { type: String, enum: ['R', 'SR', 'SSR', 'UR'], required: true },
     rarity: { type: String, enum: ['N', 'R', 'SR', 'SSR', 'UR'], required: true },
     faction: { type: LocalizedString, default: null },
     stats: {

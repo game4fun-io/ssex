@@ -8,6 +8,7 @@ import CharacterDetails from './pages/CharacterDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import TeamBuilder from './pages/TeamBuilder';
+import SharedComp from './pages/SharedComp';
 import Artifacts from './pages/Artifacts';
 import ArtifactDetail from './pages/ArtifactDetail';
 import ForceCards from './pages/ForceCards';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/characters" element={<Characters />} />
               <Route path="/characters/:id" element={<CharacterDetails />} />
               <Route path="/team-builder" element={<TeamBuilder />} />
+              <Route path="/team-builder/share/:hash" element={<SharedComp />} />
               <Route path="/artifacts" element={<Artifacts />} />
               <Route path="/artifacts/:id" element={<ArtifactDetail />} />
               <Route path="/force-cards" element={<ForceCards />} />
