@@ -24,7 +24,11 @@ const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
             <div className="w-16 h-16 bg-gray-600 rounded-full" />
         )}
         <span className="text-[10px] text-center leading-tight line-clamp-2 w-full">{getLoc(char.name)}</span>
-        <div className="absolute top-1 right-1 text-[8px] px-1 bg-black/50 rounded text-gray-300">
+        <div className={`absolute top-1 right-1 text-[8px] px-1 rounded text-white font-bold ${char.rarity === 'UR' ? 'bg-red-600' :
+                char.rarity === 'SSR' ? 'bg-yellow-600' :
+                    char.rarity === 'SR' ? 'bg-purple-600' :
+                        'bg-blue-600'
+            }`}>
             {char.rarity}
         </div>
 

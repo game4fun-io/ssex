@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import AuthContext from '../context/AuthContext';
 import ConfigContext from '../context/ConfigContext';
 const assetBase = (import.meta.env.VITE_ASSET_BASE || 'http://localhost:5000/assets').replace(/\/+$/, '');
-const logoSrc = `${assetBase}/branding/logo.svg`;
+const logoSrc = '/logo.png';
 
 const Navbar = () => {
     const { user, logout, isAdmin } = useContext(AuthContext);
