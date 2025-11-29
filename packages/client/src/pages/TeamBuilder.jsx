@@ -25,9 +25,9 @@ const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
         )}
         <span className="text-[10px] text-center leading-tight line-clamp-2 w-full">{getLoc(char.name)}</span>
         <div className={`absolute top-1 right-1 text-[8px] px-1 rounded text-white font-bold ${char.rarity === 'UR' ? 'bg-red-600' :
-                char.rarity === 'SSR' ? 'bg-yellow-600' :
-                    char.rarity === 'SR' ? 'bg-purple-600' :
-                        'bg-blue-600'
+            char.rarity === 'SSR' ? 'bg-yellow-600' :
+                char.rarity === 'SR' ? 'bg-purple-600' :
+                    'bg-blue-600'
             }`}>
             {char.rarity}
         </div>
@@ -391,7 +391,8 @@ const TeamBuilder = () => {
             return teamCharId === charId;
         });
         if (existingSlot) {
-            notify(t('alreadyInTeam'));
+            // Toggle: If already in team, remove it
+            removeFromTeam(existingSlot[0]);
             return;
         }
 
@@ -412,28 +413,7 @@ const TeamBuilder = () => {
         const row = normalizeRow(getLoc(char.positioning));
         const slots = getRowSlots(row);
 
-        // Get existing chars in this row (preserving order is tricky if we just grab from slots, 
-        // but we can infer order based on current count/position or just grab them left-to-right and append)
-        // Actually, to support "add 3rd goes to middle", we need to know which was 1st and 2nd.
-        // But simpler is: Grab all chars in row, append new one.
-        // If we grab left-to-right:
-        // Count 1 (Mid): [null, c1, null] -> [c1]
-        // Count 2 (Ext): [c1, null, c2] -> [c1, c2]
-        // Count 3 (Full): [c1, c3, c2] -> [c1, c3, c2] (Wait, if we read left-to-right, we get c1, c3, c2. 
-        // If we append c4? Full.
-        // If we remove c3 (Mid)? We get [c1, c2]. Rebalance -> [c1, null, c2]. Correct.
-        // So reading left-to-right works for maintaining set, but for "3rd goes to middle", 
-        // we just need to handle the *placement* of the list of 3 chars.
-        // The list `charsInRow` will be `[c1, c2, c3]`.
-        // Logic:
-        // 1: [null, c1, null]
-        // 2: [c1, null, c2]
-        // 3: [c1, c3, c2]  <-- Note: c3 is at index 1 in slots, but index 2 in our list? 
-        // No, `rebalanceRow` handles the mapping.
-        // If we have 2 chars: `[c1, c2]`. Add `c3`. List: `[c1, c2, c3]`.
-        // `rebalanceRow` puts `c1` at Slot 0, `c2` at Slot 2, `c3` at Slot 1.
-        // Result: `[c1, c3, c2]`. Correct.
-
+        // Get existing chars in this row
         const currentChars = slots.map(s => team[s]).filter(Boolean);
 
         if (currentChars.length >= 3) {
@@ -465,18 +445,14 @@ const TeamBuilder = () => {
         if (slotId.includes('back')) row = 'back';
 
         const slots = getRowSlots(row);
-        // Get all chars EXCEPT the one being removed
-        // We must read them in slot order (1, 2, 3) to maintain relative order of remaining?
-        // Or should we try to preserve "insertion order"?
-        // If we have `[c1, c3, c2]` (Slots: 1, 2, 3).
-        // Remove `c3` (Slot 2). Remaining from slots: `c1`, `c2`.
-        // List: `[c1, c2]`.
-        // Rebalance 2 chars: `[c1, null, c2]`. Correct.
-        // Remove `c1` (Slot 1). Remaining: `c3`, `c2`.
-        // List: `[c3, c2]`.
-        // Rebalance: `[c3, null, c2]`. Correct.
 
-        const currentChars = slots.map(s => team[s]).filter(entry => entry && s !== slotId);
+        // Get all chars EXCEPT the one being removed
+        // We filter the SLOTS first to exclude the one being removed, then map to values
+        const currentChars = slots
+            .filter(s => s !== slotId)
+            .map(s => team[s])
+            .filter(Boolean);
+
         const updates = rebalanceRow(slots, currentChars);
 
         setTeam(prev => ({ ...prev, ...updates }));
