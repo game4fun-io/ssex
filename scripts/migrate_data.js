@@ -135,6 +135,20 @@ const mapSkills = (skillIds, skillConfig, skillValueConfig, langPackages) => {
     }).filter(s => s !== null);
 };
 
+const ATTRIBUTE_MAP = {
+    'Max_Hp': 'HP',
+    'Attack': 'ATK',
+    'Physis_Def': 'P.DEF',
+    'Magic_Def': 'M.DEF',
+    'Physis_Pierce': 'P.Pierce',
+    'Pierce_Resist': 'Pierce Res',
+    'Crit_Level': 'Crit',
+    'Crit_Def_Level': 'Crit Res',
+    'Hit_Level': 'Hit',
+    'Dodge_Level': 'Dodge',
+    'Speed': 'Speed'
+};
+
 const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPackages) => {
     if (!relationId) return [];
 
@@ -151,9 +165,16 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
             return getLocalized(targetRole ? targetRole.rolename_short : '', langPackages);
         });
 
+        const effects = fetter.attribute.map(attr => {
+            const name = ATTRIBUTE_MAP[attr[0]] || attr[0];
+            const val = attr[2];
+            return `${name} +${val}%`;
+        });
+        const effectStr = effects.join(', ');
+
         return {
             name: getLocalized(fetter.name, langPackages),
-            effect: getLocalized(fetter.name, langPackages),
+            effect: { en: effectStr, pt: effectStr, es: effectStr, fr: effectStr, cn: effectStr, id: effectStr, th: effectStr }, // Use constructed string for all langs for now
             partners: targets
         };
     }).filter(b => b !== null);

@@ -54,6 +54,7 @@ const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange,
     const cardIds = slot?.cardIds || [];
     const [openRelic, setOpenRelic] = useState(false);
     const [openCards, setOpenCards] = useState(false);
+    const [hover, setHover] = useState(false); // Added for hover state
 
     if (!char) {
         return (
@@ -66,18 +67,29 @@ const SlotCard = ({ slot, label, getLoc, onRemove, relics, cards, onRelicChange,
     return (
         <div className="w-48 min-h-[288px] bg-gray-800 border border-gray-600 rounded-lg flex flex-col items-center p-3 gap-3 relative group shadow-lg">
             <button
-                onClick={onRemove}
-                className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity z-10 hover:bg-red-500 shadow-md"
+                onClick={(e) => { e.stopPropagation(); onRemove(); }}
+                className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity z-[100] hover:bg-red-500 shadow-md"
             >
                 ✕
             </button>
 
-            <div className="relative mt-2">
-                {char.imageUrl ? (
-                    <img src={char.imageUrl} alt={getLoc(char.name)} className="w-24 h-24 object-cover rounded-full border-2 border-gray-600 shadow-md" />
-                ) : (
-                    <div className="w-24 h-24 bg-gray-600 rounded-full border-2 border-gray-600 shadow-md" />
-                )}
+            <div className="relative group cursor-pointer" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+                <div className="w-24 h-32 bg-gray-800 rounded-lg border border-gray-700 relative overflow-hidden">
+                    {char.imageUrl ? (
+                        <img src={char.imageUrl} alt={getLoc(char.name)} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray-600 text-xs text-center p-1">
+                            {getLoc(char.name)}
+                        </div>
+                    )}
+                    <div className={`absolute top-1 left-1 px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${char.rarity === 'UR' ? 'bg-red-600' :
+                        char.rarity === 'SSR' ? 'bg-yellow-600' :
+                            char.rarity === 'SR' ? 'bg-purple-600' :
+                                'bg-blue-600'
+                        }`}>
+                        {char.rarity}
+                    </div>
+                </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gray-900 px-3 py-0.5 rounded text-xs whitespace-nowrap border border-gray-700 shadow-sm z-10 font-bold">
                     {getLoc(char.name)}
                 </div>
@@ -369,7 +381,11 @@ const TeamBuilder = () => {
 
     const autoAddCharacter = (char, isSupport = false) => {
         // 1. Check if already in team
-        const existingSlot = Object.entries(team).find(([_, val]) => val?.character?._id === (char._id || char.id));
+        const charId = char._id || char.id;
+        const existingSlot = Object.entries(team).find(([_, val]) => {
+            const teamCharId = val?.character?._id || val?.character?.id;
+            return teamCharId === charId;
+        });
         if (existingSlot) {
             notify(t('alreadyInTeam'));
             return;
