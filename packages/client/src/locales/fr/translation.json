@@ -60,6 +60,19 @@
         "loginToSave": "Connectez-vous pour enregistrer des compositions.",
         "viewOnlyShare": "Affichage d'une composition partagée (lecture seule)",
         "addFormation": "Ajouter à la formation",
-        "addSupport": "Ajouter en soutien"
+        "addSupport": "Ajouter en soutien",
+        "allRarities": "Toutes les Raretés",
+        "allFactions": "Toutes les Factions",
+        "allPositions": "Toutes les Positions",
+        "allRoles": "Tous les Rôles",
+        "compositionName": "Nom de la Composition",
+        "notes": "Notes",
+        "activeBonds": "Liens Actifs",
+        "front": "Avant",
+        "mid": "Milieu",
+        "back": "Arrière",
+        "cards": "Cartes",
+        "relic": "Relique",
+        "none": "Aucun"
     }
 }

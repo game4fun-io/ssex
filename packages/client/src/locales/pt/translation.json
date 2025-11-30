@@ -68,6 +68,19 @@
         "loginToSave": "Entre para salvar composições.",
         "viewOnlyShare": "Visualizando composição compartilhada (somente leitura)",
         "addFormation": "Adicionar na Formação",
-        "addSupport": "Adicionar como Suporte"
+        "addSupport": "Adicionar como Suporte",
+        "allRarities": "Todas as Raridades",
+        "allFactions": "Todas as Facções",
+        "allPositions": "Todas as Posições",
+        "allRoles": "Todas as Classes",
+        "compositionName": "Nome da Composição",
+        "notes": "Notas",
+        "activeBonds": "Vínculos Ativos",
+        "front": "Frente",
+        "mid": "Meio",
+        "back": "Trás",
+        "cards": "Cartas",
+        "relic": "Relíquia",
+        "none": "Nenhum"
     }
 }

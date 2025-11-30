@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const assetBase = (import.meta.env.VITE_ASSET_BASE || 'http://localhost:5000/assets').replace(/\/+$/, '');
-const logoSrc = `${assetBase}/branding/logo.svg`;
+const logoSrc = '/logo.png';
 
 const HeroSection = () => {
     const { t } = useTranslation();
@@ -21,7 +21,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.6 }}
                     className="flex justify-center mb-4"
                 >
-                    <img src={logoSrc} alt="Saint Seiya EX" className="h-14 w-auto drop-shadow-2xl" />
+                    <img src={logoSrc} alt="Saint Seiya EX" className="h-32 w-auto drop-shadow-2xl" />
                 </motion.div>
 
                 <motion.h1
