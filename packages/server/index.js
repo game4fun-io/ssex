@@ -13,7 +13,11 @@ const ASSET_ROUTE = process.env.ASSET_ROUTE || '/assets';
 const ASSET_DIR = process.env.ASSET_DIR || path.join(__dirname, 'public', 'assets');
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
+}));
 app.use(express.json());
 app.use(ASSET_ROUTE, express.static(ASSET_DIR)); // serve scraped assets locally
 
@@ -28,6 +32,7 @@ app.use('/api/characters', require('./src/routes/characters'));
 app.use('/api/artifacts', require('./src/routes/artifacts'));
 app.use('/api/force-cards', require('./src/routes/forceCards'));
 app.use('/api/config', require('./src/routes/config'));
+app.use('/api/share', require('./src/routes/share'));
 
 app.get('/', (req, res) => {
     res.send('Saint Seiya EX API is running');

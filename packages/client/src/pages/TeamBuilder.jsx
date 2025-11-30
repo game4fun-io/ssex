@@ -582,10 +582,18 @@ const TeamBuilder = () => {
     };
 
     const generateShareLink = async () => {
-        const hash = encodeShare();
-        const link = `${window.location.origin}/team-builder/share/${hash}`;
-        setShareLink(link);
-        try { await navigator.clipboard.writeText(link); notify(t('linkCopied')); } catch (e) { notify('Error copying link'); }
+        try {
+            const payload = { team: serializeTeamForShare(team), notes, name: compName || t('untitledComp') };
+            const res = await api.post('/share', payload);
+            const shortCode = res.data.shortCode;
+            const link = `${window.location.origin}/share/${shortCode}`;
+            setShareLink(link);
+            await navigator.clipboard.writeText(link);
+            notify(t('linkCopied'));
+        } catch (e) {
+            console.error(e);
+            notify('Error generating share link');
+        }
     };
 
     // --- Filtering ---

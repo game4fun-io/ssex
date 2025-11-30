@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import TeamBuilder from './pages/TeamBuilder';
 import SharedComp from './pages/SharedComp';
+import SharedTeamViewer from './pages/SharedTeamViewer';
 import Artifacts from './pages/Artifacts';
 import ArtifactDetail from './pages/ArtifactDetail';
 import ForceCards from './pages/ForceCards';
@@ -31,6 +32,7 @@ function App() {
               <Route path="/characters/:id" element={<CharacterDetails />} />
               <Route path="/team-builder" element={<TeamBuilder />} />
               <Route path="/team-builder/share/:hash" element={<SharedComp />} />
+              <Route path="/share/:shortCode" element={<SharedTeamViewer />} />
               <Route path="/artifacts" element={<Artifacts />} />
               <Route path="/artifacts/:id" element={<ArtifactDetail />} />
               <Route path="/force-cards" element={<ForceCards />} />
