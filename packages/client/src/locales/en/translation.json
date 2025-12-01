@@ -84,6 +84,9 @@
         "back": "Back",
         "cards": "Cards",
         "relic": "Relic",
-        "none": "None"
+        "none": "None",
+        "sharedCompSubtitle": "Shared Composition • Read Only",
+        "createYourOwn": "Create Your Own",
+        "readOnly": "Read Only"
     }
 }
