@@ -1,0 +1,19 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Install dependencies for both packages
+COPY package.json ./
+COPY packages/client/package.json ./packages/client/
+COPY packages/server/package.json ./packages/server/
+
+RUN npm install
+
+# We don't copy source code here because we'll mount it as a volume
+# This enables hot reloading
+
+# Expose ports
+EXPOSE 5173 5002
+
+# Start both client and server in dev mode
+CMD ["npm", "start"]
