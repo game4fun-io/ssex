@@ -8,8 +8,8 @@ COPY package.json ./
 COPY packages/client/package.json ./packages/client/
 COPY packages/server/package.json ./packages/server/
 
-# Install dependencies
-RUN npm install
+# Install dependencies (force dev deps for build tools like vite)
+RUN npm install --include=dev
 
 # Copy source code
 COPY . .
