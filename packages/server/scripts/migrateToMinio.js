@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
-const { minioClient, BUCKET_NAME, uploadFile } = require('../services/minio');
+const { minioClient, BUCKET_NAME, uploadFile, fileExists } = require('../services/minio');
 const { optimizeImage } = require('../services/imageOptimizer');
 
 dotenv.config({ path: path.join(__dirname, '../../.env') });
@@ -48,6 +48,13 @@ const migrate = async () => {
                 const relativePath = path.relative(ASSETS_DIR, file);
                 // Object name in MinIO (keep structure)
                 const objectName = relativePath; // e.g., resources/characters/foo.png
+
+                // Check if file exists in MinIO
+                const exists = await fileExists(objectName);
+                if (exists) {
+                    // console.log(`Skipping ${objectName} (already exists)`);
+                    continue;
+                }
 
                 try {
                     const buffer = fs.readFileSync(file);

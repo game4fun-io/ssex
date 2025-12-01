@@ -88,5 +88,6 @@ module.exports = {
     uploadFile,
     getFileUrl,
     deleteFile,
+    fileExists,
     BUCKET_NAME
 };
