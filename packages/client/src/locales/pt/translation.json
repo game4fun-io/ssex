@@ -89,6 +89,9 @@
         "save": "Salvar",
         "share": "Compartilhar",
         "noSaintsFound": "Nenhum cavaleiro encontrado com esses filtros.",
-        "noSavedComps": "Nenhuma composição salva encontrada."
+        "noSavedComps": "Nenhuma composição salva encontrada.",
+        "workInProgress": "Em Desenvolvimento",
+        "bannerMessage": "Dados atualizados constantemente com base nos lançamentos e ajuda da comunidade. Sua contribuição é bem-vinda!",
+        "copyrightNotice": "Saint Seiya EX é uma marca registrada da Efun. Esta é uma ferramenta feita por fãs."
     }
 }

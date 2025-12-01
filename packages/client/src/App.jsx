@@ -18,6 +18,7 @@ import ForceCardDetail from './pages/ForceCardDetail';
 import { ConfigProvider } from './context/ConfigContext';
 import AdminDashboard from './pages/AdminDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import AnnouncementBanner from './components/AnnouncementBanner';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <ConfigProvider>
         <Router>
           <div className="min-h-screen bg-gray-800">
+            <AnnouncementBanner />
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />

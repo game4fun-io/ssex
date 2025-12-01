@@ -81,6 +81,9 @@
         "save": "Guardar",
         "share": "Compartir",
         "noSaintsFound": "No se encontraron caballeros con estos filtros.",
-        "noSavedComps": "No se encontraron composiciones guardadas."
+        "noSavedComps": "No se encontraron composiciones guardadas.",
+        "workInProgress": "En Desarrollo",
+        "bannerMessage": "Datos actualizados constantemente según lanzamientos y ayuda de la comunidad. ¡Tu contribución es bienvenida!",
+        "copyrightNotice": "Saint Seiya EX es una marca registrada de Efun. Esta es una herramienta hecha por fans."
     }
 }
