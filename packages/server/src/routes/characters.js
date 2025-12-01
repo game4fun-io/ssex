@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Character = require('../models/Character');
 const { mapCharacterAssets } = require('../utils/assets');
+const cache = require('../middleware/cache');
 
 // Get all characters
-router.get('/', async (req, res) => {
+router.get('/', cache(3600), async (req, res) => {
     try {
         const characters = await Character.find();
         res.json(characters.map(mapCharacterAssets));
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get single character
-router.get('/:id', async (req, res) => {
+router.get('/:id', cache(3600), async (req, res) => {
     try {
         const character = await Character.findById(req.params.id);
         if (!character) {

@@ -37,6 +37,15 @@ const buildLocalAssetUrl = (url) => {
     // Remove redundant leading pieces so we don't end up with /assets/assets/...
     assetPath = assetPath.replace(/^\/?assets\//i, '').replace(/^\//, '');
 
+    // Use MinIO URL if configured
+    if (process.env.MINIO_ENDPOINT) {
+        const protocol = 'http';
+        const host = process.env.MINIO_PUBLIC_HOST || 'localhost';
+        const port = process.env.MINIO_API_PORT || 9000;
+        const bucket = process.env.MINIO_BUCKET || 'ssex-images';
+        return `${protocol}://${host}:${port}/${bucket}/${assetPath}`;
+    }
+
     const base = defaultAssetBase || '/assets';
     const normalizedBase = base.startsWith('http')
         ? base.replace(/\/+$/, '')
