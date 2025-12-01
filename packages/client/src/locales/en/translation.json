@@ -87,6 +87,11 @@
         "none": "None",
         "sharedCompSubtitle": "Shared Composition • Read Only",
         "createYourOwn": "Create Your Own",
-        "readOnly": "Read Only"
+        "readOnly": "Read Only",
+        "buildYourDreamTeam": "Plan squads, compare stats, and keep up with relics and ultimate cards—built for the global launch meta.",
+        "save": "Save",
+        "share": "Share",
+        "noSaintsFound": "No saints found matching your filters.",
+        "noSavedComps": "No saved compositions found."
     }
 }
