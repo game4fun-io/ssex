@@ -43,6 +43,12 @@ ConfigSchema.statics.getSingleton = async function () {
     let config = await this.findOne();
     if (!config) {
         config = await this.create({});
+    } else {
+        // Ensure new fields are present
+        if (config.featureFlags.announcementBanner === undefined) {
+            config.featureFlags.announcementBanner = true;
+            await config.save();
+        }
     }
     return config;
 };
