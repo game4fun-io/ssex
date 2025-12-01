@@ -31,6 +31,13 @@ This folder contains Supabase dumps and image manifests scraped from `seiya2.ver
 - **Translations**
   - `LanguagePackage_<LANG>.json`: Key/value pairs resolving `LC_*` strings to localized text.
 
+## CSV export
+Generate a single CSV that contains heroes, skills, artifacts, force cards, relations, and translations for every language with resolved text:
+```bash
+python ../export_csv.py --data-dir . --out full_dump.csv
+```
+The CSV columns are `lang`, `entity_group`, `table`, `record_id`, `row_index`, `raw_json`, and `resolved_json`.
+
 ## Assets
 No images were downloaded to keep the repo light. To fetch them locally:
 ```bash

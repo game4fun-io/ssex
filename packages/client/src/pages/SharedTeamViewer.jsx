@@ -106,7 +106,7 @@ const SharedTeamViewer = () => {
     if (error) return <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center text-red-500">{error}</div>;
     if (!comp) return null;
 
-    const { team, name, notes } = comp;
+    const { teamData, name, notes } = comp;
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-4 pb-20">
@@ -137,7 +137,7 @@ const SharedTeamViewer = () => {
                         <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('front')}</div>
                         <div className="flex gap-4 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                             {['front1', 'front2', 'front3'].map(slot => (
-                                <ReadOnlySlotCard key={slot} slot={team.teamData[slot]} label={t('front')} getLoc={getLoc} />
+                                <ReadOnlySlotCard key={slot} slot={teamData[slot]} label={t('front')} getLoc={getLoc} />
                             ))}
                         </div>
                     </div>
@@ -147,7 +147,7 @@ const SharedTeamViewer = () => {
                         <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('mid')}</div>
                         <div className="flex gap-4 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                             {['mid1', 'mid2', 'mid3'].map(slot => (
-                                <ReadOnlySlotCard key={slot} slot={team.teamData[slot]} label={t('mid')} getLoc={getLoc} />
+                                <ReadOnlySlotCard key={slot} slot={teamData[slot]} label={t('mid')} getLoc={getLoc} />
                             ))}
                         </div>
                     </div>
@@ -157,7 +157,7 @@ const SharedTeamViewer = () => {
                         <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-gray-500 uppercase">{t('back')}</div>
                         <div className="flex gap-4 justify-center bg-gray-800/30 p-4 rounded-lg border border-gray-800/50 flex-wrap">
                             {['back1', 'back2', 'back3'].map(slot => (
-                                <ReadOnlySlotCard key={slot} slot={team.teamData[slot]} label={t('back')} getLoc={getLoc} />
+                                <ReadOnlySlotCard key={slot} slot={teamData[slot]} label={t('back')} getLoc={getLoc} />
                             ))}
                         </div>
                     </div>
@@ -167,7 +167,7 @@ const SharedTeamViewer = () => {
                         <div className="w-full md:w-16 text-center md:text-right text-sm font-bold text-blue-500 uppercase">{t('support')}</div>
                         <div className="flex gap-4 justify-center bg-blue-900/10 p-4 rounded-lg border border-blue-900/30 flex-wrap">
                             {['support1', 'support2'].map(slot => (
-                                <ReadOnlySlotCard key={slot} slot={team.teamData[slot]} label={t('support')} getLoc={getLoc} />
+                                <ReadOnlySlotCard key={slot} slot={teamData[slot]} label={t('support')} getLoc={getLoc} />
                             ))}
                         </div>
                     </div>
