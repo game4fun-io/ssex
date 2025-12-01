@@ -29,6 +29,13 @@ mongoose.connect(process.env.MONGO_URI)
     })
     .catch(err => console.error('MongoDB connection error:', err));
 
+// Auto-migrate assets to MinIO in development
+if (process.env.NODE_ENV === 'development') {
+    const { migrate } = require('./scripts/migrateToMinio');
+    // Run migration in background so it doesn't block server startup
+    migrate().catch(err => console.error('MinIO migration error:', err));
+}
+
 const User = require('./src/models/User');
 const bcrypt = require('bcryptjs');
 
