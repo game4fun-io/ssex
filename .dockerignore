@@ -15,5 +15,4 @@ docker-compose.yml
 docker-compose.dev.yml
 deployment_guide.md
 README.md
-scripts/migrate_data.js
-scraping/data
+
