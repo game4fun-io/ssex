@@ -73,6 +73,9 @@
         "back": "Arrière",
         "cards": "Cartes",
         "relic": "Relique",
-        "none": "Aucun"
+        "none": "Aucun",
+        "sharedCompSubtitle": "Composition Partagée • Lecture Seule",
+        "createYourOwn": "Créez la Vôtre",
+        "readOnly": "Lecture Seule"
     }
 }

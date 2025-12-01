@@ -81,6 +81,9 @@
         "back": "Trás",
         "cards": "Cartas",
         "relic": "Relíquia",
-        "none": "Nenhum"
+        "none": "Nenhum",
+        "sharedCompSubtitle": "Composição Compartilhada • Somente Leitura",
+        "createYourOwn": "Crie a Sua",
+        "readOnly": "Somente Leitura"
     }
 }
