@@ -92,6 +92,9 @@
         "save": "Save",
         "share": "Share",
         "noSaintsFound": "No saints found matching your filters.",
-        "noSavedComps": "No saved compositions found."
+        "noSavedComps": "No saved compositions found.",
+        "workInProgress": "Work in Progress",
+        "bannerMessage": "Data is constantly updated based on game releases and community help. We'd love your contribution!",
+        "copyrightNotice": "Saint Seiya EX is a trademark of Efun. This is a fan-made tool."
     }
 }

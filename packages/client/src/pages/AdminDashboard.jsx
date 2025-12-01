@@ -109,6 +109,15 @@ const AdminDashboard = () => {
                                             className="w-5 h-5"
                                         />
                                     </div>
+                                    <div className="flex items-center justify-between">
+                                        <label className="text-gray-400">Announcement Banner</label>
+                                        <input
+                                            type="checkbox"
+                                            checked={formData.featureFlags.announcementBanner ?? true}
+                                            onChange={(e) => handleChange('featureFlags', 'announcementBanner', e.target.checked)}
+                                            className="w-5 h-5"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
