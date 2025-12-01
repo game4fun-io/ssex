@@ -6,13 +6,7 @@ const Artifact = require('../packages/server/src/models/Artifact');
 const ForceCard = require('../packages/server/src/models/ForceCard');
 
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ssex', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.log(err));
+// Connect to MongoDB moved inside migrate()
 
 const DATA_DIR = path.join(__dirname, '../scraping/data');
 const LANGUAGES = ['EN', 'PT', 'ES', 'FR', 'CN', 'ID', 'TH'];
@@ -250,6 +244,13 @@ const mapTags = (labelList, skillLabelConfig, langPackages) => {
 
 const migrate = async () => {
     try {
+        // Connect to MongoDB
+        await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27018/ssex', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('MongoDB Connected');
+
         // Load Language Packages
         const langPackages = {};
         for (const lang of LANGUAGES) {
@@ -338,36 +339,103 @@ const migrate = async () => {
         }
         console.log('Migrated Artifacts');
 
-        // Migrate Force Cards
+        // Process Force Cards
+        console.log('Processing Force Cards...');
+        // forceCardConfig and skillConfig are already loaded at the beginning of migrate()
+        // const forceCardConfigPath = path.join(DATA_DIR, 'tables', 'ForceCardItemConfig.json');
+        // if (fs.existsSync(forceCardConfigPath)) {
+        //     const forceCardConfig = JSON.parse(fs.readFileSync(forceCardConfigPath, 'utf8'));
+
         for (const card of forceCardConfig) {
+            const name = getLocalized(card.name, langPackages);
+            if (!name) continue;
+
+            // Try to find linked skill for progression
+            let progression = [];
+            // Estimate base stats based on quality/args
+            let baseAtk = card.args || 0;
+            let baseHp = baseAtk * 10; // Rough estimate
+            let baseDef = baseAtk * 0.5; // Rough estimate
+
+            let growth_stats = {
+                hp: baseHp * 0.1,
+                atk: baseAtk * 0.1,
+                pdef: baseDef * 0.1,
+                mdef: baseDef * 0.1,
+                phys_pen: 0,
+                mag_pen: 0
+            };
+
             let imageUrl = '';
             if (card.icon_path) {
+                // icon_path: "Textures/Dynamis/Card/Card_93073"
+                // Target: "/assets/resources/textures/dynamis/card/Card_93073.png"
                 const parts = card.icon_path.split('/');
-                const filename = parts.pop();
-                const path = parts.join('/').toLowerCase();
-                imageUrl = `/assets/resources/${path}/${filename}.png`;
+                const filename = parts.pop(); // Card_93073
+                const dir = parts.join('/').toLowerCase(); // textures/dynamis/card
+                imageUrl = `/assets/resources/${dir}/${filename}.png`;
             }
 
-            const cardData = {
-                id: card.id,
-                name: getLocalized(card.name, langPackages),
-                rarity: mapArtifactRarity(card.quality),
-                stats: {
-                    hp: 0,
-                    atk: card.args || 0,
-                    def: 0
-                },
-                skill: {
-                    name: getLocalized(card.name, langPackages),
-                    description: getLocalized(card.desc, langPackages)
-                },
-                skills: mapForceCardSkills(card.id, skillConfig, skillValueConfig, langPackages),
-                imageUrl: imageUrl
-            };
-            await ForceCard.create(cardData);
-        }
-        console.log('Migrated Force Cards');
+            if (card.EffectIDList) {
+                try {
+                    // EffectIDList is a string like "[93053101]" or just numbers
+                    const effectIds = JSON.parse(card.EffectIDList || '[]');
+                    if (effectIds.length > 0) {
+                        const effectId = effectIds[0].toString();
+                        // Try to find skill by prefix (first 5 digits usually)
+                        const skillPrefix = effectId.substring(0, 5);
+                        const skill = skillConfig.find(s => s.skillid.toString() === skillPrefix || s.skillid.toString() === effectId);
 
+                        if (skill && skill.skill_des) {
+                            progression = skill.skill_des.map((des, index) => ({
+                                star: index + 1,
+                                effect: resolveSkillDescription(des.des, des.value, skillValueConfig, langPackages),
+                                copies_needed: index > 0 ? 1 : 0, // Placeholder
+                                refund: index > 0 ? 10 : 0,      // Placeholder
+                                cost: (index + 1) * 1000         // Placeholder
+                            }));
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`Failed to parse EffectIDList for card ${card.id}:`, e.message);
+                }
+            }
+
+            // Generate Exp Table
+            const exp_table = Array.from({ length: 90 }, (_, i) => ({
+                level: i + 1,
+                exp_needed: (i + 1) * 100 // Placeholder formula
+            }));
+
+            await ForceCard.findOneAndUpdate(
+                { id: card.id },
+                {
+                    name: getLocalized(card.name, langPackages),
+                    rarity: mapRarity(card.quality),
+                    imageUrl: imageUrl,
+                    skill: {
+                        name: getLocalized(card.name, langPackages), // Using card name as skill name for now
+                        description: getLocalized(card.desc, langPackages)
+                    },
+                    stats: {
+                        hp: baseHp,
+                        atk: baseAtk,
+                        pdef: baseDef,
+                        mdef: baseDef,
+                        phys_pen: 0,
+                        mag_pen: 0
+                    },
+                    growth_stats: growth_stats,
+                    progression: progression,
+                    exp_table: exp_table,
+                    level: 1,
+                    stars: card.star || 0,
+                    tags: []
+                },
+                { upsert: true, new: true }
+            );
+        }
+        console.log(`Processed ${forceCardConfig.length} Force Cards`);
         console.log('Migration completed successfully');
         process.exit(0);
     } catch (error) {
