@@ -30,7 +30,13 @@ TABLES: Dict[str, List[str]] = {
     ],
     "skills": ["SkillConfig", "SkillLabelConfig", "SkillValueConfig"],
     "artifacts": ["ArtifactConfig", "ArtifactResourcesConfig"],
-    "force_cards": ["ForceCardItemConfig"],
+    "force_cards": [
+        "ForceCardItemConfig",
+        "ForceCardLevelConfig",
+        "ForceCardStarConfig",
+        "ForceCardSuitConfig",
+        "ForceCardSkillConfig"
+    ],
 }
 
 

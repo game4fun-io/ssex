@@ -5,6 +5,7 @@ const Character = require('../packages/server/src/models/Character');
 const Artifact = require('../packages/server/src/models/Artifact');
 const ForceCard = require('../packages/server/src/models/ForceCard');
 
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ssex', {
     useNewUrlParser: true,

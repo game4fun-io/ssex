@@ -54,19 +54,54 @@ const ForceCardDetail = () => {
                     <div className="flex-grow">
                         <div className="flex justify-between items-start mb-4">
                             <h1 className="text-4xl font-bold text-yellow-500">{getLoc(card.name)}</h1>
-                            <span className={`px-3 py-1 rounded text-sm font-bold ${card.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
-                                card.rarity === 'SSR' ? 'bg-yellow-600 text-white' :
-                                    card.rarity === 'SR' ? 'bg-purple-600 text-white' :
-                                        card.rarity === 'R' ? 'bg-blue-600 text-white' :
-                                            'bg-gray-600 text-white'
+                            <span className={`px-3 py-1 rounded text-sm font-bold ${['UR', 'SSR', 'Legendary'].includes(card.rarity) ? 'bg-red-900 text-white border border-red-700' :
+                                    ['SR', 'Epic'].includes(card.rarity) ? 'bg-purple-600 text-white' :
+                                        ['R', 'Rare'].includes(card.rarity) ? 'bg-blue-600 text-white' :
+                                            ['N', 'Uncommon'].includes(card.rarity) ? 'bg-green-600 text-white' :
+                                                'bg-gray-600 text-white'
                                 }`}>{card.rarity}</span>
                         </div>
 
-                        <div className="mb-6 space-y-2">
-                            {card.stats.hp > 0 && <p className="text-gray-400">HP: <span className="text-white font-bold">{card.stats.hp}</span></p>}
-                            {card.stats.atk > 0 && <p className="text-gray-400">ATK: <span className="text-white font-bold">{card.stats.atk}</span></p>}
-                            {card.stats.def > 0 && <p className="text-gray-400">DEF: <span className="text-white font-bold">{card.stats.def}</span></p>}
+                        <div className="mb-6 space-y-4 bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                            <div className="flex flex-wrap gap-4 border-b border-gray-700 pb-4">
+                                <div className="flex items-center gap-2">
+                                    <span className="text-gray-400">Level:</span>
+                                    <span className="text-white font-bold text-lg">{card.level || 1}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-gray-400">Stars:</span>
+                                    <span className="text-yellow-500 font-bold text-lg">{'★'.repeat(card.stars || 0)}</span>
+                                </div>
+                                {card.tags && card.tags.length > 0 && (
+                                    <div className="flex gap-2">
+                                        {card.tags.map((tag, i) => (
+                                            <span key={i} className="bg-gray-700 px-2 py-1 rounded text-xs text-gray-300 border border-gray-600 flex items-center">{tag}</span>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div className="bg-gray-900/50 p-2 rounded text-center">
+                                    <p className="text-gray-500 text-xs uppercase tracking-wider">HP</p>
+                                    <p className="text-white font-bold">{card.stats?.hp || 0}</p>
+                                </div>
+                                <div className="bg-gray-900/50 p-2 rounded text-center">
+                                    <p className="text-gray-500 text-xs uppercase tracking-wider">ATK</p>
+                                    <p className="text-white font-bold">{card.stats?.atk || 0}</p>
+                                </div>
+                                <div className="bg-gray-900/50 p-2 rounded text-center">
+                                    <p className="text-gray-500 text-xs uppercase tracking-wider">P.DEF</p>
+                                    <p className="text-white font-bold">{card.stats?.pdef || 0}</p>
+                                </div>
+                                <div className="bg-gray-900/50 p-2 rounded text-center">
+                                    <p className="text-gray-500 text-xs uppercase tracking-wider">M.DEF</p>
+                                    <p className="text-white font-bold">{card.stats?.mdef || 0}</p>
+                                </div>
+                            </div>
                         </div>
+
+
 
                         <div className="mb-8">
                             <h2 className="text-2xl font-bold text-white mb-2">{t('artifactEffect')}</h2>
