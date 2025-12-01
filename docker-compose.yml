@@ -14,6 +14,9 @@ services:
       - NODE_ENV=production
     depends_on:
       - mongo
+    networks:
+      - default
+      - coolify
     restart: always
 
   mongo:
@@ -26,3 +29,7 @@ services:
 
 volumes:
   mongo-data:
+
+networks:
+  coolify:
+    external: true
