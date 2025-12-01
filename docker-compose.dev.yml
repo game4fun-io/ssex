@@ -1,41 +1,48 @@
 version: '3.8'
 
 services:
-  app-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "5173:5173" # Vite
-      - "5002:5002" # Server
-    volumes:
-      - ./packages/client:/app/packages/client
-      - ./packages/server:/app/packages/server
-      - ./scripts:/app/scripts
-      - ./scraping:/app/scraping
-      - ./package.json:/app/package.json
-      # Prevent node_modules from being overwritten by host
-      - /app/node_modules
-      - /app/packages/client/node_modules
-      - /app/packages/server/node_modules
-    environment:
-      - PORT=5002
-      - MONGO_URI=mongodb://mongo-dev:27017/ssex
-      - JWT_SECRET=dev_secret
-      - ADMIN_EMAIL=admin@admin.com
-      - ADMIN_PASSWORD=admin
-      - NODE_ENV=development
-      - VITE_API_URL=http://localhost:5002/api
-    depends_on:
-      - mongo-dev
-    command: npm start
-
   mongo-dev:
     image: mongo:latest
     ports:
-      - "27019:27017" # Different port to avoid conflict with prod/local
+      - "27019:27017"
     volumes:
       - mongo-data-dev:/data/db
+    restart: always
+
+  redis-dev:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data-dev:/data
+    restart: always
+
+  minio-dev:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio-data-dev:/data
+    command: server /data --console-address ":9001"
+    restart: always
+
+  createbuckets-dev:
+    image: minio/mc
+    depends_on:
+      - minio-dev
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc config host add myminio http://minio-dev:9000 minioadmin minioadmin;
+      /usr/bin/mc mb myminio/ssex-images;
+      /usr/bin/mc anonymous set public myminio/ssex-images;
+      exit 0;
+      "
 
 volumes:
   mongo-data-dev:
+  redis-data-dev:
+  minio-data-dev:
