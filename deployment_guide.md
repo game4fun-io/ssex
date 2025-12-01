@@ -66,3 +66,22 @@ docker-compose exec app npm run seed
 ## Access the Application
 Open your browser and navigate to:
 `http://localhost:5003`
+
+## Local Development (Hot Reloading)
+For local development with hot reloading for both client and server:
+
+```bash
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+This will start:
+- Client: `http://localhost:5173`
+- Server: `http://localhost:5002`
+- Mongo: `localhost:27019`
+
+### Seeding in Development
+To seed the development database:
+
+```bash
+docker-compose -f docker-compose.dev.yml exec app-dev npm run seed
+```
