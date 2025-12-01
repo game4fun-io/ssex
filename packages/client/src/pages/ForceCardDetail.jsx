@@ -32,6 +32,50 @@ const ForceCardDetail = () => {
         fetchCard();
     }, [id]);
 
+    const [level, setLevel] = useState(1);
+    const [stars, setStars] = useState(0);
+    const [activeTab, setActiveTab] = useState('attributes');
+
+    // Mock data if missing
+    const progression = card?.progression || Array.from({ length: 16 }, (_, i) => ({
+        star: i,
+        effect: i === 0 ? 'Base Effect' : `Enhanced Effect Level ${i}`,
+        copies_needed: i > 0 ? 1 : 0,
+        refund: i > 0 ? 10 : 0,
+        cost: i * 1000
+    }));
+
+    const expTable = card?.exp_table || Array.from({ length: 90 }, (_, i) => ({
+        level: i + 1,
+        exp_needed: (i + 1) * 100
+    }));
+
+    const getGrowthFactor = (rarity, starLvl) => {
+        let base = 1.0;
+        if (['UR', 'SSR', 'Legendary'].includes(rarity)) base = 1.5;
+        if (['SR', 'Epic'].includes(rarity)) base = 1.2;
+        if (['R', 'Rare'].includes(rarity)) base = 1.0;
+        if (['N', 'Uncommon'].includes(rarity)) base = 0.8;
+        return base + (starLvl * 0.1);
+    };
+
+    const calculateStat = (base, lvl, starLvl, growthStat) => {
+        if (!base) return 0;
+        const growth = getGrowthFactor(card.rarity, starLvl);
+        // If we have specific growth stats, use them, otherwise estimate
+        const perLevel = growthStat || (base * 0.05 * growth);
+        return Math.floor(base + ((lvl - 1) * perLevel));
+    };
+
+    const statsList = [
+        { key: 'hp', label: 'HP' },
+        { key: 'atk', label: 'ATK' },
+        { key: 'pdef', label: 'P.DEF' },
+        { key: 'mdef', label: 'M.DEF' },
+        { key: 'phys_pen', label: 'Phys Pen' },
+        { key: 'mag_pen', label: 'Mag Pen' }
+    ];
+
     if (loading) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">{t('loading')}</div>;
     if (!card) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">Force Card not found</div>;
 
@@ -42,7 +86,7 @@ const ForceCardDetail = () => {
                     &larr; {t('backToForceCards')}
                 </button>
 
-                <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 flex flex-col md:flex-row gap-8">
+                <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 flex flex-col md:flex-row gap-8 mb-8">
                     <div className="flex-shrink-0">
                         {card.imageUrl ? (
                             <img src={card.imageUrl} alt={getLoc(card.name)} className="w-64 h-64 object-contain mx-auto" />
@@ -54,58 +98,6 @@ const ForceCardDetail = () => {
                     <div className="flex-grow">
                         <div className="flex justify-between items-start mb-4">
                             <h1 className="text-4xl font-bold text-yellow-500">{getLoc(card.name)}</h1>
-                            <span className={`px-3 py-1 rounded text-sm font-bold ${['UR', 'SSR', 'Legendary'].includes(card.rarity) ? 'bg-red-900 text-white border border-red-700' :
-                                    ['SR', 'Epic'].includes(card.rarity) ? 'bg-purple-600 text-white' :
-                                        ['R', 'Rare'].includes(card.rarity) ? 'bg-blue-600 text-white' :
-                                            ['N', 'Uncommon'].includes(card.rarity) ? 'bg-green-600 text-white' :
-                                                'bg-gray-600 text-white'
-                                }`}>{card.rarity}</span>
-                        </div>
-
-                        <div className="mb-6 space-y-4 bg-gray-800/50 p-4 rounded-lg border border-gray-700">
-                            <div className="flex flex-wrap gap-4 border-b border-gray-700 pb-4">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-gray-400">Level:</span>
-                                    <span className="text-white font-bold text-lg">{card.level || 1}</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-gray-400">Stars:</span>
-                                    <span className="text-yellow-500 font-bold text-lg">{'★'.repeat(card.stars || 0)}</span>
-                                </div>
-                                {card.tags && card.tags.length > 0 && (
-                                    <div className="flex gap-2">
-                                        {card.tags.map((tag, i) => (
-                                            <span key={i} className="bg-gray-700 px-2 py-1 rounded text-xs text-gray-300 border border-gray-600 flex items-center">{tag}</span>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div className="bg-gray-900/50 p-2 rounded text-center">
-                                    <p className="text-gray-500 text-xs uppercase tracking-wider">HP</p>
-                                    <p className="text-white font-bold">{card.stats?.hp || 0}</p>
-                                </div>
-                                <div className="bg-gray-900/50 p-2 rounded text-center">
-                                    <p className="text-gray-500 text-xs uppercase tracking-wider">ATK</p>
-                                    <p className="text-white font-bold">{card.stats?.atk || 0}</p>
-                                </div>
-                                <div className="bg-gray-900/50 p-2 rounded text-center">
-                                    <p className="text-gray-500 text-xs uppercase tracking-wider">P.DEF</p>
-                                    <p className="text-white font-bold">{card.stats?.pdef || 0}</p>
-                                </div>
-                                <div className="bg-gray-900/50 p-2 rounded text-center">
-                                    <p className="text-gray-500 text-xs uppercase tracking-wider">M.DEF</p>
-                                    <p className="text-white font-bold">{card.stats?.mdef || 0}</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div className="mb-8">
-                            <h2 className="text-2xl font-bold text-white mb-2">{t('artifactEffect')}</h2>
-                            <p className="text-gray-300 text-lg leading-relaxed">{getLoc(card.skill.description)}</p>
                         </div>
 
                         <div>
