@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className="bg-gray-900 text-white p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-3 group">
-                    <img src={logoSrc} alt="Saint Seiya EX" className="h-12 w-auto drop-shadow-lg group-hover:scale-[1.02] transition" />
+                    <img src={logoSrc} alt="Saint Seiya EX" className="h-28 w-auto drop-shadow-lg group-hover:scale-[1.02] transition" />
                     <span className="sr-only">Saint Seiya EX</span>
                 </Link>
                 <div className="flex items-center space-x-4">
