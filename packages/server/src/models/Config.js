@@ -6,9 +6,9 @@ const ConfigSchema = new mongoose.Schema({
             characters: { type: Boolean, default: true },
             teamBuilder: { type: Boolean, default: true },
             artifacts: { type: Boolean, default: true },
-            forceCards: { type: Boolean, default: true },
-            announcementBanner: { type: Boolean, default: true }
+            forceCards: { type: Boolean, default: true }
         },
+        announcementBanner: { type: Boolean, default: true },
         enableAds: {
             type: Boolean,
             default: true
