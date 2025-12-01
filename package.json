@@ -12,6 +12,7 @@
     "client": "npm run dev --workspace=@ssex/client"
   },
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "yargs": "^17.7.2"
   }
 }

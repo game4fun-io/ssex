@@ -81,6 +81,14 @@
         "back": "Trás",
         "cards": "Cartas",
         "relic": "Relíquia",
-        "none": "Nenhum"
+        "none": "Nenhum",
+        "sharedCompSubtitle": "Composição Compartilhada • Somente Leitura",
+        "createYourOwn": "Crie a Sua",
+        "readOnly": "Somente Leitura",
+        "buildYourDreamTeam": "Planeje esquadrões, compare estatísticas e acompanhe relíquias e cartas supremas.",
+        "save": "Salvar",
+        "share": "Compartilhar",
+        "noSaintsFound": "Nenhum cavaleiro encontrado com esses filtros.",
+        "noSavedComps": "Nenhuma composição salva encontrada."
     }
 }

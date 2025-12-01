@@ -73,6 +73,14 @@
         "back": "Arrière",
         "cards": "Cartes",
         "relic": "Relique",
-        "none": "Aucun"
+        "none": "Aucun",
+        "sharedCompSubtitle": "Composition Partagée • Lecture Seule",
+        "createYourOwn": "Créez la Vôtre",
+        "readOnly": "Lecture Seule",
+        "buildYourDreamTeam": "Planifiez des escouades, comparez les statistiques et suivez les reliques et cartes ultimes.",
+        "save": "Sauvegarder",
+        "share": "Partager",
+        "noSaintsFound": "Aucun chevalier trouvé avec ces filtres.",
+        "noSavedComps": "Aucune composition sauvegardée trouvée."
     }
 }
