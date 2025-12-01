@@ -83,6 +83,16 @@ const deleteFile = async (objectName) => {
     }
 };
 
+const fileExists = async (objectName) => {
+    try {
+        await minioClient.statObject(BUCKET_NAME, objectName);
+        return true;
+    } catch (err) {
+        if (err.code === 'NotFound') return false;
+        return false;
+    }
+};
+
 module.exports = {
     minioClient,
     uploadFile,
