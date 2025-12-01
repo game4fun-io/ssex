@@ -18,20 +18,25 @@ const Navbar = () => {
     return (
         <nav className="bg-gray-900 text-white p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-3 group">
-                    <img src={logoSrc} alt="Saint Seiya EX" className="h-28 w-auto drop-shadow-lg group-hover:scale-[1.02] transition" />
-                    <span className="sr-only">Saint Seiya EX</span>
-                </Link>
+                {/* Left Side: Logo + Main Menu */}
+                <div className="flex items-center gap-8">
+                    <Link to="/" className="flex items-center gap-3 group">
+                        <img src={logoSrc} alt="Saint Seiya EX" className="h-28 w-auto drop-shadow-lg group-hover:scale-[1.02] transition" />
+                        <span className="sr-only">Saint Seiya EX</span>
+                    </Link>
+
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center space-x-6">
+                        <Link to="/" className="hover:text-yellow-400 font-medium">{t('home')}</Link>
+                        {menus.characters && <Link to="/characters" className="hover:text-yellow-400 font-medium">{t('characters')}</Link>}
+                        {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium">{t('artifacts')}</Link>}
+                        {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium">{t('forceCards')}</Link>}
+                        {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium">{t('teamBuilder')}</Link>}
+                    </div>
+                </div>
+
+                {/* Right Side: Auth / User */}
                 <div className="flex items-center space-x-4">
-                    <Link to="/" className="hover:text-yellow-400">{t('home')}</Link>
-
-                    {menus.characters && <Link to="/characters" className="hover:text-yellow-400">{t('characters')}</Link>}
-                    {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400">{t('teamBuilder')}</Link>}
-                    {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400">{t('artifacts')}</Link>}
-                    {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400">{t('forceCards')}</Link>}
-
-
-
                     {user ? (
                         <>
                             {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">{t('admin')}</Link>}
@@ -40,8 +45,8 @@ const Navbar = () => {
                         </>
                     ) : (
                         <>
-                            <Link to="/login" className="hover:text-yellow-400">{t('login')}</Link>
-                            <Link to="/register" className="hover:text-yellow-400">{t('register')}</Link>
+                            <Link to="/login" className="hover:text-yellow-400 font-medium">{t('login')}</Link>
+                            <Link to="/register" className="bg-yellow-600 hover:bg-yellow-500 text-white px-4 py-2 rounded-full font-bold transition shadow-md">{t('register')}</Link>
                         </>
                     )}
                 </div>
