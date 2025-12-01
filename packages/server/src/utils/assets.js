@@ -39,11 +39,22 @@ const buildLocalAssetUrl = (url) => {
 
     // Use MinIO URL if configured
     if (process.env.MINIO_ENDPOINT) {
-        const protocol = 'http';
+        const protocol = process.env.MINIO_PUBLIC_PROTOCOL || 'http';
         const host = process.env.MINIO_PUBLIC_HOST || 'localhost';
         const port = process.env.MINIO_API_PORT || 9000;
         const bucket = process.env.MINIO_BUCKET || 'ssex-images';
-        return `${protocol}://${host}:${port}/${bucket}/${assetPath}`;
+        // If port is 80 or 443, we can omit it for cleaner URLs, but keeping it is safe.
+        // However, if using a domain like cdn.example.com, port 9000 might not be exposed directly.
+        // Usually behind a reverse proxy, port would be standard.
+        // If MINIO_PUBLIC_PORT is defined, use it. If not, and host is localhost, use API port.
+        // If host is a domain, maybe we shouldn't append port 9000 by default?
+        // Let's stick to the previous logic but allow overriding port for public url.
+        const publicPort = process.env.MINIO_PUBLIC_PORT || port;
+
+        // If public port is 80 or 443, don't show it
+        const portStr = (publicPort == 80 || publicPort == 443) ? '' : `:${publicPort}`;
+
+        return `${protocol}://${host}${portStr}/${bucket}/${assetPath}`;
     }
 
     const base = defaultAssetBase || '/assets';
