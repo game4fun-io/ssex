@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Artifact = require('../models/Artifact');
 const { mapArtifactAssets } = require('../utils/assets');
+const cache = require('../middleware/cache');
 
 // Get all artifacts
-router.get('/', async (req, res) => {
+router.get('/', cache(3600), async (req, res) => {
     try {
         const artifacts = await Artifact.find();
         res.json(artifacts.map(mapArtifactAssets));

@@ -1,6 +1,6 @@
 {
     "name": "@ssex/server",
-    "version": "1.0.0",
+    "version": "1.5.0",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
@@ -13,7 +13,10 @@
         "dotenv": "^16.3.1",
         "express": "^4.18.2",
         "jsonwebtoken": "^9.0.2",
-        "mongoose": "^8.0.3"
+        "minio": "^8.0.6",
+        "mongoose": "^8.0.3",
+        "redis": "^5.10.0",
+        "sharp": "^0.34.5"
     },
     "devDependencies": {
         "nodemon": "^3.0.2"
