@@ -76,7 +76,7 @@ function buildTranslations(lang) {
 }
 
 function resolveString(key, translations) {
-    if (typeof key !== 'string') return key;
+    if (typeof key !== 'string') return JSON.stringify(key);
     if (key.startsWith('LC_') && translations.has(key)) return translations.get(key);
     return key;
 }
@@ -190,7 +190,7 @@ function compareLocalized(expected, actual, langs) {
     langs.forEach((langLower) => {
         const exp = expected?.[langLower] || '';
         const act = actual?.[langLower] || '';
-        if ((exp || '').trim() !== (act || '').trim()) {
+        if (String(exp || '').trim() !== String(act || '').trim()) {
             diffs.push({ lang: langLower, expected: exp, actual: act });
         }
     });

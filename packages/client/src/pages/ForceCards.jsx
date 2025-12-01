@@ -30,12 +30,12 @@ const ForceCards = () => {
         const fetchCards = async () => {
             try {
                 const res = await api.get('/force-cards');
-                const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
+                const order = { Legendary: 5, UR: 5, SSR: 5, Epic: 4, SR: 4, Rare: 3, R: 3, Uncommon: 2, N: 2 };
                 const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
                 setCards(sorted);
                 setFilteredCards(sorted);
 
-                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
+                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort((a, b) => (order[b] || 0) - (order[a] || 0));
                 setOptions({
                     rarities: uniqueRarities
                 });
@@ -110,11 +110,11 @@ const ForceCards = () => {
                             className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-yellow-500 transition flex flex-col h-full cursor-pointer">
                             <div className="flex justify-between items-start mb-4">
                                 <h2 className="text-xl font-bold text-white">{getLoc(card.name)}</h2>
-                                <span className={`px-2 py-1 rounded text-xs font-bold ${card.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
-                                    card.rarity === 'SSR' ? 'bg-yellow-600 text-white' :
-                                        card.rarity === 'SR' ? 'bg-purple-600 text-white' :
-                                            card.rarity === 'R' ? 'bg-blue-600 text-white' :
-                                                'bg-gray-600 text-white'
+                                <span className={`px-2 py-1 rounded text-xs font-bold ${['UR', 'SSR', 'Legendary'].includes(card.rarity) ? 'bg-red-900 text-white border border-red-700' :
+                                        ['SR', 'Epic'].includes(card.rarity) ? 'bg-purple-600 text-white' :
+                                            ['R', 'Rare'].includes(card.rarity) ? 'bg-blue-600 text-white' :
+                                                ['N', 'Uncommon'].includes(card.rarity) ? 'bg-green-600 text-white' :
+                                                    'bg-gray-600 text-white'
                                     }`}>{card.rarity}</span>
                             </div>
 
@@ -123,12 +123,6 @@ const ForceCards = () => {
                                     <img src={card.imageUrl} alt={getLoc(card.name)} className="h-24 object-contain" />
                                 </div>
                             )}
-
-                            <div className="mb-4 space-y-1">
-                                {card.stats.hp > 0 && <p className="text-gray-400 text-xs">HP: <span className="text-white">{card.stats.hp}</span></p>}
-                                {card.stats.atk > 0 && <p className="text-gray-400 text-xs">ATK: <span className="text-white">{card.stats.atk}</span></p>}
-                                {card.stats.def > 0 && <p className="text-gray-400 text-xs">DEF: <span className="text-white">{card.stats.def}</span></p>}
-                            </div>
 
                             <div className="flex-grow border-t border-gray-700 pt-4 mt-2">
                                 <h3 className="text-yellow-500 font-bold text-sm mb-1">{getLoc(card.skill.name)}</h3>
