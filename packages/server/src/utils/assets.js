@@ -5,7 +5,8 @@ const defaultAssetBase = (() => {
     const port = process.env.PORT || 5000;
     const normalizedRoute = route.startsWith('http') ? route : `/${route.replace(/^\/+/, '').replace(/\/+$/, '')}`;
     if (normalizedRoute.startsWith('http')) return normalizedRoute.replace(/\/+$/, '');
-    return `http://localhost:${port}${normalizedRoute}`.replace(/\/+$/, '');
+    // Return relative path by default so client resolves it against its own origin
+    return normalizedRoute;
 })();
 
 const buildLocalAssetUrl = (url) => {

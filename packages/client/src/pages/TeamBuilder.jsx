@@ -613,7 +613,6 @@ const TeamBuilder = () => {
     return (
         <div className="min-h-screen bg-gray-900 text-white p-4 pb-20">
             <div className="max-w-[1600px] mx-auto flex flex-col gap-6">
-
                 {/* Header */}
                 <div className="flex justify-between items-center border-b border-gray-800 pb-4">
                     <div>

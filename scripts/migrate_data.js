@@ -6,7 +6,7 @@ const Artifact = require('../packages/server/src/models/Artifact');
 const ForceCard = require('../packages/server/src/models/ForceCard');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/ssex', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ssex', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -188,8 +188,13 @@ const mapRarity = (quality) => {
         case 4: return 'SSR';
         case 5: return 'UR';
         case 6: return 'UR';
-        default: return 'N';
     }
+};
+
+const mapArtifactRarity = (quality) => {
+    // Shift down by 1 level as requested (UR -> SSR, etc.)
+    const adjustedQuality = Math.max(1, quality - 1);
+    return mapRarity(adjustedQuality);
 };
 
 const mapArtifactSkills = (artifactId, skillConfig, skillValueConfig, langPackages) => {
@@ -315,7 +320,7 @@ const migrate = async () => {
             const artifactData = {
                 id: art.id,
                 name: getLocalized(art.name, langPackages),
-                rarity: mapRarity(art.initial_quality),
+                rarity: mapArtifactRarity(art.initial_quality),
                 faction: getLocalized(art.camp, langPackages),
                 stats: {
                     hp: 0,
@@ -345,7 +350,7 @@ const migrate = async () => {
             const cardData = {
                 id: card.id,
                 name: getLocalized(card.name, langPackages),
-                rarity: mapRarity(card.quality),
+                rarity: mapArtifactRarity(card.quality),
                 stats: {
                     hp: 0,
                     atk: card.args || 0,
