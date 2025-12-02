@@ -43,58 +43,46 @@ const migrate = async () => {
 
             console.log(`Found ${files.length} files to migrate.`);
 
-            for (const file of files) {
-                // Get relative path from assets dir
-                const relativePath = path.relative(ASSETS_DIR, file);
-                // Object name in MinIO (keep structure)
-                const objectName = relativePath; // e.g., resources/characters/foo.png
+            const BATCH_SIZE = 20;
+            for (let i = 0; i < files.length; i += BATCH_SIZE) {
+                const batch = files.slice(i, i + BATCH_SIZE);
+                await Promise.all(batch.map(async (file) => {
+                    // Get relative path from assets dir
+                    const relativePath = path.relative(ASSETS_DIR, file);
+                    // Object name in MinIO (keep structure)
+                    const objectName = relativePath; // e.g., resources/characters/foo.png
 
-                // Check if file exists in MinIO
-                const exists = await fileExists(objectName);
-                if (exists) {
-                    // console.log(`Skipping ${objectName} (already exists)`);
-                    continue;
-                }
-
-                try {
-                    const buffer = fs.readFileSync(file);
-
-                    // Optimize if image
-                    let finalBuffer = buffer;
-                    const ext = path.extname(file).toLowerCase();
-                    if (['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
-                        console.log(`Optimizing ${relativePath}...`);
-                        finalBuffer = await optimizeImage(buffer, {
-                            width: 1024, // Max width example
-                            format: 'webp' // Convert to webp
-                        });
-                        // Change extension to webp for the object name if we converted
-                        // But wait, if we change extension, we break DB references.
-                        // For now, let's keep original extension or update DB.
-                        // Updating DB is complex. Let's just optimize but keep format if possible, 
-                        // or just optimize size/quality and keep format.
-                        // The optimizer service I wrote converts to webp by default if not specified.
-                        // Let's modify the call to respect original format or just use webp and we might need to update DB?
-                        // The user said "image optimization".
-                        // If I change to webp, I must update DB.
-                        // Let's stick to optimizing size but keeping format for now to avoid DB mess, 
-                        // unless I want to do a full migration.
-                        // Actually, my optimizer defaults to webp.
-                        // Let's pass the format explicitly.
-                        const format = ext.replace('.', '') === 'jpg' ? 'jpeg' : ext.replace('.', '');
-                        finalBuffer = await optimizeImage(buffer, {
-                            width: 1024,
-                            format: format
-                        });
+                    // Check if file exists in MinIO
+                    const exists = await fileExists(objectName);
+                    if (exists) {
+                        // console.log(`Skipping ${objectName} (already exists)`);
+                        return;
                     }
 
-                    await uploadFile(objectName, finalBuffer, {
-                        'Content-Type': getContentType(ext)
-                    });
-                    console.log(`Uploaded ${objectName}`);
-                } catch (e) {
-                    console.error(`Failed to upload ${relativePath}:`, e);
-                }
+                    try {
+                        const buffer = fs.readFileSync(file);
+
+                        // Optimize if image
+                        let finalBuffer = buffer;
+                        const ext = path.extname(file).toLowerCase();
+                        if (['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
+                            console.log(`Optimizing ${relativePath}...`);
+                            // Determine format based on extension
+                            const format = ext.replace('.', '') === 'jpg' ? 'jpeg' : ext.replace('.', '');
+                            finalBuffer = await optimizeImage(buffer, {
+                                width: 1024,
+                                format: format
+                            });
+                        }
+
+                        await uploadFile(objectName, finalBuffer, {
+                            'Content-Type': getContentType(ext)
+                        });
+                        console.log(`Uploaded ${objectName}`);
+                    } catch (e) {
+                        console.error(`Failed to upload ${relativePath}:`, e);
+                    }
+                }));
             }
             console.log('Migration complete.');
             resolve();
