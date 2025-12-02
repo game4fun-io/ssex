@@ -27,7 +27,8 @@ const ArtifactSchema = new mongoose.Schema({
         name: LocalizedString,
         style: Number
     }],
-    imageUrl: { type: String, default: '' }
+    imageUrl: { type: String, default: '' },
+    isVisible: { type: Boolean, default: true }
 });
 
 module.exports = mongoose.model('Artifact', ArtifactSchema);

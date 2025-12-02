@@ -27,10 +27,12 @@ const Navbar = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-6">
                         <Link to="/" className="hover:text-yellow-400 font-medium">{t('home')}</Link>
+                        {menus.news && <Link to="/news" className="hover:text-yellow-400 font-medium">{t('news.title')}</Link>}
                         {menus.characters && <Link to="/characters" className="hover:text-yellow-400 font-medium">{t('characters')}</Link>}
                         {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium">{t('artifacts')}</Link>}
                         {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium">{t('forceCards')}</Link>}
                         {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium">{t('teamBuilder')}</Link>}
+                        {user && <Link to="/proposals" className="hover:text-yellow-400 font-medium">{t('community.title')}</Link>}
                     </div>
                 </div>
 
@@ -38,8 +40,8 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center space-x-4">
                     {user ? (
                         <>
-                            {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">{t('admin')}</Link>}
-                            <span className="text-gray-400">{t('welcomeUser')}</span>
+                            {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">{t('admin.title')}</Link>}
+                            <Link to="/profile" className="text-gray-400 hover:text-white transition">{t('welcomeUser')}</Link>
                             <button onClick={logout} className="hover:text-red-400">{t('logout')}</button>
                         </>
                     ) : (
@@ -69,15 +71,17 @@ const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="md:hidden mt-4 bg-gray-800 rounded-lg p-4 flex flex-col space-y-4 border border-gray-700 shadow-xl animate-fade-in-down">
                     <Link to="/" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('home')}</Link>
+                    {menus.news && <Link to="/news" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('news.title')}</Link>}
                     {menus.characters && <Link to="/characters" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('characters')}</Link>}
                     {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('artifacts')}</Link>}
                     {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('forceCards')}</Link>}
                     {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('teamBuilder')}</Link>}
+                    {user && <Link to="/proposals" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('community.title')}</Link>}
 
                     <div className="pt-2 flex flex-col space-y-3">
                         {user ? (
                             <>
-                                {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold" onClick={() => setIsMobileMenuOpen(false)}>{t('admin')}</Link>}
+                                {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold" onClick={() => setIsMobileMenuOpen(false)}>{t('admin.title')}</Link>}
                                 <span className="text-gray-400">{t('welcomeUser')}</span>
                                 <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="text-left hover:text-red-400">{t('logout')}</button>
                             </>

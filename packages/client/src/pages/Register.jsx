@@ -1,8 +1,10 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import AuthContext from '../context/AuthContext';
 
 const Register = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -43,12 +45,12 @@ const Register = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-800 py-12">
             <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-96">
-                <h2 className="text-2xl font-bold text-yellow-500 mb-6 text-center">Register</h2>
+                <h2 className="text-2xl font-bold text-yellow-500 mb-6 text-center">{t('auth.registerTitle')}</h2>
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
                         type="text"
-                        placeholder="Username"
+                        placeholder={t('auth.username')}
                         className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                         value={formData.username}
                         onChange={(e) => setFormData({ ...formData, username: e.target.value })}
@@ -56,7 +58,7 @@ const Register = () => {
                     />
                     <input
                         type="email"
-                        placeholder="Email"
+                        placeholder={t('auth.email')}
                         className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -64,7 +66,7 @@ const Register = () => {
                     />
                     <input
                         type="password"
-                        placeholder="Password"
+                        placeholder={t('auth.password')}
                         className="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -73,14 +75,14 @@ const Register = () => {
                     <div className="flex gap-2">
                         <input
                             type="text"
-                            placeholder="First Name"
+                            placeholder={t('auth.firstName')}
                             className="w-1/2 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                             value={formData.firstName}
                             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         />
                         <input
                             type="text"
-                            placeholder="Last Name"
+                            placeholder={t('auth.lastName')}
                             className="w-1/2 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                             value={formData.lastName}
                             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
@@ -89,14 +91,14 @@ const Register = () => {
                     <div className="flex gap-2">
                         <input
                             type="text"
-                            placeholder="Country"
+                            placeholder={t('auth.country')}
                             className="w-2/3 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                             value={formData.country}
                             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                         />
                         <input
                             type="number"
-                            placeholder="Age"
+                            placeholder={t('auth.age')}
                             className="w-1/3 p-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-yellow-500 outline-none"
                             value={formData.age}
                             onChange={(e) => setFormData({ ...formData, age: e.target.value })}
@@ -104,7 +106,7 @@ const Register = () => {
                     </div>
 
                     <button type="submit" className="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-2 rounded transition">
-                        Register
+                        {t('auth.registerButton')}
                     </button>
                 </form>
 

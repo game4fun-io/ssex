@@ -1,4 +1,5 @@
 const redis = require('../../services/redis');
+const jwt = require('jsonwebtoken');
 
 const cache = (duration) => {
     return async (req, res, next) => {
@@ -6,7 +7,18 @@ const cache = (duration) => {
             return next();
         }
 
-        const key = `__express__${req.originalUrl || req.url}`;
+        let role = 'guest';
+        const token = req.header('x-auth-token');
+        if (token) {
+            try {
+                const decoded = require('jsonwebtoken').verify(token, process.env.JWT_SECRET);
+                role = decoded.user.role || 'user';
+            } catch (err) {
+                // Invalid token
+            }
+        }
+
+        const key = `__express__${req.originalUrl || req.url}__${role}`;
 
         try {
             const cachedBody = await redis.get(key);

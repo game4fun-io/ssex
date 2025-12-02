@@ -19,7 +19,6 @@
         "rarity": "Rareza",
         "artifacts": "Reliquias",
         "forceCards": "Poder Supremo",
-        "admin": "Admin",
         "searchArtifactsPlaceholder": "Buscar reliquias (min 3 chars)...",
         "searchForceCardsPlaceholder": "Buscar cartas de fuerza (min 3 chars)...",
         "backToArtifacts": "Volver a Reliquias",
@@ -84,6 +83,111 @@
         "noSavedComps": "No se encontraron composiciones guardadas.",
         "workInProgress": "En Desarrollo",
         "bannerMessage": "Datos actualizados constantemente según lanzamientos y ayuda de la comunidad. ¡Tu contribución es bienvenida!",
-        "copyrightNotice": "Saint Seiya EX es una marca registrada de Efun. Esta es una herramienta hecha por fans."
+        "copyrightNotice": "Saint Seiya EX es una marca registrada de Efun. Esta es una herramienta hecha por fans.",
+        "news": {
+            "title": "Noticias",
+            "latest": "Últimas Noticias",
+            "viewAll": "Ver Todas",
+            "noNews": "No hay noticias disponibles.",
+            "visibleTo": "Visible para {{role}}s y superior",
+            "types": {
+                "update": "Actualización",
+                "event": "Evento",
+                "maintenance": "Mantenimiento",
+                "general": "General"
+            },
+            "createButton": "Crear Noticia",
+            "createTitle": "Crear Artículo de Noticia",
+            "editTitle": "Editar Artículo de Noticia",
+            "editMode": "Modo Edición",
+            "previewMode": "Modo Vista Previa",
+            "uploadThumbnail": "Subir Miniatura",
+            "insertImage": "Insertar Imagen",
+            "previewTitle": "Título de Vista Previa",
+            "formTitle": "Título",
+            "formContent": "Contenido",
+            "formType": "Tipo",
+            "formMinRole": "Rol Mínimo",
+            "formThumbnail": "URL de Miniatura",
+            "commentPlaceholder": "Escribe un comentario...",
+            "noComments": "Aún no hay comentarios.",
+            "uploaded": "Subido",
+            "noContent": "Aún no hay contenido...",
+            "roles": {
+                "user": "Todos los Usuarios",
+                "member": "Miembros+",
+                "influencer": "Influencers+",
+                "moderator": "Moderadores+"
+            }
+        },
+        "cancel": "Cancelar",
+        "create": "Crear",
+        "send": "Enviar",
+        "saving": "Guardando...",
+        "edit": "Editar",
+        "allLanguages": "Todos los Idiomas",
+        "community": {
+            "title": "Comunidad",
+            "proposals": {
+                "title": "Propuestas de la Comunidad",
+                "new": "Nueva Propuesta",
+                "cancel": "Cancelar",
+                "submitTitle": "Enviar una Propuesta",
+                "type": "Tipo",
+                "types": {
+                    "fix": "Corrección de Error",
+                    "content": "Nuevo Contenido",
+                    "feature": "Solicitud de Función"
+                },
+                "form": {
+                    "title": "Título",
+                    "description": "Descripción"
+                },
+                "submit": "Enviar",
+                "submittedBy": "Enviado por {{user}} el {{date}}",
+                "status": {
+                    "pending": "Pendiente",
+                    "approved": "Aprobado",
+                    "rejected": "Rechazado"
+                },
+                "approve": "Aprobar",
+                "reject": "Rechazar",
+                "noProposals": "No se encontraron propuestas.",
+                "moderatorOnly": "Solo los Moderadores pueden ver la lista de propuestas.",
+                "memberInstruction": "Como miembro, puedes enviar nuevas propuestas usando el botón de arriba.",
+                "success": "¡Propuesta enviada con éxito!",
+                "failure": "Error al enviar la propuesta."
+            }
+        },
+        "admin": {
+            "title": "Admin",
+            "editCharacter": "Editar Personaje",
+            "editModal": {
+                "title": "Editar {{type}}",
+                "visible": "Visible para Usuarios",
+                "visibleHelp": "Si está desmarcado, este elemento solo será visible para administradores.",
+                "cancel": "Cancelar",
+                "save": "Guardar",
+                "saving": "Guardando..."
+            }
+        },
+        "auth": {
+            "email": "Correo Electrónico",
+            "password": "Contraseña",
+            "username": "Nombre de Usuario",
+            "firstName": "Nombre",
+            "lastName": "Apellido",
+            "country": "País",
+            "age": "Edad",
+            "loginTitle": "Iniciar Sesión",
+            "registerTitle": "Registrarse",
+            "noAccount": "¿No tienes una cuenta?",
+            "hasAccount": "¿Ya tienes una cuenta?",
+            "loginButton": "Iniciar Sesión",
+            "registerButton": "Registrarse",
+            "error": {
+                "invalidCredentials": "Credenciales inválidas"
+            }
+        }
     }
 }

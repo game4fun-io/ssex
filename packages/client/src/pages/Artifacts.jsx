@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
+import { useAuth } from '../context/AuthContext';
 
 const Artifacts = () => {
     const [artifacts, setArtifacts] = useState([]);
@@ -9,37 +10,20 @@ const Artifacts = () => {
     const [loading, setLoading] = useState(true);
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
+    const { canEdit } = useAuth();
 
-    const [filters, setFilters] = useState({
-        rarity: ''
-    });
     const [searchTerm, setSearchTerm] = useState('');
-
-    const [options, setOptions] = useState({
-        rarities: [],
-        types: []
-    });
-
-    const getLoc = (data) => {
-        if (!data) return '';
-        if (typeof data === 'string') return data;
-        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
-    };
+    const [filters, setFilters] = useState({ rarity: '' });
+    const [options, setOptions] = useState({ rarities: [] });
 
     useEffect(() => {
         const fetchArtifacts = async () => {
             try {
                 const res = await api.get('/artifacts');
-                const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
-                const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
-                setArtifacts(sorted);
-                setFilteredArtifacts(sorted);
-
-                const uniqueRarities = [...new Set(res.data.map(a => a.rarity))].filter(Boolean).sort();
-                setOptions({
-                    rarities: uniqueRarities
-                });
+                setArtifacts(res.data);
+                setFilteredArtifacts(res.data);
+                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
+                setOptions({ rarities: uniqueRarities });
             } catch (err) {
                 console.error(err);
             } finally {
@@ -47,35 +31,51 @@ const Artifacts = () => {
             }
         };
         fetchArtifacts();
-    }, [i18n.language]);
+    }, []);
 
     useEffect(() => {
         let result = artifacts;
-
         if (searchTerm.length >= 3) {
-            result = result.filter(a => getLoc(a.name).toLowerCase().includes(searchTerm.toLowerCase()));
+            result = result.filter(c => getLoc(c.name).toLowerCase().includes(searchTerm.toLowerCase()));
         }
-
-        if (filters.rarity) result = result.filter(a => a.rarity === filters.rarity);
-        if (filters.rarity) result = result.filter(a => a.rarity === filters.rarity);
-
+        if (filters.rarity) {
+            result = result.filter(c => c.rarity === filters.rarity);
+        }
         setFilteredArtifacts(result);
-    }, [filters, artifacts, searchTerm, i18n.language]);
+    }, [searchTerm, filters, artifacts, i18n.language]);
 
-    const handleFilterChange = (e) => {
-        setFilters({ ...filters, [e.target.name]: e.target.value });
-    };
-
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
+    const handleSearchChange = (e) => setSearchTerm(e.target.value);
+    const handleFilterChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
     const clearFilters = () => {
         setFilters({ rarity: '' });
         setSearchTerm('');
     };
 
-    if (loading) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">{t('loading')}</div>;
+    const getLoc = (data) => {
+        if (!data) return '';
+        if (typeof data === 'string') return data;
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        return data[lang] || data['en'] || '';
+    };
+    const toggleVisibility = async (e, art) => {
+        e.stopPropagation(); // Prevent navigation
+        if (!canEdit) return;
+
+        try {
+            const newVisibility = !art.isVisible;
+            await api.patch(`/admin/update/artifact/${art._id}`, { isVisible: newVisibility });
+
+            // Update local state
+            const updateList = (list) => list.map(a => a._id === art._id ? { ...a, isVisible: newVisibility } : a);
+            setArtifacts(prev => updateList(prev));
+            setFilteredArtifacts(prev => updateList(prev));
+        } catch (err) {
+            console.error('Error updating visibility:', err);
+            alert('Failed to update visibility');
+        }
+    };
+
+    // ... (existing useEffects and handlers)
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -114,13 +114,27 @@ const Artifacts = () => {
 
                             {/* Rarity Badge - Top Right */}
                             <span className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-bold ${art.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
-                                    art.rarity === 'SSR' ? 'bg-yellow-600 text-white border border-yellow-500' :
-                                        art.rarity === 'SR' ? 'bg-purple-600 text-white border border-purple-500' :
-                                            art.rarity === 'R' ? 'bg-blue-600 text-white border border-blue-500' :
-                                                'bg-gray-600 text-white border border-gray-500'
+                                art.rarity === 'SSR' ? 'bg-yellow-600 text-white border border-yellow-500' :
+                                    art.rarity === 'SR' ? 'bg-purple-600 text-white border border-purple-500' :
+                                        art.rarity === 'R' ? 'bg-blue-600 text-white border border-blue-500' :
+                                            'bg-gray-600 text-white border border-gray-500'
                                 }`}>
                                 {art.rarity}
                             </span>
+                            {canEdit && (
+                                <button
+                                    onClick={(e) => toggleVisibility(e, art)}
+                                    className={`absolute top-2 left-2 p-1.5 rounded text-xs font-bold ${art.isVisible ? 'bg-green-600/80 hover:bg-green-500' : 'bg-red-600/80 hover:bg-red-500'} text-white shadow-md transition backdrop-blur-sm z-10`}
+                                    title={art.isVisible ? "Hide from users" : "Show to users"}
+                                >
+                                    {art.isVisible ? '👁️' : '🚫'}
+                                </button>
+                            )}
+                            {!art.isVisible && !canEdit && (
+                                <span className="absolute top-2 left-2 px-2 py-1 rounded text-xs font-bold bg-black/70 text-white border border-gray-500">
+                                    👁️‍🗨️ Hidden
+                                </span>
+                            )}
 
                             {art.imageUrl && (
                                 <div className="flex justify-center mb-4">

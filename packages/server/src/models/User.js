@@ -15,6 +15,10 @@ const UserSchema = new mongoose.Schema({
         trim: true,
         lowercase: true
     },
+    avatar: {
+        type: String,
+        default: ''
+    },
     password: {
         type: String,
         required: true,
@@ -45,9 +49,21 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['user', 'admin'],
+        enum: ['user', 'member', 'moderator', 'influencer', 'admin'],
         default: 'user'
     },
+    // Gamification
+    points: {
+        type: Number,
+        default: 0
+    },
+    level: {
+        type: Number,
+        default: 1
+    },
+    badges: [{
+        type: String // Badge IDs or names
+    }],
     ownedCharacters: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Character'

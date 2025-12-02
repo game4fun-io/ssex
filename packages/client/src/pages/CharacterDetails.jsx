@@ -4,18 +4,27 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import api from '../api/axios';
 import AdUnit from '../components/AdUnit';
+import { useAuth } from '../context/AuthContext';
+import AdminEditModal from '../components/AdminEditModal';
 
 const CharacterDetails = () => {
     const { id } = useParams();
     const { t, i18n } = useTranslation();
+    const { user, canEdit } = useAuth();
     const [character, setCharacter] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedCharacter, setEditedCharacter] = useState(null);
+
+    const isAdmin = user?.role === 'admin';
 
     useEffect(() => {
         const fetchCharacter = async () => {
             try {
                 const res = await api.get(`/characters/${id}`);
                 setCharacter(res.data);
+                setEditedCharacter(res.data);
             } catch (err) {
                 console.error(err);
             } finally {
@@ -25,11 +34,77 @@ const CharacterDetails = () => {
         fetchCharacter();
     }, [id]);
 
+    const handleSave = async () => {
+        try {
+            await api.patch(`/admin/update/character/${character._id}`, editedCharacter);
+            setCharacter(editedCharacter);
+            setIsEditing(false);
+            alert('Character updated successfully!');
+        } catch (err) {
+            console.error('Error updating character:', err);
+            alert('Failed to update character.');
+        }
+    };
+
+    const handleImageUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('image', file);
+
+        try {
+            const res = await api.post('/upload', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            });
+            setEditedCharacter({ ...editedCharacter, imageUrl: res.data.filePath });
+        } catch (err) {
+            console.error('Error uploading image:', err);
+            alert('Failed to upload image');
+        }
+    };
+
+    const handleChange = (e, field) => {
+        setEditedCharacter({ ...editedCharacter, [field]: e.target.value });
+    };
+
+    const handleNestedChange = (e, parent, field) => {
+        setEditedCharacter({
+            ...editedCharacter,
+            [parent]: { ...editedCharacter[parent], [field]: e.target.value }
+        });
+    };
+
+    const handleArrayChange = (e, index, field, arrayName) => {
+        const newArray = [...editedCharacter[arrayName]];
+        newArray[index] = { ...newArray[index], [field]: e.target.value };
+        setEditedCharacter({ ...editedCharacter, [arrayName]: newArray });
+    };
+
     const getLoc = (data) => {
         if (!data) return '';
         if (typeof data === 'string') return data;
         const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
         return data[lang] || data['en'] || '';
+    };
+
+    const updateLoc = (value, field, obj = editedCharacter) => {
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        const currentLoc = obj[field] || {};
+        // If it's a string, convert to object
+        const newLoc = typeof currentLoc === 'string' ? { [lang]: value, en: currentLoc } : { ...currentLoc, [lang]: value };
+        return newLoc;
+    };
+
+    const handleLocChange = (e, field) => {
+        setEditedCharacter({ ...editedCharacter, [field]: updateLoc(e.target.value, field) });
+    };
+
+    const handleNestedLocChange = (e, parent, field) => {
+        setEditedCharacter({
+            ...editedCharacter,
+            [parent]: { ...editedCharacter[parent], [field]: updateLoc(e.target.value, field, editedCharacter[parent]) }
+        });
     };
 
     // Helper to parse Unity-style rich text tags
@@ -53,10 +128,29 @@ const CharacterDetails = () => {
     return (
         <div className="min-h-screen bg-gray-900 text-white pb-20">
             {/* Header Section */}
-            <div className="container mx-auto px-4 pt-4">
+            {/* Header Section */}
+            <div className="container mx-auto px-4 pt-4 flex justify-between items-center">
                 <Link to="/characters" className="text-yellow-500 hover:text-yellow-400 transition mb-4 inline-block">
                     &larr; {t('backToCharacters')}
                 </Link>
+                <div className="flex gap-2">
+                    {canEdit && (
+                        <button
+                            onClick={() => setIsEditing(!isEditing)}
+                            className={`px-4 py-2 rounded font-bold transition mb-4 ${isEditing ? 'bg-red-600 hover:bg-red-500' : 'bg-yellow-600 hover:bg-yellow-500'} text-white`}
+                        >
+                            {isEditing ? 'Cancel Editing' : 'Edit Character'}
+                        </button>
+                    )}
+                    {isEditing && (
+                        <button
+                            onClick={handleSave}
+                            className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-bold transition mb-4"
+                        >
+                            Save Changes
+                        </button>
+                    )}
+                </div>
             </div>
             <div className="relative h-[400px] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900 z-0" />
@@ -64,36 +158,128 @@ const CharacterDetails = () => {
                     <motion.img
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        src={character.imageUrl}
+                        src={isEditing ? editedCharacter.imageUrl : character.imageUrl}
                         alt={getLoc(character.name)}
                         className="w-48 h-48 md:w-64 md:h-64 object-cover object-top rounded-full border-4 border-yellow-500 shadow-2xl"
                     />
+                    {isEditing && (
+                        <div className="absolute bottom-32 left-4 bg-gray-800 p-2 rounded border border-gray-600">
+                            <label className="block text-xs text-gray-400 mb-1">{t('imageUpload')}</label>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageUpload}
+                                className="bg-gray-700 text-white p-1 rounded text-xs w-full mb-2"
+                            />
+                            <input
+                                type="text"
+                                value={editedCharacter.imageUrl}
+                                onChange={(e) => handleChange(e, 'imageUrl')}
+                                className="bg-gray-700 text-white p-1 rounded text-xs w-full"
+                                placeholder={t('imageUrlPlaceholder')}
+                            />
+                        </div>
+                    )}
                     <div className="mb-4 flex-grow">
                         <div className="flex justify-between items-end mb-2">
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-4xl md:text-6xl font-bold text-white"
-                            >
-                                {getLoc(character.name)}
-                            </motion.h1>
-                            <span className={`px-3 py-1 rounded text-xl font-bold ${character.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
-                                character.rarity === 'SSR' ? 'bg-yellow-600 text-white border border-yellow-500' :
-                                    character.rarity === 'SR' ? 'bg-purple-600 text-white border border-purple-500' :
-                                        character.rarity === 'R' ? 'bg-blue-600 text-white border border-blue-500' :
-                                            'bg-gray-600 text-white border-gray-500'
-                                }`}>
-                                {character.rarity}
-                            </span>
+                            {isEditing ? (
+                                <input
+                                    type="text"
+                                    value={getLoc(editedCharacter.name)}
+                                    onChange={(e) => handleLocChange(e, 'name')}
+                                    className="text-4xl md:text-6xl font-bold text-white bg-gray-700 rounded p-2 w-full mr-4"
+                                />
+                            ) : (
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-4xl md:text-6xl font-bold text-white"
+                                >
+                                    {getLoc(character.name)}
+                                </motion.h1>
+                            )}
+
+                            {isEditing ? (
+                                <select
+                                    value={editedCharacter.rarity}
+                                    onChange={(e) => handleChange(e, 'rarity')}
+                                    className="px-3 py-1 rounded text-xl font-bold bg-gray-700 text-white border border-gray-600"
+                                >
+                                    <option value="UR">UR</option>
+                                    <option value="SSR">SSR</option>
+                                    <option value="SR">SR</option>
+                                    <option value="R">R</option>
+                                    <option value="N">N</option>
+                                </select>
+                            ) : (
+                                <span className={`px-3 py-1 rounded text-xl font-bold ${character.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
+                                    character.rarity === 'SSR' ? 'bg-yellow-600 text-white border border-yellow-500' :
+                                        character.rarity === 'SR' ? 'bg-purple-600 text-white border border-purple-500' :
+                                            character.rarity === 'R' ? 'bg-blue-600 text-white border border-blue-500' :
+                                                'bg-gray-600 text-white border-gray-500'
+                                    }`}>
+                                    {character.rarity}
+                                </span>
+                            )}
                         </div>
                         <div className="flex flex-wrap gap-2">
+                            {/* Tags editing could be complex, skipping for now or simple text input */}
                             {character.tags && character.tags.map((tag, idx) => (
                                 <span key={idx} className="bg-gray-700 px-3 py-1 rounded text-sm border border-gray-600">{tag}</span>
                             ))}
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.faction)}</span>
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.combatPosition)}</span>
-                            <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.positioning)}</span>
-                            <span className="bg-red-900 px-3 py-1 rounded text-sm">{getLoc(character.attackType)}</span>
+
+                            {isEditing ? (
+                                <>
+                                    <select value={getLoc(editedCharacter.faction)} onChange={(e) => handleLocChange(e, 'faction')} className="bg-gray-700 px-3 py-1 rounded text-sm w-24">
+                                        <option value="">Faction</option>
+                                        <option value="Athena">Athena</option>
+                                        <option value="Poseidon">Poseidon</option>
+                                        <option value="Hades">Hades</option>
+                                    </select>
+                                    <select value={getLoc(editedCharacter.combatPosition)} onChange={(e) => handleLocChange(e, 'combatPosition')} className="bg-gray-700 px-3 py-1 rounded text-sm w-24">
+                                        <option value="">Role</option>
+                                        <option value="Tank">Tank</option>
+                                        <option value="Warrior">Warrior</option>
+                                        <option value="Assassin">Assassin</option>
+                                        <option value="Support">Support</option>
+                                        <option value="Mage">Mage</option>
+                                    </select>
+                                    <select value={getLoc(editedCharacter.positioning)} onChange={(e) => handleLocChange(e, 'positioning')} className="bg-gray-700 px-3 py-1 rounded text-sm w-24">
+                                        <option value="">Position</option>
+                                        <option value="Front">Front</option>
+                                        <option value="Middle">Middle</option>
+                                        <option value="Back">Back</option>
+                                    </select>
+                                    <select value={getLoc(editedCharacter.attackType)} onChange={(e) => handleLocChange(e, 'attackType')} className="bg-red-900 px-3 py-1 rounded text-sm w-24">
+                                        <option value="">Type</option>
+                                        <option value="Physical">Physical</option>
+                                        <option value="Cosmic">Cosmic</option>
+                                    </select>
+                                </>
+                            ) : (
+                                <>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.faction)}</span>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.combatPosition)}</span>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.positioning)}</span>
+                                    <span className="bg-red-900 px-3 py-1 rounded text-sm">{getLoc(character.attackType)}</span>
+                                </>
+                            )}
+
+                            {!character.isVisible && !isEditing && (
+                                <span className="bg-black/70 text-white px-3 py-1 rounded text-sm font-bold border border-gray-500 flex items-center gap-1">
+                                    👁️‍🗨️ Hidden
+                                </span>
+                            )}
+                            {isEditing && (
+                                <label className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded text-sm cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        checked={editedCharacter.isVisible}
+                                        onChange={(e) => setEditedCharacter({ ...editedCharacter, isVisible: e.target.checked })}
+                                    />
+                                    Visible
+                                </label>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -101,6 +287,7 @@ const CharacterDetails = () => {
 
             <div className="container mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
+                {/* Left Column: Stats & Bonds */}
                 {/* Left Column: Stats & Bonds */}
                 <div className="lg:col-span-1 space-y-8">
                     {/* Basic Stats */}
@@ -110,13 +297,38 @@ const CharacterDetails = () => {
                         transition={{ delay: 0.2 }}
                         className="bg-gray-800 p-6 rounded-xl border border-gray-700"
                     >
-                        <h2 className="text-xl font-bold text-yellow-500 mb-4">Basic Stats</h2>
+                        <h2 className="text-xl font-bold text-yellow-500 mb-4">{t('basicStats')}</h2>
                         <div className="space-y-2">
-                            <div className="flex justify-between"><span className="text-gray-400">HP</span><span>{character.stats.hp}</span></div>
-                            <div className="flex justify-between"><span className="text-gray-400">ATK</span><span>{character.stats.atk}</span></div>
-                            <div className="flex justify-between"><span className="text-gray-400">DEF</span><span>{character.stats.def}</span></div>
-                            <div className="flex justify-between"><span className="text-gray-400">M-DEF</span><span>{character.stats.mdef}</span></div>
-                            <div className="flex justify-between"><span className="text-gray-400">Speed</span><span>{character.stats.speed}</span></div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400">HP</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.hp} onChange={(e) => handleNestedChange(e, 'stats', 'hp')} className="bg-gray-700 text-white p-1 rounded w-20 text-right" />
+                                ) : <span>{character.stats.hp}</span>}
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400">ATK</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.atk} onChange={(e) => handleNestedChange(e, 'stats', 'atk')} className="bg-gray-700 text-white p-1 rounded w-20 text-right" />
+                                ) : <span>{character.stats.atk}</span>}
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400">DEF</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.def} onChange={(e) => handleNestedChange(e, 'stats', 'def')} className="bg-gray-700 text-white p-1 rounded w-20 text-right" />
+                                ) : <span>{character.stats.def}</span>}
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400">M-DEF</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.mdef} onChange={(e) => handleNestedChange(e, 'stats', 'mdef')} className="bg-gray-700 text-white p-1 rounded w-20 text-right" />
+                                ) : <span>{character.stats.mdef}</span>}
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-400">Speed</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.speed} onChange={(e) => handleNestedChange(e, 'stats', 'speed')} className="bg-gray-700 text-white p-1 rounded w-20 text-right" />
+                                ) : <span>{character.stats.speed}</span>}
+                            </div>
                         </div>
                     </motion.div>
 
@@ -127,12 +339,32 @@ const CharacterDetails = () => {
                         transition={{ delay: 0.3 }}
                         className="bg-gray-800 p-6 rounded-xl border border-gray-700"
                     >
-                        <h2 className="text-xl font-bold text-yellow-500 mb-4">Special Stats</h2>
+                        <h2 className="text-xl font-bold text-yellow-500 mb-4">{t('specialStats')}</h2>
                         <div className="grid grid-cols-2 gap-4 text-sm">
-                            <div><span className="text-gray-400 block">Hit Rate</span>{character.stats.hitRate}%</div>
-                            <div><span className="text-gray-400 block">Dodge Rate</span>{character.stats.dodgeRate}%</div>
-                            <div><span className="text-gray-400 block">Crit Rate</span>{character.stats.critRate}%</div>
-                            <div><span className="text-gray-400 block">Crit Resist</span>{character.stats.critResistRate}%</div>
+                            <div>
+                                <span className="text-gray-400 block">Hit Rate</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.hitRate} onChange={(e) => handleNestedChange(e, 'stats', 'hitRate')} className="bg-gray-700 text-white p-1 rounded w-full" />
+                                ) : <span>{character.stats.hitRate}%</span>}
+                            </div>
+                            <div>
+                                <span className="text-gray-400 block">Dodge Rate</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.dodgeRate} onChange={(e) => handleNestedChange(e, 'stats', 'dodgeRate')} className="bg-gray-700 text-white p-1 rounded w-full" />
+                                ) : <span>{character.stats.dodgeRate}%</span>}
+                            </div>
+                            <div>
+                                <span className="text-gray-400 block">Crit Rate</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.critRate} onChange={(e) => handleNestedChange(e, 'stats', 'critRate')} className="bg-gray-700 text-white p-1 rounded w-full" />
+                                ) : <span>{character.stats.critRate}%</span>}
+                            </div>
+                            <div>
+                                <span className="text-gray-400 block">Crit Resist</span>
+                                {isEditing ? (
+                                    <input type="number" value={editedCharacter.stats.critResistRate} onChange={(e) => handleNestedChange(e, 'stats', 'critResistRate')} className="bg-gray-700 text-white p-1 rounded w-full" />
+                                ) : <span>{character.stats.critResistRate}%</span>}
+                            </div>
                         </div>
                     </motion.div>
 
@@ -143,7 +375,7 @@ const CharacterDetails = () => {
                         transition={{ delay: 0.4 }}
                         className="bg-gray-800 p-6 rounded-xl border border-gray-700"
                     >
-                        <h2 className="text-xl font-bold text-yellow-500 mb-4">Bonds</h2>
+                        <h2 className="text-xl font-bold text-yellow-500 mb-4">{t('bonds')}</h2>
                         <div className="space-y-4">
                             {character.bonds.map((bond, idx) => (
                                 <div key={idx} className="border-b border-gray-700 pb-2 last:border-0">
@@ -168,11 +400,37 @@ const CharacterDetails = () => {
                         transition={{ delay: 0.5 }}
                         className="bg-gray-800 p-6 rounded-xl border border-gray-700"
                     >
-                        <h2 className="text-xl font-bold text-yellow-500 mb-2">Biography</h2>
-                        <p className="text-gray-300 leading-relaxed">{parseRichText(getLoc(character.description))}</p>
-                        <p className="text-sm text-gray-500 mt-2">Collection: {character.collection}</p>
-                        {getLoc(character.constellation) && <p className="text-sm text-gray-500">Constellation: {getLoc(character.constellation)}</p>}
-                        {getLoc(character.cv_name) && <p className="text-sm text-gray-500">CV: {getLoc(character.cv_name)}</p>}
+                        <h2 className="text-xl font-bold text-yellow-500 mb-2">{t('biography')}</h2>
+                        {isEditing ? (
+                            <textarea
+                                value={getLoc(editedCharacter.description)}
+                                onChange={(e) => handleLocChange(e, 'description')}
+                                className="w-full bg-gray-700 text-white p-2 rounded h-32"
+                            />
+                        ) : (
+                            <p className="text-gray-300 leading-relaxed">{parseRichText(getLoc(character.description))}</p>
+                        )}
+
+                        <div className="mt-4 grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="text-sm text-gray-500">Collection</label>
+                                {isEditing ? (
+                                    <input type="text" value={editedCharacter.collection} onChange={(e) => handleChange(e, 'collection')} className="w-full bg-gray-700 text-white p-1 rounded text-sm" />
+                                ) : <p className="text-sm text-gray-500">{character.collection}</p>}
+                            </div>
+                            <div>
+                                <label className="text-sm text-gray-500">Constellation</label>
+                                {isEditing ? (
+                                    <input type="text" value={getLoc(editedCharacter.constellation)} onChange={(e) => handleLocChange(e, 'constellation')} className="w-full bg-gray-700 text-white p-1 rounded text-sm" />
+                                ) : <p className="text-sm text-gray-500">{getLoc(character.constellation)}</p>}
+                            </div>
+                            <div>
+                                <label className="text-sm text-gray-500">CV Name</label>
+                                {isEditing ? (
+                                    <input type="text" value={getLoc(editedCharacter.cv_name)} onChange={(e) => handleLocChange(e, 'cv_name')} className="w-full bg-gray-700 text-white p-1 rounded text-sm" />
+                                ) : <p className="text-sm text-gray-500">{getLoc(character.cv_name)}</p>}
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Skills */}
@@ -181,31 +439,90 @@ const CharacterDetails = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <h2 className="text-2xl font-bold text-yellow-500 mb-6">Skills</h2>
+                        <h2 className="text-2xl font-bold text-yellow-500 mb-6">{t('skills')}</h2>
                         <div className="space-y-6">
-                            {character.skills.map((skill, idx) => (
+                            {editedCharacter.skills.map((skill, idx) => (
                                 <div key={idx} className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition">
                                     <div className="flex justify-between items-start mb-2">
-                                        <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-4 w-full">
                                             {skill.iconUrl && <img src={skill.iconUrl} alt={getLoc(skill.name)} className="w-12 h-12 rounded border border-gray-600" />}
-                                            <div>
-                                                <h3 className="text-xl font-bold text-white">{getLoc(skill.name)}</h3>
-                                                <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300 mr-2">{skill.type}</span>
-                                                {skill.cost > 0 && <span className="text-xs bg-blue-900 px-2 py-1 rounded text-blue-200">Cost: {skill.cost}</span>}
+                                            <div className="w-full">
+                                                {isEditing ? (
+                                                    <div className="grid grid-cols-2 gap-2 mb-2">
+                                                        <input
+                                                            type="text"
+                                                            value={getLoc(skill.name)}
+                                                            onChange={(e) => {
+                                                                const newSkills = [...editedCharacter.skills];
+                                                                newSkills[idx].name = updateLoc(e.target.value, 'name', newSkills[idx]);
+                                                                setEditedCharacter({ ...editedCharacter, skills: newSkills });
+                                                            }}
+                                                            className="bg-gray-700 text-white p-1 rounded font-bold"
+                                                            placeholder="Skill Name"
+                                                        />
+                                                        <input
+                                                            type="text"
+                                                            value={skill.type}
+                                                            onChange={(e) => handleArrayChange(e, idx, 'type', 'skills')}
+                                                            className="bg-gray-700 text-white p-1 rounded text-xs"
+                                                            placeholder="Type"
+                                                        />
+                                                        <input
+                                                            type="number"
+                                                            value={skill.cost}
+                                                            onChange={(e) => handleArrayChange(e, idx, 'cost', 'skills')}
+                                                            className="bg-gray-700 text-white p-1 rounded text-xs"
+                                                            placeholder="Cost"
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <>
+                                                        <h3 className="text-xl font-bold text-white">{getLoc(skill.name)}</h3>
+                                                        <span className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300 mr-2">{skill.type}</span>
+                                                        {skill.cost > 0 && <span className="text-xs bg-blue-900 px-2 py-1 rounded text-blue-200">Cost: {skill.cost}</span>}
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-gray-300 mb-4">{parseRichText(getLoc(skill.description))}</p>
+                                    {isEditing ? (
+                                        <textarea
+                                            value={getLoc(skill.description)}
+                                            onChange={(e) => {
+                                                const newSkills = [...editedCharacter.skills];
+                                                newSkills[idx].description = updateLoc(e.target.value, 'description', newSkills[idx]);
+                                                setEditedCharacter({ ...editedCharacter, skills: newSkills });
+                                            }}
+                                            className="w-full bg-gray-700 text-white p-2 rounded h-20 text-sm mb-4"
+                                            placeholder="Description"
+                                        />
+                                    ) : (
+                                        <p className="text-gray-300 mb-4">{parseRichText(getLoc(skill.description))}</p>
+                                    )}
 
                                     {/* Skill Levels */}
                                     <div className="bg-gray-900 p-4 rounded-lg">
                                         <h4 className="text-sm font-bold text-gray-400 mb-2">Level Up Effects</h4>
                                         <ul className="space-y-2">
                                             {skill.levels.map((lvl, lIdx) => (
-                                                <li key={lIdx} className="text-sm text-gray-400 flex gap-2">
-                                                    <span className="text-yellow-500 font-bold">Lv.{lvl.level}</span>
-                                                    <span>{parseRichText(getLoc(lvl.description))}</span>
-                                                    {getLoc(lvl.unlockRequirement) && <span className="text-xs text-gray-600 ml-auto">({getLoc(lvl.unlockRequirement)})</span>}
+                                                <li key={lIdx} className="text-sm text-gray-400 flex gap-2 flex-col">
+                                                    <div className="flex gap-2 items-center">
+                                                        <span className="text-yellow-500 font-bold">Lv.{lvl.level}</span>
+                                                        {isEditing ? (
+                                                            <textarea
+                                                                value={getLoc(lvl.description)}
+                                                                onChange={(e) => {
+                                                                    const newSkills = [...editedCharacter.skills];
+                                                                    newSkills[idx].levels[lIdx].description = updateLoc(e.target.value, 'description', newSkills[idx].levels[lIdx]);
+                                                                    setEditedCharacter({ ...editedCharacter, skills: newSkills });
+                                                                }}
+                                                                className="w-full bg-gray-700 text-white p-1 rounded text-xs"
+                                                            />
+                                                        ) : (
+                                                            <span>{parseRichText(getLoc(lvl.description))}</span>
+                                                        )}
+                                                    </div>
+                                                    {getLoc(lvl.unlockRequirement) && !isEditing && <span className="text-xs text-gray-600 ml-auto">({getLoc(lvl.unlockRequirement)})</span>}
                                                 </li>
                                             ))}
                                         </ul>
@@ -217,6 +534,14 @@ const CharacterDetails = () => {
                 </div>
             </div>
             <AdUnit slot="character-details-bottom" />
+
+            <AdminEditModal
+                isOpen={isEditModalOpen}
+                onClose={() => setIsEditModalOpen(false)}
+                entity={character}
+                type="character"
+                onUpdate={setCharacter}
+            />
         </div>
     );
 };

@@ -34,7 +34,6 @@
         "backToForceCards": "Voltar para Poder Supremo",
         "artifactEffect": "Efeito",
         "artifactProgression": "Progressão de Nível e Melhorias",
-        "admin": "Admin",
         "featureCharactersDescription": "Explore o elenco completo com status, habilidades e raridade localizados.",
         "featureTeamBuilderDescription": "Crie, salve e compartilhe formações ideais com seu time.",
         "featureRelicsDescription": "Revise os bônus das relíquias e como elas impulsionam seus Cavaleiros.",
@@ -92,6 +91,82 @@
         "noSavedComps": "Nenhuma composição salva encontrada.",
         "workInProgress": "Em Desenvolvimento",
         "bannerMessage": "Dados atualizados constantemente com base nos lançamentos e ajuda da comunidade. Sua contribuição é bem-vinda!",
-        "copyrightNotice": "Saint Seiya EX é uma marca registrada da Efun. Esta é uma ferramenta feita por fãs."
+        "copyrightNotice": "Saint Seiya EX é uma marca registrada da Efun. Esta é uma ferramenta feita por fãs.",
+        "news": {
+            "title": "Notícias",
+            "latest": "Últimas Notícias",
+            "viewAll": "Ver Todas",
+            "noNews": "Nenhuma notícia disponível.",
+            "visibleTo": "Visível para {{role}}s e acima",
+            "types": {
+                "update": "Atualização",
+                "event": "Evento",
+                "maintenance": "Manutenção",
+                "general": "Geral"
+            }
+        },
+        "community": {
+            "title": "Comunidade",
+            "proposals": {
+                "title": "Propostas da Comunidade",
+                "new": "Nova Proposta",
+                "cancel": "Cancelar",
+                "submitTitle": "Enviar uma Proposta",
+                "type": "Tipo",
+                "types": {
+                    "fix": "Correção de Bug",
+                    "content": "Novo Conteúdo",
+                    "feature": "Solicitação de Recurso"
+                },
+                "form": {
+                    "title": "Título",
+                    "description": "Descrição"
+                },
+                "submit": "Enviar",
+                "submittedBy": "Enviado por {{user}} em {{date}}",
+                "status": {
+                    "pending": "Pendente",
+                    "approved": "Aprovado",
+                    "rejected": "Rejeitado"
+                },
+                "approve": "Aprovar",
+                "reject": "Rejeitar",
+                "noProposals": "Nenhuma proposta encontrada.",
+                "moderatorOnly": "Apenas Moderadores podem ver a lista de propostas.",
+                "memberInstruction": "Como membro, você pode enviar novas propostas usando o botão acima.",
+                "success": "Proposta enviada com sucesso!",
+                "failure": "Falha ao enviar proposta."
+            }
+        },
+        "admin": {
+            "title": "Admin",
+            "editCharacter": "Editar Personagem",
+            "editModal": {
+                "title": "Editar {{type}}",
+                "visible": "Visível para Usuários",
+                "visibleHelp": "Se desmarcado, este item será visível apenas para admins.",
+                "cancel": "Cancelar",
+                "save": "Salvar",
+                "saving": "Salvando..."
+            }
+        },
+        "auth": {
+            "email": "Endereço de Email",
+            "password": "Senha",
+            "username": "Nome de Usuário",
+            "firstName": "Nome",
+            "lastName": "Sobrenome",
+            "country": "País",
+            "age": "Idade",
+            "loginTitle": "Entrar",
+            "registerTitle": "Registrar",
+            "noAccount": "Não tem uma conta?",
+            "hasAccount": "Já tem uma conta?",
+            "loginButton": "Entrar",
+            "registerButton": "Registrar",
+            "error": {
+                "invalidCredentials": "Credenciais inválidas"
+            }
+        }
     }
 }

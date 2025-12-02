@@ -19,7 +19,6 @@
         "rarity": "ความหายาก",
         "artifacts": "รีลิก",
         "forceCards": "พลังสูงสุด",
-        "admin": "ผู้ดูแลระบบ",
         "searchArtifactsPlaceholder": "ค้นหารีลิก (อย่างน้อย 3 ตัวอักษร)...",
         "searchForceCardsPlaceholder": "ค้นหาพลังสูงสุด (อย่างน้อย 3 ตัวอักษร)...",
         "backToArtifacts": "กลับไปที่วัตถุโบราณ",
@@ -71,6 +70,82 @@
         "loginToSave": "เข้าสู่ระบบเพื่อบันทึกคอมพ์",
         "viewOnlyShare": "กำลังดูคอมพ์ที่แชร์ (อ่านอย่างเดียว)",
         "addFormation": "ใส่ในฟอร์เมชัน",
-        "addSupport": "ใส่เป็นซัพพอร์ต"
+        "addSupport": "ใส่เป็นซัพพอร์ต",
+        "news": {
+            "title": "ข่าว",
+            "latest": "ข่าวล่าสุด",
+            "viewAll": "ดูทั้งหมด",
+            "noNews": "ไม่มีข่าว",
+            "visibleTo": "มองเห็นได้สำหรับ {{role}} และสูงกว่า",
+            "types": {
+                "update": "อัปเดต",
+                "event": "กิจกรรม",
+                "maintenance": "ปิดปรับปรุง",
+                "general": "ทั่วไป"
+            }
+        },
+        "community": {
+            "title": "ชุมชน",
+            "proposals": {
+                "title": "ข้อเสนอของชุมชน",
+                "new": "ข้อเสนอใหม่",
+                "cancel": "ยกเลิก",
+                "submitTitle": "ส่งข้อเสนอ",
+                "type": "ประเภท",
+                "types": {
+                    "fix": "แก้ไขบั๊ก",
+                    "content": "เนื้อหาใหม่",
+                    "feature": "ขอฟีเจอร์"
+                },
+                "form": {
+                    "title": "หัวข้อ",
+                    "description": "คำอธิบาย"
+                },
+                "submit": "ส่ง",
+                "submittedBy": "ส่งโดย {{user}} เมื่อ {{date}}",
+                "status": {
+                    "pending": "รออนุมัติ",
+                    "approved": "อนุมัติแล้ว",
+                    "rejected": "ถูกปฏิเสธ"
+                },
+                "approve": "อนุมัติ",
+                "reject": "ปฏิเสธ",
+                "noProposals": "ไม่พบข้อเสนอ",
+                "moderatorOnly": "เฉพาะผู้ดูแลเท่านั้นที่สามารถดูรายการข้อเสนอได้",
+                "memberInstruction": "ในฐานะสมาชิก คุณสามารถส่งข้อเสนอใหม่ได้โดยใช้ปุ่มด้านบน",
+                "success": "ส่งข้อเสนอสำเร็จ!",
+                "failure": "ส่งข้อเสนอไม่สำเร็จ"
+            }
+        },
+        "admin": {
+            "title": "ผู้ดูแลระบบ",
+            "editCharacter": "แก้ไขตัวละคร",
+            "editModal": {
+                "title": "แก้ไข {{type}}",
+                "visible": "มองเห็นได้สำหรับผู้ใช้",
+                "visibleHelp": "หากไม่เลือก รายการนี้จะมองเห็นได้เฉพาะผู้ดูแลระบบเท่านั้น",
+                "cancel": "ยกเลิก",
+                "save": "บันทึก",
+                "saving": "กำลังบันทึก..."
+            }
+        },
+        "auth": {
+            "email": "ที่อยู่อีเมล",
+            "password": "รหัสผ่าน",
+            "username": "ชื่อผู้ใช้",
+            "firstName": "ชื่อจริง",
+            "lastName": "นามสกุล",
+            "country": "ประเทศ",
+            "age": "อายุ",
+            "loginTitle": "เข้าสู่ระบบ",
+            "registerTitle": "ลงทะเบียน",
+            "noAccount": "ยังไม่มีบัญชี?",
+            "hasAccount": "มีบัญชีแล้ว?",
+            "loginButton": "เข้าสู่ระบบ",
+            "registerButton": "ลงทะเบียน",
+            "error": {
+                "invalidCredentials": "ข้อมูลประจำตัวไม่ถูกต้อง"
+            }
+        }
     }
 }

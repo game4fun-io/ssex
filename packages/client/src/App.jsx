@@ -3,6 +3,8 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import News from './pages/News';
+import NewsEditor from './pages/NewsEditor';
 import Characters from './pages/Characters';
 import CharacterDetails from './pages/CharacterDetails';
 import Login from './pages/Login';
@@ -14,6 +16,8 @@ import Artifacts from './pages/Artifacts';
 import ArtifactDetail from './pages/ArtifactDetail';
 import ForceCards from './pages/ForceCards';
 import ForceCardDetail from './pages/ForceCardDetail';
+import Proposals from './pages/Proposals';
+import Profile from './pages/Profile';
 
 import { ConfigProvider } from './context/ConfigContext';
 import AdminDashboard from './pages/AdminDashboard';
@@ -30,6 +34,9 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/create" element={<ProtectedRoute><NewsEditor /></ProtectedRoute>} />
+              <Route path="/news/edit/:id" element={<ProtectedRoute><NewsEditor /></ProtectedRoute>} />
               <Route path="/characters" element={<Characters />} />
               <Route path="/characters/:id" element={<CharacterDetails />} />
               <Route path="/team-builder" element={<TeamBuilder />} />
@@ -39,8 +46,17 @@ function App() {
               <Route path="/artifacts/:id" element={<ArtifactDetail />} />
               <Route path="/force-cards" element={<ForceCards />} />
               <Route path="/force-cards/:id" element={<ForceCardDetail />} />
+              <Route path="/proposals" element={<Proposals />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              />
               <Route
                 path="/admin"
                 element={

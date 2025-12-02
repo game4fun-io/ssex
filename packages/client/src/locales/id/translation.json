@@ -22,7 +22,6 @@
         "backToForceCards": "Kembali ke Kekuatan Tertinggi",
         "artifactEffect": "Efek",
         "artifactProgression": "Progres Level & Peningkatan",
-        "admin": "Admin",
         "searchArtifactsPlaceholder": "Cari relik (min 3 karakter)...",
         "searchForceCardsPlaceholder": "Cari kekuatan tertinggi (min 3 karakter)...",
         "backToArtifacts": "Kembali ke Relik",
@@ -72,6 +71,82 @@
         "loginToSave": "Masuk untuk menyimpan komposisi.",
         "viewOnlyShare": "Melihat komposisi yang dibagikan (read-only)",
         "addFormation": "Tambahkan ke formasi",
-        "addSupport": "Tambahkan sebagai support"
+        "addSupport": "Tambahkan sebagai support",
+        "news": {
+            "title": "Berita",
+            "latest": "Berita Terbaru",
+            "viewAll": "Lihat Semua",
+            "noNews": "Tidak ada berita tersedia.",
+            "visibleTo": "Terlihat untuk {{role}} dan di atasnya",
+            "types": {
+                "update": "Pembaruan",
+                "event": "Acara",
+                "maintenance": "Pemeliharaan",
+                "general": "Umum"
+            }
+        },
+        "community": {
+            "title": "Komunitas",
+            "proposals": {
+                "title": "Proposal Komunitas",
+                "new": "Proposal Baru",
+                "cancel": "Batal",
+                "submitTitle": "Kirim Proposal",
+                "type": "Tipe",
+                "types": {
+                    "fix": "Perbaikan Bug",
+                    "content": "Konten Baru",
+                    "feature": "Permintaan Fitur"
+                },
+                "form": {
+                    "title": "Judul",
+                    "description": "Deskripsi"
+                },
+                "submit": "Kirim",
+                "submittedBy": "Dikirim oleh {{user}} pada {{date}}",
+                "status": {
+                    "pending": "Tertunda",
+                    "approved": "Disetujui",
+                    "rejected": "Ditolak"
+                },
+                "approve": "Setujui",
+                "reject": "Tolak",
+                "noProposals": "Tidak ada proposal ditemukan.",
+                "moderatorOnly": "Hanya Moderator yang dapat melihat daftar proposal.",
+                "memberInstruction": "Sebagai anggota, Anda dapat mengirim proposal baru menggunakan tombol di atas.",
+                "success": "Proposal berhasil dikirim!",
+                "failure": "Gagal mengirim proposal."
+            }
+        },
+        "admin": {
+            "title": "Admin",
+            "editCharacter": "Edit Karakter",
+            "editModal": {
+                "title": "Edit {{type}}",
+                "visible": "Terlihat oleh Pengguna",
+                "visibleHelp": "Jika tidak dicentang, item ini hanya akan terlihat oleh admin.",
+                "cancel": "Batal",
+                "save": "Simpan",
+                "saving": "Menyimpan..."
+            }
+        },
+        "auth": {
+            "email": "Alamat Email",
+            "password": "Kata Sandi",
+            "username": "Nama Pengguna",
+            "firstName": "Nama Depan",
+            "lastName": "Nama Belakang",
+            "country": "Negara",
+            "age": "Usia",
+            "loginTitle": "Masuk",
+            "registerTitle": "Daftar",
+            "noAccount": "Belum punya akun?",
+            "hasAccount": "Sudah punya akun?",
+            "loginButton": "Masuk",
+            "registerButton": "Daftar",
+            "error": {
+                "invalidCredentials": "Kredensial tidak valid"
+            }
+        }
     }
 }

@@ -77,11 +77,15 @@ const createAdminUser = async () => {
 
 // Routes
 app.use('/api/auth', require('./src/routes/auth'));
+app.use('/api/news', require('./src/routes/news'));
 app.use('/api/characters', require('./src/routes/characters'));
 app.use('/api/artifacts', require('./src/routes/artifacts'));
 app.use('/api/force-cards', require('./src/routes/forceCards'));
+app.use('/api/admin', require('./src/routes/admin'));
+app.use('/api/community', require('./src/routes/community'));
 app.use('/api/config', require('./src/routes/config'));
 app.use('/api/share', require('./src/routes/share'));
+app.use('/api/upload', require('./src/routes/upload'));
 
 
 
