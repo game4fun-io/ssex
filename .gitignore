@@ -5,3 +5,4 @@ dist
 build
 coverage
 temp_assets
+.env.test
