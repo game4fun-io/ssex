@@ -24,6 +24,26 @@ import AdminDashboard from './pages/AdminDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import AnnouncementBanner from './components/AnnouncementBanner';
 
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+function TokenHandler() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token');
+    if (token) {
+      localStorage.setItem('token', token);
+      // Force reload to update auth state or use context if possible (reload is safer for now)
+      window.location.href = '/';
+    }
+  }, [location, navigate]);
+
+  return null;
+}
+
 function App() {
   return (
     <AuthProvider>
@@ -32,6 +52,7 @@ function App() {
           <div className="min-h-screen bg-gray-800">
             <AnnouncementBanner />
             <Navbar />
+            <TokenHandler />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news" element={<News />} />

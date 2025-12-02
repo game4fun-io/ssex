@@ -5,6 +5,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const session = require('express-session');
+const passport = require('./config/passport');
 const DiscordService = require('./services/DiscordService');
 
 const app = express();
@@ -23,6 +25,13 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
 }));
 app.use(express.json());
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'super_secret_session_key',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 // app.use(ASSET_ROUTE, express.static(ASSET_DIR)); // serve scraped assets locally
 
 // Database Connection
