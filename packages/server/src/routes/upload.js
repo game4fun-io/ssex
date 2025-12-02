@@ -49,7 +49,8 @@ router.post('/', [auth, upload.single('image')], async (req, res) => {
         }
 
         const fileContent = fs.readFileSync(req.file.path);
-        const objectName = `news/${Date.now()}-${req.file.originalname}`;
+        const folder = req.body.folder || 'uploads';
+        const objectName = `${folder}/${Date.now()}-${req.file.originalname}`;
 
         await uploadFile(objectName, fileContent, {
             'Content-Type': req.file.mimetype

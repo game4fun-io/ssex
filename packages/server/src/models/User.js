@@ -52,6 +52,26 @@ const UserSchema = new mongoose.Schema({
         enum: ['user', 'member', 'moderator', 'influencer', 'admin'],
         default: 'user'
     },
+    discordId: {
+        type: String,
+        unique: true,
+        sparse: true
+    },
+    discordUsername: {
+        type: String
+    },
+    discordDiscriminator: {
+        type: String
+    },
+    discordAvatar: {
+        type: String
+    },
+    accessToken: {
+        type: String
+    },
+    refreshToken: {
+        type: String
+    },
     // Gamification
     points: {
         type: Number,

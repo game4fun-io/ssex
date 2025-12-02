@@ -94,6 +94,7 @@ const CreateNewsModal = ({ onClose, onCreated }) => {
                             className="w-full bg-gray-700 text-white p-2 rounded border border-gray-600"
                             placeholder="https://..."
                         />
+                        <p className="text-xs text-gray-500 mt-1">Recommended size: 600x400px</p>
                     </div>
                     <div className="flex justify-end gap-4 mt-6">
                         <button

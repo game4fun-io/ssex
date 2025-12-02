@@ -32,18 +32,38 @@ const Navbar = () => {
                         {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium">{t('artifacts')}</Link>}
                         {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium">{t('forceCards')}</Link>}
                         {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium">{t('teamBuilder')}</Link>}
-                        {user && <Link to="/proposals" className="hover:text-yellow-400 font-medium">{t('community.title')}</Link>}
+                        <a href="https://discord.gg/thfv5B7e" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition flex items-center gap-2">
+                            <i className="fab fa-discord text-[#5865F2]"></i>
+                            {t('nav.community')}
+                        </a>
                     </div>
                 </div>
 
                 {/* Right Side: Auth / User (Desktop) */}
                 <div className="hidden md:flex items-center space-x-4">
                     {user ? (
-                        <>
-                            {isAdmin && <Link to="/admin" className="text-yellow-500 hover:text-yellow-400 font-bold">{t('admin.title')}</Link>}
-                            <Link to="/profile" className="text-gray-400 hover:text-white transition">{t('welcomeUser')}</Link>
-                            <button onClick={logout} className="hover:text-red-400">{t('logout')}</button>
-                        </>
+                        <div className="relative group">
+                            <button className="flex items-center gap-2 focus:outline-none">
+                                <img
+                                    src={user.avatar || (user.discordId && user.discordAvatar ? `https://cdn.discordapp.com/avatars/${user.discordId}/${user.discordAvatar}.png` : 'https://via.placeholder.com/150')}
+                                    alt={user.username}
+                                    className="w-10 h-10 rounded-full border-2 border-yellow-500 object-cover"
+                                />
+                                <span className="text-sm font-medium text-gray-300 group-hover:text-white transition">{user.username}</span>
+                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50">
+                                <div className="px-4 py-2 border-b border-gray-700">
+                                    <p className="text-sm text-white font-bold truncate">{user.username}</p>
+                                    <p className="text-xs text-gray-400 truncate">{user.email}</p>
+                                </div>
+                                <Link to="/profile" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">{t('welcomeUser')}</Link>
+                                {isAdmin && <Link to="/admin" className="block px-4 py-2 text-sm text-yellow-500 hover:bg-gray-700 hover:text-yellow-400">{t('admin.title')}</Link>}
+                                <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700 hover:text-red-300">{t('logout')}</button>
+                            </div>
+                        </div>
                     ) : (
                         <>
                             <Link to="/login" className="hover:text-yellow-400 font-medium">{t('login')}</Link>
@@ -76,7 +96,9 @@ const Navbar = () => {
                     {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('artifacts')}</Link>}
                     {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('forceCards')}</Link>}
                     {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('teamBuilder')}</Link>}
-                    {user && <Link to="/proposals" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('community.title')}</Link>}
+                    <a href="https://discord.gg/placeholder" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2 flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                        <span>Discord</span>
+                    </a>
 
                     <div className="pt-2 flex flex-col space-y-3">
                         {user ? (

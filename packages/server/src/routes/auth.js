@@ -3,6 +3,43 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const passport = require('passport');
+
+// @route   GET api/auth/discord
+// @desc    Auth with Discord
+// @access  Public
+router.get('/discord', passport.authenticate('discord'));
+
+// @route   GET api/auth/discord/callback
+// @desc    Discord auth callback
+// @access  Public
+router.get('/discord/callback', passport.authenticate('discord', {
+    failureRedirect: '/'
+}), (req, res) => {
+    // Successful authentication
+    const payload = {
+        user: {
+            id: req.user.id,
+            role: req.user.role
+        }
+    };
+
+    jwt.sign(
+        payload,
+        process.env.JWT_SECRET,
+        { expiresIn: '7d' }, // Longer expiration for OAuth
+        (err, token) => {
+            if (err) throw err;
+            // Redirect to client with token
+            const clientUrl = process.env.CLIENT_URL || (
+                process.env.NODE_ENV === 'production'
+                    ? 'https://seiyaexcompanion.games4fun.io'
+                    : 'http://localhost:5173'
+            );
+            res.redirect(`${clientUrl}?token=${token}`);
+        }
+    );
+});
 
 // Register
 router.post('/register', async (req, res) => {
@@ -137,6 +174,20 @@ router.put('/updateDetails', auth, async (req, res) => {
         ).select('-password');
 
         res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// @route   DELETE api/auth/me
+// @desc    Delete current user
+// @access  Private
+router.delete('/me', auth, async (req, res) => {
+    try {
+        // Remove user
+        await User.findOneAndDelete({ _id: req.user.id });
+        res.json({ msg: 'User deleted' });
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');

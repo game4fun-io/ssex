@@ -1,16 +1,22 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const path = require('path');
-
-dotenv.config();
+const session = require('express-session');
+const passport = require('./config/passport');
+const DiscordService = require('./services/DiscordService');
 
 const app = express();
 const PORT = process.env.PORT || 5002;
 const ASSET_ROUTE = process.env.ASSET_ROUTE || '/assets';
 // Default to server-package assets so deployment/CDN swaps are straightforward
 const ASSET_DIR = process.env.ASSET_DIR || path.join(__dirname, 'public', 'assets');
+
+// Connect Discord Bot
+DiscordService.connect();
 
 // Middleware
 app.use(cors({
@@ -19,6 +25,13 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
 }));
 app.use(express.json());
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'super_secret_session_key',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 // app.use(ASSET_ROUTE, express.static(ASSET_DIR)); // serve scraped assets locally
 
 // Database Connection
@@ -30,11 +43,11 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.error('MongoDB connection error:', err));
 
 // Auto-migrate assets to MinIO in development
-if (process.env.NODE_ENV === 'development') {
-    const { migrate } = require('./scripts/migrateToMinio');
-    // Run migration in background so it doesn't block server startup
-    migrate().catch(err => console.error('MinIO migration error:', err));
-}
+// if (process.env.NODE_ENV === 'development') {
+//     const { migrate } = require('./scripts/migrateToMinio');
+//     // Run migration in background so it doesn't block server startup
+//     migrate().catch(err => console.error('MinIO migration error:', err));
+// }
 
 const User = require('./src/models/User');
 const bcrypt = require('bcryptjs');
