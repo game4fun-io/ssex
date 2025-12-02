@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5003:5002"
+    environment:
+      - PORT=5002
+      - MONGO_URI=mongodb://mongo:27017/ssex
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=test_secret
+      - ADMIN_EMAIL=admin@test.com
+      - ADMIN_PASSWORD=password123
+      - NODE_ENV=production
+    env_file:
+      - .env.test
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - test-net
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27020:27017" # Avoid conflict with dev mongo
+    networks:
+      - test-net
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379" # Avoid conflict with dev redis
+    networks:
+      - test-net
+
+networks:
+  test-net:

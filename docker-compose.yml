@@ -12,6 +12,13 @@ services:
       - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@admin.com}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-your_secure_password}
       - NODE_ENV=production
+      - MINIO_ENDPOINT=${MINIO_ENDPOINT}
+      - MINIO_PORT=${MINIO_PORT}
+      - MINIO_USE_SSL=${MINIO_USE_SSL}
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
+      - MINIO_BUCKET=${MINIO_BUCKET}
+      - MINIO_PUBLIC_HOST=${MINIO_PUBLIC_HOST}
     depends_on:
       - mongo
     networks:

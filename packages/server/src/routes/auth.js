@@ -8,9 +8,10 @@ const User = require('../models/User');
 router.post('/register', async (req, res) => {
     try {
         const { username, email, password, firstName, lastName, country, age } = req.body;
+        const normalizedEmail = email.toLowerCase();
 
         // Check if user exists
-        let user = await User.findOne({ email });
+        let user = await User.findOne({ email: normalizedEmail });
         if (user) {
             return res.status(400).json({ msg: 'User already exists' });
         }
@@ -22,7 +23,7 @@ router.post('/register', async (req, res) => {
         // Create user
         user = new User({
             username,
-            email,
+            email: normalizedEmail,
             password: hashedPassword,
             firstName,
             lastName,
@@ -58,15 +59,20 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
+        const normalizedEmail = email.toLowerCase();
+        console.log('Login attempt:', { email: normalizedEmail, password });
 
         // Check if user exists
-        let user = await User.findOne({ email });
+        let user = await User.findOne({ email: normalizedEmail });
         if (!user) {
+            console.log('User not found');
             return res.status(400).json({ msg: 'Invalid Credentials' });
         }
+        console.log('User found:', user.email, user.password);
 
         // Validate password
         const isMatch = await bcrypt.compare(password, user.password);
+        console.log('Password match:', isMatch);
         if (!isMatch) {
             return res.status(400).json({ msg: 'Invalid Credentials' });
         }
@@ -74,7 +80,8 @@ router.post('/login', async (req, res) => {
         // Create token
         const payload = {
             user: {
-                id: user.id
+                id: user.id,
+                role: user.role
             }
         };
 
@@ -100,6 +107,35 @@ const auth = require('../middleware/auth');
 router.get('/me', auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// @route   PUT api/auth/updateDetails
+// @desc    Update user details
+// @access  Private
+router.put('/updateDetails', auth, async (req, res) => {
+    try {
+        const { username, email, avatar, country, age } = req.body;
+        const userFields = {};
+        if (username) userFields.username = username;
+        if (email) userFields.email = email;
+        if (avatar) userFields.avatar = avatar;
+        if (country) userFields.country = country;
+        if (age) userFields.age = age;
+
+        let user = await User.findById(req.user.id);
+        if (!user) return res.status(404).json({ msg: 'User not found' });
+
+        user = await User.findByIdAndUpdate(
+            req.user.id,
+            { $set: userFields },
+            { new: true }
+        ).select('-password');
+
         res.json(user);
     } catch (err) {
         console.error(err.message);

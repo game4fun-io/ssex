@@ -58,7 +58,8 @@ const ForceCardSchema = new mongoose.Schema({
         level: { type: Number, required: true },
         description: { type: LocalizedString, required: true }
     }],
-    imageUrl: { type: String, default: '' }
+    imageUrl: { type: String, default: '' },
+    isVisible: { type: Boolean, default: true }
 });
 
 module.exports = mongoose.model('ForceCard', ForceCardSchema);

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
+import { useAuth } from '../context/AuthContext';
 
 const ForceCards = () => {
     const navigate = useNavigate();
@@ -9,36 +10,20 @@ const ForceCards = () => {
     const [filteredCards, setFilteredCards] = useState([]);
     const [loading, setLoading] = useState(true);
     const { t, i18n } = useTranslation();
+    const { canEdit } = useAuth();
 
-    const [filters, setFilters] = useState({
-        rarity: ''
-    });
     const [searchTerm, setSearchTerm] = useState('');
-
-    const [options, setOptions] = useState({
-        rarities: []
-    });
-
-    const getLoc = (data) => {
-        if (!data) return '';
-        if (typeof data === 'string') return data;
-        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
-    };
+    const [filters, setFilters] = useState({ rarity: '' });
+    const [options, setOptions] = useState({ rarities: [] });
 
     useEffect(() => {
         const fetchCards = async () => {
             try {
                 const res = await api.get('/force-cards');
-                const order = { Legendary: 5, UR: 5, SSR: 5, Epic: 4, SR: 4, Rare: 3, R: 3, Uncommon: 2, N: 2 };
-                const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
-                setCards(sorted);
-                setFilteredCards(sorted);
-
-                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort((a, b) => (order[b] || 0) - (order[a] || 0));
-                setOptions({
-                    rarities: uniqueRarities
-                });
+                setCards(res.data);
+                setFilteredCards(res.data);
+                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
+                setOptions({ rarities: uniqueRarities });
             } catch (err) {
                 console.error(err);
             } finally {
@@ -46,34 +31,51 @@ const ForceCards = () => {
             }
         };
         fetchCards();
-    }, [i18n.language]);
+    }, []);
 
     useEffect(() => {
         let result = cards;
-
         if (searchTerm.length >= 3) {
             result = result.filter(c => getLoc(c.name).toLowerCase().includes(searchTerm.toLowerCase()));
         }
-
-        if (filters.rarity) result = result.filter(c => c.rarity === filters.rarity);
-
+        if (filters.rarity) {
+            result = result.filter(c => c.rarity === filters.rarity);
+        }
         setFilteredCards(result);
-    }, [filters, cards, searchTerm, i18n.language]);
+    }, [searchTerm, filters, cards, i18n.language]);
 
-    const handleFilterChange = (e) => {
-        setFilters({ ...filters, [e.target.name]: e.target.value });
-    };
-
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
+    const handleSearchChange = (e) => setSearchTerm(e.target.value);
+    const handleFilterChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
     const clearFilters = () => {
         setFilters({ rarity: '' });
         setSearchTerm('');
     };
 
-    if (loading) return <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">{t('loading')}</div>;
+    const getLoc = (data) => {
+        if (!data) return '';
+        if (typeof data === 'string') return data;
+        const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
+        return data[lang] || data['en'] || '';
+    };
+    const toggleVisibility = async (e, card) => {
+        e.stopPropagation(); // Prevent navigation
+        if (!canEdit) return;
+
+        try {
+            const newVisibility = !card.isVisible;
+            await api.patch(`/admin/update/force-card/${card._id}`, { isVisible: newVisibility });
+
+            // Update local state
+            const updateList = (list) => list.map(c => c._id === card._id ? { ...c, isVisible: newVisibility } : c);
+            setCards(prev => updateList(prev));
+            setFilteredCards(prev => updateList(prev));
+        } catch (err) {
+            console.error('Error updating visibility:', err);
+            alert('Failed to update visibility');
+        }
+    };
+
+    // ... (existing useEffects and handlers)
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -107,22 +109,39 @@ const ForceCards = () => {
                     {filteredCards.map(card => (
                         <div key={card._id}
                             onClick={() => navigate(`/force-cards/${card.id}`)}
-                            className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-yellow-500 transition flex flex-col h-full cursor-pointer">
-                            <div className="flex justify-between items-start mb-4">
-                                <h2 className="text-xl font-bold text-white">{getLoc(card.name)}</h2>
-                                <span className={`px-2 py-1 rounded text-xs font-bold ${['UR', 'SSR', 'Legendary'].includes(card.rarity) ? 'bg-red-900 text-white border border-red-700' :
-                                        ['SR', 'Epic'].includes(card.rarity) ? 'bg-purple-600 text-white' :
-                                            ['R', 'Rare'].includes(card.rarity) ? 'bg-blue-600 text-white' :
-                                                ['N', 'Uncommon'].includes(card.rarity) ? 'bg-green-600 text-white' :
-                                                    'bg-gray-600 text-white'
-                                    }`}>{card.rarity}</span>
-                            </div>
+                            className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-yellow-500 transition flex flex-col h-full cursor-pointer relative">
+                            {/* Rarity Badge - Top Right */}
+                            <span className={`absolute top-2 right-2 px-2 py-1 rounded text-xs font-bold ${['UR', 'SSR', 'Legendary'].includes(card.rarity) ? 'bg-red-900 text-white border border-red-700' :
+                                ['SR', 'Epic'].includes(card.rarity) ? 'bg-purple-600 text-white' :
+                                    ['R', 'Rare'].includes(card.rarity) ? 'bg-blue-600 text-white' :
+                                        ['N', 'Uncommon'].includes(card.rarity) ? 'bg-green-600 text-white' :
+                                            'bg-gray-600 text-white'
+                                }`}>{card.rarity}</span>
+
+                            {canEdit && (
+                                <button
+                                    onClick={(e) => toggleVisibility(e, card)}
+                                    className={`absolute top-2 left-2 p-1.5 rounded text-xs font-bold ${card.isVisible ? 'bg-green-600/80 hover:bg-green-500' : 'bg-red-600/80 hover:bg-red-500'} text-white shadow-md transition backdrop-blur-sm z-10`}
+                                    title={card.isVisible ? "Hide from users" : "Show to users"}
+                                >
+                                    {card.isVisible ? '👁️' : '🚫'}
+                                </button>
+                            )}
+                            {!card.isVisible && !canEdit && (
+                                <div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-bold">
+                                    👁️‍🗨️ Hidden
+                                </div>
+                            )}
 
                             {card.imageUrl && (
-                                <div className="mb-4 flex justify-center">
+                                <div className="mb-4 flex justify-center mt-8">
                                     <img src={card.imageUrl} alt={getLoc(card.name)} className="h-24 object-contain" />
                                 </div>
                             )}
+
+                            <div className="mb-2 text-center">
+                                <h2 className="text-xl font-bold text-white">{getLoc(card.name)}</h2>
+                            </div>
 
                             <div className="flex-grow border-t border-gray-700 pt-4 mt-2">
                                 <h3 className="text-yellow-500 font-bold text-sm mb-1">{getLoc(card.skill.name)}</h3>

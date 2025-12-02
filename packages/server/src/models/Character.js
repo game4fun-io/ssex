@@ -65,7 +65,8 @@ const CharacterSchema = new mongoose.Schema({
     imageUrl: { type: String, default: '' },
     avatarUrl: { type: String, default: '' },
     description: { type: LocalizedString },
-    collection: { type: String }
+    collection: { type: String },
+    isVisible: { type: Boolean, default: true }
 });
 
 module.exports = mongoose.model('Character', CharacterSchema);

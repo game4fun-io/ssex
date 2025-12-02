@@ -34,7 +34,6 @@
         "backToForceCards": "Back to Supreme Power",
         "artifactEffect": "Effect",
         "artifactProgression": "Level Progression & Enhancements",
-        "admin": "Admin",
         "featureCharactersDescription": "Browse the full roster with localized stats, skills, and rarity details.",
         "featureTeamBuilderDescription": "Create, save, and share optimal team formations with your squad.",
         "featureRelicsDescription": "Review relic bonuses and how they boost your Saints' performance.",
@@ -95,6 +94,120 @@
         "noSavedComps": "No saved compositions found.",
         "workInProgress": "Work in Progress",
         "bannerMessage": "Data is constantly updated based on game releases and community help. We'd love your contribution!",
-        "copyrightNotice": "Saint Seiya EX is a trademark of Efun. This is a fan-made tool."
+        "copyrightNotice": "Saint Seiya EX is a trademark of Efun. This is a fan-made tool.",
+        "news": {
+            "title": "News",
+            "latest": "Latest News",
+            "viewAll": "View All",
+            "noNews": "No news available.",
+            "visibleTo": "Visible to {{role}}s and above",
+            "types": {
+                "update": "Update",
+                "event": "Event",
+                "maintenance": "Maintenance",
+                "general": "General"
+            },
+            "createButton": "Create News",
+            "createTitle": "Create News Item",
+            "editTitle": "Edit News Item",
+            "editMode": "Edit Mode",
+            "previewMode": "Preview Mode",
+            "uploadThumbnail": "Upload Thumbnail",
+            "insertImage": "Insert Image",
+            "previewTitle": "Preview Title",
+            "formTitle": "Title",
+            "formContent": "Content",
+            "formType": "Type",
+            "formMinRole": "Minimum Role",
+            "formThumbnail": "Thumbnail URL",
+            "commentPlaceholder": "Write a comment...",
+            "noComments": "No comments yet.",
+            "uploaded": "Uploaded",
+            "noContent": "No content yet...",
+            "roles": {
+                "user": "All Users",
+                "member": "Members+",
+                "influencer": "Influencers+",
+                "moderator": "Moderators+"
+            }
+        },
+        "cancel": "Cancel",
+        "create": "Create",
+        "send": "Send",
+        "saving": "Saving...",
+        "edit": "Edit",
+        "allLanguages": "All Languages",
+        "community": {
+            "title": "Community",
+            "proposals": {
+                "title": "Community Proposals",
+                "new": "New Proposal",
+                "cancel": "Cancel",
+                "submitTitle": "Submit a Proposal",
+                "type": "Type",
+                "types": {
+                    "fix": "Bug Fix",
+                    "content": "New Content",
+                    "feature": "Feature Request"
+                },
+                "form": {
+                    "title": "Title",
+                    "description": "Description"
+                },
+                "submit": "Submit",
+                "submittedBy": "Submitted by {{user}} on {{date}}",
+                "status": {
+                    "pending": "Pending",
+                    "approved": "Approved",
+                    "rejected": "Rejected"
+                },
+                "approve": "Approve",
+                "reject": "Reject",
+                "noProposals": "No proposals found.",
+                "moderatorOnly": "Only Moderators can view the proposal list.",
+                "memberInstruction": "As a member, you can submit new proposals using the button above.",
+                "success": "Proposal submitted successfully!",
+                "failure": "Failed to submit proposal."
+            }
+        },
+        "admin": {
+            "title": "Admin",
+            "editCharacter": "Edit Character",
+            "editModal": {
+                "title": "Edit {{type}}",
+                "visible": "Visible to Users",
+                "visibleHelp": "If unchecked, this item will only be visible to admins.",
+                "cancel": "Cancel",
+                "save": "Save",
+                "saving": "Saving..."
+            }
+        },
+        "auth": {
+            "email": "Email Address",
+            "password": "Password",
+            "username": "Username",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "country": "Country",
+            "age": "Age",
+            "loginTitle": "Login",
+            "registerTitle": "Register",
+            "noAccount": "Don't have an account?",
+            "hasAccount": "Already have an account?",
+            "loginButton": "Login",
+            "registerButton": "Register"
+        },
+        "imageUpload": "Upload Image",
+        "imageUrlPlaceholder": "Or enter Image URL",
+        "basicStats": "Basic Stats",
+        "specialStats": "Special Stats",
+        "bonds": "Bonds",
+        "biography": "Biography",
+        "skills": "Skills",
+        "profile": {
+            "uploadError": "Failed to upload avatar",
+            "updateSuccess": "Profile updated successfully",
+            "updateError": "Failed to update profile"
+        }
     }
 }

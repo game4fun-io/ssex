@@ -34,7 +34,6 @@
         "backToForceCards": "返回究极之力",
         "artifactEffect": "效果",
         "artifactProgression": "等级提升与强化",
-        "admin": "管理员",
         "searchArtifactsPlaceholder": "搜索圣器 (最少3个字符)...",
         "searchForceCardsPlaceholder": "搜索究极之力 (最少3个字符)...",
         "backToArtifacts": "返回圣器",
@@ -72,6 +71,82 @@
         "loginToSave": "登录后才能保存编队。",
         "viewOnlyShare": "正在查看分享的编队（只读）",
         "addFormation": "加入阵容",
-        "addSupport": "作为支援"
+        "addSupport": "作为支援",
+        "news": {
+            "title": "新闻",
+            "latest": "最新新闻",
+            "viewAll": "查看全部",
+            "noNews": "暂无新闻。",
+            "visibleTo": "对{{role}}及以上可见",
+            "types": {
+                "update": "更新",
+                "event": "活动",
+                "maintenance": "维护",
+                "general": "常规"
+            }
+        },
+        "community": {
+            "title": "社区",
+            "proposals": {
+                "title": "社区提案",
+                "new": "新提案",
+                "cancel": "取消",
+                "submitTitle": "提交提案",
+                "type": "类型",
+                "types": {
+                    "fix": "错误修复",
+                    "content": "新内容",
+                    "feature": "功能请求"
+                },
+                "form": {
+                    "title": "标题",
+                    "description": "描述"
+                },
+                "submit": "提交",
+                "submittedBy": "由 {{user}} 于 {{date}} 提交",
+                "status": {
+                    "pending": "待审核",
+                    "approved": "已批准",
+                    "rejected": "已拒绝"
+                },
+                "approve": "批准",
+                "reject": "拒绝",
+                "noProposals": "未找到提案。",
+                "moderatorOnly": "仅版主可查看提案列表。",
+                "memberInstruction": "作为成员，您可以使用上方的按钮提交新提案。",
+                "success": "提案提交成功！",
+                "failure": "提案提交失败。"
+            }
+        },
+        "admin": {
+            "title": "管理员",
+            "editCharacter": "编辑角色",
+            "editModal": {
+                "title": "编辑 {{type}}",
+                "visible": "对用户可见",
+                "visibleHelp": "如果未选中，此项目仅对管理员可见。",
+                "cancel": "取消",
+                "save": "保存",
+                "saving": "保存中..."
+            }
+        },
+        "auth": {
+            "email": "电子邮件地址",
+            "password": "密码",
+            "username": "用户名",
+            "firstName": "名",
+            "lastName": "姓",
+            "country": "国家",
+            "age": "年龄",
+            "loginTitle": "登录",
+            "registerTitle": "注册",
+            "noAccount": "没有账号？",
+            "hasAccount": "已有账号？",
+            "loginButton": "登录",
+            "registerButton": "注册",
+            "error": {
+                "invalidCredentials": "凭证无效"
+            }
+        }
     }
 }

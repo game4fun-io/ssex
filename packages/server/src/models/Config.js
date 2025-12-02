@@ -6,7 +6,8 @@ const ConfigSchema = new mongoose.Schema({
             characters: { type: Boolean, default: true },
             teamBuilder: { type: Boolean, default: true },
             artifacts: { type: Boolean, default: true },
-            forceCards: { type: Boolean, default: true }
+            forceCards: { type: Boolean, default: true },
+            news: { type: Boolean, default: true }
         },
         announcementBanner: { type: Boolean, default: true },
         enableAds: {
@@ -45,10 +46,16 @@ ConfigSchema.statics.getSingleton = async function () {
         config = await this.create({});
     } else {
         // Ensure new fields are present
+        let changed = false;
         if (config.featureFlags.announcementBanner === undefined) {
             config.featureFlags.announcementBanner = true;
-            await config.save();
+            changed = true;
         }
+        if (config.featureFlags.menus.news === undefined) {
+            config.featureFlags.menus.news = true;
+            changed = true;
+        }
+        if (changed) await config.save();
     }
     return config;
 };

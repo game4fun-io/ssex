@@ -21,7 +21,6 @@
         "forceCards": "Pouvoir Suprême",
         "artifactEffect": "Effet",
         "artifactProgression": "Progression de Niveau et Améliorations",
-        "admin": "Admin",
         "searchArtifactsPlaceholder": "Rechercher des reliques (min 3 chars)...",
         "searchForceCardsPlaceholder": "Rechercher des cartes de force (min 3 chars)...",
         "backToArtifacts": "Retour aux Reliques",
@@ -84,6 +83,82 @@
         "noSavedComps": "Aucune composition sauvegardée trouvée.",
         "workInProgress": "En Développement",
         "bannerMessage": "Données mises à jour constamment selon les sorties et l'aide de la communauté. Votre contribution est la bienvenue !",
-        "copyrightNotice": "Saint Seiya EX est une marque déposée d'Efun. Ceci est un outil fait par des fans."
+        "copyrightNotice": "Saint Seiya EX est une marque déposée d'Efun. Ceci est un outil fait par des fans.",
+        "news": {
+            "title": "Actualités",
+            "latest": "Dernières Actualités",
+            "viewAll": "Voir Tout",
+            "noNews": "Aucune actualité disponible.",
+            "visibleTo": "Visible pour {{role}}s et plus",
+            "types": {
+                "update": "Mise à jour",
+                "event": "Événement",
+                "maintenance": "Maintenance",
+                "general": "Général"
+            }
+        },
+        "community": {
+            "title": "Communauté",
+            "proposals": {
+                "title": "Propositions de la Communauté",
+                "new": "Nouvelle Proposition",
+                "cancel": "Annuler",
+                "submitTitle": "Soumettre une Proposition",
+                "type": "Type",
+                "types": {
+                    "fix": "Correction de Bug",
+                    "content": "Nouveau Contenu",
+                    "feature": "Demande de Fonctionnalité"
+                },
+                "form": {
+                    "title": "Titre",
+                    "description": "Description"
+                },
+                "submit": "Soumettre",
+                "submittedBy": "Soumis par {{user}} le {{date}}",
+                "status": {
+                    "pending": "En attente",
+                    "approved": "Approuvé",
+                    "rejected": "Rejeté"
+                },
+                "approve": "Approuver",
+                "reject": "Rejeter",
+                "noProposals": "Aucune proposition trouvée.",
+                "moderatorOnly": "Seuls les modérateurs peuvent voir la liste des propositions.",
+                "memberInstruction": "En tant que membre, vous pouvez soumettre de nouvelles propositions en utilisant le bouton ci-dessus.",
+                "success": "Proposition soumise avec succès !",
+                "failure": "Échec de la soumission de la proposition."
+            }
+        },
+        "admin": {
+            "title": "Admin",
+            "editCharacter": "Modifier Personnage",
+            "editModal": {
+                "title": "Modifier {{type}}",
+                "visible": "Visible pour les Utilisateurs",
+                "visibleHelp": "Si décoché, cet élément ne sera visible que par les administrateurs.",
+                "cancel": "Annuler",
+                "save": "Enregistrer",
+                "saving": "Enregistrement..."
+            }
+        },
+        "auth": {
+            "email": "Adresse Email",
+            "password": "Mot de passe",
+            "username": "Nom d'utilisateur",
+            "firstName": "Prénom",
+            "lastName": "Nom",
+            "country": "Pays",
+            "age": "Âge",
+            "loginTitle": "Connexion",
+            "registerTitle": "Inscription",
+            "noAccount": "Pas de compte ?",
+            "hasAccount": "Déjà un compte ?",
+            "loginButton": "Connexion",
+            "registerButton": "S'inscrire",
+            "error": {
+                "invalidCredentials": "Identifiants invalides"
+            }
+        }
     }
 }

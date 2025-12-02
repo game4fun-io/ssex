@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import api from '../api/axios';
 import AdUnit from '../components/AdUnit';
+import { useAuth } from '../context/AuthContext';
 
 const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [filteredCharacters, setFilteredCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
     const { t, i18n } = useTranslation();
+    const { canEdit } = useAuth();
 
     // Filters
     const [filters, setFilters] = useState({
@@ -98,6 +100,25 @@ const Characters = () => {
         return data[lang] || data['en'] || '';
     };
 
+    const toggleVisibility = async (e, char) => {
+        e.preventDefault(); // Prevent link navigation
+        e.stopPropagation();
+        if (!canEdit) return;
+
+        try {
+            const newVisibility = !char.isVisible;
+            await api.patch(`/admin/update/character/${char._id}`, { isVisible: newVisibility });
+
+            // Update local state
+            const updateList = (list) => list.map(c => c._id === char._id ? { ...c, isVisible: newVisibility } : c);
+            setCharacters(prev => updateList(prev));
+            setFilteredCharacters(prev => updateList(prev));
+        } catch (err) {
+            console.error('Error updating visibility:', err);
+            alert('Failed to update visibility');
+        }
+    };
+
     if (loading) {
         return <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">{t('loading')}</div>;
     }
@@ -168,7 +189,7 @@ const Characters = () => {
                                         ) : (
                                             <span className="text-gray-500">No Image</span>
                                         )}
-                                        <div className="absolute top-2 right-2 flex flex-col gap-1 items-end">
+                                        <div className="absolute top-2 right-2">
                                             <span className={`px-2 py-1 rounded text-xs font-bold ${char.rarity === 'UR' ? 'bg-red-900 text-white border border-red-700' :
                                                 char.rarity === 'SSR' ? 'bg-yellow-600 text-white' :
                                                     char.rarity === 'SR' ? 'bg-purple-600 text-white' :
@@ -178,6 +199,20 @@ const Characters = () => {
                                                 {char.rarity}
                                             </span>
                                         </div>
+                                        {canEdit && (
+                                            <button
+                                                onClick={(e) => toggleVisibility(e, char)}
+                                                className={`absolute top-2 left-2 p-1.5 rounded text-xs font-bold ${char.isVisible ? 'bg-green-600/80 hover:bg-green-500' : 'bg-red-600/80 hover:bg-red-500'} text-white shadow-md transition backdrop-blur-sm z-10`}
+                                                title={char.isVisible ? "Hide from users" : "Show to users"}
+                                            >
+                                                {char.isVisible ? '👁️' : '🚫'}
+                                            </button>
+                                        )}
+                                        {!char.isVisible && !canEdit && (
+                                            <div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1">
+                                                <span>👁️‍🗨️ Hidden</span>
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="p-4 flex-grow">
                                         <h2 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition">{getLoc(char.name)}</h2>
