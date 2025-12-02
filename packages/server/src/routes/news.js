@@ -3,6 +3,7 @@ const router = express.Router();
 const News = require('../models/News');
 const auth = require('../middleware/auth');
 const role = require('../middleware/role');
+const DiscordService = require('../../services/DiscordService');
 
 // @route   GET api/news
 // @desc    Get all active news (filtered by role)
@@ -54,26 +55,33 @@ router.get('/', async (req, res) => {
 // @route   POST api/news
 // @desc    Create a news item
 // @access  Private (Admin, Moderator, Influencer)
-router.post('/', [auth, role(['admin', 'moderator', 'influencer'])], async (req, res) => {
+router.post('/', auth, async (req, res) => {
     try {
-        const { title, content, thumbnailUrl, type, minRole, language, isActive } = req.body;
+        if (req.user.role !== 'admin' && req.user.role !== 'moderator' && req.user.role !== 'influencer') {
+            return res.status(403).json({ message: 'Not authorized' });
+        }
 
-        const newNews = new News({
+        const { title, content, type, minRole, thumbnailUrl, language, isActive } = req.body; // Added language, isActive from original
+        const news = new News({
             title,
             content,
-            thumbnailUrl,
             type,
             minRole,
-            language,
-            isActive,
-            author: req.user.id
+            thumbnailUrl,
+            language, // Added language
+            isActive, // Added isActive
+            author: req.user.id // Changed from req.user.userId to req.user.id to match existing auth middleware
         });
 
-        const news = await newNews.save();
-        res.json(news);
+        await news.save();
+
+        // Post to Discord
+        await DiscordService.postNews(news);
+
+        res.status(201).json(news);
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        console.error(err.message); // Keep original error logging
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
