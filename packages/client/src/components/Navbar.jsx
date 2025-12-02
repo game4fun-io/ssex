@@ -34,7 +34,7 @@ const Navbar = () => {
                         {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium">{t('teamBuilder')}</Link>}
                         <a href="https://discord.gg/thfv5B7e" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition flex items-center gap-2">
                             <i className="fab fa-discord text-[#5865F2]"></i>
-                            {t('nav.community')}
+                            {t('community.title')}
                         </a>
                     </div>
                 </div>
@@ -96,8 +96,9 @@ const Navbar = () => {
                     {menus.artifacts && <Link to="/artifacts" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('artifacts')}</Link>}
                     {menus.forceCards && <Link to="/force-cards" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('forceCards')}</Link>}
                     {menus.teamBuilder && <Link to="/team-builder" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2" onClick={() => setIsMobileMenuOpen(false)}>{t('teamBuilder')}</Link>}
-                    <a href="https://discord.gg/placeholder" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2 flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span>Discord</span>
+                    <a href="https://discord.gg/thfv5B7e" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 font-medium border-b border-gray-700 pb-2 flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                        <i className="fab fa-discord text-[#5865F2]"></i>
+                        <span>{t('community.title')}</span>
                     </a>
 
                     <div className="pt-2 flex flex-col space-y-3">
