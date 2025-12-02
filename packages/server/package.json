@@ -1,6 +1,6 @@
 {
     "name": "@ssex/server",
-    "version": "1.6.4",
+    "version": "1.6.5",
     "main": "index.js",
     "scripts": {
         "start": "npm run migrate:prod && (npm run migrate:minio &) && node index.js",
