@@ -357,9 +357,13 @@ const TeamBuilder = () => {
     // --- Team Logic ---
     const normalizeRow = (positioning) => {
         const value = (positioning || '').toLowerCase();
-        if (value.includes('front') || value.includes('frente') || value.includes('avant')) return 'front';
-        if (value.includes('mid') || value.includes('meio') || value.includes('medio') || value.includes('centre') || value.includes('centro')) return 'mid';
-        if (value.includes('back') || value.includes('trás') || value.includes('tras') || value.includes('arrière') || value.includes('fundo')) return 'back';
+        // Front
+        if (value.includes('front') || value.includes('frente') || value.includes('avant') || value.includes('delante') || value.includes('前') || value.includes('depan') || value.includes('หน้า')) return 'front';
+        // Mid
+        if (value.includes('mid') || value.includes('meio') || value.includes('medio') || value.includes('centre') || value.includes('centro') || value.includes('milieu') || value.includes('中') || value.includes('tengah') || value.includes('กลาง')) return 'mid';
+        // Back
+        if (value.includes('back') || value.includes('trás') || value.includes('tras') || value.includes('arrière') || value.includes('fundo') || value.includes('atrás') || value.includes('fondo') || value.includes('后') || value.includes('belakang') || value.includes('หลัง')) return 'back';
+
         return 'front';
     };
 
