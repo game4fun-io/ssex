@@ -4,12 +4,12 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "seed:news": "node scripts/seedNews.js",
-        "migrate:prod": "node scripts/productionMigration.js",
-        "migrate:minio": "node scripts/migrateToMinio.js",
-        "migrate": "npm run migrate:prod && npm run migrate:minio",
         "dev": "nodemon index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "migrate:create": "migrate-mongo create",
+        "migrate:up": "migrate-mongo up",
+        "migrate:down": "migrate-mongo down",
+        "migrate:status": "migrate-mongo status"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
@@ -20,6 +20,7 @@
         "express-session": "^1.18.2",
         "jsonwebtoken": "^9.0.2",
         "minio": "^8.0.6",
+        "migrate-mongo": "^14.0.0",
         "mongoose": "^8.0.3",
         "multer": "^2.0.2",
         "passport": "^0.7.0",

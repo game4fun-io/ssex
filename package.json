@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "concurrently \"npm run start --workspace=@ssex/server\" \"npm run dev --workspace=@ssex/client\"",
+    "start": "concurrently -k \"npm run start --workspace=@ssex/server\" \"npm run dev --workspace=@ssex/client\"",
     "dev": "concurrently -k \"npm run dev --workspace=@ssex/server\" \"npm run dev --workspace=@ssex/client\"",
     "build": "npm run build --workspace=@ssex/client",
     "seed": "node scripts/migrate_data.js",

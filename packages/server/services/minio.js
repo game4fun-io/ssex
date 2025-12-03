@@ -57,21 +57,25 @@ const uploadFile = async (objectName, buffer, metaData = {}) => {
     }
 };
 
-const getFileUrl = async (objectName) => {
-    try {
-        // Presigned URL for temporary access if needed, but we made it public.
-        // So we can just construct the URL.
-        // If running in docker, 'localhost' might work for the host machine, but 'minio' for internal.
-        // We need to know where the client is accessing from.
-        // Let's assume the client accesses via the same host/port as configured.
-        const protocol = 'http';
-        const host = process.env.MINIO_PUBLIC_HOST || 'localhost';
-        const port = process.env.MINIO_API_PORT || 9000;
-        return `${protocol}://${host}:${port}/${BUCKET_NAME}/${objectName}`;
-    } catch (err) {
-        console.error('Error getting file URL:', err);
-        throw err;
-    }
+const getFileUrl = (objectName) => {
+    if (!objectName) return objectName;
+    if (/^https?:\/\//i.test(objectName)) return objectName; // already a full URL
+
+    const cleanName = objectName
+        .replace(/^\/+/, '')
+        .replace(new RegExp(`^${BUCKET_NAME}/`), '')
+        .replace(/^assets\//i, ''); // strip legacy assets/ prefix
+
+    const protocol = process.env.MINIO_PUBLIC_PROTOCOL || 'http';
+    const host = process.env.MINIO_PUBLIC_HOST || process.env.MINIO_ENDPOINT || 'localhost';
+    const port =
+        process.env.MINIO_PUBLIC_PORT ||
+        process.env.MINIO_API_PORT ||
+        process.env.MINIO_PORT ||
+        (protocol === 'https' ? 443 : 9000);
+
+    const portStr = (port == 80 || port == 443) ? '' : `:${port}`;
+    return `${protocol}://${host}${portStr}/${BUCKET_NAME}/${cleanName}`;
 };
 
 const deleteFile = async (objectName) => {

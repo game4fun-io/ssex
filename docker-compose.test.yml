@@ -13,11 +13,11 @@ services:
       - ADMIN_EMAIL=admin@test.com
       - ADMIN_PASSWORD=password123
       - NODE_ENV=production
-    env_file:
-      - .env.test
     depends_on:
       - mongo
       - redis
+    networks:
+      - test-net
     networks:
       - test-net
 
