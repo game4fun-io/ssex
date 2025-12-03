@@ -6,7 +6,12 @@ const Character = require('../src/models/Character');
 const Artifact = require('../src/models/Artifact');
 const ForceCard = require('../src/models/ForceCard');
 
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+// Load env from server package first, then fall back to repo root
+// __dirname = packages/server/scripts
+const serverEnv = path.join(__dirname, '../.env');
+const rootEnv = path.join(__dirname, '../../../.env');
+dotenv.config({ path: serverEnv });
+dotenv.config({ path: rootEnv, override: false });
 
 const migrateDB = async () => {
     try {
