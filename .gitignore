@@ -6,3 +6,5 @@ build
 coverage
 temp_assets
 .env.test
+*.archive
+*.bkp

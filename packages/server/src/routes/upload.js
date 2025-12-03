@@ -56,7 +56,7 @@ router.post('/', [auth, upload.single('image')], async (req, res) => {
             'Content-Type': req.file.mimetype
         });
 
-        const fileUrl = await getFileUrl(objectName);
+        const fileUrl = getFileUrl(objectName);
 
         // Clean up local file
         fs.unlinkSync(req.file.path);
