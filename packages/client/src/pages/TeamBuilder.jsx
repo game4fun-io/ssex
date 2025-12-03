@@ -9,6 +9,18 @@ const rarityScore = (rarity) => {
     return order[rarity] || 0;
 };
 
+const normalizeRow = (positioning) => {
+    const value = (positioning || '').toLowerCase();
+    // Front
+    if (value.includes('front') || value.includes('frente') || value.includes('avant') || value.includes('delante') || value.includes('前') || value.includes('depan') || value.includes('หน้า')) return 'front';
+    // Mid
+    if (value.includes('mid') || value.includes('meio') || value.includes('medio') || value.includes('centre') || value.includes('centro') || value.includes('milieu') || value.includes('中') || value.includes('tengah') || value.includes('กลาง')) return 'mid';
+    // Back
+    if (value.includes('back') || value.includes('trás') || value.includes('tras') || value.includes('arrière') || value.includes('fundo') || value.includes('atrás') || value.includes('fondo') || value.includes('后') || value.includes('belakang') || value.includes('หลัง')) return 'back';
+
+    return 'front';
+};
+
 const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
     <div
         className={`
@@ -30,6 +42,12 @@ const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
                     'bg-blue-600'
             }`}>
             {char.rarity}
+        </div>
+        <div className={`absolute top-1 left-1 text-[7px] md:text-[8px] px-1 rounded text-white font-bold uppercase ${normalizeRow(getLoc(char.positioning)) === 'front' ? 'bg-red-500' :
+                normalizeRow(getLoc(char.positioning)) === 'mid' ? 'bg-green-500' :
+                    'bg-blue-500'
+            }`}>
+            {normalizeRow(getLoc(char.positioning)).charAt(0)}
         </div>
 
         {/* Hover Overlay */}
@@ -355,17 +373,7 @@ const TeamBuilder = () => {
     };
 
     // --- Team Logic ---
-    const normalizeRow = (positioning) => {
-        const value = (positioning || '').toLowerCase();
-        // Front
-        if (value.includes('front') || value.includes('frente') || value.includes('avant') || value.includes('delante') || value.includes('前') || value.includes('depan') || value.includes('หน้า')) return 'front';
-        // Mid
-        if (value.includes('mid') || value.includes('meio') || value.includes('medio') || value.includes('centre') || value.includes('centro') || value.includes('milieu') || value.includes('中') || value.includes('tengah') || value.includes('กลาง')) return 'mid';
-        // Back
-        if (value.includes('back') || value.includes('trás') || value.includes('tras') || value.includes('arrière') || value.includes('fundo') || value.includes('atrás') || value.includes('fondo') || value.includes('后') || value.includes('belakang') || value.includes('หลัง')) return 'back';
-
-        return 'front';
-    };
+    // normalizeRow moved to module scope
 
     const getRowSlots = (row) => {
         if (row === 'front') return ['front1', 'front2', 'front3'];
