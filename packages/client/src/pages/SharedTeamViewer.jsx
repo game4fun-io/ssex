@@ -93,12 +93,13 @@ const SharedTeamViewer = () => {
     const [artifacts, setArtifacts] = useState([]);
     const [cards, setCards] = useState([]);
 
-    const getLoc = useCallback((data) => {
+    const getLoc = (data) => {
         if (!data) return '';
         if (typeof data === 'string') return data;
         const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
-    }, [i18n.language]);
+        // Strict fallback: Current Lang -> English -> Empty
+        return (data[lang] && data[lang].trim()) ? data[lang] : (data['en'] || '');
+    };
 
     useEffect(() => {
         const fetchData = async () => {

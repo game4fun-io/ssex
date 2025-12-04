@@ -208,6 +208,32 @@
             "uploadError": "Failed to upload avatar",
             "updateSuccess": "Profile updated successfully",
             "updateError": "Failed to update profile"
+        },
+        "factions": {
+            "athena": "Athena's Saints",
+            "hades": "Hades' Army",
+            "poseidon": "Poseidon's Marinas",
+            "asgard": "Asgard God Warriors",
+            "other": "Other"
+        },
+        "roles": {
+            "tank": "Tank",
+            "warrior": "Warrior",
+            "assassin": "Assassin",
+            "support": "Support",
+            "skill": "Skill",
+            "mage": "Mage",
+            "other": "Other"
+        },
+        "rows": {
+            "front": "Front",
+            "mid": "Middle",
+            "back": "Back"
+        },
+        "attackTypes": {
+            "physical": "Physical",
+            "magical": "Cosmo",
+            "other": "Other"
         }
     }
 }

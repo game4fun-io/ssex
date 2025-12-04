@@ -37,14 +37,17 @@ const Characters = () => {
                 const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
                 const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
                 setCharacters(sorted);
+
                 setFilteredCharacters(sorted);
 
                 // Extract unique values for filters based on current language
-                const uniqueRarities = [...new Set(res.data.map(c => c.rarity))].filter(Boolean).sort();
-                const uniqueFactions = [...new Set(res.data.map(c => getLoc(c.faction)))].filter(Boolean).sort();
-                const uniquePositionings = [...new Set(res.data.map(c => getLoc(c.positioning)))].filter(Boolean).sort();
-                const uniqueCombatPositions = [...new Set(res.data.map(c => getLoc(c.combatPosition)))].filter(Boolean).sort();
-                const uniqueAttackTypes = [...new Set(res.data.map(c => getLoc(c.attackType)))].filter(Boolean).sort();
+                const uniqueRarities = ['N', 'R', 'SR', 'SSR', 'UR'];
+                // We use stable keys now, but for the UI dropdowns we might want to iterate over available keys or just hardcode the known ones
+                // For now, let's use the keys present in the data to be safe, or hardcode if we want specific order
+                const uniqueFactions = [...new Set(res.data.map(c => c.factionKey))].filter(Boolean).sort();
+                const uniquePositionings = ['front', 'mid', 'back']; // Stable rows
+                const uniqueCombatPositions = [...new Set(res.data.map(c => c.roleKey))].filter(Boolean).sort();
+                const uniqueAttackTypes = [...new Set(res.data.map(c => c.attackTypeKey))].filter(Boolean).sort();
 
                 setOptions({
                     rarities: uniqueRarities,
@@ -67,15 +70,26 @@ const Characters = () => {
     useEffect(() => {
         let result = characters;
 
+
         // Search Filter (>= 3 chars)
         if (searchTerm.length >= 3) {
             result = result.filter(c => getLoc(c.name).toLowerCase().includes(searchTerm.toLowerCase()));
         }
 
         if (filters.rarity) result = result.filter(c => c.rarity === filters.rarity);
-        if (filters.faction) result = result.filter(c => getLoc(c.faction) === filters.faction);
-        if (filters.positioning) result = result.filter(c => getLoc(c.positioning) === filters.positioning);
-        if (filters.combatPosition) result = result.filter(c => getLoc(c.combatPosition) === filters.combatPosition);
+        if (filters.faction) {
+
+            result = result.filter(c => c.factionKey === filters.faction);
+        }
+        if (filters.positioning) {
+
+            result = result.filter(c => c.row === filters.positioning); // Using row for positioning
+        }
+        if (filters.combatPosition) {
+
+            result = result.filter(c => c.roleKey === filters.combatPosition);
+        }
+
 
         setFilteredCharacters(result);
     }, [filters, characters, searchTerm, i18n.language]);
@@ -97,7 +111,8 @@ const Characters = () => {
         if (!data) return '';
         if (typeof data === 'string') return data;
         const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
+        // Strict fallback: Current Lang -> English -> Empty (No random languages)
+        return (data[lang] && data[lang].trim()) ? data[lang] : (data['en'] || '');
     };
 
     const toggleVisibility = async (e, char) => {
@@ -153,21 +168,21 @@ const Characters = () => {
                             <label className="block text-xs text-gray-400 mb-1">{t('faction')}</label>
                             <select name="faction" value={filters.faction} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
                                 <option value="">{t('all')}</option>
-                                {options.factions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                                {options.factions.map(opt => <option key={opt} value={opt}>{t(`factions.${opt}`) || opt}</option>)}
                             </select>
                         </div>
                         <div>
                             <label className="block text-xs text-gray-400 mb-1">{t('position')}</label>
                             <select name="positioning" value={filters.positioning} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
                                 <option value="">{t('all')}</option>
-                                {options.positionings.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                                {options.positionings.map(opt => <option key={opt} value={opt}>{t(`rows.${opt}`) || opt}</option>)}
                             </select>
                         </div>
                         <div>
                             <label className="block text-xs text-gray-400 mb-1">{t('role')}</label>
                             <select name="combatPosition" value={filters.combatPosition} onChange={handleFilterChange} className="bg-gray-700 text-white p-2 rounded text-sm border border-gray-600 focus:border-yellow-500 outline-none min-w-[120px]">
                                 <option value="">{t('all')}</option>
-                                {options.combatPositions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                                {options.combatPositions.map(opt => <option key={opt} value={opt}>{t(`roles.${opt}`) || opt}</option>)}
                             </select>
                         </div>
                         <button onClick={clearFilters} className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded text-sm border border-gray-600 transition h-[38px]">{t('clear')}</button>
@@ -223,22 +238,22 @@ const Characters = () => {
                                             ))}
                                         </div>
 
-                                        <div className="grid grid-cols-2 gap-y-2 gap-x-1 text-xs text-gray-400">
-                                            <div className="flex items-center gap-1" title="Faction">
+                                        <div className="grid grid-cols-2 gap-2 mt-3 text-xs text-gray-400">
+                                            <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                                {getLoc(char.faction)}
+                                                <span className="truncate" title={t('faction')}>{t(`factions.${char.factionKey}`)}</span>
                                             </div>
-                                            <div className="flex items-center gap-1" title="Role">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                                                {getLoc(char.combatPosition)}
-                                            </div>
-                                            <div className="flex items-center gap-1" title="Position">
+                                            <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                                {getLoc(char.positioning)}
+                                                <span className="truncate" title={t('role')}>{t(`roles.${char.roleKey}`)}</span>
                                             </div>
-                                            <div className="flex items-center gap-1" title="Attack Type">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                                {getLoc(char.attackType)}
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+                                                <span className="truncate" title={t('position')}>{t(`rows.${char.row}`)}</span>
+                                            </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                                <span className="truncate" title={t('attackType')}>{t(`attackTypes.${char.attackTypeKey}`)}</span>
                                             </div>
                                         </div>
                                     </div>
