@@ -85,7 +85,8 @@ const CharacterDetails = () => {
         if (!data) return '';
         if (typeof data === 'string') return data;
         const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
+        // Strict fallback: Current Lang -> English -> Empty
+        return (data[lang] && data[lang].trim()) ? data[lang] : (data['en'] || '');
     };
 
     const updateLoc = (value, field, obj = editedCharacter) => {
@@ -258,10 +259,10 @@ const CharacterDetails = () => {
                                 </>
                             ) : (
                                 <>
-                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.faction)}</span>
-                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.combatPosition)}</span>
-                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{getLoc(character.positioning)}</span>
-                                    <span className="bg-red-900 px-3 py-1 rounded text-sm">{getLoc(character.attackType)}</span>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{t(`factions.${character.factionKey}`)}</span>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{t(`roles.${character.roleKey}`)}</span>
+                                    <span className="bg-gray-700 px-3 py-1 rounded text-sm">{t(`rows.${character.row}`)}</span>
+                                    <span className="bg-red-900 px-3 py-1 rounded text-sm">{t(`attackTypes.${character.attackTypeKey}`)}</span>
                                 </>
                             )}
 

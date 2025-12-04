@@ -9,18 +9,6 @@ const rarityScore = (rarity) => {
     return order[rarity] || 0;
 };
 
-const normalizeRow = (positioning) => {
-    const value = (positioning || '').toLowerCase();
-    // Front
-    if (value.includes('front') || value.includes('frente') || value.includes('avant') || value.includes('delante') || value.includes('前') || value.includes('depan') || value.includes('หน้า')) return 'front';
-    // Mid
-    if (value.includes('mid') || value.includes('meio') || value.includes('medio') || value.includes('centre') || value.includes('centro') || value.includes('milieu') || value.includes('中') || value.includes('tengah') || value.includes('กลาง')) return 'mid';
-    // Back
-    if (value.includes('back') || value.includes('trás') || value.includes('tras') || value.includes('arrière') || value.includes('fundo') || value.includes('atrás') || value.includes('fondo') || value.includes('后') || value.includes('belakang') || value.includes('หลัง')) return 'back';
-
-    return 'front';
-};
-
 const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
     <div
         className={`
@@ -42,12 +30,6 @@ const CharacterCard = ({ char, getLoc, onAddMain, onAddSupport, disabled }) => (
                     'bg-blue-600'
             }`}>
             {char.rarity}
-        </div>
-        <div className={`absolute top-1 left-1 text-[7px] md:text-[8px] px-1 rounded text-white font-bold uppercase ${normalizeRow(getLoc(char.positioning)) === 'front' ? 'bg-red-500' :
-                normalizeRow(getLoc(char.positioning)) === 'mid' ? 'bg-green-500' :
-                    'bg-blue-500'
-            }`}>
-            {normalizeRow(getLoc(char.positioning)).charAt(0)}
         </div>
 
         {/* Hover Overlay */}
@@ -229,7 +211,7 @@ const BondModal = ({ bond, onClose, getLoc }) => {
                 <button onClick={onClose} className="absolute top-2 right-2 text-gray-400 hover:text-white">✕</button>
                 <h3 className="text-xl font-bold text-yellow-500 mb-2">{bond.bondName}</h3>
                 <div className="bg-gray-800 p-3 rounded border border-gray-700 mb-4">
-                    <p className="text-sm text-gray-200">{bond.effect || 'Check seiya2.vercel.app'}</p>
+                    <p className="text-sm text-gray-200">{bond.effect || 'No effect description.'}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                     {bond.partnersData.map((p, idx) => (
@@ -289,12 +271,13 @@ const TeamBuilder = () => {
     });
 
     // Helpers
-    const getLoc = useCallback((data) => {
+    const getLoc = (data) => {
         if (!data) return '';
         if (typeof data === 'string') return data;
         const lang = i18n.language ? i18n.language.split('-')[0].toLowerCase() : 'en';
-        return data[lang] || data['en'] || '';
-    }, [i18n.language]);
+        // Strict fallback: Current Lang -> English -> Empty
+        return (data[lang] && data[lang].trim()) ? data[lang] : (data['en'] || '');
+    };
 
     // Fetch Data
     useEffect(() => {
@@ -315,10 +298,10 @@ const TeamBuilder = () => {
                 setCards(sortedCards);
 
                 // Extract Options
-                const uniqueRarities = [...new Set(sortedChars.map(c => c.rarity))].filter(Boolean).sort();
-                const uniqueFactions = [...new Set(sortedChars.map(c => getLoc(c.faction)))].filter(Boolean).sort();
-                const uniquePositionings = [...new Set(sortedChars.map(c => getLoc(c.positioning)))].filter(Boolean).sort();
-                const uniqueCombatPositions = [...new Set(sortedChars.map(c => getLoc(c.combatPosition)))].filter(Boolean).sort();
+                const uniqueRarities = ['N', 'R', 'SR', 'SSR', 'UR'];
+                const uniqueFactions = [...new Set(sortedChars.map(c => c.factionKey))].filter(Boolean).sort();
+                const uniquePositionings = ['front', 'mid', 'back'];
+                const uniqueCombatPositions = [...new Set(sortedChars.map(c => c.roleKey))].filter(Boolean).sort();
 
                 setOptions({
                     rarities: uniqueRarities,
@@ -373,7 +356,8 @@ const TeamBuilder = () => {
     };
 
     // --- Team Logic ---
-    // normalizeRow moved to module scope
+    // normalizeRow removed - using char.row directly
+
 
     const getRowSlots = (row) => {
         if (row === 'front') return ['front1', 'front2', 'front3'];
@@ -429,7 +413,8 @@ const TeamBuilder = () => {
         }
 
         // Main Team Logic
-        const row = normalizeRow(getLoc(char.positioning));
+        const row = char.row || 'front'; // Fallback to front if missing
+
         const slots = getRowSlots(row);
 
         // Get existing chars in this row
@@ -623,9 +608,9 @@ const TeamBuilder = () => {
     const filteredCharacters = characters.filter(c => {
         const nameMatch = getLoc(c.name).toLowerCase().includes(searchTerm.toLowerCase());
         const rarityMatch = filters.rarity ? c.rarity === filters.rarity : true;
-        const factionMatch = filters.faction ? getLoc(c.faction) === filters.faction : true;
-        const posMatch = filters.positioning ? getLoc(c.positioning) === filters.positioning : true;
-        const roleMatch = filters.combatPosition ? getLoc(c.combatPosition) === filters.combatPosition : true;
+        const factionMatch = filters.faction ? c.factionKey === filters.faction : true;
+        const posMatch = filters.positioning ? c.row === filters.positioning : true;
+        const roleMatch = filters.combatPosition ? c.roleKey === filters.combatPosition : true;
         return nameMatch && rarityMatch && factionMatch && posMatch && roleMatch;
     });
 
@@ -695,15 +680,15 @@ const TeamBuilder = () => {
                                 </select>
                                 <select name="faction" value={filters.faction} onChange={handleFilterChange} className="bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs focus:border-yellow-500 outline-none">
                                     <option value="">{t('allFactions')}</option>
-                                    {options.factions.map(f => <option key={f} value={f}>{f}</option>)}
+                                    {options.factions.map(f => <option key={f} value={f}>{t(`factions.${f}`) || f}</option>)}
                                 </select>
                                 <select name="positioning" value={filters.positioning} onChange={handleFilterChange} className="bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs focus:border-yellow-500 outline-none">
                                     <option value="">{t('allPositions')}</option>
-                                    {options.positionings.map(p => <option key={p} value={p}>{p}</option>)}
+                                    {options.positionings.map(p => <option key={p} value={p}>{t(`rows.${p}`) || p}</option>)}
                                 </select>
                                 <select name="combatPosition" value={filters.combatPosition} onChange={handleFilterChange} className="bg-gray-900 border border-gray-700 rounded px-2 py-1 text-xs focus:border-yellow-500 outline-none">
                                     <option value="">{t('allRoles')}</option>
-                                    {options.combatPositions.map(c => <option key={c} value={c}>{c}</option>)}
+                                    {options.combatPositions.map(c => <option key={c} value={c}>{t(`roles.${c}`) || c}</option>)}
                                 </select>
                             </div>
                         </div>
@@ -809,7 +794,7 @@ const TeamBuilder = () => {
                                                 </div>
                                                 <div className="font-bold text-yellow-400 text-sm truncate">{bond.bondName}</div>
                                             </div>
-                                            <div className="text-xs text-gray-400 line-clamp-2">{bond.effect || 'Check seiya2.vercel.app'}</div>
+                                            <div className="text-xs text-gray-400 line-clamp-2">{bond.effect || 'No effect description.'}</div>
                                         </div>
                                     ))}
                                 </div>

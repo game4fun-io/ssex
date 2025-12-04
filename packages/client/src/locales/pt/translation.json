@@ -167,6 +167,32 @@
             "error": {
                 "invalidCredentials": "Credenciais inválidas"
             }
+        },
+        "factions": {
+            "athena": "Cavaleiros de Athena",
+            "hades": "Exército de Hades",
+            "poseidon": "Marinas de Poseidon",
+            "asgard": "Guerreiros Deuses de Asgard",
+            "other": "Outro"
+        },
+        "roles": {
+            "tank": "Tanque",
+            "warrior": "Guerreiro",
+            "assassin": "Assassino",
+            "support": "Suporte",
+            "skill": "Habilidade",
+            "mage": "Mago",
+            "other": "Outro"
+        },
+        "rows": {
+            "front": "Frente",
+            "mid": "Meio",
+            "back": "Trás"
+        },
+        "attackTypes": {
+            "physical": "Físico",
+            "magical": "Cosmo",
+            "other": "Outro"
         }
     }
 }

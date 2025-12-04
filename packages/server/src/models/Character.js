@@ -15,16 +15,18 @@ const CharacterSchema = new mongoose.Schema({
     name: { type: LocalizedString, required: true },
     rarity: { type: String, enum: ['N', 'R', 'SR', 'SSR', 'UR'], default: 'R' },
     tags: [{ type: String }],
-    faction: { type: LocalizedString, default: {} }, // Camp
 
     // New Fields from scraping
     constellation: { type: LocalizedString },
     cv_name: { type: LocalizedString },
     quality: { type: Number },
 
-    combatPosition: { type: LocalizedString, default: {} }, // Default for now
-    positioning: { type: LocalizedString, default: {} },
-    attackType: { type: LocalizedString, default: {} },
+    row: { type: String, enum: ['front', 'mid', 'back'], default: 'front' },
+
+    // Stable Filter Keys
+    factionKey: { type: String, default: 'other' },
+    roleKey: { type: String, default: 'other' },
+    attackTypeKey: { type: String, default: 'other' },
 
     stats: {
         hp: { type: Number, default: 0 },

@@ -18,8 +18,6 @@ services:
       - redis
     networks:
       - test-net
-    networks:
-      - test-net
 
   mongo:
     image: mongo:latest
