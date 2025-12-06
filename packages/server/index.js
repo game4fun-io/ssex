@@ -53,12 +53,27 @@ mongoose.connect(process.env.MONGO_URI)
 const User = require('./src/models/User');
 const bcrypt = require('bcryptjs');
 
+/**
+ * Determines the base URL for the application.
+ * Priority is given to the SITE_URL environment variable if set,
+ * otherwise constructs it from the request protocol and host.
+ * 
+ * @param {Object} req - Express request object
+ * @returns {string} The base URL without trailing slash
+ */
 const getBaseUrl = (req) => {
     const envUrl = process.env.SITE_URL;
     if (envUrl) return envUrl.replace(/\/$/, '');
     return `${req.protocol}://${req.get('host')}`;
 };
 
+/**
+ * Array of routes to include in the sitemap.xml file.
+ * These routes represent the main pages of the application
+ * that should be indexed by search engines.
+ * 
+ * @type {string[]}
+ */
 const sitemapRoutes = [
     '/',
     '/news',
@@ -72,6 +87,14 @@ const sitemapRoutes = [
     '/register'
 ];
 
+/**
+ * Builds an XML sitemap for the application based on predefined routes.
+ * The sitemap follows the sitemaps.org protocol and includes location,
+ * change frequency, and priority for each URL.
+ * 
+ * @param {Object} req - Express request object used to determine the base URL
+ * @returns {string} Complete XML sitemap as a string
+ */
 const buildSitemapXml = (req) => {
     const base = getBaseUrl(req);
     const urls = sitemapRoutes.map((route) => `  <url>\n    <loc>${base}${route}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${route === '/' ? '1.0' : '0.7'}</priority>\n  </url>`).join('\n');
