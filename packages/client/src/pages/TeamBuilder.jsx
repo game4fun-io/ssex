@@ -831,21 +831,28 @@ const TeamBuilder = () => {
                         <h1 className="text-2xl font-bold text-yellow-500">{t('teamBuilder')}</h1>
                         <p className="text-gray-400 text-xs">{t('buildYourDreamTeam')}</p>
                     </div>
-                    <div className="flex gap-2">
-                        <button onClick={saveComp} disabled={!user || viewMode} className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 rounded text-sm font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                            {t('save')}
-                        </button>
-                        <button onClick={generateShareLink} className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded text-sm font-bold transition-colors">
-                            {t('share')}
-                        </button>
-                        <button onClick={() => setIsPublishModalOpen(true)} disabled={!user} className={`px-4 py-2 rounded text-sm font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${editingCompId ? 'bg-green-700 hover:bg-green-600' : 'bg-green-600 hover:bg-green-500'}`}>
-                            {editingCompId ? 'Update' : 'Publish'}
-                        </button>
-                        {user && (
-                            <button onClick={() => setShowMyComps(true)} className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm font-bold transition-colors">
-                                {t('load')}
+                    <div className="flex gap-4">
+                        {/* Management Group */}
+                        <div className="flex gap-2">
+                            <button onClick={saveComp} disabled={!user || viewMode} className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 rounded text-sm font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                {t('save')}
                             </button>
-                        )}
+                            {user && (
+                                <button onClick={() => setShowMyComps(true)} className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm font-bold transition-colors">
+                                    {t('load')}
+                                </button>
+                            )}
+                        </div>
+
+                        {/* Distribution Group */}
+                        <div className="flex gap-2 border-l border-gray-700 pl-4">
+                            <button onClick={generateShareLink} className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded text-sm font-bold transition-colors">
+                                {t('shareURL')}
+                            </button>
+                            <button onClick={() => setIsPublishModalOpen(true)} disabled={!user} className={`px-4 py-2 rounded text-sm font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${editingCompId ? 'bg-green-700 hover:bg-green-600' : 'bg-green-600 hover:bg-green-500'}`}>
+                                {editingCompId ? t('updateComp') : t('publishGuide')}
+                            </button>
+                        </div>
                     </div>
                 </div>
 
