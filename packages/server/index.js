@@ -53,6 +53,31 @@ mongoose.connect(process.env.MONGO_URI)
 const User = require('./src/models/User');
 const bcrypt = require('bcryptjs');
 
+const getBaseUrl = (req) => {
+    const envUrl = process.env.SITE_URL;
+    if (envUrl) return envUrl.replace(/\/$/, '');
+    return `${req.protocol}://${req.get('host')}`;
+};
+
+const sitemapRoutes = [
+    '/',
+    '/news',
+    '/characters',
+    '/team-builder',
+    '/artifacts',
+    '/force-cards',
+    '/community-comps',
+    '/proposals',
+    '/login',
+    '/register'
+];
+
+const buildSitemapXml = (req) => {
+    const base = getBaseUrl(req);
+    const urls = sitemapRoutes.map((route) => `  <url>\n    <loc>${base}${route}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${route === '/' ? '1.0' : '0.7'}</priority>\n  </url>`).join('\n');
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+};
+
 const createAdminUser = async () => {
     try {
         const email = process.env.ADMIN_EMAIL;
@@ -101,6 +126,15 @@ app.use('/api/config', require('./src/routes/config'));
 app.use('/api/share', require('./src/routes/share'));
 app.use('/api/upload', require('./src/routes/upload'));
 app.use('/api/community-comps', require('./src/routes/communityComps'));
+
+app.get('/robots.txt', (req, res) => {
+    const base = getBaseUrl(req);
+    res.type('text/plain').send(`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml').send(buildSitemapXml(req));
+});
 
 
 
