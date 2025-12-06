@@ -9,7 +9,8 @@ COPY packages/client/package.json ./packages/client/
 COPY packages/server/package.json ./packages/server/
 
 # Install dependencies (force dev deps for build tools like vite)
-RUN npm install --include=dev
+# Legacy peer deps needed because react-helmet-async peer range stops at React 18.
+RUN npm install --include=dev --legacy-peer-deps
 
 # Copy source code
 COPY . .
