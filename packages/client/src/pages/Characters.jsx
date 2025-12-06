@@ -33,7 +33,7 @@ const Characters = () => {
     useEffect(() => {
         const fetchCharacters = async () => {
             try {
-                const res = await api.get('/characters?v=1.6.12');
+                const res = await api.get(`/characters?v=${__APP_VERSION__}`);
                 const order = { UR: 5, SSR: 4, SR: 3, R: 2, N: 1 };
                 const sorted = (res.data || []).slice().sort((a, b) => (order[b.rarity] || 0) - (order[a.rarity] || 0));
                 setCharacters(sorted);
