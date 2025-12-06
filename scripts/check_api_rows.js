@@ -1,8 +1,11 @@
 const https = require('https');
 
 const url = 'https://seiyaexcompanion.games4fun.io/api/characters';
+const options = {
+    headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
+};
 
-https.get(url, (res) => {
+https.get(url, options, (res) => {
     let data = '';
 
     res.on('data', (chunk) => {

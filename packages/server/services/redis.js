@@ -21,6 +21,7 @@ client.on('connect', () => console.log('Redis Client Connected'));
 const DEFAULT_EXPIRATION = 3600; // 1 hour
 
 const get = async (key) => {
+    if (!client.isOpen) return null;
     try {
         const data = await client.get(key);
         if (data) {
@@ -34,6 +35,7 @@ const get = async (key) => {
 };
 
 const set = async (key, value, expiration = DEFAULT_EXPIRATION) => {
+    if (!client.isOpen) return;
     try {
         await client.setEx(key, expiration, JSON.stringify(value));
     } catch (error) {
@@ -42,6 +44,7 @@ const set = async (key, value, expiration = DEFAULT_EXPIRATION) => {
 };
 
 const del = async (key) => {
+    if (!client.isOpen) return;
     try {
         await client.del(key);
     } catch (error) {
