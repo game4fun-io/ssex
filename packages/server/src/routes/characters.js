@@ -28,7 +28,9 @@ router.get('/', async (req, res) => {
 // Get single character
 router.get('/:id', cache(3600), async (req, res) => {
     try {
-        const character = await Character.findById(req.params.id);
+        const character = await Character.findById(req.params.id)
+            .populate('recommendations.cards.cardId')
+            .populate('recommendations.artifacts.artifactId');
         if (!character) {
             return res.status(404).json({ msg: 'Character not found' });
         }

@@ -1,3 +1,4 @@
+require('dotenv').config({ path: './packages/server/.env' });
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
@@ -175,6 +176,44 @@ const mapBonds = (relationId, relationConfig, fettersConfig, roleConfig, langPac
     }).filter(b => b !== null);
 };
 
+const mapCombineSkills = (relationId, relationConfig, relationSkillConfig, skillConfig, skillValueConfig, roleConfig, langPackages) => {
+    if (!relationId) return [];
+
+    const relation = relationConfig.find(r => r.id === relationId);
+    if (!relation || !relation.combine_skill_list) return [];
+
+    return relation.combine_skill_list.map(skillId => {
+        // Find relation skill definition (partners)
+        const relSkill = relationSkillConfig.find(r => r.skill_id === skillId);
+        // Find actual skill definition (name, description, icon)
+        const skill = skillConfig.find(s => s.skillid === skillId);
+
+        if (!relSkill || !skill) return null;
+
+        // Resolve description
+        let description = {};
+        if (skill.skill_des && skill.skill_des.length > 0) {
+            description = resolveSkillDescription(skill.skill_des[0].des, skill.skill_des[0].value, skillValueConfig, langPackages);
+        }
+
+        // Map partners
+        const partners = relSkill.hero_list.map(targetId => {
+            const targetRole = roleConfig.find(r => r.id === targetId);
+            return getLocalized(targetRole ? targetRole.rolename_short : '', langPackages);
+        });
+
+        return {
+            skillId: skillId,
+            name: getLocalized(skill.name, langPackages),
+            description: description,
+            iconUrl: skill.iconpath
+                ? `https://seiya2.vercel.app/assets/resources/textures/hero/skillicon/texture/${skill.iconpath.split('/').pop()}.png`
+                : '',
+            partners: partners
+        };
+    }).filter(s => s !== null);
+};
+
 const mapRarity = (quality) => {
     switch (quality) {
         case 1: return 'N';
@@ -268,6 +307,7 @@ const migrate = async () => {
         const forceCardConfig = loadJSON('EN', 'ForceCardItemConfig.json');
         const artifactResourcesConfig = loadJSON('EN', 'ArtifactResourcesConfig.json');
         const skillLabelConfig = loadJSON('EN', 'SkillLabelConfig.json');
+        const relationSkillConfig = loadJSON('EN', 'HeroRelationSkillConfig.json');
 
         console.log(`Loaded ${roleConfig.length} roles, ${heroConfig.length} heroes, ${skillConfig.length} skills`);
         console.log(`Loaded ${artifactConfig.length} artifacts, ${forceCardConfig.length} force cards`);
@@ -302,6 +342,7 @@ const migrate = async () => {
                 },
                 skills: mapSkills(role.skills, skillConfig, skillValueConfig, langPackages),
                 bonds: mapBonds(role.id, relationConfig, fettersConfig, roleConfig, langPackages),
+                combineSkills: mapCombineSkills(role.id, relationConfig, relationSkillConfig, skillConfig, skillValueConfig, roleConfig, langPackages),
                 constellation: getLocalized(role.role_constellation_name, langPackages),
                 cv_name: getLocalized(role.cvname, langPackages),
                 quality: role.quality,

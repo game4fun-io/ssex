@@ -28,6 +28,12 @@ const CharacterSchema = new mongoose.Schema({
     roleKey: { type: String, default: 'other' },
     attackTypeKey: { type: String, default: 'other' },
 
+    // Display Fields
+    faction: { type: LocalizedString },
+    combatPosition: { type: LocalizedString },
+    positioning: { type: LocalizedString },
+    attackType: { type: LocalizedString },
+
     stats: {
         hp: { type: Number, default: 0 },
         atk: { type: Number, default: 0 },
@@ -64,11 +70,35 @@ const CharacterSchema = new mongoose.Schema({
         isActive: { type: Boolean, default: false }
     }],
 
+    combineSkills: [{
+        skillId: { type: Number },
+        name: { type: LocalizedString },
+        description: { type: LocalizedString },
+        iconUrl: { type: String },
+        partners: [{ type: LocalizedString }]
+    }],
+
+
     imageUrl: { type: String, default: '' },
     avatarUrl: { type: String, default: '' },
     description: { type: LocalizedString },
     collection: { type: String },
-    isVisible: { type: Boolean, default: true }
+    isVisible: { type: Boolean, default: true },
+
+    recommendations: {
+        cards: [{
+            cardId: { type: mongoose.Schema.Types.ObjectId, ref: 'ForceCard' },
+            note: { type: LocalizedString },
+            isF2P: { type: Boolean, default: false },
+            priority: { type: Number, default: 0 } // 0 = Core, 1 = Alternative
+        }],
+        artifacts: [{
+            artifactId: { type: mongoose.Schema.Types.ObjectId, ref: 'Artifact' },
+            note: { type: LocalizedString },
+            isF2P: { type: Boolean, default: false },
+            priority: { type: Number, default: 0 }
+        }]
+    }
 });
 
 module.exports = mongoose.model('Character', CharacterSchema);

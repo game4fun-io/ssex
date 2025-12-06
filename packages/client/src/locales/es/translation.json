@@ -188,6 +188,16 @@
             "error": {
                 "invalidCredentials": "Credenciales inválidas"
             }
+        },
+        "visualGuide": {
+            "title": "Guía Visual",
+            "createComp": "Crear Comp",
+            "teamComposition": "Composición del Equipo",
+            "activeBonds": "Vínculos Activos",
+            "noActiveBonds": "No se encontraron vínculos activos en esta composición.",
+            "descriptionStrategy": "Descripción y Estrategia",
+            "backToComps": "Volver a Comps",
+            "byAuthor": "Por {{author}}"
         }
     }
 }

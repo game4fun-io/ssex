@@ -55,6 +55,8 @@ const guessLocalPath = (objectName) => {
     const candidates = [
         path.join(base, 'assets', objectName),
         path.join(base, objectName),
+        path.join(__dirname, '../../../assets', objectName), // Check root scraper output
+        path.join(__dirname, '../../../assets/resources/textures', objectName) // Check deep scraper output if needed
     ];
     return candidates.find((p) => fs.existsSync(p)) || null;
 };
@@ -218,7 +220,7 @@ const run = async () => {
         console.error('Error during fillMissingAssets:', err);
         process.exitCode = 1;
     } finally {
-        await mongoose.disconnect().catch(() => {});
+        await mongoose.disconnect().catch(() => { });
     }
 };
 

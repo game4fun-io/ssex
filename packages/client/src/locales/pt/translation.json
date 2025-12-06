@@ -193,6 +193,16 @@
             "physical": "Físico",
             "magical": "Cosmo",
             "other": "Outro"
+        },
+        "visualGuide": {
+            "title": "Guia Visual",
+            "createComp": "Criar Comp",
+            "teamComposition": "Composição do Time",
+            "activeBonds": "Laços Ativos",
+            "noActiveBonds": "Nenhum laço ativo encontrado nesta composição.",
+            "descriptionStrategy": "Descrição e Estratégia",
+            "backToComps": "Voltar para Comps",
+            "byAuthor": "Por {{author}}"
         }
     }
 }

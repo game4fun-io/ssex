@@ -199,6 +199,8 @@
         },
         "imageUpload": "Upload Image",
         "imageUrlPlaceholder": "Or enter Image URL",
+        "statsAndSkills": "Stats & Skills",
+        "activeCombineSkills": "Active Combine Skills",
         "basicStats": "Basic Stats",
         "specialStats": "Special Stats",
         "bonds": "Bonds",
@@ -234,6 +236,16 @@
             "physical": "Physical",
             "magical": "Cosmo",
             "other": "Other"
+        },
+        "visualGuide": {
+            "title": "Visual Guide",
+            "createComp": "Create Comp",
+            "teamComposition": "Team Composition",
+            "activeBonds": "Active Bonds",
+            "noActiveBonds": "No active bonds found in this composition.",
+            "descriptionStrategy": "Description & Strategy",
+            "backToComps": "Back to Comps",
+            "byAuthor": "By {{author}}"
         }
     }
 }

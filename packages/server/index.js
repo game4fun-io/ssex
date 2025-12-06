@@ -1,10 +1,11 @@
 const dotenv = require('dotenv');
-dotenv.config();
+const path = require('path');
+dotenv.config({ path: path.join(__dirname, '.env') });
+console.log('JWT_SECRET loaded:', process.env.JWT_SECRET ? 'Yes' : 'No'); // Debug log
 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
 const session = require('express-session');
 const passport = require('./config/passport');
 const DiscordService = require('./services/DiscordService');
@@ -99,6 +100,7 @@ app.use('/api/community', require('./src/routes/community'));
 app.use('/api/config', require('./src/routes/config'));
 app.use('/api/share', require('./src/routes/share'));
 app.use('/api/upload', require('./src/routes/upload'));
+app.use('/api/community-comps', require('./src/routes/communityComps'));
 
 
 

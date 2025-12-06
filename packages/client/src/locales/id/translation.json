@@ -147,6 +147,16 @@
             "error": {
                 "invalidCredentials": "Kredensial tidak valid"
             }
+        },
+        "visualGuide": {
+            "title": "Panduan Visual",
+            "createComp": "Buat Komposisi",
+            "teamComposition": "Komposisi Tim",
+            "activeBonds": "Ikatan Aktif",
+            "noActiveBonds": "Tidak ada ikatan aktif ditemukan dalam komposisi ini.",
+            "descriptionStrategy": "Deskripsi & Strategi",
+            "backToComps": "Kembali ke Komposisi",
+            "byAuthor": "Oleh {{author}}"
         }
     }
 }

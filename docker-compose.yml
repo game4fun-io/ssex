@@ -11,7 +11,8 @@ services:
       - JWT_SECRET=${JWT_SECRET:-your_production_secret}
       - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@admin.com}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-your_secure_password}
-      - NODE_ENV=production
+      - ASSET_ROUTE=${ASSET_ROUTE:-/assets}
+      - ASSET_DIR=${ASSET_DIR:-/app/packages/server/public/assets}
       - MINIO_ENDPOINT=${MINIO_ENDPOINT}
       - MINIO_PORT=${MINIO_PORT}
       - MINIO_USE_SSL=${MINIO_USE_SSL}
@@ -19,20 +20,20 @@ services:
       - MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
       - MINIO_BUCKET=${MINIO_BUCKET}
       - MINIO_PUBLIC_HOST=${MINIO_PUBLIC_HOST}
-    depends_on:
-      - mongo
+    # depends_on:
+    #   - mongo
     networks:
       - default
       - coolify
     restart: always
 
-  mongo:
-    image: mongo:latest
-    ports:
-      - "${MONGO_PORT:-27018}:27017"
-    volumes:
-      - mongo-data:/data/db
-    restart: always
+  # mongo:
+  #   image: mongo:latest
+  #   ports:
+  #     - "${MONGO_PORT:-27018}:27017"
+  #   volumes:
+  #     - mongo-data:/data/db
+  #   restart: always
 
 volumes:
   mongo-data:

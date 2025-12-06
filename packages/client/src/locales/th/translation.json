@@ -146,6 +146,16 @@
             "error": {
                 "invalidCredentials": "ข้อมูลประจำตัวไม่ถูกต้อง"
             }
+        },
+        "visualGuide": {
+            "title": "คู่มือภาพ",
+            "createComp": "สร้างทีม",
+            "teamComposition": "ส่วนประกอบทีม",
+            "activeBonds": "พันธะที่ใช้งานอยู่",
+            "noActiveBonds": "ไม่พบพันธะที่ใช้งานอยู่ในทีมนี้",
+            "descriptionStrategy": "คำอธิบายและกลยุทธ์",
+            "backToComps": "กลับไปที่ทีม",
+            "byAuthor": "โดย {{author}}"
         }
     }
 }

@@ -5,6 +5,8 @@ dist
 build
 coverage
 temp_assets
+assets
+output
 .env.test
 *.archive
 *.bkp

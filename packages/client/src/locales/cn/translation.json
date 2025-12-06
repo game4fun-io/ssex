@@ -147,6 +147,16 @@
             "error": {
                 "invalidCredentials": "凭证无效"
             }
+        },
+        "visualGuide": {
+            "title": "视觉指南",
+            "createComp": "创建阵容",
+            "teamComposition": "队伍组成",
+            "activeBonds": "激活羁绊",
+            "noActiveBonds": "此阵容中未发现激活的羁绊。",
+            "descriptionStrategy": "描述与策略",
+            "backToComps": "返回阵容列表",
+            "byAuthor": "作者 {{author}}"
         }
     }
 }
