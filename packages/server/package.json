@@ -1,6 +1,6 @@
 {
     "name": "@ssex/server",
-    "version": "1.6.16",
+    "version": "1.6.17",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",

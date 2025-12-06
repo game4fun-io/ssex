@@ -22,7 +22,7 @@ class DiscordService {
                 intents: [GatewayIntentBits.Guilds]
             });
 
-            this.client.once('clientReady', () => {
+            this.client.once('ready', () => {
                 console.log(`DiscordService: Logged in as ${this.client.user.tag}`);
                 this.isConnected = true;
             });
