@@ -348,9 +348,9 @@ const TeamBuilder = () => {
         const fetchData = async () => {
             try {
                 const [charRes, artRes, cardRes] = await Promise.all([
-                    api.get('/characters'),
-                    api.get('/artifacts'),
-                    api.get('/force-cards')
+                    api.get('/characters?v=1.6.12'),
+                    api.get('/artifacts?v=1.6.12'),
+                    api.get('/force-cards?v=1.6.12')
                 ]);
 
                 const sortedChars = (charRes.data || []).slice().sort((a, b) => rarityScore(b.rarity) - rarityScore(a.rarity));

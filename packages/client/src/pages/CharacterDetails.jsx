@@ -30,8 +30,8 @@ const CharacterDetails = () => {
                 // Fetch current character and ALL characters for bond lookup in parallel
                 // Use Promise.all
                 const [charRes, allRes] = await Promise.all([
-                    api.get(`/characters/${id}`),
-                    api.get(`/characters`) // This is cached by browser/store usually, or we trust browser cache
+                    api.get(`/characters/${id}?v=1.6.12`),
+                    api.get(`/characters?v=1.6.12`) // This is cached by browser/store usually, or we trust browser cache
                 ]);
 
                 setCharacter(charRes.data);
@@ -54,8 +54,8 @@ const CharacterDetails = () => {
             const fetchData = async () => {
                 try {
                     const [cardsRes, artifactsRes] = await Promise.all([
-                        api.get('/force-cards'),
-                        api.get('/artifacts')
+                        api.get('/force-cards?v=1.6.12'),
+                        api.get('/artifacts?v=1.6.12')
                     ]);
                     setForceCards(cardsRes.data);
                     setArtifacts(artifactsRes.data);
