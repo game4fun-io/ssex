@@ -74,8 +74,28 @@ const sitemapRoutes = [
 
 const buildSitemapXml = (req) => {
     const base = getBaseUrl(req);
-    const urls = sitemapRoutes.map((route) => `  <url>\n    <loc>${base}${route}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>${route === '/' ? '1.0' : '0.7'}</priority>\n  </url>`).join('\n');
-    return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+    
+    const xmlHeader = '<?xml version="1.0" encoding="UTF-8"?>';
+    const urlsetOpen = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    const urlsetClose = '</urlset>';
+    
+    const urlEntries = sitemapRoutes.map((route) => {
+        const priority = route === '/' ? '1.0' : '0.7';
+        return [
+            '  <url>',
+            `    <loc>${base}${route}</loc>`,
+            '    <changefreq>weekly</changefreq>',
+            `    <priority>${priority}</priority>`,
+            '  </url>'
+        ].join('\n');
+    });
+    
+    return [
+        xmlHeader,
+        urlsetOpen,
+        ...urlEntries,
+        urlsetClose
+    ].join('\n');
 };
 
 const createAdminUser = async () => {
