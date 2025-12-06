@@ -175,7 +175,10 @@ def scrape(lang: str, download_assets: bool, out_dir: Path, assets_dir: Path) ->
             if table in tables:
                 continue
             print(f"Fetching table {table}...")
-            tables[table] = fetch_table(table)
+            try:
+                tables[table] = fetch_table(table)
+            except Exception as e:
+                print(f"Warning: Failed to fetch table {table}: {e}", file=sys.stderr)
 
     # Language table for translating LC_* keys
     lang_table = f"LanguagePackage_{lang.upper()}"

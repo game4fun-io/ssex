@@ -226,6 +226,67 @@ const BondModal = ({ bond, onClose, getLoc }) => {
     );
 };
 
+const PublishModal = ({ isOpen, onClose, onPublish, initialTitle, initialNotes, initialTags }) => {
+    const [title, setTitle] = useState(initialTitle);
+    const [description, setDescription] = useState(initialNotes);
+    const [tags, setTags] = useState(initialTags || '');
+
+    useEffect(() => {
+        setTitle(initialTitle);
+        setDescription(initialNotes);
+        setTags(initialTags || '');
+    }, [initialTitle, initialNotes, initialTags]);
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+            <div className="bg-gray-900 border border-yellow-600 rounded-lg p-6 max-w-md w-full relative shadow-2xl">
+                <button onClick={onClose} className="absolute top-2 right-2 text-gray-400 hover:text-white">✕</button>
+                <h3 className="text-xl font-bold text-yellow-500 mb-4">Publish to Community</h3>
+
+                <div className="space-y-4">
+                    <div>
+                        <label className="block text-sm text-gray-400 mb-1">Composition Title</label>
+                        <input
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            className="w-full bg-gray-800 border border-gray-700 rounded p-2 text-white"
+                            placeholder="e.g. Athena's Guard"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm text-gray-400 mb-1">Description / Strategy</label>
+                        <textarea
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            className="w-full bg-gray-800 border border-gray-700 rounded p-2 text-white h-32"
+                            placeholder="Explain how this team works..."
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm text-gray-400 mb-1">Tags (comma separated)</label>
+                        <input
+                            type="text"
+                            value={tags}
+                            onChange={(e) => setTags(e.target.value)}
+                            className="w-full bg-gray-800 border border-gray-700 rounded p-2 text-white"
+                            placeholder="e.g. PVP, PVE, Boss"
+                        />
+                    </div>
+                    <button
+                        onClick={() => onPublish({ title, description, tags: tags.split(',').map(t => t.trim()).filter(Boolean) })}
+                        className="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-2 rounded transition"
+                    >
+                        Publish
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const TeamBuilder = () => {
     const { t, i18n } = useTranslation();
     const { user } = useContext(AuthContext);
@@ -256,11 +317,14 @@ const TeamBuilder = () => {
     const [toast, setToast] = useState(null);
     const [compName, setCompName] = useState('');
     const [notes, setNotes] = useState('');
+    const [tags, setTags] = useState('');
     const [shareLink, setShareLink] = useState('');
     const [viewMode, setViewMode] = useState(false);
     const [showMyComps, setShowMyComps] = useState(false);
     const [savedComps, setSavedComps] = useState([]);
     const [selectedBond, setSelectedBond] = useState(null);
+    const [isPublishModalOpen, setIsPublishModalOpen] = useState(false);
+    const [editingCompId, setEditingCompId] = useState(null);
 
     // Team State
     const [team, setTeam] = useState({
@@ -345,6 +409,52 @@ const TeamBuilder = () => {
         }
     }, [hash, location.search, characters]); // eslint-disable-line
 
+    // Handle Edit Mode
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const editId = params.get('edit');
+        if (editId && characters.length > 0) {
+            setEditingCompId(editId);
+            const fetchComp = async () => {
+                try {
+                    const res = await api.get(`/community-comps/${editId}`);
+                    const comp = res.data;
+                    setCompName(comp.title);
+                    setNotes(typeof comp.description === 'string' ? comp.description : (comp.description?.en || ''));
+                    if (comp.tags) {
+                        setTags(comp.tags.join(', '));
+                    }
+
+                    const newTeam = {
+                        front1: null, front2: null, front3: null,
+                        mid1: null, mid2: null, mid3: null,
+                        back1: null, back2: null, back3: null,
+                        support1: null, support2: null
+                    };
+
+                    comp.characters.forEach(entry => {
+                        if (entry.slot && newTeam.hasOwnProperty(entry.slot)) {
+                            const charId = entry.character._id || entry.character;
+                            const char = characters.find(c => c._id === charId) || entry.character;
+
+                            newTeam[entry.slot] = {
+                                character: char,
+                                relicId: entry.relic?._id || entry.relic,
+                                cardIds: (entry.cards || []).map(c => c._id || c)
+                            };
+                        }
+                    });
+                    setTeam(newTeam);
+                    notify('Loaded composition for editing');
+                } catch (err) {
+                    console.error(err);
+                    notify('Error loading composition');
+                }
+            };
+            fetchComp();
+        }
+    }, [location.search, characters]);
+
     const notify = (msg) => {
         setToast(msg);
         setTimeout(() => setToast(null), 2200);
@@ -413,7 +523,7 @@ const TeamBuilder = () => {
         }
 
         // Main Team Logic
-        const row = char.row || 'front'; // Fallback to front if missing
+        const row = (char.row || 'front').toLowerCase(); // Fallback to front if missing
 
         const slots = getRowSlots(row);
 
@@ -471,65 +581,112 @@ const TeamBuilder = () => {
     };
 
     // --- Bonds Logic ---
-    const activeBonds = useMemo(() => {
-        const active = [];
+    // --- Bonds & Skills Logic ---
+    const { activeBonds, activeCombineSkills } = useMemo(() => {
+        const bonds = [];
+        const skills = [];
         const teamChars = Object.values(team).filter(slot => slot?.character).map(slot => slot.character);
-        const normalize = (s) => s ? s.toLowerCase().replace(/\s+/g, '') : '';
+
+        const normalize = (s) => s ? s.toLowerCase().replace(/[^a-z0-9]/g, '') : '';
+
+        // Helper to check if a partner (localized object) is present in the team
+        const isPartnerInTeam = (partnerLoc) => {
+            if (!partnerLoc) return false;
+            const pNames = Object.values(partnerLoc).filter(n => n && typeof n === 'string');
+
+            return teamChars.some(teamChar => {
+                const cNames = Object.values(teamChar.name || {}).filter(n => n && typeof n === 'string');
+                // Use includes for flexibility (e.g. "Underworld Saga" includes "Saga")
+                return cNames.some(cName =>
+                    pNames.some(pName =>
+                        normalize(cName).includes(normalize(pName)) && normalize(pName).length > 1
+                    )
+                );
+            });
+        };
+
+        // Helper to return the matched character object for a partner, or fallback
+        const getPartnerChar = (partnerLoc) => {
+            if (!partnerLoc) return { name: partnerLoc, imageUrl: '' };
+            const pNames = Object.values(partnerLoc).filter(n => n && typeof n === 'string');
+
+            const match = teamChars.find(teamChar => {
+                const cNames = Object.values(teamChar.name || {}).filter(n => n && typeof n === 'string');
+                return cNames.some(cName =>
+                    pNames.some(pName =>
+                        normalize(cName).includes(normalize(pName)) && normalize(pName).length > 1
+                    )
+                );
+            });
+            return match || { name: partnerLoc, imageUrl: '' };
+        };
 
         teamChars.forEach(char => {
-            if (!char.bonds || !char.bonds.length) return;
+            // 1. Status Bonds
+            if (char.bonds && char.bonds.length) {
+                char.bonds.forEach(bond => {
+                    const partners = bond.partners || [];
+                    if (partners.length === 0) return;
 
-            char.bonds.forEach(bond => {
-                const partners = bond.partners || [];
-                if (partners.length === 0) return;
+                    const allPartnersPresent = partners.every(partnerLoc => isPartnerInTeam(partnerLoc));
 
-                const allPartnersPresent = partners.every(partnerLoc => {
-                    return teamChars.some(teamChar => {
-                        const langs = ['en', 'pt', 'es', 'fr', 'cn', 'th'];
-                        return langs.some(lang => {
-                            const pName = partnerLoc[lang];
-                            const cName = teamChar.name[lang];
-                            return pName && cName && normalize(cName).includes(normalize(pName));
+                    if (allPartnersPresent) {
+                        const partnersData = partners.map(pLoc => getPartnerChar(pLoc));
+                        bonds.push({
+                            charName: getLoc(char.name),
+                            bondName: getLoc(bond.name),
+                            effect: getLoc(bond.effect),
+                            partnersData
                         });
-                    });
+                    }
                 });
+            }
 
-                if (allPartnersPresent) {
-                    // Find partner character objects for icons
-                    const partnersData = partners.map(pLoc => {
-                        // Find the character in the team that matched
-                        const matchedChar = teamChars.find(tc => {
-                            const langs = ['en', 'pt', 'es', 'fr', 'cn', 'th'];
-                            return langs.some(lang => {
-                                const pName = pLoc[lang];
-                                const cName = tc.name[lang];
-                                return pName && cName && normalize(cName).includes(normalize(pName));
-                            });
+            // 2. Combine Skills
+            if (char.combineSkills && char.combineSkills.length) {
+                char.combineSkills.forEach(skill => {
+                    const partners = skill.partners || [];
+                    if (partners.length === 0) return;
+
+                    const allPartnersPresent = partners.every(partnerLoc => isPartnerInTeam(partnerLoc));
+
+                    if (allPartnersPresent) {
+                        const partnersData = partners.map(pLoc => getPartnerChar(pLoc));
+                        skills.push({
+                            charName: getLoc(char.name),
+                            skillName: getLoc(skill.name),
+                            description: getLoc(skill.description),
+                            iconUrl: skill.iconUrl,
+                            partnersData
                         });
-                        return matchedChar || { name: pLoc, imageUrl: '' };
-                    });
-
-                    active.push({
-                        charName: getLoc(char.name),
-                        bondName: getLoc(bond.name),
-                        effect: getLoc(bond.effect),
-                        partnersData
-                    });
-                }
-            });
+                    }
+                });
+            }
         });
 
+        // Deduplicate Bonds
         const uniqueBonds = [];
-        const seen = new Set();
-        active.forEach(b => {
+        const seenBonds = new Set();
+        bonds.forEach(b => {
             const key = `${b.bondName}-${b.effect}`;
-            if (!seen.has(key)) {
-                seen.add(key);
+            if (!seenBonds.has(key)) {
+                seenBonds.add(key);
                 uniqueBonds.push(b);
             }
         });
 
-        return uniqueBonds;
+        // Deduplicate Skills
+        const uniqueSkills = [];
+        const seenSkills = new Set();
+        skills.forEach(s => {
+            const key = `${s.skillName}-${s.description}`;
+            if (!seenSkills.has(key)) {
+                seenSkills.add(key);
+                uniqueSkills.push(s);
+            }
+        });
+
+        return { activeBonds: uniqueBonds, activeCombineSkills: uniqueSkills };
     }, [team, getLoc]);
 
     // --- Saving / Sharing Logic ---
@@ -541,6 +698,16 @@ const TeamBuilder = () => {
         localStorage.setItem(key, JSON.stringify(updated));
         setSavedComps(updated);
         notify(t('compSaved'));
+    };
+
+    const deleteSavedComp = (compId) => {
+        if (!user) return;
+        if (!window.confirm('Delete this saved composition?')) return;
+        const key = `comps_${user._id || user.id || 'user'}`;
+        const updated = savedComps.filter(c => c.id !== compId);
+        localStorage.setItem(key, JSON.stringify(updated));
+        setSavedComps(updated);
+        notify('Composition deleted');
     };
 
     const serializeTeamForShare = (currentTeam) => {
@@ -600,6 +767,47 @@ const TeamBuilder = () => {
         }
     };
 
+    const handlePublish = async (data) => {
+        try {
+            const characters = Object.entries(team)
+                .filter(([slot, data]) => data?.character)
+                .map(([slot, data]) => ({
+                    slot,
+                    character: data.character._id || data.character.id,
+                    relic: data.relicId || null,
+                    cards: data.cardIds || []
+                }));
+
+            if (characters.length === 0) {
+                notify('Team is empty!');
+                return;
+            }
+
+            if (editingCompId) {
+                await api.put(`/community-comps/${editingCompId}`, {
+                    title: data.title,
+                    description: { en: data.description },
+                    tags: data.tags,
+                    characters
+                });
+                notify('Composition updated successfully!');
+            } else {
+                await api.post('/community-comps', {
+                    title: data.title,
+                    description: { en: data.description },
+                    tags: data.tags,
+                    characters
+                });
+                notify('Composition published successfully!');
+            }
+
+            setIsPublishModalOpen(false);
+        } catch (err) {
+            console.error(err);
+            notify('Failed to publish composition');
+        }
+    };
+
     // --- Filtering ---
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -629,6 +837,9 @@ const TeamBuilder = () => {
                         </button>
                         <button onClick={generateShareLink} className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded text-sm font-bold transition-colors">
                             {t('share')}
+                        </button>
+                        <button onClick={() => setIsPublishModalOpen(true)} disabled={!user} className={`px-4 py-2 rounded text-sm font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${editingCompId ? 'bg-green-700 hover:bg-green-600' : 'bg-green-600 hover:bg-green-500'}`}>
+                            {editingCompId ? 'Update' : 'Publish'}
                         </button>
                         {user && (
                             <button onClick={() => setShowMyComps(true)} className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm font-bold transition-colors">
@@ -768,15 +979,45 @@ const TeamBuilder = () => {
                             </div>
                         </div>
 
+                        {/* Active Combine Skills */}
+                        {activeCombineSkills.length > 0 && (
+                            <div className="w-full mt-4">
+                                <h4 className="text-sm font-bold text-yellow-500 mb-2">{t('activeCombineSkills') || 'Active Combine Skills'}</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {activeCombineSkills.map((skill, idx) => (
+                                        <div key={idx} className="bg-gray-800 border border-yellow-600/50 p-4 rounded-lg flex flex-col md:flex-row gap-4 shadow-lg">
+                                            {skill.iconUrl && (
+                                                <div className="flex-shrink-0 mx-auto md:mx-0">
+                                                    <img src={skill.iconUrl} alt={skill.skillName} className="w-16 h-16 rounded border border-gray-600" />
+                                                </div>
+                                            )}
+                                            <div className="flex-grow">
+                                                <h4 className="font-bold text-yellow-400 text-lg mb-1">{skill.skillName}</h4>
+                                                <div className="flex flex-wrap gap-2 mb-2">
+                                                    {skill.partnersData.map((p, i) => (
+                                                        <div key={i} className="flex items-center gap-1 bg-gray-700 px-2 py-0.5 rounded border border-gray-600">
+                                                            {p.imageUrl && <img src={p.imageUrl} alt="" className="w-4 h-4 rounded-full" />}
+                                                            <span className="text-[10px] text-gray-300">{getLoc(p.name)}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                <div className="text-xs text-gray-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: skill.description ? skill.description.replace(/\\n/g, '<br/>') : '' }}></div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {/* Active Bonds */}
                         {activeBonds.length > 0 && (
-                            <div className="w-full mt-4">
-                                <h3 className="text-xl font-bold text-yellow-500 mb-4 border-b border-gray-800 pb-2">{t('activeBonds') || 'Active Bonds'}</h3>
+                            <div className="w-full mt-8">
+                                <h3 className="text-xl font-bold text-blue-400 mb-4 border-b border-gray-800 pb-2">{t('activeBonds') || 'Attribute Bonds'}</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                                     {activeBonds.map((bond, idx) => (
                                         <div
                                             key={idx}
-                                            className="bg-gray-800 border border-gray-700 rounded p-3 shadow-sm cursor-pointer hover:border-yellow-500 transition"
+                                            className="bg-gray-800 border border-gray-700 rounded p-3 shadow-sm cursor-pointer hover:border-blue-500 transition"
                                             onClick={() => setSelectedBond(bond)}
                                         >
                                             <div className="flex items-center gap-3 mb-2">
@@ -792,7 +1033,7 @@ const TeamBuilder = () => {
                                                         </div>
                                                     )}
                                                 </div>
-                                                <div className="font-bold text-yellow-400 text-sm truncate">{bond.bondName}</div>
+                                                <div className="font-bold text-blue-400 text-sm truncate">{bond.bondName}</div>
                                             </div>
                                             <div className="text-xs text-gray-400 line-clamp-2">{bond.effect || 'No effect description.'}</div>
                                         </div>
@@ -811,6 +1052,16 @@ const TeamBuilder = () => {
                 </div>
             )}
 
+            {isPublishModalOpen && (
+                <PublishModal
+                    isOpen={isPublishModalOpen}
+                    onClose={() => setIsPublishModalOpen(false)}
+                    onPublish={handlePublish}
+                    initialTitle={compName}
+                    initialNotes={notes}
+                    initialTags={tags}
+                />
+            )}
             {selectedBond && (
                 <BondModal bond={selectedBond} onClose={() => setSelectedBond(null)} getLoc={getLoc} />
             )}
@@ -830,12 +1081,20 @@ const TeamBuilder = () => {
                                             <div className="font-bold text-sm">{comp.name}</div>
                                             <div className="text-[10px] text-gray-500">{new Date(comp.id).toLocaleDateString()}</div>
                                         </div>
-                                        <button
-                                            onClick={() => { setTeam(comp.team); setCompName(comp.name); setNotes(comp.notes); setShowMyComps(false); }}
-                                            className="text-xs bg-yellow-600 hover:bg-yellow-500 px-2 py-1 rounded text-white"
-                                        >
-                                            {t('load')}
-                                        </button>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={() => { setTeam(comp.team); setCompName(comp.name); setNotes(comp.notes); setShowMyComps(false); }}
+                                                className="text-xs bg-yellow-600 hover:bg-yellow-500 px-2 py-1 rounded text-white"
+                                            >
+                                                {t('load')}
+                                            </button>
+                                            <button
+                                                onClick={() => deleteSavedComp(comp.id)}
+                                                className="text-xs bg-red-600 hover:bg-red-500 px-2 py-1 rounded text-white"
+                                            >
+                                                ✕
+                                            </button>
+                                        </div>
                                     </div>
                                 ))
                             )}

@@ -241,19 +241,19 @@ const Characters = () => {
                                         <div className="grid grid-cols-2 gap-2 mt-3 text-xs text-gray-400">
                                             <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                                <span className="truncate" title={t('faction')}>{t(`factions.${char.factionKey}`)}</span>
+                                                <span className="truncate" title={t('faction')}>{getLoc(char.faction)}</span>
                                             </div>
                                             <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                                <span className="truncate" title={t('role')}>{t(`roles.${char.roleKey}`)}</span>
+                                                <span className="truncate" title={t('role')}>{getLoc(char.combatPosition)}</span>
                                             </div>
                                             <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
-                                                <span className="truncate" title={t('position')}>{t(`rows.${char.row}`)}</span>
+                                                <span className="truncate" title={t('position')}>{getLoc(char.positioning)}</span>
                                             </div>
                                             <div className="flex items-center gap-1.5">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                                                <span className="truncate" title={t('attackType')}>{t(`attackTypes.${char.attackTypeKey}`)}</span>
+                                                <span className="truncate" title={t('attackType')}>{getLoc(char.attackType)}</span>
                                             </div>
                                         </div>
                                     </div>

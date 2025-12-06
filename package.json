@@ -1,5 +1,6 @@
 {
-  "name": "ssex-consulting-tool",
+  "name": "ssex",
+  "version": "1.6.11",
   "private": true,
   "workspaces": [
     "packages/*"

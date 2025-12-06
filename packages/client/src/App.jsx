@@ -18,6 +18,8 @@ import ForceCards from './pages/ForceCards';
 import ForceCardDetail from './pages/ForceCardDetail';
 import Proposals from './pages/Proposals';
 import Profile from './pages/Profile';
+import CommunityComps from './pages/CommunityComps';
+import CompDetail from './pages/CompDetail';
 
 import { ConfigProvider } from './context/ConfigContext';
 import AdminDashboard from './pages/AdminDashboard';
@@ -67,6 +69,8 @@ function App() {
               <Route path="/artifacts/:id" element={<ArtifactDetail />} />
               <Route path="/force-cards" element={<ForceCards />} />
               <Route path="/force-cards/:id" element={<ForceCardDetail />} />
+              <Route path="/community-comps" element={<CommunityComps />} />
+              <Route path="/community-comps/:id" element={<CompDetail />} />
               <Route path="/proposals" element={<Proposals />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
