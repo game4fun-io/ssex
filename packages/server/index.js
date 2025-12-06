@@ -59,6 +59,11 @@ const getBaseUrl = (req) => {
     return `${req.protocol}://${req.get('host')}`;
 };
 
+const SITEMAP_XMLNS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
+const SITEMAP_CHANGEFREQ = 'weekly';
+const SITEMAP_PRIORITY_HIGH = '1.0';
+const SITEMAP_PRIORITY_NORMAL = '0.7';
+
 const sitemapRoutes = [
     '/',
     '/news',
@@ -76,15 +81,15 @@ const buildSitemapXml = (req) => {
     const base = getBaseUrl(req);
     
     const xmlHeader = '<?xml version="1.0" encoding="UTF-8"?>';
-    const urlsetOpen = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    const urlsetOpen = `<urlset xmlns="${SITEMAP_XMLNS}">`;
     const urlsetClose = '</urlset>';
     
     const urlEntries = sitemapRoutes.map((route) => {
-        const priority = route === '/' ? '1.0' : '0.7';
+        const priority = route === '/' ? SITEMAP_PRIORITY_HIGH : SITEMAP_PRIORITY_NORMAL;
         return [
             '  <url>',
             `    <loc>${base}${route}</loc>`,
-            '    <changefreq>weekly</changefreq>',
+            `    <changefreq>${SITEMAP_CHANGEFREQ}</changefreq>`,
             `    <priority>${priority}</priority>`,
             '  </url>'
         ].join('\n');
